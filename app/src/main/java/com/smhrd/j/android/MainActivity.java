@@ -6,10 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private View tv_hello;
+    private TextView tv_hw;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.v("tt","123");
 
-        tv_hello = findViewById(R.id.tv_hello);
+        tv_hw = findViewById(R.id.tv_hw);
 
         Log.v("ada","15151515");
         Log.v("ada","15151515");
