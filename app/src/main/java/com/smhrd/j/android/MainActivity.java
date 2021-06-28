@@ -13,5 +13,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Log.v("hhd","111");
+        Log.v("ada","15151515");
     }
 }
