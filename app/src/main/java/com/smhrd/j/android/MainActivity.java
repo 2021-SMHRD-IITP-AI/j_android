@@ -14,5 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
         Log.v("hhd","111");
         Log.v("ada","15151515");
+        Log.v("ada","15151515");
     }
 }
