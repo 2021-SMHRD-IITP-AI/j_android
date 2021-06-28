@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TextView tv_hello;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +17,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Log.v("hhd","111");
-        Log.v("hhd","김은경");
+
+        Log.v("tt","123");
+
+        tv_hello = findViewById(R.id.tv_hello);
+
     }
 }
