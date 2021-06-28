@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Log.v("hhd","111");
-        Intent intent = new Intent();
+        Log.v("hhd","김은경");
     }
 }
