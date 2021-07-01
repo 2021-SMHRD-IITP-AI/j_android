@@ -13,5 +13,6 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Log.v("aa","aaaa");
+        Log.v("aa","aaaa");
     }
 }
