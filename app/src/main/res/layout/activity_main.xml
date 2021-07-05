@@ -10,18 +10,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="48dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
             android:orientation="horizontal"
             android:padding="10dp">
 
             <TextView
                 android:id="@+id/textView17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="56dp"
+                android:layout_height="31dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
@@ -32,24 +38,26 @@
 
             <EditText
                 android:id="@+id/editTextTextPersonName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_width="192dp"
+                android:layout_height="26dp"
                 android:background="@drawable/background"
+                android:drawableEnd="@drawable/search_img"
+                android:elevation="10dp"
                 android:ems="10"
                 android:fontFamily="@font/gmarketsansttfmedium"
                 android:hint="   검색해주세요"
                 android:inputType="textPersonName"
                 android:textColor="#000000"
                 android:textColorHint="#670401"
-                android:textSize="17sp" />
+                android:textSize="15sp" />
 
             <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="70dp"
-                android:layout_height="36dp"
+                android:id="@+id/imageView2"
+                android:layout_width="20dp"
+                android:layout_height="27dp"
                 android:layout_weight="1"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:srcCompat="@drawable/shopping_bag_ic" />
+
         </LinearLayout>
     </LinearLayout>
 
@@ -107,13 +115,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="15dp" />
+        app:layout_constraintGuide_begin="16dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="58dp" />
+        app:layout_constraintGuide_percent="0.08071136" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
