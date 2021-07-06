@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:background="#FFFFFF"
+=======
+    android:background="#F4F4F4"
+>>>>>>> 3fa0d01d10290c05c210786e58f2ff15080746ff
     tools:context=".Login">
 
     <EditText
@@ -21,7 +25,11 @@
         android:fontFamily="@font/gmarketsansttflight"
         android:hint="  아이디"
         android:inputType="textPersonName"
+<<<<<<< HEAD
         android:textSize="16sp"
+=======
+        android:textColorHint="#4C4C4C"
+>>>>>>> 3fa0d01d10290c05c210786e58f2ff15080746ff
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,8 +44,13 @@
         android:fontFamily="@font/gmarketsansttflight"
         android:hint="  비밀번호"
         android:inputType="textPersonName"
+<<<<<<< HEAD
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/id_login"
+=======
+        android:textColorHint="#4C4C4C"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3"
+>>>>>>> 3fa0d01d10290c05c210786e58f2ff15080746ff
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
