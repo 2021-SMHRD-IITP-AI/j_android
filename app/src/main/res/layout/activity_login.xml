@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F4F4F4"
     tools:context=".Login">
 
     <EditText
@@ -19,6 +20,7 @@
         android:ems="10"
         android:hint="  아이디"
         android:inputType="textPersonName"
+        android:textColorHint="#4C4C4C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,6 +34,7 @@
         android:ems="10"
         android:hint="  비밀번호"
         android:inputType="textPersonName"
+        android:textColorHint="#4C4C4C"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -98,6 +101,7 @@
         android:background="#EFEFEF"
         android:gravity="center"
         android:text="로그인"
+        android:textColor="#4C4C4C"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

@@ -8,30 +8,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-<<<<<<< HEAD
-
-        android:theme="@style/Theme.AppCompat.NoActionBar">  // 타이틀 바 없애기
-        <activity android:name=".Main">
-=======
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Login_contract">
->>>>>>> 13fdd7ce4bc50f443245b2a72fd543982187f449
+
+        <activity android:name=".HotItem">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
 
-        <activity android:name=".Login">
-
-
-=======
-        <activity android:name=".Login">
->>>>>>> 13fdd7ce4bc50f443245b2a72fd543982187f449
-
-        </activity>
+        <activity android:name=".Main"></activity>
+        <activity android:name=".Login_contract"></activity>
+        <activity android:name=".Login"></activity>
     </application>
 
 </manifest>
