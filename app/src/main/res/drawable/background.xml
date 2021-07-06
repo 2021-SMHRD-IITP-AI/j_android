@@ -13,14 +13,15 @@
     </item>
 
     <item
-
         android:bottom="1dp"
         android:left="1dp"
         android:right="1dp"
         android:top="1dp">
 
+
+        //검색창 내부
         <shape android:shape="rectangle">
-            <solid android:color="#FFFFFF"/>
+            <solid android:color="#ffffff"/>
             <corners
                 android:bottomRightRadius="100dp"
                 android:bottomLeftRadius="100dp"
@@ -28,5 +29,7 @@
                 android:topRightRadius="100dp"/>
         </shape>
     </item>
+
+
 
 </layer-list>
