@@ -38,6 +38,7 @@
                 android:background="#EFEFEF"
                 android:gravity="center_horizontal"
                 android:text="회원가입"
+                android:fontFamily="@font/jalnan"
                 android:textColor="#4C4C4C"
                 android:textSize="34sp"
                 android:textStyle="bold" />
@@ -48,6 +49,7 @@
                 android:layout_marginTop="50dp"
                 android:paddingLeft="55dp"
                 android:text="아이디/비밀번호"
+                android:fontFamily="@font/jalnan"
                 android:textColor="#4C4C4C"
                 android:textStyle="bold" />
 
@@ -57,7 +59,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName2"
+                    android:id="@+id/id"
                     android:layout_width="200dp"
                     android:layout_height="38dp"
                     android:layout_marginStart="55dp"
@@ -66,6 +68,7 @@
                     android:background="@drawable/border"
                     android:ems="10"
                     android:hint="아이디"
+                    android:fontFamily="@font/gmarketsansttflight"
                     android:inputType="textPersonName"
                     android:paddingLeft="10dp"
                     android:textColor="#000000"
@@ -73,13 +76,15 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/btn_overlap1"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="31dp"
                     android:layout_weight="0"
+                    android:fontFamily="@font/jalnan"
                     android:text="중복확인"
-                    android:textSize="16sp"
+
+                    android:textSize="14sp"
                     app:backgroundTint="#670401"
                     app:cornerRadius="0dp" />
 
@@ -91,7 +96,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/editTextTextPassword"
+                    android:id="@+id/pw1"
                     android:layout_width="296dp"
                     android:layout_height="38dp"
                     android:layout_marginStart="55dp"
@@ -100,6 +105,7 @@
                     android:background="@drawable/border"
                     android:ems="10"
                     android:hint="비밀번호"
+                    android:fontFamily="@font/gmarketsansttflight"
                     android:inputType="textPassword"
                     android:paddingLeft="10dp"
                     android:textColor="#000000"
@@ -107,7 +113,7 @@
                     android:textSize="12sp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPassword2"
+                    android:id="@+id/pw2"
                     android:layout_width="296dp"
                     android:layout_height="38dp"
                     android:layout_marginStart="55dp"
@@ -116,6 +122,7 @@
                     android:background="@drawable/border"
                     android:ems="10"
                     android:hint="비밀번호확인"
+                    android:fontFamily="@font/gmarketsansttflight"
                     android:inputType="textPassword"
                     android:paddingLeft="10dp"
                     android:textColor="#000000"
@@ -129,11 +136,12 @@
                     android:layout_marginTop="30dp"
                     android:paddingLeft="55dp"
                     android:text="회원정보"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#4C4C4C"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName8"
+                    android:id="@+id/name"
                     android:layout_width="296dp"
                     android:layout_height="38dp"
                     android:layout_marginStart="55dp"
@@ -142,6 +150,7 @@
                     android:background="@drawable/border"
                     android:ems="10"
                     android:hint="이름"
+                    android:fontFamily="@font/gmarketsansttflight"
                     android:inputType="textPersonName"
                     android:paddingLeft="10dp"
                     android:textColor="#000000"
@@ -155,7 +164,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName9"
+                    android:id="@+id/n_name"
                     android:layout_width="200dp"
                     android:layout_height="38dp"
                     android:layout_marginStart="55dp"
@@ -164,6 +173,7 @@
                     android:background="@drawable/border"
                     android:ems="10"
                     android:hint="닉네임"
+                    android:fontFamily="@font/gmarketsansttflight"
                     android:inputType="textPersonName"
                     android:paddingLeft="10dp"
                     android:textColor="#000000"
@@ -171,13 +181,14 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btn_overlap2"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:layout_marginTop="14dp"
+                    android:layout_marginTop="12dp"
                     android:layout_weight="0"
+                    android:fontFamily="@font/jalnan"
                     android:text="중복확인"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     app:backgroundTint="#670401"
                     app:cornerRadius="0dp" />
             </LinearLayout>
@@ -188,7 +199,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/editTextPhone"
+                    android:id="@+id/h_p"
                     android:layout_width="296dp"
                     android:layout_height="38dp"
                     android:layout_marginStart="55dp"
@@ -197,6 +208,7 @@
                     android:background="@drawable/border"
                     android:ems="10"
                     android:hint="휴대폰번호"
+                    android:fontFamily="@font/gmarketsansttflight"
                     android:inputType="phone"
                     android:paddingLeft="10dp"
                     android:textColor="#000000"
@@ -210,11 +222,12 @@
                     android:layout_marginTop="30dp"
                     android:paddingLeft="55dp"
                     android:text="이메일"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#4C4C4C"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/editTextTextEmailAddress"
+                    android:id="@+id/email"
                     android:layout_width="296dp"
                     android:layout_height="38dp"
                     android:layout_marginStart="55dp"
@@ -224,6 +237,7 @@
                     android:background="@drawable/border"
                     android:ems="10"
                     android:hint="이메일"
+                    android:fontFamily="@font/gmarketsansttflight"
                     android:inputType="textEmailAddress"
                     android:paddingLeft="10dp"
                     android:textColor="#000000"
@@ -237,11 +251,12 @@
                     android:layout_marginTop="30dp"
                     android:paddingLeft="55dp"
                     android:text="주소"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#4C4C4C"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/editTextTextPostalAddress"
+                    android:id="@+id/add"
                     android:layout_width="296dp"
                     android:layout_height="38dp"
                     android:layout_marginStart="55dp"
@@ -250,6 +265,7 @@
                     android:background="@drawable/border"
                     android:ems="10"
                     android:hint="상세주소입력"
+                    android:fontFamily="@font/gmarketsansttflight"
                     android:inputType="textPostalAddress"
                     android:paddingLeft="10dp"
                     android:textColor="#000000"
@@ -263,6 +279,7 @@
                     android:layout_marginTop="30dp"
                     android:paddingLeft="55dp"
                     android:text="생년월일"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#4C4C4C"
                     android:textStyle="bold" />
 
@@ -284,7 +301,7 @@
                 <EditText
 
                     android:id="@+id/year"
-
+                    android:fontFamily="@font/gmarketsansttflight"
                     android:layout_width="60dp"
 
                     android:layout_height="wrap_content"
@@ -301,7 +318,7 @@
                     android:layout_height="wrap_content"
 
                     android:text="년"
-
+                    android:fontFamily="@font/jalnan"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#4C4C4C"
                     android:textSize="16sp" />
@@ -310,7 +327,7 @@
                 <EditText
 
                     android:id="@+id/month"
-
+                    android:fontFamily="@font/gmarketsansttflight"
                     android:layout_width="30dp"
 
                     android:layout_height="wrap_content"
@@ -327,7 +344,7 @@
                     android:layout_height="wrap_content"
 
                     android:text="월"
-
+                    android:fontFamily="@font/jalnan"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#4C4C4C"
                     android:textSize="16sp" />
@@ -336,7 +353,7 @@
                 <EditText
 
                     android:id="@+id/day"
-
+                    android:fontFamily="@font/gmarketsansttflight"
                     android:layout_width="30dp"
 
                     android:layout_height="wrap_content"
@@ -353,7 +370,7 @@
                     android:layout_height="wrap_content"
 
                     android:text="일"
-
+                    android:fontFamily="@font/jalnan"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#4C4C4C"
                     android:textSize="16sp" />
@@ -372,6 +389,7 @@
                     android:paddingLeft="55dp"
                     android:paddingTop="30dp"
                     android:text="성별"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#4C4C4C"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -382,7 +400,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/btn_m"
                     android:layout_width="150dp"
                     android:layout_height="60dp"
                     android:layout_marginStart="57dp"
@@ -390,16 +408,18 @@
                     android:layout_marginTop="20dp"
                     android:layout_weight="0"
                     android:text="남자"
+                    android:fontFamily="@font/jalnan"
                     app:backgroundTint="#670401"
                     app:cornerRadius="0dp" />
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/btn_w"
                     android:layout_width="150dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
                     android:layout_weight="0"
                     android:text="여자"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#4C4C4C"
                     app:backgroundTint="#EFEFEF"
                     app:cornerRadius="0dp" />
@@ -416,6 +436,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="55dp"
                     android:paddingTop="30dp"
+                    android:fontFamily="@font/jalnan"
                     android:text="건강상태체크"
                     android:textColor="#4C4C4C"
                     android:textStyle="bold" />
@@ -424,6 +445,7 @@
                     android:id="@+id/spinner"
                     android:layout_width="296dp"
                     android:layout_height="38dp"
+                    android:fontFamily="@font/gmarketsansttflight"
                     android:layout_marginStart="55dp"
                     android:layout_marginLeft="55dp"
                     android:layout_marginTop="30dp"
@@ -431,12 +453,13 @@
                     />
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/contract"
                     android:layout_width="296dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="55dp"
                     android:layout_marginLeft="55dp"
                     android:layout_marginBottom="30dp"
+                    android:fontFamily="@font/jalnan"
                     android:text="회원가입"
                     app:backgroundTint="#670401"
                     app:cornerRadius="0dp" />
