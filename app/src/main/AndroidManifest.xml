@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.smhrd.j.android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
@@ -12,25 +13,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
 
-        <activity android:name=".HotItem">
+        <activity android:name="Login">
+
+
+        </activity>
+        <activity android:name=".Main">
+
+
+        </activity>
+        <activity android:name=".Login_contract">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-
         </activity>
-<<<<<<< HEAD
-        <activity android:name="Login">
 
-
-=======
->>>>>>> 3fa0d01d10290c05c210786e58f2ff15080746ff
-
-        <activity android:name=".Main"></activity>
-        <activity android:name=".Login_contract"></activity>
-        <activity android:name=".Login"></activity>
     </application>
 
 </manifest>
