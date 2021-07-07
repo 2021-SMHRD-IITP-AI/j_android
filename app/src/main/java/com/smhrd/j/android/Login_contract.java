@@ -78,7 +78,7 @@ public class Login_contract extends AppCompatActivity {
 
 
         queue = Volley.newRequestQueue(this);
-        String url = "https://222.102.104.135:3000/Join";
+        String url = "http://222.102.104.135:3000/Join";
 
         stringRequest = new StringRequest(Request.Method.POST,
                 url, new Response.Listener<String>() {
@@ -89,9 +89,12 @@ public class Login_contract extends AppCompatActivity {
 
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-                    String value = jsonObject.getString("check");
-                    Log.v("resultValue", value);
-                    if(value.equals("true")){
+//                    String value = jsonObject.getString("check");
+//                    Log.v("resultValue", value);
+                    String resultId=jsonObject.getString("approve_id");
+                    String resultPassword = jsonObject.getString("approve_pw");
+
+                    if(resultId.equals("OK")&& resultPassword.equals("OK")){
                         Intent intent = new Intent(getApplicationContext(),Login.class);
                         startActivity(intent);
                         Toast.makeText(getApplicationContext(),"회원가입성공",Toast.LENGTH_SHORT).show();
