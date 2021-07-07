@@ -44,6 +44,9 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Intent intent = new Intent(getApplicationContext(),Main.class);
+                startActivity(intent);
+
                 String userId = id_login.getText().toString();
                 String userPw = pw_login.getText().toString();
 
@@ -71,9 +74,6 @@ public class Login extends AppCompatActivity {
                         }
                     }
                 };
-
-
-
 
             }
         });

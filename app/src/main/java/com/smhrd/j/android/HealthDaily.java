@@ -4,11 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class HotItem extends AppCompatActivity {
+public class HealthDaily extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hot_item);
+        setContentView(R.layout.activity_health_daily);
+
+
+
+
+
+
     }
+
+
+
 }
