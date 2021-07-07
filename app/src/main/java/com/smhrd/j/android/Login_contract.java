@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -29,12 +32,13 @@ import java.util.Map;
 
 public class Login_contract extends AppCompatActivity {
 
-    private EditText id, pw1,  name,  h_p;
-//            add, birth;
-    private Button  contract;
+    private EditText id, pw1,  name,  h_p, email, address, birth;
+    private Button  btn_contract;
 
     private RequestQueue queue;
     private StringRequest stringRequest;
+
+    Spinner spinner;
 
 
     @Override
@@ -43,18 +47,24 @@ public class Login_contract extends AppCompatActivity {
         setContentView(R.layout.activity_login_contract);
 
         id=findViewById(R.id.id);
-        pw1=findViewById(R.id.pw1);
+        pw1=findViewById(R.id.pw);
         name=findViewById(R.id.name);
         h_p=findViewById(R.id.h_p);
 
-//        add=findViewById(R.id.add);
-//        birth=findViewById(R.id.birth);
+        email=findViewById(R.id.email);
+        address=findViewById(R.id.address);
+        birth=findViewById(R.id.birth);
+
+        final String[] data = getResources().getStringArray(R.array.array);
+        ArrayAdapter<String> adapter =new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,data);
+        Spinner spinner1 = (Spinner) findViewById(R.id.spinner);
+        spinner1.setAdapter(adapter);
 
 
 
-        contract=findViewById(R.id.contract);
+        btn_contract=findViewById(R.id.btn_contract);
 
-        contract.setOnClickListener(new View.OnClickListener() {
+        btn_contract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -65,6 +75,7 @@ public class Login_contract extends AppCompatActivity {
     }
 
     private void sendRequest() {
+
 
         queue = Volley.newRequestQueue(this);
         String url = "http://222.102.104.135:3000/Join";
@@ -84,9 +95,13 @@ public class Login_contract extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(),Login.class);
                         startActivity(intent);
                         Toast.makeText(getApplicationContext(),"회원가입성공",Toast.LENGTH_SHORT).show();
+                        Log.v("123","회원가입 성공");
                     }else{
                         Toast.makeText(getApplicationContext(),"회원가입에실패했습니다.",Toast.LENGTH_SHORT).show();
-
+                            id.setText("");
+                            pw1.setText("");
+                            name.setText("");
+                            h_p.setText("");
                     }
 
                 } catch (JSONException e) {
@@ -107,10 +122,13 @@ public class Login_contract extends AppCompatActivity {
                 params.put("id",id.getText().toString());
                 params.put("pw",pw1.getText().toString());
                 params.put("name",name.getText().toString());
-                params.put("n",h_p.getText().toString());
+                params.put("tel",h_p.getText().toString());
+                params.put("email",email.getText().toString());
+                params.put("address",address.getText().toString());
+                params.put("birth",birth.getText().toString());
 
-//                params.put("add",add.getText().toString());
-//                params.put("birth",birth.getText().toString());
+
+
 
 
                 return params;
