@@ -102,7 +102,6 @@ public class Login_contract extends AppCompatActivity {
 
     private void sendRequest() {
 
-
         queue = Volley.newRequestQueue(this);
         String url = "http://222.102.104.135:3000/Join";
         stringRequest = new StringRequest(Request.Method.POST,
@@ -119,7 +118,6 @@ public class Login_contract extends AppCompatActivity {
                     if(value.equals("true")){
                         Intent intent = new Intent(getApplicationContext(), Login.class);
                         startActivity(intent);
-                        Toast.makeText(getApplicationContext(),"회원가입성공",Toast.LENGTH_SHORT).show();
                         Log.v("test","가입성공");
                     }else{
                         Toast.makeText(getApplicationContext(),"회원가입에실패했습니다.",Toast.LENGTH_SHORT).show();
@@ -127,6 +125,7 @@ public class Login_contract extends AppCompatActivity {
                         pw1.setText("");
                         name.setText("");
                         h_p.setText("");
+                        Log.v("test","실패");
                     }
 
                 } catch (JSONException e) {
@@ -153,8 +152,6 @@ public class Login_contract extends AppCompatActivity {
                 params.put("birth",birth.getText().toString());
 
                 return params;
-
-
             }
         };
         queue.add(stringRequest);
