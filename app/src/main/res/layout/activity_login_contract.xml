@@ -273,13 +273,10 @@
                     android:layout_marginStart="56dp"
                     android:layout_marginLeft="56dp"
                     android:layout_marginTop="30dp"
-                    android:hint="선택"
-                    android:textColorHint="#4C4C4C"
                     android:background="@drawable/border"
                     android:entries="@array/array"
                     android:fontFamily="@font/gmarketsansttflight"
                     android:spinnerMode="dropdown"
-
                     android:textColor="@color/black" />
 
                 <Button
