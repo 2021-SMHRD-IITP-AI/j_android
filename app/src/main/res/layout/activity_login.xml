@@ -23,25 +23,10 @@
         android:fontFamily="@font/gmarketsansttflight"
         android:hint="  아이디"
         android:inputType="textPersonName"
-        android:textSize="16sp"
         android:textColorHint="#4C4C4C"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/pw_login"
-        android:layout_width="299dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="256dp"
-        android:background="@drawable/border"
-        android:ems="10"
-        android:fontFamily="@font/gmarketsansttflight"
-        android:hint="  비밀번호"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/id_login"
-        android:textColorHint="#4C4C4C"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
@@ -53,6 +38,21 @@
         android:textColor="#4C4C4C"
         app:layout_constraintStart_toStartOf="@+id/pw_login"
         app:layout_constraintTop_toBottomOf="@+id/pw_login" />
+
+    <EditText
+        android:id="@+id/pw_login"
+        android:layout_width="299dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="256dp"
+        android:background="@drawable/border"
+        android:ems="10"
+        android:fontFamily="@font/gmarketsansttflight"
+        android:hint="  비밀번호"
+        android:inputType="textPersonName"
+        android:textColorHint="#4C4C4C"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/id_login"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView7"
@@ -125,4 +125,18 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/btn_login"
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="356dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="56dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
