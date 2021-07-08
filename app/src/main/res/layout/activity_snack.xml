@@ -51,7 +51,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="0.8"
-                    android:text="일일 도시락추천"
+                    android:text="간편식"
                     android:textColor="#4C4C4C"
                     android:textSize="16sp"
                     android:textStyle="bold" />
