@@ -15,8 +15,8 @@ public class Lunch_box_main extends AppCompatActivity {
         setContentView(R.layout.activity_lunch_box_main);
 
         radioButton1=findViewById(R.id.tbtn_1);
-        radioButton2=findViewById(R.id.radioButton2);
-        radioButton3=findViewById(R.id.radioButton3);
+        radioButton2=findViewById(R.id.tbtn_2);
+        radioButton3=findViewById(R.id.tbtn_3);
 
 
     }
