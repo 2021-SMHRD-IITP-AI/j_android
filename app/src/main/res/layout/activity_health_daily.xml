@@ -110,23 +110,16 @@
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
 
-                            <RadioGroup
-                                android:id="@+id/health_rdg"
+                            <RadioButton
+                                android:id="@+id/health_rd"
                                 android:layout_width="match_parent"
-                                android:layout_height="35dp">
-
-                                <RadioButton
-                                    android:id="@+id/health_rd"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="35dp"
-                                    android:layout_marginStart="20dp"
-                                    android:layout_marginLeft="20dp"
-                                    android:shadowColor="#FFFFFF"
-                                    android:textColor="#4C4C4C"
-                                    android:textColorHint="#4C4C4C"
-                                    android:textColorLink="#4C4C4C" />
-
-                            </RadioGroup>
+                                android:layout_height="35dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:shadowColor="#FFFFFF"
+                                android:textColor="#4C4C4C"
+                                android:textColorHint="#4C4C4C"
+                                android:textColorLink="#4C4C4C" />
 
                         </LinearLayout>
 
@@ -184,7 +177,7 @@
                     android:paddingRight="20dp">
 
                     <Button
-                        android:id="@+id/button7"
+                        android:id="@+id/health_add"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#670401"
