@@ -50,7 +50,7 @@ public class HealthDaily extends AppCompatActivity {
         health_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Log.v("12123","123");
             }
         });
 
