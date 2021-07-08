@@ -71,7 +71,7 @@ public class Login_contract extends AppCompatActivity {
         address=findViewById(R.id.address);
         birth=findViewById(R.id.birth);
 
-        //달력
+        //달력//
         birth.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
