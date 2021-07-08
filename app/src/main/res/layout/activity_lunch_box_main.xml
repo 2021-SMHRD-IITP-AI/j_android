@@ -95,7 +95,7 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/radioButton1"
+                        android:id="@+id/tbtn_1"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginStart="45dp"
