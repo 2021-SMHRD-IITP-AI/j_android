@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Today_lunch_box"></activity>
         <activity android:name=".Purchase">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,17 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Recommend_lunch_box">
-
-        </activity>
-        <activity android:name=".Lunch_box_main">
-
-        </activity>
+        <activity android:name=".Recommend_lunch_box"></activity>
+        <activity android:name=".Lunch_box_main"></activity>
         <activity android:name=".Login" />
         <activity android:name=".Main" />
-        <activity android:name=".Login_contract">
-
-        </activity>
+        <activity android:name=".Login_contract"></activity>
     </application>
 
 </manifest>
