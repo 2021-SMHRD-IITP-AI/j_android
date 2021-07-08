@@ -15,7 +15,8 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingLeft="14dp"
-        android:paddingRight="19dp">
+        android:paddingRight="19dp"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView"
@@ -225,11 +226,13 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4"
+        android:layout_width="407dp"
+        android:layout_height="517dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        tools:layout_editor_absoluteX="1dp">
+        tools:layout_editor_absoluteX="3dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -450,13 +453,14 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#EFEFEF"
         android:orientation="horizontal"
         android:padding="9dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="1dp">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -465,21 +469,14 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView26"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                app:srcCompat="@drawable/main_change_ic" />
-
-            <TextView
-                android:id="@+id/textView40"
+            <Button
+                android:id="@+id/button"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingTop="4dp"
+                android:drawableTop="@drawable/main_change_red"
                 android:text="헬스케어"
-                android:textColor="#670401"
-                android:textSize="15sp" />
+                android:textColor="#670401" />
         </LinearLayout>
 
         <LinearLayout
@@ -489,21 +486,15 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView27"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                app:srcCompat="@drawable/main_home_ic" />
-
-            <TextView
-                android:id="@+id/textView41"
+            <Button
+                android:id="@+id/button3"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingTop="4dp"
+                android:drawableTop="@drawable/main_home_red"
                 android:text="HOME"
-                android:textColor="#670401"
-                android:textSize="15sp" />
+                android:textColor="#670401" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -513,21 +504,15 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView28"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                app:srcCompat="@drawable/main_user_information_ic" />
-
-            <TextView
-                android:id="@+id/textView39"
+            <Button
+                android:id="@+id/button4"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingTop="4dp"
-                android:text="내 정보"
-                android:textColor="#670401"
-                android:textSize="15sp" />
+                android:drawableTop="@drawable/main_user_red"
+                android:text="내정보"
+                android:textColor="#670401" />
+
         </LinearLayout>
     </LinearLayout>
 

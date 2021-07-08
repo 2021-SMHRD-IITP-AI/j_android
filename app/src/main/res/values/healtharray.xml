@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="healtharray">
+        <item>감기</item>
+        <item>근육통</item>
+        <item>관절통</item>
+        <item>두통</item>
+        <item>오환</item>
+        <item>식욕상승</item>
+        <item>식욕감소</item>
+        <item>손발저림</item>
+    </string-array>
+
+</resources>

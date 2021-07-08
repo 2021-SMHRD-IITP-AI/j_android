@@ -8,139 +8,251 @@
     tools:context=".HealthDaily">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="59dp"
-        android:background="#EFEFEF"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingLeft="14dp"
-        android:paddingRight="19dp"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="29dp"
-            android:layout_height="19dp"
-            android:layout_weight="0.1"
-            app:srcCompat="@drawable/arrow_left_ic" />
-
-        <TextView
-            android:id="@+id/textView22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="0.8"
-            android:text="건강일지"
-            android:textColor="#4C4C4C"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/imageView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:layout_marginRight="12dp"
-            android:layout_weight="0.1"
-            app:srcCompat="@drawable/search_ic" />
-
-        <ImageView
-            android:id="@+id/imageView16"
-            android:layout_width="20dp"
-            android:layout_height="27dp"
-            android:layout_weight="0.1"
-            app:srcCompat="@drawable/main_shopping_bag_ic" />
-    </LinearLayout>
-
-    <CalendarView
-        android:id="@+id/calendarView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:focusedMonthDateColor="#FFFFFF"
-        android:showWeekNumber="true"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="98dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#EFEFEF"
-        android:orientation="horizontal"
-        android:padding="9dp"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:layout_height="0dp"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:background="#EFEFEF"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:paddingLeft="14dp"
+            android:paddingRight="19dp">
 
             <ImageView
-                android:id="@+id/imageView26"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                app:srcCompat="@drawable/main_change_ic" />
+                android:id="@+id/imageView"
+                android:layout_width="29dp"
+                android:layout_height="19dp"
+                android:layout_weight="0.1"
+                app:srcCompat="@drawable/arrow_left_ic" />
 
             <TextView
-                android:id="@+id/textView40"
-                android:layout_width="match_parent"
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingTop="4dp"
-                android:text="헬스케어"
-                android:textColor="#670401"
-                android:textSize="15sp" />
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="0.8"
+                android:text="건강일지"
+                android:textColor="#4C4C4C"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_weight="0.1"
+                app:srcCompat="@drawable/search_ic" />
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="20dp"
+                android:layout_height="27dp"
+                android:layout_weight="0.1"
+                app:srcCompat="@drawable/main_shopping_bag_ic" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
-            <ImageView
-                android:id="@+id/imageView27"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                app:srcCompat="@drawable/main_home_ic" />
-
-            <TextView
-                android:id="@+id/textView41"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingTop="4dp"
-                android:text="HOME"
-                android:textColor="#670401"
-                android:textSize="15sp" />
-        </LinearLayout>
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <CalendarView
+                        android:id="@+id/health_cal"
+                        android:layout_width="400dp"
+                        android:layout_height="300dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/textView27"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:font="@font/gmarketsansttfmedium"
+                                android:text="운동여부"
+                                android:textColor="#4C4C4C"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <RadioGroup
+                                android:id="@+id/health_rdg"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp">
+
+                                <RadioButton
+                                    android:id="@+id/health_rd"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:shadowColor="#FFFFFF"
+                                    android:textColor="#4C4C4C"
+                                    android:textColorHint="#4C4C4C"
+                                    android:textColorLink="#4C4C4C" />
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <Spinner
+                                android:id="@+id/health_sp"
+                                android:layout_width="200dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/border" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/textView31"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:font="@font/gmarketsansttfmedium"
+                                android:text="오늘의 건강일지 작성"
+                                android:textColor="#4C4C4C"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/health_edt"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:layout_marginTop="15dp"
+                                android:background="@drawable/border"
+                                android:ems="10"
+                                android:gravity="top"
+                                android:hint="   내용을 입력해주세요"
+                                android:inputType="textPersonName"
+                                android:textColorHint="#AAAAAA" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <Button
+                        android:id="@+id/button7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#670401"
+                        android:text="추가하기" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:background="#EFEFEF"
+            android:orientation="horizontal"
+            android:padding="9dp">
 
-            <ImageView
-                android:id="@+id/imageView28"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                app:srcCompat="@drawable/main_user_information_ic" />
-
-            <TextView
-                android:id="@+id/textView39"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:paddingTop="4dp"
-                android:text="내 정보"
-                android:textColor="#670401"
-                android:textSize="15sp" />
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/main_change_red"
+                    android:text="헬스케어"
+                    android:textColor="#670401" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button3"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/main_home_red"
+                    android:text="HOME"
+                    android:textColor="#670401" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button4"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/main_user_red"
+                    android:text="내정보"
+                    android:textColor="#670401" />
+
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
