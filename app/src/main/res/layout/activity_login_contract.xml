@@ -36,9 +36,9 @@
                 android:layout_height="59dp"
                 android:layout_marginTop="0dp"
                 android:background="#EFEFEF"
+                android:fontFamily="@font/jalnan"
                 android:gravity="center_horizontal"
                 android:text="회원가입"
-                android:fontFamily="@font/jalnan"
                 android:textColor="#4C4C4C"
                 android:textSize="34sp"
                 android:textStyle="bold" />
@@ -47,9 +47,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
+                android:fontFamily="@font/jalnan"
                 android:paddingLeft="55dp"
                 android:text="아이디/비밀번호"
-                android:fontFamily="@font/jalnan"
                 android:textColor="#4C4C4C"
                 android:textStyle="bold" />
 
@@ -60,33 +60,20 @@
 
                 <EditText
                     android:id="@+id/id"
-                    android:layout_width="200dp"
+                    android:layout_width="296dp"
                     android:layout_height="38dp"
                     android:layout_marginStart="55dp"
                     android:layout_marginLeft="55dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/border"
                     android:ems="10"
-                    android:hint="아이디"
                     android:fontFamily="@font/gmarketsansttflight"
+                    android:hint="아이디"
                     android:inputType="textPersonName"
                     android:paddingLeft="10dp"
                     android:textColor="#000000"
                     android:textColorHint="#4C4C4C"
                     android:textSize="12sp" />
-
-                <Button
-                    android:id="@+id/btn_overlap1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="48dp"
-                    android:layout_marginTop="31dp"
-                    android:layout_weight="0"
-                    android:fontFamily="@font/jalnan"
-                    android:text="중복확인"
-
-                    android:textSize="14sp"
-                    app:backgroundTint="#670401"
-                    app:cornerRadius="0dp" />
 
             </LinearLayout>
 
@@ -96,7 +83,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/pw1"
+                    android:id="@+id/pw"
                     android:layout_width="296dp"
                     android:layout_height="38dp"
                     android:layout_marginStart="55dp"
@@ -104,25 +91,8 @@
                     android:layout_marginTop="13dp"
                     android:background="@drawable/border"
                     android:ems="10"
+                    android:fontFamily="@font/gmarketsansttflight"
                     android:hint="비밀번호"
-                    android:fontFamily="@font/gmarketsansttflight"
-                    android:inputType="textPassword"
-                    android:paddingLeft="10dp"
-                    android:textColor="#000000"
-                    android:textColorHint="#4C4C4C"
-                    android:textSize="12sp" />
-
-                <EditText
-                    android:id="@+id/pw2"
-                    android:layout_width="296dp"
-                    android:layout_height="38dp"
-                    android:layout_marginStart="55dp"
-                    android:layout_marginLeft="55dp"
-                    android:layout_marginTop="13dp"
-                    android:background="@drawable/border"
-                    android:ems="10"
-                    android:hint="비밀번호확인"
-                    android:fontFamily="@font/gmarketsansttflight"
                     android:inputType="textPassword"
                     android:paddingLeft="10dp"
                     android:textColor="#000000"
@@ -134,9 +104,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
+                    android:fontFamily="@font/jalnan"
                     android:paddingLeft="55dp"
                     android:text="회원정보"
-                    android:fontFamily="@font/jalnan"
                     android:textColor="#4C4C4C"
                     android:textStyle="bold" />
 
@@ -149,48 +119,13 @@
                     android:layout_marginTop="30dp"
                     android:background="@drawable/border"
                     android:ems="10"
+                    android:fontFamily="@font/gmarketsansttflight"
                     android:hint="이름"
-                    android:fontFamily="@font/gmarketsansttflight"
                     android:inputType="textPersonName"
                     android:paddingLeft="10dp"
                     android:textColor="#000000"
                     android:textColorHint="#4C4C4C"
                     android:textSize="12sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/n_name"
-                    android:layout_width="200dp"
-                    android:layout_height="38dp"
-                    android:layout_marginStart="55dp"
-                    android:layout_marginLeft="55dp"
-                    android:layout_marginTop="13dp"
-                    android:background="@drawable/border"
-                    android:ems="10"
-                    android:hint="닉네임"
-                    android:fontFamily="@font/gmarketsansttflight"
-                    android:inputType="textPersonName"
-                    android:paddingLeft="10dp"
-                    android:textColor="#000000"
-                    android:textColorHint="#4C4C4C"
-                    android:textSize="12sp" />
-
-                <Button
-                    android:id="@+id/btn_overlap2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="48dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_weight="0"
-                    android:fontFamily="@font/jalnan"
-                    android:text="중복확인"
-                    android:textSize="14sp"
-                    app:backgroundTint="#670401"
-                    app:cornerRadius="0dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -207,8 +142,8 @@
                     android:layout_marginTop="13dp"
                     android:background="@drawable/border"
                     android:ems="10"
-                    android:hint="휴대폰번호"
                     android:fontFamily="@font/gmarketsansttflight"
+                    android:hint="휴대폰번호"
                     android:inputType="phone"
                     android:paddingLeft="10dp"
                     android:textColor="#000000"
@@ -220,9 +155,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
+                    android:fontFamily="@font/jalnan"
                     android:paddingLeft="55dp"
                     android:text="이메일"
-                    android:fontFamily="@font/jalnan"
                     android:textColor="#4C4C4C"
                     android:textStyle="bold" />
 
@@ -236,8 +171,8 @@
                     android:layout_weight="0"
                     android:background="@drawable/border"
                     android:ems="10"
-                    android:hint="이메일"
                     android:fontFamily="@font/gmarketsansttflight"
+                    android:hint="이메일"
                     android:inputType="textEmailAddress"
                     android:paddingLeft="10dp"
                     android:textColor="#000000"
@@ -249,14 +184,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
+                    android:fontFamily="@font/jalnan"
                     android:paddingLeft="55dp"
                     android:text="주소"
-                    android:fontFamily="@font/jalnan"
                     android:textColor="#4C4C4C"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/add"
+                    android:id="@+id/address"
                     android:layout_width="296dp"
                     android:layout_height="38dp"
                     android:layout_marginStart="55dp"
@@ -264,8 +199,8 @@
                     android:layout_marginTop="30dp"
                     android:background="@drawable/border"
                     android:ems="10"
-                    android:hint="상세주소입력"
                     android:fontFamily="@font/gmarketsansttflight"
+                    android:hint="상세주소입력"
                     android:inputType="textPostalAddress"
                     android:paddingLeft="10dp"
                     android:textColor="#000000"
@@ -277,9 +212,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
+                    android:fontFamily="@font/jalnan"
                     android:paddingLeft="55dp"
                     android:text="생년월일"
-                    android:fontFamily="@font/jalnan"
                     android:textColor="#4C4C4C"
                     android:textStyle="bold" />
 
@@ -288,141 +223,31 @@
             <LinearLayout
 
                 android:layout_width="wrap_content"
-
                 android:layout_height="wrap_content"
-
                 android:layout_gravity="center"
-
                 android:layout_marginTop="30dp"
-
                 android:orientation="horizontal">
 
 
                 <EditText
-
-                    android:id="@+id/year"
-                    android:fontFamily="@font/gmarketsansttflight"
-                    android:layout_width="60dp"
-
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="12sp" />
-
-
-                <TextView
-
-                    android:id="@+id/textView15"
-
-                    android:layout_width="wrap_content"
-
-                    android:layout_height="wrap_content"
-
-                    android:text="년"
-                    android:fontFamily="@font/jalnan"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="#4C4C4C"
-                    android:textSize="16sp" />
-
-
-                <EditText
-
-                    android:id="@+id/month"
-                    android:fontFamily="@font/gmarketsansttflight"
-                    android:layout_width="30dp"
-
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="12sp" />
-
-
-                <TextView
-
-                    android:id="@+id/textView16"
-
-                    android:layout_width="wrap_content"
-
-                    android:layout_height="wrap_content"
-
-                    android:text="월"
-                    android:fontFamily="@font/jalnan"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="#4C4C4C"
-                    android:textSize="16sp" />
-
-
-                <EditText
-
-                    android:id="@+id/day"
-                    android:fontFamily="@font/gmarketsansttflight"
-                    android:layout_width="30dp"
-
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="12sp" />
-
-
-                <TextView
-
-                    android:id="@+id/textView17"
-
-                    android:layout_width="wrap_content"
-
-                    android:layout_height="wrap_content"
-
-                    android:text="일"
-                    android:fontFamily="@font/jalnan"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="#4C4C4C"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView18"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="55dp"
-                    android:paddingTop="30dp"
-                    android:text="성별"
-                    android:fontFamily="@font/jalnan"
-                    android:textColor="#4C4C4C"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btn_m"
-                    android:layout_width="150dp"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="57dp"
-                    android:layout_marginLeft="57dp"
-                    android:layout_marginTop="20dp"
+                    android:id="@+id/birth"
+                    android:layout_width="296dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="0"
-                    android:text="남자"
-                    android:fontFamily="@font/jalnan"
-                    app:backgroundTint="#670401"
-                    app:cornerRadius="0dp" />
+                    android:background="@drawable/border"
+                    android:ems="10"
+                    android:fontFamily="@font/gmarketsansttflight"
+                    android:hint="생년월일"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="10dp"
+                    android:textColor="#040404"
+                    android:textColorHint="#4C4C4C"
+                    android:textSize="12sp" />
 
-                <Button
-                    android:id="@+id/btn_w"
-                    android:layout_width="150dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_weight="0"
-                    android:text="여자"
-                    android:fontFamily="@font/jalnan"
-                    android:textColor="#4C4C4C"
-                    app:backgroundTint="#EFEFEF"
-                    app:cornerRadius="0dp" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -434,9 +259,9 @@
                     android:id="@+id/textView19"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/jalnan"
                     android:paddingLeft="55dp"
                     android:paddingTop="30dp"
-                    android:fontFamily="@font/jalnan"
                     android:text="건강상태체크"
                     android:textColor="#4C4C4C"
                     android:textStyle="bold" />
@@ -445,19 +270,22 @@
                     android:id="@+id/spinner"
                     android:layout_width="296dp"
                     android:layout_height="38dp"
-                    android:fontFamily="@font/gmarketsansttflight"
-                    android:layout_marginStart="55dp"
-                    android:layout_marginLeft="55dp"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginLeft="56dp"
                     android:layout_marginTop="30dp"
-
-                    />
+                    android:background="@drawable/border"
+                    android:entries="@array/array"
+                    android:fontFamily="@font/gmarketsansttflight"
+                    android:spinnerMode="dropdown"
+                    android:textColor="@color/black" />
 
                 <Button
-                    android:id="@+id/contract"
+                    android:id="@+id/btn_contract"
                     android:layout_width="296dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="55dp"
                     android:layout_marginLeft="55dp"
+                    android:layout_marginTop="50dp"
                     android:layout_marginBottom="30dp"
                     android:fontFamily="@font/jalnan"
                     android:text="회원가입"

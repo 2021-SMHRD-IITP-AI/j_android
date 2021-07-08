@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class Login_POST extends Login_contract {
 
-    private  final  static  String URL= "http://222.102.104.135:3000/Join.php";
+    private  final  static  String URL= "http://222.102.104.135:3000/Join";
     private Map<String, String> map;
 
     public Login_POST(String id, String pw, String name, String n_name,

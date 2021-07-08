@@ -8,12 +8,15 @@ import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,6 +25,8 @@ public class Login extends AppCompatActivity {
 
     private EditText id_login, pw_login;
     private Button btn_contract, btn_login;
+    private CheckBox cb_login;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,24 @@ public class Login extends AppCompatActivity {
         pw_login=findViewById(R.id.pw_login);
         btn_login=findViewById(R.id.btn_login);
         btn_contract=findViewById(R.id.btn_contract);
+        cb_login=findViewById(R.id.cb_login);
+
+//        String login = PreferenceManager.getString(getApplicationContext(),"login");
+//        if(!login.equals("")){
+//            try {
+//                JSONObject jsonObject = new JSONObject(login);
+//                String id = jsonObject.getString("id");
+//                String pw = jsonObject.getString("pw");
+//
+//                id_login.setText(id);
+//                pw_login.setText(pw);
+//                cb_login.setChecked(true);
+//
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
+
 
         btn_contract.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,15 +70,17 @@ public class Login extends AppCompatActivity {
                 String userId = id_login.getText().toString();
                 String userPw = pw_login.getText().toString();
 
-                Response.Listener<String> listener = new Response.Listener<String>() {
+                Response.Listener<String>listener=new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
                             if (success) {
+
                                 String userID = jsonObject.getString("id");
                                 String userPW = jsonObject.getString("pw");
+
 
                                 Toast.makeText(getApplicationContext(), "로그인성공", Toast.LENGTH_SHORT).show();
 
@@ -69,10 +94,9 @@ public class Login extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+
                     }
                 };
-
-
 
 
             }
