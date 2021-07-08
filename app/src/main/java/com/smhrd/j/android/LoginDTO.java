@@ -4,18 +4,22 @@ import java.io.Serializable;
 
 public class LoginDTO implements Serializable {
 
-    private String id,pw,name,tel,email, add;
+    private String id,pw,name,tel,email, add, birth;
 
-    public LoginDTO(String id, String pw, String name, String tel, String email, String add) {
+    public LoginDTO(String id, String pw, String name, String tel, String email, String add, String birth) {
         this.id = id;
         this.pw = pw;
         this.name = name;
         this.tel = tel;
         this.email = email;
         this.add = add;
+        this.birth=birth;
     }
 
-
+    public LoginDTO(String id, String pw) {
+        this.id = id;
+        this.pw = pw;
+    }
 
     public String getId() {        return id;    }
 
@@ -40,4 +44,8 @@ public class LoginDTO implements Serializable {
     public String getAdd() {        return add;    }
 
     public void setAdd(String add) {        this.add = add;    }
+
+    public String getBirth() {        return birth;    }
+
+    public void setBirth(String birth) {        this.birth = birth;    }
 }

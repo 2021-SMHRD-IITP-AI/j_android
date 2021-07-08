@@ -23,11 +23,22 @@
         android:fontFamily="@font/gmarketsansttflight"
         android:hint="  아이디"
         android:inputType="textPersonName"
-        android:textSize="16sp"
+        android:textColor="#4C4C4C"
         android:textColorHint="#4C4C4C"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cb_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gmarketsansttflight"
+        android:text="자동로그인"
+        android:textColor="#4C4C4C"
+        app:layout_constraintStart_toStartOf="@+id/pw_login"
+        app:layout_constraintTop_toBottomOf="@+id/pw_login" />
 
     <EditText
         android:id="@+id/pw_login"
@@ -39,20 +50,11 @@
         android:fontFamily="@font/gmarketsansttflight"
         android:hint="  비밀번호"
         android:inputType="textPersonName"
+        android:textColor="#4C4C4C"
+        android:textColorHint="#4C4C4C"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/id_login"
-        android:textColorHint="#4C4C4C"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/gmarketsansttflight"
-        android:text="자동로그인"
-        android:textColor="#4C4C4C"
-        app:layout_constraintStart_toStartOf="@+id/pw_login"
-        app:layout_constraintTop_toBottomOf="@+id/pw_login" />
 
     <TextView
         android:id="@+id/textView7"
@@ -62,9 +64,9 @@
         android:text="아이디/비밀번호 찾기 "
         android:textColor="#4C4C4C"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/checkBox2"
+        app:layout_constraintBottom_toBottomOf="@+id/cb_login"
         app:layout_constraintEnd_toEndOf="@+id/pw_login"
-        app:layout_constraintTop_toTopOf="@+id/checkBox2" />
+        app:layout_constraintTop_toTopOf="@+id/cb_login" />
 
     <TextView
         android:id="@+id/textView10"
@@ -109,7 +111,7 @@
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+        app:layout_constraintTop_toBottomOf="@+id/cb_login" />
 
     <Button
         android:id="@+id/btn_contract"
@@ -125,4 +127,18 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/btn_login"
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="356dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="56dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

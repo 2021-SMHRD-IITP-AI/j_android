@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string-array name="array">
-        <item>기저길환있음</item>
-        <item>기저길환없음</item>
+        건강상태를 선택해주세요
+        <item>고혈압</item>
+        <item>당뇨</item>
+        <item>지방</item>
+        <item>건강함</item>
+        <item>위 해당사항없음</item>
     </string-array>
+
+
 
 </resources>
