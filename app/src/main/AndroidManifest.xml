@@ -20,10 +20,16 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login">
+
+
+        </activity>
         <activity android:name=".Main"></activity>
         <activity android:name=".Login_contract">
+
+
 
         </activity>
     </application>
