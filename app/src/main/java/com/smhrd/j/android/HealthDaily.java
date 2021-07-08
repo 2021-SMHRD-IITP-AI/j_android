@@ -1,5 +1,6 @@
 package com.smhrd.j.android;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -19,8 +21,10 @@ import android.widget.TextView;
 public class HealthDaily extends AppCompatActivity {
     Spinner spinner;
    private EditText health_edt;
-   CalendarView health_cal;
-   //RadioGroup health_rdg = (RadioGroup)findViewById(R.id.health_rdg);
+   private CalendarView health_cal;
+   private RadioButton health_rd;
+   private Button health_add;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +34,29 @@ public class HealthDaily extends AppCompatActivity {
 
         health_edt=findViewById(R.id.health_edt);
         health_cal =findViewById(R.id.health_cal);
+        health_add = findViewById(R.id.health_add);
 
-        //RadioButton radioButton = (RadioButton)View.findViewById(health_rdg.getCheckedRadioButtonId());
+        //달력
+        health_cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                health_edt.setVisibility(View.VISIBLE);
+                health_add.setVisibility(View.VISIBLE);  //버튼
+                health_rd.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        // 추가버튼
+        health_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
 
 
-
+       //스피너
         final String[] data = getResources().getStringArray(R.array.healtharray);
         ArrayAdapter<String> adapter =new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,data);
         Spinner spinner1 = (Spinner) findViewById(R.id.health_sp);
@@ -56,20 +77,18 @@ public class HealthDaily extends AppCompatActivity {
 
     }
 
-    //radio button check
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.health_rd:
-                if (checked) {
-                    Log.v("check", "체크");
-                    break;
-                }
-        }
-    }
+//    //radio button check
+//    public void onRadioButtonClicked(View view) {
+//        boolean checked = ((RadioButton) view).isChecked();
+//
+//        switch(view.getId()) {
+//            case R.id.health_rd:
+//                if (checked) {
+//                    Log.v("check", "체크");
+//                    break;
+//                }
+//        }
+//    }
 
 
 }
