@@ -87,7 +87,6 @@ public class Login extends AppCompatActivity {
                         Gson gson = new Gson();
                         String value = gson.toJson(info);
 
-
                         Intent intent = new Intent(getApplicationContext(),Main.class);
                         intent.putExtra("info",info);
                         startActivity(intent);
