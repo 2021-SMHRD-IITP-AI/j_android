@@ -51,7 +51,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="0.8"
-                    android:text="간편식"
+                    android:text="이달의 특가"
                     android:textColor="#4C4C4C"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -185,12 +185,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/textView65"
-                android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:background="#4C4C4C" />
-
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="462dp">
@@ -200,20 +194,11 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/textView66"
+                    <ImageView
+                        android:id="@+id/imageView46"
                         android:layout_width="match_parent"
-                        android:layout_height="26dp" />
-
-                    <TextView
-                        android:id="@+id/textView67"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="추천상품"
-                        android:textColor="#4C4C4C"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:layout_height="260dp"
+                        app:srcCompat="@drawable/sale_main_img" />
 
                     <TextView
                         android:id="@+id/textView68"
@@ -236,7 +221,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/snack_img1" />
+                                app:srcCompat="@drawable/sale_img1" />
 
                             <TextView
                                 android:id="@+id/textView51"
@@ -251,7 +236,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="닭가슴살 마늘맛"
+                                android:text="닭가슴살 세트"
                                 android:textColor="#4C4C4C" />
 
                             <TextView
@@ -267,11 +252,12 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="2,700원"
+                                android:text="19,000원"
                                 android:textColor="#4C4C4C"
                                 android:textStyle="bold" />
 
                             <TextView
+                                android:id="@+id/textView60"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1" />
@@ -287,7 +273,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/snack_img2" />
+                                app:srcCompat="@drawable/sale_img2" />
 
                             <TextView
                                 android:id="@+id/textView71"
@@ -302,7 +288,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="닭감슴살 볼"
+                                android:text="컵밥도시락 세트"
                                 android:textColor="#4C4C4C" />
 
                             <TextView
@@ -318,7 +304,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="2,700원"
+                                android:text="27,000원"
                                 android:textColor="#4C4C4C"
                                 android:textStyle="bold" />
 
@@ -339,7 +325,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/snack_img3" />
+                                app:srcCompat="@drawable/sale_img3" />
 
                             <TextView
                                 android:id="@+id/textView83"
@@ -354,7 +340,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="닭가슴살 새우 스테이크"
+                                android:text="프로틴 초코맛 10+1"
                                 android:textColor="#4C4C4C" />
 
                             <TextView
@@ -370,7 +356,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="2,900원"
+                                android:text="17,000원"
                                 android:textColor="#4C4C4C"
                                 android:textStyle="bold" />
 
@@ -391,7 +377,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/snack_img4" />
+                                app:srcCompat="@drawable/proteen_img4" />
 
                             <TextView
                                 android:id="@+id/textView95"
@@ -406,7 +392,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="저염 닭가슴살"
+                                android:text="프로틴 일반"
                                 android:textColor="#4C4C4C" />
 
                             <TextView
@@ -422,7 +408,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="1,900원"
+                                android:text="49,000원"
                                 android:textColor="#4C4C4C"
                                 android:textStyle="bold" />
 
@@ -450,7 +436,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/snack_img6" />
+                                app:srcCompat="@drawable/sale_img5" />
 
                             <TextView
                                 android:id="@+id/textView52"
@@ -465,7 +451,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="닭안심살"
+                                android:text="도시락 세트"
                                 android:textColor="#4C4C4C" />
 
                             <TextView
@@ -481,7 +467,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="5,700원"
+                                android:text="27,000원"
                                 android:textColor="#4C4C4C"
                                 android:textStyle="bold" />
 
@@ -502,7 +488,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/snack_img7" />
+                                app:srcCompat="@drawable/sale_img6" />
 
                             <TextView
                                 android:id="@+id/textView77"
@@ -517,7 +503,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="큐브 닭가슴살 마늘맛"
+                                android:text="문어도시락 세트"
                                 android:textColor="#4C4C4C" />
 
                             <TextView
@@ -533,7 +519,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="2,700원"
+                                android:text="19,000원"
                                 android:textColor="#4C4C4C"
                                 android:textStyle="bold" />
 
@@ -554,7 +540,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/snack_img8" />
+                                app:srcCompat="@drawable/proteen_img7" />
 
                             <TextView
                                 android:id="@+id/textView89"
@@ -569,7 +555,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="생선살 스테이크"
+                                android:text="프로틴 카페 프런치맛"
                                 android:textColor="#4C4C4C" />
 
                             <TextView
@@ -585,7 +571,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="2,700원"
+                                android:text="37,000원"
                                 android:textColor="#4C4C4C"
                                 android:textStyle="bold" />
 
@@ -606,7 +592,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/snack_img5" />
+                                app:srcCompat="@drawable/sale_img8" />
 
                             <TextView
                                 android:id="@+id/textView101"
@@ -621,7 +607,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="닭가슴살 세트"
+                                android:text="알밤도시락 세트"
                                 android:textColor="#4C4C4C" />
 
                             <TextView
@@ -637,7 +623,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginLeft="30dp"
                                 android:layout_weight="1"
-                                android:text="17,500원"
+                                android:text="17,000원"
                                 android:textColor="#4C4C4C"
                                 android:textStyle="bold" />
 

@@ -12,8 +12,14 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkResponse;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HttpHeaderParser;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 
@@ -21,26 +27,32 @@ import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Login extends AppCompatActivity {
 
     private EditText id_login, pw_login;
     private Button btn_contract, btn_login;
     private CheckBox cb_login;
 
+    private RequestQueue queue;
+    private StringRequest stringRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        id_login=findViewById(R.id.id_login);
-        pw_login=findViewById(R.id.pw_login);
-        btn_login=findViewById(R.id.btn_login);
-        btn_contract=findViewById(R.id.btn_contract);
-        cb_login=findViewById(R.id.cb_login);
+        id_login = findViewById(R.id.id_login);
+        pw_login = findViewById(R.id.pw_login);
+        btn_login = findViewById(R.id.btn_login);
+        btn_contract = findViewById(R.id.btn_contract);
+        cb_login = findViewById(R.id.cb_login);
 
-        String login = PreferenceManager.getString(getApplicationContext(),"login");
-        if(!login.equals("")){
+        String login = PreferenceManager.getString(getApplicationContext(), "login");
+        if (!cb_login.equals("")) {
             try {
                 JSONObject jsonObject = new JSONObject(login);
                 String id = jsonObject.getString("id");
@@ -54,55 +66,96 @@ public class Login extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-
-
         btn_contract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Login_contract.class);
+                Intent intent = new Intent(getApplicationContext(), Login_contract.class);
                 startActivity(intent);
             }
         });
+
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sendRequest();
+            }
+        });
+    }
+    public void sendRequest() {
+        queue = Volley.newRequestQueue(this);
+        String url = "http://222.102.104.135:3000/Login";
 
-                Intent intent = new Intent(getApplicationContext(),Main.class);
-                startActivity(intent);
-
-                String userId = id_login.getText().toString();
-                String userPw = pw_login.getText().toString();
-
-                String info = PreferenceManager.getString(getApplicationContext(),"info");
+        stringRequest = new StringRequest(Request.Method.POST,
+                url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
                 try {
-                    JSONObject jsonObject = new JSONObject(info);
-                    String id1 = jsonObject.getString("id1");
-                    String pw1 = jsonObject.getString("pw1");
+                    JSONObject jsonObject = new JSONObject(response);
+                    String value = jsonObject.getString("check");
+                    Log.v("result", value);
 
-                    if(userId.equals(id1)&&userPw.equals(pw1)){
-                        if(cb_login.isChecked()){
-                            LoginDTO dto = new LoginDTO(id1,pw1);
-                            Gson gson = new Gson();
-                            String value = gson.toJson(dto);
-                            PreferenceManager.setString(getApplicationContext(),"login",value);
+                    if (value.equals("true")) {
+                        String id = jsonObject.getString("id");
+                        String pw = jsonObject.getString("pw");
 
-                            Intent intent2 = new Intent(Login.this, Login_contract.class);
-                            intent.putExtra("userId", (Parcelable) id_login);
-                            intent.putExtra("userPw", (Parcelable) pw_login);
-                            startActivity(intent2);
+                        LoginDTO dto = new LoginDTO(id, pw);
+                        Gson gson = new Gson();
+                        String login = gson.toJson(dto);
 
-                        }else {
-                            PreferenceManager.removeKey(getApplicationContext(),"login");
-                        }
+                        PreferenceManager.setString(getApplicationContext(), "login", value);
 
+                        Toast.makeText(getApplicationContext(),"로그인성공",Toast.LENGTH_SHORT).show();
+                        Log.v("result","성공");
+
+                        Intent intent = new Intent(getApplicationContext(), Main.class);
+                        startActivity(intent);
+
+                    } else if (value.equals("false")) {
+                        Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
+                        Log.v("result","실패");
                     }
+
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
+            }
+
+
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                error.printStackTrace();
+            }
+        }) {
+//            @Override
+//            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+//
+//                try {
+//                    String utf8String = new String(response.data, "UTF-8");
+//                    return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response));
+//                } catch (UnsupportedEncodingException e) {
+//                    e.printStackTrace();
+//                }
+//                return super.parseNetworkResponse(response);
+//            }
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("id", id_login.getText().toString());
+                params.put("pw", pw_login.getText().toString());
+
+                return params;
+
 
             }
-        });
+        };
+        queue.add(stringRequest);
+
 
     }
 }
