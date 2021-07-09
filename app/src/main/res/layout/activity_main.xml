@@ -73,6 +73,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="인기상품"
+                android:fontFamily="@font/gmarketsansttfbold"
                 android:textColor="#FFFFFF" />
 
             <TextView
@@ -82,6 +83,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="이달의 특가"
+                android:fontFamily="@font/gmarketsansttfbold"
                 android:textColor="#FFFFFF" />
 
             <TextView
@@ -91,6 +93,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="헬스케어"
+                android:fontFamily="@font/gmarketsansttfbold"
                 android:textColor="#FFFFFF" />
 
             <TextView
@@ -100,6 +103,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="종료별"
+                android:fontFamily="@font/gmarketsansttfbold"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 
@@ -375,6 +379,7 @@
                         android:layout_weight="1"
                         android:background="#F4F4F4"
                         android:paddingLeft="15dp"
+
                         android:text="일일 도시락 추천"
                         android:textColor="#4C4C4C"
                         android:textSize="24sp" />
