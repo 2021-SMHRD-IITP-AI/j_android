@@ -3,11 +3,16 @@ package com.smhrd.j.android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.ByteArrayOutputStream;
 
 public class Main extends AppCompatActivity {
     private Button btn_mu1,btn_mu2,btn_mu3,btn_mu4,btn_mu5,btn_mu6,btn_mu7,btn_mu8, btn_more1, btn_j, btn_nv2,btn_nv3;
@@ -62,13 +67,14 @@ public class Main extends AppCompatActivity {
 
 
 
-//
-//        shp1.setOnClickListener(new View.OnClickListener() {//장바구니 페이지 이동
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(),)
-//            }
-//        });
+
+        shp1.setOnClickListener(new View.OnClickListener() {//장바구니 페이지 이동
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Cart.class);
+                startActivity(intent);
+            }
+        });
 
         //인기상품
         menu1.setOnClickListener(new View.OnClickListener() {
@@ -124,6 +130,23 @@ public class Main extends AppCompatActivity {
             }
         });
 
+
+        img1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Purchase.class);
+//                intent.putExtra("name1",tv_lu_name1.getText().toString());
+//                intent.putExtra("name2",tv_pa1.getText().toString());
+
+//                Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.main_img4);
+//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+//                byte[] byteArray = stream.toByteArray();
+//                intent.putExtra("image",byteArray);
+
+                startActivity(intent);
+            }
+        });
 
 
 
