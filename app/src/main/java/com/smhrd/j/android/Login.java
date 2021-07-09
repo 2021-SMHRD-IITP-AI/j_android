@@ -66,20 +66,20 @@ public class Login extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-            btn_contract.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), Login_contract.class);
-                    startActivity(intent);
-                }
-            });
+        btn_contract.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Login_contract.class);
+                startActivity(intent);
+            }
+        });
 
-            btn_login.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    sendRequest();
-                }
-            });
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendRequest();
+            }
+        });
     }
     public void sendRequest() {
         queue = Volley.newRequestQueue(this);
