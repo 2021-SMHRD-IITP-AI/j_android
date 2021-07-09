@@ -83,6 +83,7 @@ public class Login_contract extends AppCompatActivity {
         final String[] data = getResources().getStringArray(R.array.array);
         ArrayAdapter<String> adapter =new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,data);
         Spinner spinner1 = (Spinner) findViewById(R.id.spinner);
+        String text = spinner1.getSelectedItem().toString();
         spinner1.setAdapter(adapter);
 
 
@@ -91,6 +92,14 @@ public class Login_contract extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value =  (String)(parent.getItemAtPosition(position));
                 Toast.makeText(getApplicationContext(), value,Toast.LENGTH_SHORT).show();
+//
+//                String size = spinner1.getSelectedItem().toString();
+//
+//                int spinner_num = spinner1.getSelectedItemPosition();
+//                String[] size_value = getResources().getStringArray(R.array.array);
+//                int size_int = Integer.valueOf(size_value[spinner_num]);
+
+
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
