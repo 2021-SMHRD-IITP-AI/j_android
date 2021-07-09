@@ -13,21 +13,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Jandroid"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Payment">
+        <activity android:name=".Sale">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HealthDaily"></activity>
-        <activity android:name=".Hot_item" />
-        <activity android:name=".Main" />
-        <activity android:name=".Login_contract"></activity>
-        <activity android:name=".Login">
+        <activity android:name=".Payment">
 
         </activity>
-        <activity android:name=".Lunch_box_main"></activity>
+        <activity android:name=".HealthDaily" />
+        <activity android:name=".Hot_item" />
+        <activity android:name=".Main" />
+        <activity android:name=".Login_contract" />
+        <activity android:name=".Login"></activity>
+        <activity android:name=".Lunch_box_main" />
     </application>
 
 </manifest>
