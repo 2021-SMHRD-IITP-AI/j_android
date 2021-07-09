@@ -56,7 +56,6 @@ public class Login_contract extends AppCompatActivity {
         }
     };
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +86,17 @@ public class Login_contract extends AppCompatActivity {
         spinner1.setAdapter(adapter);
 
 
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String value =  (String)(parent.getItemAtPosition(position));
+                Toast.makeText(getApplicationContext(), value,Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         btn_contract=findViewById(R.id.btn_contract);
 
@@ -97,9 +107,7 @@ public class Login_contract extends AppCompatActivity {
                 sendRequest();
             }
         });
-
     }
-
     private void sendRequest() {
 
         queue = Volley.newRequestQueue(this);
