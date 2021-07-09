@@ -5,78 +5,149 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkResponse;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HttpHeaderParser;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Login extends AppCompatActivity {
 
     private EditText id_login, pw_login;
     private Button btn_contract, btn_login;
+    private CheckBox cb_login;
+
+    private RequestQueue queue;
+    private StringRequest stringRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        id_login=findViewById(R.id.id_login);
-        pw_login=findViewById(R.id.pw_login);
-        btn_login=findViewById(R.id.btn_login);
-        btn_contract=findViewById(R.id.btn_contract);
+        id_login = findViewById(R.id.id_login);
+        pw_login = findViewById(R.id.pw_login);
+        btn_login = findViewById(R.id.btn_login);
+        btn_contract = findViewById(R.id.btn_contract);
 
+        String login = PreferenceManager.getString(getApplicationContext(), "login");
+        if (!cb_login.equals("")) {
+            try {
+                JSONObject jsonObject = new JSONObject(login);
+                String id = jsonObject.getString("id");
+                String pw = jsonObject.getString("pw");
+
+                id_login.setText(id);
+                pw_login.setText(pw);
+                cb_login.setChecked(true);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
         btn_contract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Login_contract.class);
+                Intent intent = new Intent(getApplicationContext(), Login_contract.class);
                 startActivity(intent);
             }
         });
+
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(getApplicationContext(),Main.class);
-                startActivity(intent);
-
-                String userId = id_login.getText().toString();
-                String userPw = pw_login.getText().toString();
-
-                Response.Listener<String> listener = new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            boolean success = jsonObject.getBoolean("success");
-                            if (success) {
-                                String userID = jsonObject.getString("id");
-                                String userPW = jsonObject.getString("pw");
-
-                                Toast.makeText(getApplicationContext(), "로그인성공", Toast.LENGTH_SHORT).show();
-
-                                Intent intent = new Intent(Login.this, Login_contract.class);
-                                intent.putExtra("userId", (Parcelable) id_login);
-                                intent.putExtra("userPw", (Parcelable) pw_login);
-                                startActivity(intent);
-                            } else {
-                                return;
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                };
-
+                sendRequest();
             }
         });
+    }
+    public void sendRequest() {
+        queue = Volley.newRequestQueue(this);
+        String url = "http://222.102.104.135:3000/Join";
+
+        stringRequest = new StringRequest(Request.Method.POST,
+                url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    String value = jsonObject.getString("check");
+                    Log.v("result", value);
+
+                    if (value.equals("true")) {
+                        String id = jsonObject.getString("id");
+                        String pw = jsonObject.getString("pw");
+
+                        LoginDTO dto = new LoginDTO(id, pw);
+                        Gson gson = new Gson();
+                        String login = gson.toJson(dto);
+
+                        PreferenceManager.setString(getApplicationContext(), "login", login);
+
+                        Intent intent = new Intent(getApplicationContext(), Main.class);
+                        startActivity(intent);
+
+                    } else if (value.equals("false")) {
+                        Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+
+                try {
+                    String utf8String = new String(response.data, "UTF-8");
+                    return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                return super.parseNetworkResponse(response);
+            }
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("id", id_login.getText().toString());
+                params.put("pw", pw_login.getText().toString());
+
+                return params;
+
+
+            }
+        };
+        queue.add(stringRequest);
+
 
     }
 }

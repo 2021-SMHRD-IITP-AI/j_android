@@ -79,7 +79,6 @@ public class Login_contract extends AppCompatActivity {
 
         queue = Volley.newRequestQueue(this);
         String url = "http://222.102.104.135:3000/Join";
-
         stringRequest = new StringRequest(Request.Method.POST,
                 url, new Response.Listener<String>() {
             @Override
@@ -90,12 +89,12 @@ public class Login_contract extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     String value = jsonObject.getString("check");
-                    Log.v("resultValue", value);
-                    if(value.equals("true")){
-                        Intent intent = new Intent(getApplicationContext(),Login.class);
+                    Log.v("result", value);
+                    if(value != null){
+                        Intent intent = new Intent(getApplicationContext(), Login.class);
                         startActivity(intent);
                         Toast.makeText(getApplicationContext(),"회원가입성공",Toast.LENGTH_SHORT).show();
-                        Log.v("123","회원가입 성공");
+                        Log.v("test","가입성공");
                     }else{
                         Toast.makeText(getApplicationContext(),"회원가입에실패했습니다.",Toast.LENGTH_SHORT).show();
                             id.setText("");
@@ -126,10 +125,6 @@ public class Login_contract extends AppCompatActivity {
                 params.put("email",email.getText().toString());
                 params.put("address",address.getText().toString());
                 params.put("birth",birth.getText().toString());
-
-
-
-
 
                 return params;
 
