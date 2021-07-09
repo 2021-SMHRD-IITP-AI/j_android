@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -49,23 +50,22 @@ public class Login extends AppCompatActivity {
         pw_login = findViewById(R.id.pw_login);
         btn_login = findViewById(R.id.btn_login);
         btn_contract = findViewById(R.id.btn_contract);
-        cb_login = findViewById(R.id.cb_login);
 
-        String login = PreferenceManager.getString(getApplicationContext(), "login");
-        if (!cb_login.equals("")) {
-            try {
-                JSONObject jsonObject = new JSONObject(login);
-                String id = jsonObject.getString("id");
-                String pw = jsonObject.getString("pw");
-
-                id_login.setText(id);
-                pw_login.setText(pw);
-                cb_login.setChecked(true);
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
+        //String login = PreferenceManager.getString(getApplicationContext(), "login");
+//        if (!cb_login.equals("")) {
+//            try {
+//                JSONObject jsonObject = new JSONObject(login);
+//                String id = jsonObject.getString("id");
+//                String pw = jsonObject.getString("pw");
+//
+//                id_login.setText(id);
+//                pw_login.setText(pw);
+//                cb_login.setChecked(true);
+//
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
         btn_contract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,40 +89,31 @@ public class Login extends AppCompatActivity {
                 url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    String value = jsonObject.getString("check");
-                    Log.v("result", value);
 
-                    if (value.equals("true")) {
+                if(!response.equals("null")){
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
                         String id = jsonObject.getString("id");
                         String pw = jsonObject.getString("pw");
 
-                        LoginDTO dto = new LoginDTO(id, pw);
-                        Gson gson = new Gson();
-                        String login = gson.toJson(dto);
+//                        LoginDTO dto = new LoginDTO(id, pw);
+//                        String login = gson.toJson(dto);
 
-                        PreferenceManager.setString(getApplicationContext(), "login", value);
-
-                        Toast.makeText(getApplicationContext(),"로그인성공",Toast.LENGTH_SHORT).show();
-                        Log.v("result","성공");
+                        //PreferenceManager.setString(getApplicationContext(), "login", login);
 
                         Intent intent = new Intent(getApplicationContext(), Main.class);
                         startActivity(intent);
 
-                    } else if (value.equals("false")) {
-                        Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
-                        Log.v("result","실패");
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
 
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                }else {
+                    Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
                 }
 
             }
-
-
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
@@ -130,17 +121,17 @@ public class Login extends AppCompatActivity {
                 error.printStackTrace();
             }
         }) {
-//            @Override
-//            protected Response<String> parseNetworkResponse(NetworkResponse response) {
-//
-//                try {
-//                    String utf8String = new String(response.data, "UTF-8");
-//                    return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response));
-//                } catch (UnsupportedEncodingException e) {
-//                    e.printStackTrace();
-//                }
-//                return super.parseNetworkResponse(response);
-//            }
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+
+                try {
+                    String utf8String = new String(response.data, "UTF-8");
+                    return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                return super.parseNetworkResponse(response);
+            }
 
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
