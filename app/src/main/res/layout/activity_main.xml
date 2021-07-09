@@ -567,6 +567,7 @@
         </ScrollView>
 
         <LinearLayout
+            android:id="@+id/linearLayout6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#EFEFEF"
@@ -580,21 +581,14 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/imageView26"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    app:srcCompat="@drawable/main_change_ic" />
-
-                <TextView
-                    android:id="@+id/textView40"
+                <Button
+                    android:id="@+id/btn_j"
+                    style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingTop="4dp"
+                    android:drawableTop="@drawable/main_change_red"
                     android:text="헬스케어"
-                    android:textColor="#670401"
-                    android:textSize="15sp" />
+                    android:textColor="#670401" />
             </LinearLayout>
 
             <LinearLayout
@@ -604,21 +598,15 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/imageView27"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    app:srcCompat="@drawable/main_home_ic" />
-
-                <TextView
-                    android:id="@+id/textView41"
+                <Button
+                    android:id="@+id/btn_nv2"
+                    style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingTop="4dp"
+                    android:drawableTop="@drawable/main_home_red"
                     android:text="HOME"
-                    android:textColor="#670401"
-                    android:textSize="15sp" />
+                    android:textColor="#670401" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -628,21 +616,15 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/imageView28"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    app:srcCompat="@drawable/main_user_information_ic" />
-
-                <TextView
-                    android:id="@+id/textView39"
+                <Button
+                    android:id="@+id/btn_nv3"
+                    style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingTop="4dp"
-                    android:text="내 정보"
-                    android:textColor="#670401"
-                    android:textSize="15sp" />
+                    android:drawableTop="@drawable/main_user_red"
+                    android:text="내정보"
+                    android:textColor="#670401" />
+
             </LinearLayout>
         </LinearLayout>
 

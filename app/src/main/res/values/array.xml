@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string-array name="array">
         <item>건강상태를 선택해주세요</item>
         <item>고혈압</item>
