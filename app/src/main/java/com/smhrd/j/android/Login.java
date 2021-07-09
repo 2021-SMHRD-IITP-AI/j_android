@@ -102,19 +102,27 @@ public class Login extends AppCompatActivity {
                         Gson gson = new Gson();
                         String login = gson.toJson(dto);
 
-                        PreferenceManager.setString(getApplicationContext(), "login", login);
+                        PreferenceManager.setString(getApplicationContext(), "login", value);
+
+                        Toast.makeText(getApplicationContext(),"로그인성공",Toast.LENGTH_SHORT).show();
+                        Log.v("result","성공");
 
                         Intent intent = new Intent(getApplicationContext(), Main.class);
                         startActivity(intent);
 
                     } else if (value.equals("false")) {
                         Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
+                        Log.v("result","실패");
                     }
+
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
             }
+
+
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
@@ -122,17 +130,17 @@ public class Login extends AppCompatActivity {
                 error.printStackTrace();
             }
         }) {
-            @Override
-            protected Response<String> parseNetworkResponse(NetworkResponse response) {
-
-                try {
-                    String utf8String = new String(response.data, "UTF-8");
-                    return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response));
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
-                return super.parseNetworkResponse(response);
-            }
+//            @Override
+//            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+//
+//                try {
+//                    String utf8String = new String(response.data, "UTF-8");
+//                    return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response));
+//                } catch (UnsupportedEncodingException e) {
+//                    e.printStackTrace();
+//                }
+//                return super.parseNetworkResponse(response);
+//            }
 
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
