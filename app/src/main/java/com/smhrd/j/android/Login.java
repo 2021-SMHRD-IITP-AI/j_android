@@ -51,53 +51,68 @@ public class Login extends AppCompatActivity {
         btn_contract = findViewById(R.id.btn_contract);
         cb_login = findViewById(R.id.cb_login);
 
+        String login = PreferenceManager.getString(getApplicationContext(), "login");
+        if (!cb_login.equals("")) {
+            try {
+                JSONObject jsonObject = new JSONObject(login);
+                String id = jsonObject.getString("id");
+                String pw = jsonObject.getString("pw");
 
-        btn_contract.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Login_contract.class);
-                startActivity(intent);
+                id_login.setText(id);
+                pw_login.setText(pw);
+                cb_login.setChecked(true);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-        });
+        }
+            btn_contract.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), Login_contract.class);
+                    startActivity(intent);
+                }
+            });
 
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendRequest();
-            }
-
-        });
+            btn_login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    sendRequest();
+                }
+            });
     }
     public void sendRequest() {
         queue = Volley.newRequestQueue(this);
-        String url = "http://222.102.104.135:3000/Join";
+        String url = "http://222.102.104.135:3000/Login";
 
         stringRequest = new StringRequest(Request.Method.POST,
                 url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    String value = jsonObject.getString("check");
+                    Log.v("result", value);
 
-                if(!response.equals(null)){
-                    try {
-                        JSONObject jsonObject = new JSONObject(response);
-                        String id= jsonObject.getString("id");
+                    if (value.equals("true")) {
+                        String id = jsonObject.getString("id");
                         String pw = jsonObject.getString("pw");
 
-                        LoginDTO info = new LoginDTO(id, pw);
+                        LoginDTO dto = new LoginDTO(id, pw);
                         Gson gson = new Gson();
-                        String value = gson.toJson(info);
+                        String login = gson.toJson(dto);
 
-                        Intent intent = new Intent(getApplicationContext(),Main.class);
-                        intent.putExtra("info",info);
+                        PreferenceManager.setString(getApplicationContext(), "login", login);
+
+                        Intent intent = new Intent(getApplicationContext(), Main.class);
                         startActivity(intent);
 
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+                    } else if (value.equals("false")) {
+                        Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
                     }
-                }else{
-                    Toast.makeText(getApplicationContext(),"아이디와 비밀번호를 확인해주세요",Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-
 
             }
         }, new Response.ErrorListener() {
@@ -111,7 +126,7 @@ public class Login extends AppCompatActivity {
             protected Response<String> parseNetworkResponse(NetworkResponse response) {
 
                 try {
-                    String utf8String = new String(response.data,"UTF-8");
+                    String utf8String = new String(response.data, "UTF-8");
                     return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response));
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
@@ -134,15 +149,5 @@ public class Login extends AppCompatActivity {
         queue.add(stringRequest);
 
 
-
-
-
-
-
-
     }
-
-
-
-
 }
