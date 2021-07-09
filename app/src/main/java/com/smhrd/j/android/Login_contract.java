@@ -92,11 +92,12 @@ public class Login_contract extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value =  (String)(parent.getItemAtPosition(position));
                 Toast.makeText(getApplicationContext(), value,Toast.LENGTH_SHORT).show();
-                String size = spinner1.getSelectedItem().toString();
-
-                int spinner_num = spinner1.getSelectedItemPosition();
-                String[] size_value = getResources().getStringArray(R.array.array);
-                int size_int = Integer.valueOf(size_value[spinner_num]);
+//
+//                String size = spinner1.getSelectedItem().toString();
+//
+//                int spinner_num = spinner1.getSelectedItemPosition();
+//                String[] size_value = getResources().getStringArray(R.array.array);
+//                int size_int = Integer.valueOf(size_value[spinner_num]);
 
 
             }
