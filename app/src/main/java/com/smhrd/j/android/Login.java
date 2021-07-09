@@ -51,21 +51,21 @@ public class Login extends AppCompatActivity {
         btn_login = findViewById(R.id.btn_login);
         btn_contract = findViewById(R.id.btn_contract);
 
-        String login = PreferenceManager.getString(getApplicationContext(), "login");
-        if (!cb_login.equals("")) {
-            try {
-                JSONObject jsonObject = new JSONObject(login);
-                String id = jsonObject.getString("id");
-                String pw = jsonObject.getString("pw");
-
-                id_login.setText(id);
-                pw_login.setText(pw);
-                cb_login.setChecked(true);
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
+        //String login = PreferenceManager.getString(getApplicationContext(), "login");
+//        if (!cb_login.equals("")) {
+//            try {
+//                JSONObject jsonObject = new JSONObject(login);
+//                String id = jsonObject.getString("id");
+//                String pw = jsonObject.getString("pw");
+//
+//                id_login.setText(id);
+//                pw_login.setText(pw);
+//                cb_login.setChecked(true);
+//
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
         btn_contract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,35 +83,34 @@ public class Login extends AppCompatActivity {
     }
     public void sendRequest() {
         queue = Volley.newRequestQueue(this);
-        String url = "http://222.102.104.135:3000/Join";
+        String url = "http://222.102.104.135:3000/Login";
 
         stringRequest = new StringRequest(Request.Method.POST,
                 url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    String value = jsonObject.getString("check");
-                    Log.v("result", value);
 
-                    if (value.equals("true")) {
+                if(!response.equals("null")){
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
                         String id = jsonObject.getString("id");
                         String pw = jsonObject.getString("pw");
 
-                        LoginDTO dto = new LoginDTO(id, pw);
-                        Gson gson = new Gson();
-                        String login = gson.toJson(dto);
+//                        LoginDTO dto = new LoginDTO(id, pw);
+//                        String login = gson.toJson(dto);
 
-                        PreferenceManager.setString(getApplicationContext(), "login", login);
+                        //PreferenceManager.setString(getApplicationContext(), "login", login);
 
                         Intent intent = new Intent(getApplicationContext(), Main.class);
                         startActivity(intent);
 
-                    } else if (value.equals("false")) {
-                        Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-                } catch (JSONException e) {
-                    e.printStackTrace();
+
+                }else {
+                    Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
                 }
 
             }
