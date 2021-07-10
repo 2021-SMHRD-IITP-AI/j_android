@@ -12,5 +12,23 @@
         </shape>
     </item>
 
+    <item
+        android:bottom="1dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp">
+
+
+        //검색창 내부
+        <shape android:shape="rectangle">
+            <solid android:color="#ffffff"/>
+            <corners
+                android:bottomRightRadius="10dp"
+                android:bottomLeftRadius="10dp"
+                android:topLeftRadius="10dp"
+                android:topRightRadius="10dp"/>
+        </shape>
+    </item>
+
 
 </layer-list>
