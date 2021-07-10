@@ -130,12 +130,10 @@ public class Main extends AppCompatActivity {
         });
 
 
-
         img1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Purchase.class);
-
 //                intent.putExtra("name1",tv_lu_name1.getText().toString());
 //                intent.putExtra("name2",tv_pa1.getText().toString());
 
@@ -144,8 +142,8 @@ public class Main extends AppCompatActivity {
 //                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
 //                byte[] byteArray = stream.toByteArray();
 //                intent.putExtra("image",byteArray);
-                startActivity(intent);
 
+                startActivity(intent);
             }
         });
 
