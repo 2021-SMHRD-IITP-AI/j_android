@@ -66,8 +66,6 @@ public class Main extends AppCompatActivity {
         tv_pa3=findViewById(R.id.tv_pa3);
 
 
-
-
         shp1.setOnClickListener(new View.OnClickListener() {//장바구니 페이지 이동
             @Override
             public void onClick(View v) {
@@ -75,6 +73,7 @@ public class Main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
         //인기상품
         menu1.setOnClickListener(new View.OnClickListener() {
@@ -153,4 +152,6 @@ public class Main extends AppCompatActivity {
 
 
     }
+
+
 }
