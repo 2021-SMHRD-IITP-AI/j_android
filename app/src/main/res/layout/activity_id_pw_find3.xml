@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ID_PW_FIND">
+    tools:context=".ID_PW_FIND3">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -40,23 +40,24 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_find_id"
+        android:id="@+id/btn_find_id2"
         android:layout_width="148dp"
         android:layout_height="50dp"
-        android:layout_marginStart="62dp"
-        android:layout_marginLeft="62dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="64dp"
         android:fontFamily="@font/jalnan"
         android:text="아이디 찾기"
         android:textSize="16sp"
-        app:backgroundTint="#670401"
+
+        app:backgroundTint="#4C4C4C"
         app:cornerRadius="0dp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_find_pw"
+        app:layout_constraintEnd_toStartOf="@+id/btn_find_pw2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
-        android:id="@+id/btn_find_pw"
+        android:id="@+id/btn_find_pw2"
         android:layout_width="148dp"
         android:layout_height="50dp"
         android:layout_marginEnd="53dp"
@@ -64,63 +65,74 @@
         android:fontFamily="@font/jalnan"
         android:text="비밀번호 찾기"
         android:textSize="16sp"
-        app:backgroundTint="#4C4C4C"
+        app:backgroundTint="#670401"
         app:cornerRadius="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_find_id"
+
+        app:layout_constraintBottom_toBottomOf="@+id/btn_find_id2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_find_id"
-        app:layout_constraintTop_toTopOf="@+id/btn_find_id" />
+        app:layout_constraintStart_toEndOf="@+id/btn_find_id2"
+        app:layout_constraintTop_toTopOf="@+id/btn_find_id2" />
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="176dp"
         android:layout_marginEnd="281dp"
         android:layout_marginRight="281dp"
         android:fontFamily="@font/gmarketsansttfbold"
         android:text="이메일 입력"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/btn_find_id"
-        app:layout_constraintTop_toBottomOf="@+id/btn_find_id" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_find_id2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_find_id2" />
 
-    <TextView
-        android:id="@+id/textView35"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="255dp"
-        android:layout_marginRight="255dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="248dp"
+        android:layout_marginRight="248dp"
         android:fontFamily="@font/gmarketsansttfbold"
         android:text="휴대폰번호 입력"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView28"
-        app:layout_constraintTop_toBottomOf="@+id/edt_find_e" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView46"
+        app:layout_constraintTop_toBottomOf="@+id/edt_find_e2" />
 
     <EditText
-        android:id="@+id/edt_find_e"
+        android:id="@+id/edt_find_e2"
         android:layout_width="296dp"
         android:layout_height="45dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="53dp"
-        android:layout_marginRight="53dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
         android:ems="10"
         android:hint="이메일"
         android:background="@drawable/border"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView28"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView46"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <Button
-        android:id="@+id/btn_check"
+        android:id="@+id/btn_check2"
         android:layout_width="296dp"
         android:layout_height="50dp"
         android:layout_marginStart="62dp"
         android:layout_marginLeft="62dp"
         android:layout_marginEnd="53dp"
         android:layout_marginRight="53dp"
-        android:layout_marginBottom="177dp"
+        android:layout_marginBottom="64dp"
         android:fontFamily="@font/jalnan"
         android:text="입력완료"
         android:textSize="16sp"
@@ -128,48 +140,70 @@
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline28"
+        android:id="@+id/guideline33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="210dp" />
+        app:layout_constraintGuide_begin="209dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.51" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline25"
+        android:id="@+id/guideline34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.48" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline26"
+        android:id="@+id/guideline35"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+        app:layout_constraintGuide_percent="0.34" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="281dp"
+        android:layout_marginRight="281dp"
+        android:text="아이디 입력"
+        android:fontFamily="@font/gmarketsansttfbold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btn_find_id2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_find_id2" />
 
     <EditText
-        android:id="@+id/edt_find_h"
+        android:id="@+id/edt_find_i"
         android:layout_width="296dp"
         android:layout_height="45dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginRight="55dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:ems="10"
+        android:hint="아이디"
         android:background="@drawable/border"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView46"
+        app:layout_constraintTop_toBottomOf="@+id/textView46" />
+
+    <EditText
+        android:id="@+id/edt_find_h2"
+        android:layout_width="296dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
         android:ems="10"
         android:hint="휴대폰번호"
+        android:background="@drawable/border"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView28"
-        app:layout_constraintTop_toBottomOf="@+id/textView35" />
+        app:layout_constraintStart_toStartOf="@+id/textView46"
+        app:layout_constraintTop_toBottomOf="@+id/textView45" />
 </androidx.constraintlayout.widget.ConstraintLayout>
