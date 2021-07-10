@@ -173,7 +173,7 @@ public class HealthDaily extends AppCompatActivity {
 
     public void sendRequest() {
         queue = Volley.newRequestQueue(this);
-        String url = "http://222.102.104.135:3000/Join";
+        String url = "http://222.102.104.135:3000/Note";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override//응답을 받아왔으 때
             public void onResponse(String response) { //server로 부터 데이터를 받아오는 곳
@@ -186,22 +186,14 @@ public class HealthDaily extends AppCompatActivity {
                     if (value.equals("true")){
 //                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
 //                        startActivity(intent);
-                        health_edt.setText("daily");
-                        if (response.equals("ck")== true ) {
-                            health_ck.setChecked(true);
-                        }else{
-                            health_ck.setChecked(false);
-                        }
-
-                       // if (response. == "0")
-
-
-
+//                        String daily = jsonObject.getString("daily");
+//                        String ck = jsonObject.getString("ck");
+//                        String sp = jsonObject.getString("sp");
 
 
                     }else {
                         health_edt.setText("");
-                        health_edt.setText("");
+
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -219,7 +211,7 @@ public class HealthDaily extends AppCompatActivity {
                 Map<String,String> params = new HashMap<String, String>();
                 //한번에 바꾸기 alt+shift+r
                 params.put("daily", health_edt.getText().toString());
-                params.put("ck",health_ck.getText().toString());
+                params.put("ck",ck_check);
                 params.put("sp",sp_cnt);
                 return params;
             }

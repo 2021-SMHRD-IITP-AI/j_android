@@ -38,7 +38,7 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/imageView15"
+            android:id="@+id/search1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
@@ -47,7 +47,7 @@
             app:srcCompat="@drawable/search_ic" />
 
         <ImageView
-            android:id="@+id/imageView16"
+            android:id="@+id/shp1"
             android:layout_width="20dp"
             android:layout_height="27dp"
             android:layout_weight="0.1"
@@ -544,7 +544,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btn_j"
+                android:id="@+id/btn_nv1"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -561,7 +561,6 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btn_nv2"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
