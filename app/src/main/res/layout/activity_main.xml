@@ -99,7 +99,7 @@
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="종료별"
+                android:text="종류별"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 
@@ -501,7 +501,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btn_j"
+                    android:id="@+id/btn_nv1"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

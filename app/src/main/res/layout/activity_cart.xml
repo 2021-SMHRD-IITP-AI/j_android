@@ -38,7 +38,7 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/imageView15"
+            android:id="@+id/search1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
@@ -47,7 +47,7 @@
             app:srcCompat="@drawable/search_ic" />
 
         <ImageView
-            android:id="@+id/imageView16"
+            android:id="@+id/shp1"
             android:layout_width="20dp"
             android:layout_height="27dp"
             android:layout_weight="0.1"
@@ -249,7 +249,7 @@
                 android:layout_weight="1" />
 
             <ImageView
-                android:id="@+id/imageView36"
+                android:id="@+id/hot_img1"
                 android:layout_width="80dp"
                 android:layout_height="65dp"
                 android:layout_marginEnd="15dp"
@@ -264,7 +264,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView45"
+                    android:id="@+id/hot_name1"
                     android:layout_width="164dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
@@ -276,7 +276,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView46"
+                    android:id="@+id/hot_pa1"
                     android:layout_width="164dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
@@ -594,7 +594,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btn_j"
+                android:id="@+id/btn_nv1"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -611,7 +611,6 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btn_nv2"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
