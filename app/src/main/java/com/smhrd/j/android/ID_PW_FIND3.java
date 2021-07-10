@@ -69,6 +69,7 @@ public class ID_PW_FIND3 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendRequest();
+
             }
         });
     }
