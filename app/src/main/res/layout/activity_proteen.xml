@@ -32,6 +32,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="59dp"
+                android:background="#EFEFEF"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:paddingLeft="14dp"
@@ -162,13 +163,6 @@
                         android:text="건강 간식"
                         android:textColor="#4C4C4C" />
 
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginStart="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:src="@drawable/top_proteen_ic" />
-
                     <TextView
                         android:id="@+id/textView63"
                         android:layout_width="49dp"
@@ -180,17 +174,6 @@
                 </LinearLayout>
             </HorizontalScrollView>
 
-            <TextView
-                android:id="@+id/textView64"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/textView65"
-                android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:background="#4C4C4C" />
-
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="462dp">
@@ -201,11 +184,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView66"
-                        android:layout_width="match_parent"
-                        android:layout_height="26dp" />
-
-                    <TextView
                         android:id="@+id/textView67"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -214,11 +192,6 @@
                         android:textColor="#4C4C4C"
                         android:textSize="16sp"
                         android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/textView68"
-                        android:layout_width="match_parent"
-                        android:layout_height="26dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -239,12 +212,6 @@
                                 app:srcCompat="@drawable/proteen_img1" />
 
                             <TextView
-                                android:id="@+id/textView51"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
-                            <TextView
                                 android:id="@+id/textView53"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -253,12 +220,6 @@
                                 android:layout_weight="1"
                                 android:text="프로틴 바나나맛"
                                 android:textColor="#4C4C4C" />
-
-                            <TextView
-                                android:id="@+id/textView55"
-                                android:layout_width="match_parent"
-                                android:layout_height="5dp"
-                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/textView57"
@@ -271,30 +232,12 @@
                                 android:textColor="#4C4C4C"
                                 android:textStyle="bold" />
 
-                            <TextView
-                                android:id="@+id/textView60"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
-                            <TextView
-                                android:id="@+id/textView69"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
                             <ImageView
                                 android:id="@+id/imageView40"
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
                                 app:srcCompat="@drawable/proteen_img2" />
-
-                            <TextView
-                                android:id="@+id/textView71"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/textView72"
@@ -307,12 +250,6 @@
                                 android:textColor="#4C4C4C" />
 
                             <TextView
-                                android:id="@+id/textView73"
-                                android:layout_width="match_parent"
-                                android:layout_height="5dp"
-                                android:layout_weight="1" />
-
-                            <TextView
                                 android:id="@+id/textView74"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -323,30 +260,12 @@
                                 android:textColor="#4C4C4C"
                                 android:textStyle="bold" />
 
-                            <TextView
-                                android:id="@+id/textView75"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
-                            <TextView
-                                android:id="@+id/textView76"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
                             <ImageView
                                 android:id="@+id/imageView42"
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
                                 app:srcCompat="@drawable/proteen_img3" />
-
-                            <TextView
-                                android:id="@+id/textView83"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/textView84"
@@ -358,47 +277,12 @@
                                 android:text="프로틴 딸기맛"
                                 android:textColor="#4C4C4C" />
 
-                            <TextView
-                                android:id="@+id/textView85"
-                                android:layout_width="match_parent"
-                                android:layout_height="5dp"
-                                android:layout_weight="1" />
-
-                            <TextView
-                                android:id="@+id/textView86"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="59,000원"
-                                android:textColor="#4C4C4C"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/textView87"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
-                            <TextView
-                                android:id="@+id/textView88"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
                             <ImageView
                                 android:id="@+id/imageView44"
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
                                 app:srcCompat="@drawable/proteen_img4" />
-
-                            <TextView
-                                android:id="@+id/textView95"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/textView96"
@@ -411,12 +295,6 @@
                                 android:textColor="#4C4C4C" />
 
                             <TextView
-                                android:id="@+id/textView97"
-                                android:layout_width="match_parent"
-                                android:layout_height="5dp"
-                                android:layout_weight="1" />
-
-                            <TextView
                                 android:id="@+id/textView98"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -427,17 +305,6 @@
                                 android:textColor="#4C4C4C"
                                 android:textStyle="bold" />
 
-                            <TextView
-                                android:id="@+id/textView99"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
-                            <TextView
-                                android:id="@+id/textView100"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -454,12 +321,6 @@
                                 app:srcCompat="@drawable/proteen_img5" />
 
                             <TextView
-                                android:id="@+id/textView52"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
-                            <TextView
                                 android:id="@+id/textView54"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -468,12 +329,6 @@
                                 android:layout_weight="1"
                                 android:text="프로틴 블루베리맛"
                                 android:textColor="#4C4C4C" />
-
-                            <TextView
-                                android:id="@+id/textView59"
-                                android:layout_width="match_parent"
-                                android:layout_height="5dp"
-                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/textView58"
@@ -486,30 +341,12 @@
                                 android:textColor="#4C4C4C"
                                 android:textStyle="bold" />
 
-                            <TextView
-                                android:id="@+id/textView61"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
-                            <TextView
-                                android:id="@+id/textView70"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
                             <ImageView
                                 android:id="@+id/imageView41"
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
                                 app:srcCompat="@drawable/proteen_img6" />
-
-                            <TextView
-                                android:id="@+id/textView77"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/textView78"
@@ -522,12 +359,6 @@
                                 android:textColor="#4C4C4C" />
 
                             <TextView
-                                android:id="@+id/textView79"
-                                android:layout_width="match_parent"
-                                android:layout_height="5dp"
-                                android:layout_weight="1" />
-
-                            <TextView
                                 android:id="@+id/textView80"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -538,30 +369,12 @@
                                 android:textColor="#4C4C4C"
                                 android:textStyle="bold" />
 
-                            <TextView
-                                android:id="@+id/textView81"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
-                            <TextView
-                                android:id="@+id/textView82"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
                             <ImageView
                                 android:id="@+id/imageView43"
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
                                 app:srcCompat="@drawable/proteen_img7" />
-
-                            <TextView
-                                android:id="@+id/textView89"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/textView90"
@@ -574,12 +387,6 @@
                                 android:textColor="#4C4C4C" />
 
                             <TextView
-                                android:id="@+id/textView91"
-                                android:layout_width="match_parent"
-                                android:layout_height="5dp"
-                                android:layout_weight="1" />
-
-                            <TextView
                                 android:id="@+id/textView92"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -590,30 +397,12 @@
                                 android:textColor="#4C4C4C"
                                 android:textStyle="bold" />
 
-                            <TextView
-                                android:id="@+id/textView93"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
-                            <TextView
-                                android:id="@+id/textView94"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
                             <ImageView
                                 android:id="@+id/imageView45"
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
                                 android:layout_weight="1"
                                 app:srcCompat="@drawable/proteen_img8" />
-
-                            <TextView
-                                android:id="@+id/textView101"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/textView102"
@@ -626,12 +415,6 @@
                                 android:textColor="#4C4C4C" />
 
                             <TextView
-                                android:id="@+id/textView103"
-                                android:layout_width="match_parent"
-                                android:layout_height="5dp"
-                                android:layout_weight="1" />
-
-                            <TextView
                                 android:id="@+id/textView104"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -642,17 +425,6 @@
                                 android:textColor="#4C4C4C"
                                 android:textStyle="bold" />
 
-                            <TextView
-                                android:id="@+id/textView105"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
-                            <TextView
-                                android:id="@+id/textView106"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1" />
                         </LinearLayout>
 
                     </LinearLayout>
