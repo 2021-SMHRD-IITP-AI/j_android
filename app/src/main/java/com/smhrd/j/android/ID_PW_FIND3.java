@@ -70,6 +70,7 @@ public class ID_PW_FIND3 extends AppCompatActivity {
             public void onClick(View v) {
                 sendRequest();
 
+
             }
         });
     }
