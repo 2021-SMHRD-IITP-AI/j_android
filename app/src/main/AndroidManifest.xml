@@ -18,11 +18,7 @@
 
         <activity android:name=".MyPage"></activity>
         <activity android:name=".Bar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Purchase"></activity>
         <activity android:name=".Coupon"></activity>
@@ -32,7 +28,13 @@
         <activity android:name=".Hot_item">
 
         </activity>
-        <activity android:name=".Main" />
+        <activity android:name=".Main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Login_contract" />
         <activity android:name=".Login" />
         <activity android:name=".Lunch_box_main" />
