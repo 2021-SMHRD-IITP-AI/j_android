@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#F4F4F4"
     tools:context=".Recommend_lunch_box">
 
     <androidx.constraintlayout.widget.Guideline
@@ -15,422 +15,518 @@
         app:layout_constraintGuide_begin="25dp" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="59dp"
+            android:background="#EFEFEF"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="14dp"
+            android:paddingRight="19dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="59dp"
-                android:background="#EFEFEF"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingLeft="14dp"
-                android:paddingRight="16dp">
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="29dp"
-                    android:layout_height="19dp"
-                    android:layout_weight="0.1"
-                    app:srcCompat="@drawable/arrow_left_ic" />
-
-                <TextView
-                    android:id="@+id/textView34"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_weight="0.8"
-                    android:text="프로틴"
-                    android:textColor="#4C4C4C"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:id="@+id/search1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_weight="0.1"
-                    app:srcCompat="@drawable/search_ic" />
-
-                <ImageView
-                    android:id="@+id/shp1"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="0.1"
-                    app:srcCompat="@drawable/main_shopping_bag_ic" />
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/back1"
+                android:layout_width="29dp"
+                android:layout_height="19dp"
+                android:layout_weight="0.1"
+                app:srcCompat="@drawable/arrow_left_ic" />
 
             <TextView
-                android:id="@+id/textView36"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <HorizontalScrollView
+                android:id="@+id/textView22"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="0.8"
+                android:background="#F4F4F4"
+                android:text="프로틴"
+                android:textColor="#4C4C4C"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/search1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_weight="0.1"
+                app:srcCompat="@drawable/search_ic" />
 
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginStart="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:src="@drawable/top_lunch_box_ic" />
+            <ImageView
+                android:id="@+id/shp1"
+                android:layout_width="20dp"
+                android:layout_height="27dp"
+                android:layout_weight="0.1"
+                app:srcCompat="@drawable/main_shopping_bag_ic" />
+        </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/textView33"
-                        android:layout_width="92dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="도시락 · 볶음밥"
-                        android:textColor="#4C4C4C" />
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp">
 
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginStart="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:src="@drawable/top_choice_ic" />
-
-                    <TextView
-                        android:id="@+id/textView43"
-                        android:layout_width="110dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="선택 도시락볶음밥"
-                        android:textColor="#4C4C4C" />
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginStart="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:src="@drawable/top_salad_ic" />
-
-                    <TextView
-                        android:id="@+id/textView44"
-                        android:layout_width="41dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="샐러드"
-                        android:textColor="#4C4C4C" />
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginStart="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:src="@drawable/top_conveniece_ic" />
-
-                    <TextView
-                        android:id="@+id/textView56"
-                        android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="간편식"
-                        android:textColor="#4C4C4C" />
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginStart="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:src="@drawable/top_health_food_ic" />
-
-                    <TextView
-                        android:id="@+id/textView62"
-                        android:layout_width="59dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="건강 간식"
-                        android:textColor="#4C4C4C" />
-
-                    <TextView
-                        android:id="@+id/textView63"
-                        android:layout_width="49dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="프로틴"
-                        android:textColor="#4C4C4C" />
-
-                </LinearLayout>
-            </HorizontalScrollView>
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="462dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
 
-                    <TextView
-                        android:id="@+id/textView67"
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
                         android:gravity="center"
-                        android:text="추천상품"
-                        android:textColor="#4C4C4C"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/top1"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableLeft="@drawable/horsv_lunch_gr"
+                            android:gravity="center|right"
+                            android:text="도시락/볶음밥"
+                            android:textColor="#4C4C4C"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="#F4F4F4"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/top2"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableLeft="@drawable/horsv_choice_gr"
+                            android:gravity="center|right"
+                            android:text="맟춤도시락"
+                            android:textColor="#4C4C4C"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/top3"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableLeft="@drawable/horsv_salad_gr"
+                            android:gravity="center|right"
+                            android:text="샐러드"
+                            android:textColor="#4C4C4C"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/top4"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableLeft="@drawable/horsv_conveniece_gr"
+                            android:gravity="center|right"
+                            android:text="간편식"
+                            android:textColor="#4C4C4C"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center"
                         android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/top5"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableLeft="@drawable/horsv_food_gr"
+                            android:gravity="center|right"
+                            android:text="건강간식"
+                            android:textColor="#4C4C4C"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:text="추천상품"
+                    android:textColor="#4C4C4C"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingBottom="30dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/hot_img1"
-                                android:layout_width="match_parent"
-                                android:layout_height="150dp"
-                                android:layout_weight="1"
+                                android:id="@+id/imageView11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="200dp"
+                                android:background="#F4F4F4"
                                 app:srcCompat="@drawable/proteen_img1" />
 
                             <TextView
-                                android:id="@+id/textView53"
+                                android:id="@+id/textView3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="프로틴 바나나맛"
-                                android:textColor="#4C4C4C" />
+                                android:text="프로틴 바나나맛" />
 
                             <TextView
-                                android:id="@+id/textView57"
+                                android:id="@+id/textView4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="59,000원"
-                                android:textColor="#4C4C4C"
-                                android:textStyle="bold" />
-
-                            <ImageView
-                                android:id="@+id/imageView40"
-                                android:layout_width="match_parent"
-                                android:layout_height="150dp"
-                                android:layout_weight="1"
-                                app:srcCompat="@drawable/proteen_img2" />
-
-                            <TextView
-                                android:id="@+id/textView72"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="프로틴 고구마 라떼맛"
-                                android:textColor="#4C4C4C" />
-
-                            <TextView
-                                android:id="@+id/textView74"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="37,000원"
-                                android:textColor="#4C4C4C"
-                                android:textStyle="bold" />
-
-                            <ImageView
-                                android:id="@+id/imageView42"
-                                android:layout_width="match_parent"
-                                android:layout_height="150dp"
-                                android:layout_weight="1"
-                                app:srcCompat="@drawable/proteen_img3" />
-
-                            <TextView
-                                android:id="@+id/textView84"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="프로틴 딸기맛"
-                                android:textColor="#4C4C4C" />
-
-                            <ImageView
-                                android:id="@+id/imageView44"
-                                android:layout_width="match_parent"
-                                android:layout_height="150dp"
-                                android:layout_weight="1"
-                                app:srcCompat="@drawable/proteen_img4" />
-
-                            <TextView
-                                android:id="@+id/textView96"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="프로틴 일반"
-                                android:textColor="#4C4C4C" />
-
-                            <TextView
-                                android:id="@+id/textView98"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="49,000원"
-                                android:textColor="#4C4C4C"
-                                android:textStyle="bold" />
-
+                                android:text="59,000원" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
                             android:layout_weight="1"
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView37"
+                                android:id="@+id/imageView12"
                                 android:layout_width="match_parent"
-                                android:layout_height="150dp"
-                                android:layout_weight="1"
+                                android:layout_height="200dp"
+                                android:background="#F4F4F4"
+                                app:srcCompat="@drawable/proteen_img2" />
+
+                            <TextView
+                                android:id="@+id/textView8"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="프로틴 고구마 라떼맛" />
+
+                            <TextView
+                                android:id="@+id/textView21"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="37,000원" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingBottom="30dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="200dp"
+                                app:srcCompat="@drawable/proteen_img3" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="프로틴 딸기맛" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="59,000원" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                app:srcCompat="@drawable/proteen_img4" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="프로틴 일반" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="49,000원" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingBottom="30dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="200dp"
                                 app:srcCompat="@drawable/proteen_img5" />
 
                             <TextView
-                                android:id="@+id/textView54"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="프로틴 블루베리맛"
-                                android:textColor="#4C4C4C" />
+                                android:text="프로틴 블루베리맛" />
 
                             <TextView
-                                android:id="@+id/textView58"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="37,000원"
-                                android:textColor="#4C4C4C"
-                                android:textStyle="bold" />
+                                android:text="37,000원" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView41"
                                 android:layout_width="match_parent"
-                                android:layout_height="150dp"
-                                android:layout_weight="1"
+                                android:layout_height="200dp"
                                 app:srcCompat="@drawable/proteen_img6" />
 
                             <TextView
-                                android:id="@+id/textView78"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="프로틴 초코맛"
-                                android:textColor="#4C4C4C" />
+                                android:text="프로틴 초코맛" />
 
                             <TextView
-                                android:id="@+id/textView80"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="59,000원"
-                                android:textColor="#4C4C4C"
-                                android:textStyle="bold" />
+                                android:text="37,000원" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="30dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView43"
-                                android:layout_width="match_parent"
-                                android:layout_height="150dp"
-                                android:layout_weight="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="200dp"
                                 app:srcCompat="@drawable/proteen_img7" />
 
                             <TextView
-                                android:id="@+id/textView90"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="프로틴 카페 프런치맛"
-                                android:textColor="#4C4C4C" />
+                                android:text="프로틴 카페 프런치맛" />
 
                             <TextView
-                                android:id="@+id/textView92"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="37,000원"
-                                android:textColor="#4C4C4C"
-                                android:textStyle="bold" />
+                                android:text="37,000원" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView45"
                                 android:layout_width="match_parent"
-                                android:layout_height="150dp"
-                                android:layout_weight="1"
+                                android:layout_height="200dp"
                                 app:srcCompat="@drawable/proteen_img8" />
 
                             <TextView
-                                android:id="@+id/textView102"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="프로틴 그린티맛"
-                                android:textColor="#4C4C4C" />
+                                android:text="프로틴 그린티맛" />
 
                             <TextView
-                                android:id="@+id/textView104"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="30dp"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:text="37,000원"
-                                android:textColor="#4C4C4C"
-                                android:textStyle="bold" />
-
+                                android:text="37,000원" />
                         </LinearLayout>
 
                     </LinearLayout>
                 </LinearLayout>
-            </ScrollView>
 
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EFEFEF"
+            android:orientation="horizontal"
+            android:padding="9dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_nv1"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/main_change_red"
+                    android:text="헬스케어"
+                    android:textColor="#670401" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_nv2"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/main_home_red"
+                    android:text="HOME"
+                    android:textColor="#670401" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_nv3"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/main_user_red"
+                    android:text="내정보"
+                    android:textColor="#670401" />
+
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
@@ -462,106 +558,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="59dp" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"></LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#EFEFEF"
-        android:orientation="horizontal"
-        android:padding="9dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageView26"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                app:srcCompat="@drawable/main_change_ic" />
-
-            <TextView
-                android:id="@+id/textView40"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingTop="4dp"
-                android:text="헬스케어"
-                android:textColor="#670401"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageView27"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                app:srcCompat="@drawable/main_home_ic" />
-
-            <TextView
-                android:id="@+id/textView41"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingTop="4dp"
-                android:text="HOME"
-                android:textColor="#670401"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageView28"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                app:srcCompat="@drawable/main_user_information_ic" />
-
-            <TextView
-                android:id="@+id/textView39"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingTop="4dp"
-                android:text="내 정보"
-                android:textColor="#670401"
-                android:textSize="15sp" />
-        </LinearLayout>
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

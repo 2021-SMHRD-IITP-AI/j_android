@@ -25,7 +25,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Main extends AppCompatActivity {
-    private Button btn_mu1,btn_mu2,btn_mu3,btn_mu4,btn_mu5,btn_mu6,btn_mu7,btn_mu8, btn_more1, btn_j, btn_nv2,btn_nv3;
+    private Button btn_mu1,btn_mu2,btn_mu3,btn_mu4,btn_mu5,btn_mu6,btn_mu7,btn_mu8, btn_more1, btn_j, btn_nv1, btn_nv2,btn_nv3;
     private ImageView ctgr,search1, shp1,img1,img2,img3,cir1,cir2,cir3,cir4,cir5,cir6;
     private TextView menu1,menu2,menu3,menu4,tv_lu_name1,tv_lu_name2,tv_lu_name3,tv_pa1,tv_pa2,tv_pa3;
 
@@ -46,6 +46,7 @@ public class Main extends AppCompatActivity {
         btn_mu8=findViewById(R.id.btn_mu8);
         btn_more1=findViewById(R.id.btn_more1);
         btn_j=findViewById(R.id.btn_j);
+        btn_nv1=findViewById(R.id.btn_nv1);
         btn_nv2=findViewById(R.id.btn_nv2);
         btn_nv3=findViewById(R.id.btn_nv3);
 
@@ -161,9 +162,8 @@ public class Main extends AppCompatActivity {
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new JSONTask().execute("http://222.102.104.135:3000/txts/go.txt");
+                new JSONTask().execute("http://222.102.104.135:3000/txts/go_recom.txt");
 //                new JSONTask().execute("http://222.102.104.135:3000/Dise"); // 디비로 접근하는건데 과부하 걸려서 안되는듯..
-                new JSONTask2().execute("http://222.102.104.135:3000/txts/fat.txt");
             }
         });
 
@@ -174,18 +174,12 @@ public class Main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
     public class JSONTask extends AsyncTask<String, String, String>{
         @Override
         protected String doInBackground(String... urls) {
             try {
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.accumulate("dise_name", "test");
-                jsonObject.accumulate("dise_notice", "test1");
-
                 HttpURLConnection con = null;
                 BufferedReader reader = null;
                 try {
@@ -225,10 +219,8 @@ public class Main extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             return null;
         }
-
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
@@ -237,66 +229,4 @@ public class Main extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
-    public class JSONTask2 extends AsyncTask<String, String, String>{
-        @Override
-        protected String doInBackground(String... urls) {
-            try {
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.accumulate("dise_name", "test");
-                jsonObject.accumulate("dise_notice", "test1");
-
-                HttpURLConnection con = null;
-                BufferedReader reader = null;
-                try {
-                    URL url = new URL(urls[0]);
-                    con = (HttpURLConnection) url.openConnection();
-                    con.connect();
-
-                    InputStream stream = con.getInputStream();
-
-                    reader = new BufferedReader(new InputStreamReader(stream));
-
-                    StringBuffer buffer = new StringBuffer();
-
-                    String line = "";
-
-                    while((line = reader.readLine()) != null){
-                        buffer.append(line);
-                    }
-                    return buffer.toString();
-
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e){
-                    e.printStackTrace();
-                } finally {
-                    if(con != null){
-                        con.disconnect();
-                    }
-                    try {
-                        if(reader != null){
-                            reader.close();
-                        }
-                    } catch (IOException e){
-                        e.printStackTrace();
-                    }
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-            Intent intent = new Intent(getApplicationContext(), HealthCare.class);
-            intent.putExtra("result2", result);
-            startActivity(intent);
-        }
-    }
-
-
 }

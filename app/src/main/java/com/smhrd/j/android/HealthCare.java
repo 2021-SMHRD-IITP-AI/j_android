@@ -8,15 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-
 public class HealthCare extends AppCompatActivity {
 
     private TextView tv_recom, tv_warn, tv_userInfo;
     private Button btn_nv1, btn_nv2, btn_nv3;
-    private String result, result2;
+    private String result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +31,8 @@ public class HealthCare extends AppCompatActivity {
 
         Intent intent = getIntent();
         result = intent.getStringExtra("result");
-        result2 = intent.getStringExtra("result2");
 
         tv_recom.setText(result);
-        tv_warn.setText(result2);
-
-
-        JSONObject jsonObject = new JSONObject();
 
         btn_nv2.setOnClickListener(new View.OnClickListener() {
             @Override
