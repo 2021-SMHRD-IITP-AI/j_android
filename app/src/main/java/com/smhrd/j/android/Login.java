@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -37,6 +38,7 @@ public class Login extends AppCompatActivity {
     private EditText id_login, pw_login;
     private Button btn_contract, btn_login;
     private CheckBox cb_login;
+    private TextView tv_find;
 
     private RequestQueue queue;
     private StringRequest stringRequest;
@@ -50,6 +52,8 @@ public class Login extends AppCompatActivity {
         pw_login = findViewById(R.id.pw_login);
         btn_login = findViewById(R.id.btn_login);
         btn_contract = findViewById(R.id.btn_contract);
+
+        tv_find=findViewById(R.id.tv_find);
 
         //String login = PreferenceManager.getString(getApplicationContext(), "login");
 //        if (!cb_login.equals("")) {
@@ -66,6 +70,16 @@ public class Login extends AppCompatActivity {
 //                e.printStackTrace();
 //            }
 //        }
+        //아이디비번찾기
+        tv_find.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),ID_PW_FIND.class);
+                startActivity(intent);
+            }
+        });
+
+        //회원가입 버튼
         btn_contract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
