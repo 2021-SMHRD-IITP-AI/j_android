@@ -12,8 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Lunch_box_main extends AppCompatActivity {
-    private Button  btn_g,btn_j;
+    private Button  btn_g;
 
+    private String btn_j;
     private RadioButton tbtn_1,tbtn_2,tbtn_3,tbtn_4,tbtn_5,tbtn_6,tbtn_7
             ,tbtn_8,tbtn_9,tbtn_10,tbtn_11,tbtn_12,tbtn_13,tbtn_14,tbtn_15;
 
@@ -23,19 +24,19 @@ public class Lunch_box_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lunch_box_main);
 
-        btn_j=findViewById(R.id.btn_j);
+//        btn_j=findViewById(R.id.btn_j);
         btn_g=findViewById(R.id.btn_g);
 
         //담는 버튼
-        btn_j.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //라디오버튼 선택값 저장 코드 작성필요
-
-
-                Toast.makeText(getApplicationContext(),"선택되었습니다.",Toast.LENGTH_SHORT).show();
-            }
-        });
+//        btn_j.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //라디오버튼 선택값 저장 코드 작성필요
+//
+//
+//                Toast.makeText(getApplicationContext(),"선택되었습니다.",Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         final RadioGroup group1=(RadioGroup)findViewById(R.id.RadioGroup_1);
         final RadioGroup group2=(RadioGroup)findViewById(R.id.RadioGroup_2);
@@ -142,31 +143,33 @@ public class Lunch_box_main extends AppCompatActivity {
         });
 
         //구매하기 버튼
-//        btn_g.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //맞춤 도시락 구매페이지 인텐트 필요
-//
-//                //맞게 담았는지 확인하는 코드 작성하기
-////                if(btn_j != null){
-////                Toast.makeText(Lunch_box_main.this, (CharSequence) btn_j,Toast.LENGTH_SHORT).show();
+        btn_g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //맞춤 도시락 구매페이지 인텐트 필요
+
+                //맞게 담았는지 확인하는 코드 작성하기
+
+
+//                if(btn_j != null){
+//                Toast.makeText(Lunch_box_main.this, (CharSequence) btn_j,Toast.LENGTH_SHORT).show();
 //
 //                    //버튼 비활성화(else)/영양소 미선택시 팝업
-////                    btn_g.setEnabled(true);
-////                    return;
+//                    btn_g.setEnabled(true);
+//                    return;
 //
-////                }else{
-////                    Toast.makeText(Lunch_box_main.this,"영양소를 선택 해주세요",Toast.LENGTH_SHORT).show();
+//                }else{
+//                    Toast.makeText(Lunch_box_main.this,"영양소를 선택 해주세요",Toast.LENGTH_SHORT).show();
 //                    //버튼 활성화
-////                    btn_g.setEnabled(false);
-//
-////
-////                }
-//            }
+//                    btn_g.setEnabled(false);
 //
 //
-//
-//        });
+//                }
+            }
+
+
+
+        });
 
 
 
