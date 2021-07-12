@@ -177,7 +177,7 @@
                             android:layout_marginStart="45dp"
                             android:layout_marginLeft="45dp"
                             android:layout_weight="0"
-                            android:text="RadioButton"
+                            android:text="닭 가슴살"
                             android:textColor="#000000" />
 
                         <RadioButton
@@ -187,7 +187,7 @@
                             android:layout_marginStart="105dp"
                             android:layout_marginLeft="105dp"
                             android:layout_weight="0"
-                            android:text="RadioButton" />
+                            android:text="흰살생선" />
 
                         <RadioButton
                             android:id="@+id/tbtn_3"
@@ -196,7 +196,7 @@
                             android:layout_marginStart="100dp"
                             android:layout_marginLeft="100dp"
                             android:layout_weight="0"
-                            android:text="RadioButton" />
+                            android:text="두부" />
                     </RadioGroup>
 
                 </LinearLayout>
@@ -307,7 +307,7 @@
                             android:layout_marginStart="45dp"
                             android:layout_marginLeft="45dp"
                             android:layout_weight="0"
-                            android:text="RadioButton" />
+                            android:text="흰 쌀밥" />
 
                         <RadioButton
                             android:id="@+id/tbtn_5"
@@ -316,7 +316,7 @@
                             android:layout_marginStart="105dp"
                             android:layout_marginLeft="105dp"
                             android:layout_weight="0"
-                            android:text="RadioButton" />
+                            android:text="잡곡밥" />
 
                         <RadioButton
                             android:id="@+id/tbtn_6"
@@ -325,7 +325,7 @@
                             android:layout_marginStart="100dp"
                             android:layout_marginLeft="100dp"
                             android:layout_weight="0"
-                            android:text="RadioButton" />
+                            android:text="곤약밥" />
 
                     </RadioGroup>
 
@@ -435,7 +435,7 @@
                             android:layout_marginStart="45dp"
                             android:layout_marginLeft="45dp"
                             android:layout_weight="0"
-                            android:text="RadioButton" />
+                            android:text="녹색채소" />
 
                         <RadioButton
                             android:id="@+id/tbtn_8"
@@ -444,7 +444,7 @@
                             android:layout_marginStart="105dp"
                             android:layout_marginLeft="105dp"
                             android:layout_weight="0"
-                            android:text="RadioButton" />
+                            android:text="씨앗류" />
 
                         <RadioButton
                             android:id="@+id/tbtn_9"
@@ -453,7 +453,7 @@
                             android:layout_marginStart="100dp"
                             android:layout_marginLeft="100dp"
                             android:layout_weight="0"
-                            android:text="RadioButton" />
+                            android:text="견과류" />
                     </RadioGroup>
 
                 </LinearLayout>
@@ -562,7 +562,7 @@
                             android:layout_marginStart="45dp"
                             android:layout_marginLeft="45dp"
                             android:layout_weight="0"
-                            android:text="RadioButton" />
+                            android:text="과일" />
 
                         <RadioButton
                             android:id="@+id/tbtn_11"
@@ -571,7 +571,7 @@
                             android:layout_marginStart="105dp"
                             android:layout_marginLeft="105dp"
                             android:layout_weight="0"
-                            android:text="RadioButton" />
+                            android:text="버섯" />
 
                         <RadioButton
                             android:id="@+id/tbtn_12"
@@ -580,7 +580,7 @@
                             android:layout_marginStart="100dp"
                             android:layout_marginLeft="100dp"
                             android:layout_weight="0"
-                            android:text="RadioButton" />
+                            android:text="황색채소" />
                     </RadioGroup>
 
                 </LinearLayout>
@@ -689,7 +689,7 @@
                             android:layout_marginStart="45dp"
                             android:layout_marginLeft="45dp"
                             android:layout_weight="0"
-                            android:text="RadioButton" />
+                            android:text="치즈" />
 
                         <RadioButton
                             android:id="@+id/tbtn_14"
@@ -698,7 +698,7 @@
                             android:layout_marginStart="105dp"
                             android:layout_marginLeft="105dp"
                             android:layout_weight="0"
-                            android:text="RadioButton" />
+                            android:text="멸치" />
 
                         <RadioButton
                             android:id="@+id/tbtn_15"
@@ -707,7 +707,7 @@
                             android:layout_marginStart="100dp"
                             android:layout_marginLeft="100dp"
                             android:layout_weight="0"
-                            android:text="RadioButton" />
+                            android:text="해조류" />
                     </RadioGroup>
 
                 </LinearLayout>
