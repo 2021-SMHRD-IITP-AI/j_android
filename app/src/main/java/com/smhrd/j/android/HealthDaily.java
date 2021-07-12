@@ -52,7 +52,6 @@ public class HealthDaily extends AppCompatActivity {
    int state_cnt;
    private String ck_check;
     private String result = "";
-    private String date_daily = "";
 
     private RequestQueue queue;
     private StringRequest stringRequest;
@@ -69,6 +68,7 @@ public class HealthDaily extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_daily);
 
+        //서버 값 가져오는 매소드
         checkHealth();
 
 
@@ -78,8 +78,8 @@ public class HealthDaily extends AppCompatActivity {
         layout1 = (LinearLayout) findViewById(R.id.layout1);
         health_ck = findViewById(R.id.health_ck);
 
+        //날짜 비교해서 캘린더보여주기
         for(int i = 0; i < list.size(); i++){
-
 //            if(건강일지 날짜 가져오기 == list.get(i).getDate()){
 //                layout1.setVisibility((View.VISIBLE));
 //            }else{
@@ -87,7 +87,7 @@ public class HealthDaily extends AppCompatActivity {
 //            }
         }
 
-
+        //캘린더
         health_cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
@@ -132,7 +132,7 @@ public class HealthDaily extends AppCompatActivity {
         });
 
 
-
+        //추가버튼 클릭했을 때 서버로 값 넘김
         health_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
