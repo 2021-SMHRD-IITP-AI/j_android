@@ -163,19 +163,7 @@ public class Lunch_box_main extends AppCompatActivity {
                 //맞게 담았는지 확인하는 코드 작성하기
 
 
-//                if(btn_j != null){
-//                Toast.makeText(Lunch_box_main.this, btn_j,Toast.LENGTH_SHORT).show();
-//
-//                    //버튼 비활성화(else)/영양소 미선택시 팝업
-//                    btn_g.setEnabled(true);
-//                    return;
-//
-//                }else{
-//                    Toast.makeText(Lunch_box_main.this,"영양소를 선택 해주세요",Toast.LENGTH_SHORT).show();
-//                    //버튼 활성화
-//                    btn_g.setEnabled(false);
-//
-//                }
+
             }
 
         });
