@@ -240,7 +240,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/hot_img1"
+                    android:id="@+id/img_recom1"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="30dp"
@@ -249,7 +249,7 @@
                     app:srcCompat="@drawable/green_vegetable_ic" />
 
                 <ImageView
-                    android:id="@+id/imageView37"
+                    android:id="@+id/img_recom2"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="60dp"
@@ -340,7 +340,7 @@
                     app:srcCompat="@drawable/fruit_ic" />
 
                 <ImageView
-                    android:id="@+id/imageView40"
+                    android:id="@+id/img_recom3"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="60dp"
@@ -349,7 +349,7 @@
                     app:srcCompat="@drawable/mushroom_ic" />
 
                 <ImageView
-                    android:id="@+id/imageView41"
+                    android:id="@+id/img_recom4"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="60dp"
@@ -422,7 +422,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView42"
+                    android:id="@+id/img_recom5"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="30dp"
@@ -431,7 +431,7 @@
                     app:srcCompat="@drawable/cheesee_ic" />
 
                 <ImageView
-                    android:id="@+id/imageView43"
+                    android:id="@+id/img_recom6"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="60dp"
@@ -440,7 +440,7 @@
                     app:srcCompat="@drawable/anchovy_ic" />
 
                 <ImageView
-                    android:id="@+id/imageView44"
+                    android:id="@+id/img_recom7"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginStart="60dp"

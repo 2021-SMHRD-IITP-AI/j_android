@@ -12,7 +12,7 @@ public class HealthCare extends AppCompatActivity {
 
     private TextView tv_recom, tv_warn, tv_userInfo;
     private Button btn_nv1, btn_nv2, btn_nv3;
-    private String result;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +29,17 @@ public class HealthCare extends AppCompatActivity {
         btn_nv2 = findViewById(R.id.btn_nv2);
         btn_nv3 = findViewById(R.id.btn_nv3);
 
+        String result, result2;
+
         Intent intent = getIntent();
         result = intent.getStringExtra("result");
 
         tv_recom.setText(result);
+
+        Intent intent2 = getIntent();
+        result2 = intent2.getStringExtra("result2");
+
+        tv_warn.setText(result2);
 
         btn_nv2.setOnClickListener(new View.OnClickListener() {
             @Override

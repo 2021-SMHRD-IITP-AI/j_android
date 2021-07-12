@@ -243,7 +243,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/hot_img1"
+                            android:id="@+id/img_recom1"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_weight="1"
@@ -256,7 +256,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView53"
+                            android:id="@+id/tv_recom_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -272,7 +272,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView57"
+                            android:id="@+id/tv_recom_price"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -295,7 +295,7 @@
                             android:layout_weight="1" />
 
                         <ImageView
-                            android:id="@+id/imageView40"
+                            android:id="@+id/img_recom3"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_weight="1"
@@ -308,7 +308,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView72"
+                            android:id="@+id/tv_recom_name3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -324,7 +324,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView74"
+                            android:id="@+id/tv_recom_price3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -347,7 +347,7 @@
                             android:layout_weight="1" />
 
                         <ImageView
-                            android:id="@+id/imageView42"
+                            android:id="@+id/img_recom5"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_weight="1"
@@ -360,7 +360,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView84"
+                            android:id="@+id/tv_recom_name5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -376,7 +376,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView86"
+                            android:id="@+id/tv_recom_price5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -399,7 +399,7 @@
                             android:layout_weight="1" />
 
                         <ImageView
-                            android:id="@+id/imageView44"
+                            android:id="@+id/img_recom7"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_weight="1"
@@ -412,7 +412,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView96"
+                            android:id="@+id/tv_recom_name7"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -428,7 +428,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView98"
+                            android:id="@+id/tv_recom_price7"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -458,7 +458,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/imageView37"
+                            android:id="@+id/img_recom2"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_weight="1"
@@ -471,7 +471,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView54"
+                            android:id="@+id/tv_recom_name2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -487,7 +487,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView58"
+                            android:id="@+id/tv_recom_price2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -510,7 +510,7 @@
                             android:layout_weight="1" />
 
                         <ImageView
-                            android:id="@+id/imageView41"
+                            android:id="@+id/img_recom4"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_weight="1"
@@ -523,7 +523,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView78"
+                            android:id="@+id/tv_recom_name4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -539,7 +539,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView80"
+                            android:id="@+id/tv_recom_price4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -562,7 +562,7 @@
                             android:layout_weight="1" />
 
                         <ImageView
-                            android:id="@+id/imageView43"
+                            android:id="@+id/img_recom6"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_weight="1"
@@ -575,7 +575,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView90"
+                            android:id="@+id/tv_recom_name6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -591,7 +591,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView92"
+                            android:id="@+id/tv_recom_price6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -614,7 +614,7 @@
                             android:layout_weight="1" />
 
                         <ImageView
-                            android:id="@+id/imageView45"
+                            android:id="@+id/img_recom8"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_weight="1"
@@ -627,7 +627,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView102"
+                            android:id="@+id/tv_recom_name8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -643,7 +643,7 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:id="@+id/textView104"
+                            android:id="@+id/tv_recom_price8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"

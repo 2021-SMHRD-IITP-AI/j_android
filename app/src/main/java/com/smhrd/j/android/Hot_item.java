@@ -2,7 +2,6 @@ package com.smhrd.j.android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,7 +22,7 @@ public class Hot_item extends AppCompatActivity {
         back1=findViewById(R.id.back1);
         search1 =findViewById(R.id.search1);
         shp1 =findViewById(R.id.shp1);
-        hot_img1 =findViewById(R.id.hot_img1);
+        hot_img1 =findViewById(R.id.img_recom1);
         hot_img2 =findViewById(R.id.hot_img2);
         hot_img3 =findViewById(R.id.hot_img3);
 
