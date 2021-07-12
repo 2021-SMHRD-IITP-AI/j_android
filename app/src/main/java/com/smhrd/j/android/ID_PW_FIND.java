@@ -3,7 +3,9 @@ package com.smhrd.j.android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.style.BackgroundColorSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -49,6 +51,9 @@ public class ID_PW_FIND extends AppCompatActivity {
         btn_find_pw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+//                Color.rgb(103,4,1);
+
                 Intent intent = new Intent(getApplicationContext(),ID_PW_FIND3.class);
                 startActivity(intent);
 
