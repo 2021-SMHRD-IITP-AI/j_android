@@ -245,17 +245,20 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/img_recom1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/recomend_img1" />
 
                             <TextView
+                                android:id="@+id/tv_recom_name1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="제주톳보리밥 도시락" />
 
                             <TextView
+                                android:id="@+id/tv_recom_price"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="5,300원" />
@@ -270,17 +273,20 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/img_recom2"
                                 android:layout_width="match_parent"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/recomend_img3" />
 
                             <TextView
+                                android:id="@+id/tv_recom_name2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="불고기 볶음밥" />
 
                             <TextView
+                                android:id="@+id/tv_recom_price2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="4,900원" />
@@ -303,17 +309,20 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/img_recom3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/recomend_img5" />
 
                             <TextView
+                                android:id="@+id/tv_recom_name3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="단호박 영양 도시락" />
 
                             <TextView
+                                android:id="@+id/tv_recom_price3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="5,300원" />
@@ -328,17 +337,20 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/img_recom4"
                                 android:layout_width="match_parent"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/recomend_img6" />
 
                             <TextView
+                                android:id="@+id/tv_recom_name4"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="마늘 닭가슴살 도시락" />
 
                             <TextView
+                                android:id="@+id/tv_recom_price4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="5,500원" />
@@ -361,17 +373,20 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/img_recom5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/recomend_img2" />
 
                             <TextView
+                                android:id="@+id/tv_recom_name5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="닭갈비 볶음밥" />
 
                             <TextView
+                                android:id="@+id/tv_recom_price5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="4,900원" />
@@ -386,17 +401,20 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/img_recom6"
                                 android:layout_width="match_parent"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/recomend_img4" />
 
                             <TextView
+                                android:id="@+id/tv_recom_name6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="미역국 도시락" />
 
                             <TextView
+                                android:id="@+id/tv_recom_price6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="5,500원" />
@@ -419,20 +437,20 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView11"
+                                android:id="@+id/img_recom7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/recomend_img7" />
 
                             <TextView
-                                android:id="@+id/textView3"
+                                android:id="@+id/tv_recom_name7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="닭가슴 카레 도시락" />
 
                             <TextView
-                                android:id="@+id/textView4"
+                                android:id="@+id/tv_recom_price7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="5,800원" />
@@ -447,20 +465,20 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView12"
+                                android:id="@+id/img_recom8"
                                 android:layout_width="match_parent"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/recomend_img8" />
 
                             <TextView
-                                android:id="@+id/textView8"
+                                android:id="@+id/tv_recom_name8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="닭가슴살 난자 완스 도시락" />
 
                             <TextView
-                                android:id="@+id/textView21"
+                                android:id="@+id/tv_recom_price8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="5,800원" />

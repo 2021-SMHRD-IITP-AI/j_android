@@ -419,20 +419,20 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView11"
+                                android:id="@+id/img_recom7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/salad_img7" />
 
                             <TextView
-                                android:id="@+id/textView3"
+                                android:id="@+id/tv_recom_name7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="닭가슴살 볼 샐러드" />
 
                             <TextView
-                                android:id="@+id/textView4"
+                                android:id="@+id/tv_recom_price7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="5,500원" />
@@ -447,20 +447,20 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView12"
+                                android:id="@+id/img_recom8"
                                 android:layout_width="match_parent"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/salad_img8" />
 
                             <TextView
-                                android:id="@+id/textView8"
+                                android:id="@+id/tv_recom_name8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="훈제오리 샐러드" />
 
                             <TextView
-                                android:id="@+id/textView21"
+                                android:id="@+id/tv_recom_price8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="4,500원" />
