@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -52,24 +51,25 @@ public class Login extends AppCompatActivity {
         pw_login = findViewById(R.id.pw_login);
         btn_login = findViewById(R.id.btn_login);
         btn_contract = findViewById(R.id.btn_contract);
+        cb_login = findViewById(R.id.cb_login);
 
         tv_find=findViewById(R.id.tv_find);
 
-        //String login = PreferenceManager.getString(getApplicationContext(), "login");
-//        if (!cb_login.equals("")) {
-//            try {
-//                JSONObject jsonObject = new JSONObject(login);
-//                String id = jsonObject.getString("id");
-//                String pw = jsonObject.getString("pw");
-//
-//                id_login.setText(id);
-//                pw_login.setText(pw);
-//                cb_login.setChecked(true);
-//
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//        }
+        String login = PreferenceManager.getString(getApplicationContext(), "login");
+        if (!cb_login.equals("")) {
+            try {
+                JSONObject jsonObject = new JSONObject(login);
+                String id = jsonObject.getString("id");
+                String pw = jsonObject.getString("pw");
+
+                id_login.setText(id);
+                pw_login.setText(pw);
+                cb_login.setChecked(true);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
         //아이디비번찾기
         tv_find.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +92,8 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendRequest();
+
+
             }
         });
     }
@@ -99,16 +101,22 @@ public class Login extends AppCompatActivity {
         queue = Volley.newRequestQueue(this);
         String url = "http://222.102.104.135:3000/Login";
 
+
         stringRequest = new StringRequest(Request.Method.POST,
                 url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-                if(!response.equals("null")){
+
+                String login = PreferenceManager.getString(getApplicationContext(),"login");
+
+                if(!response.equals("null") ){
                     try {
                         JSONObject jsonObject = new JSONObject(response);
+                        String value = jsonObject.getString("check");
                         String id = jsonObject.getString("id");
                         String pw = jsonObject.getString("pw");
+
 
 //                        LoginDTO dto = new LoginDTO(id, pw);
 //                        String login = gson.toJson(dto);
