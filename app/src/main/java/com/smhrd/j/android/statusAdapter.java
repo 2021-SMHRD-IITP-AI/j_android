@@ -13,7 +13,6 @@ public class statusAdapter extends BaseAdapter {
 
     private ArrayList<LoginDTO> list = new ArrayList<LoginDTO>();
 
-
     @Override
     public int getCount() {
         return list.size();
@@ -35,14 +34,10 @@ public class statusAdapter extends BaseAdapter {
         if(convertView == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.activity_login_contract,parent,false);
+
         }
 
-//        TextView tv_chat_id = convertView.findViewById(R.id.tv_chat_id);
-//        TextView tv_chat_chat = convertView.findViewById(R.id.tv_chat_chat);
-
         LoginDTO dto = list.get(position);
-//        tv_chat_id.setText(dto.getId());
-
 
 
         return convertView;

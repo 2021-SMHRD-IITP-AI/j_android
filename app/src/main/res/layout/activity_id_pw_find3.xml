@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ID_PW_FIND3">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:background="#EFEFEF"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="14dp"
+        android:paddingRight="19dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back1"
+            android:layout_width="29dp"
+            android:layout_height="19dp"
+            android:layout_weight="0.1"
+            app:srcCompat="@drawable/arrow_left_ic" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="0.8"
+            android:fontFamily="@font/jalnan"
+            android:text="아이디/비밀번호 찾기"
+            android:textColor="#4C4C4C"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_find_id2"
+        android:layout_width="148dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/jalnan"
+        android:text="아이디 찾기"
+        android:textSize="16sp"
+
+        app:backgroundTint="#4C4C4C"
+        app:cornerRadius="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_find_pw2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/btn_find_pw2"
+        android:layout_width="148dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
+        android:fontFamily="@font/jalnan"
+        android:text="비밀번호 찾기"
+        android:textSize="16sp"
+        app:backgroundTint="#670401"
+        app:cornerRadius="0dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/btn_find_id2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_find_id2"
+        app:layout_constraintTop_toTopOf="@+id/btn_find_id2" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="281dp"
+        android:layout_marginRight="281dp"
+        android:fontFamily="@font/gmarketsansttfbold"
+        android:text="이메일 입력"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_find_id2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_find_id2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="248dp"
+        android:layout_marginRight="248dp"
+        android:fontFamily="@font/gmarketsansttfbold"
+        android:text="휴대폰번호 입력"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView46"
+        app:layout_constraintTop_toBottomOf="@+id/edt_find_e2" />
+
+    <EditText
+        android:id="@+id/edt_find_e2"
+        android:layout_width="296dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:ems="10"
+        android:hint="이메일"
+        android:background="@drawable/border"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView46"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <Button
+        android:id="@+id/btn_check2"
+        android:layout_width="296dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
+        android:layout_marginBottom="64dp"
+        android:fontFamily="@font/jalnan"
+        android:text="입력완료"
+        android:textSize="16sp"
+        app:backgroundTint="#670401"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="209dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.48" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.34" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="281dp"
+        android:layout_marginRight="281dp"
+        android:text="아이디 입력"
+        android:fontFamily="@font/gmarketsansttfbold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btn_find_id2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_find_id2" />
+
+    <EditText
+        android:id="@+id/edt_find_i"
+        android:layout_width="296dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:ems="10"
+        android:hint="아이디"
+        android:background="@drawable/border"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView46"
+        app:layout_constraintTop_toBottomOf="@+id/textView46" />
+
+    <EditText
+        android:id="@+id/edt_find_h2"
+        android:layout_width="296dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:ems="10"
+        android:hint="휴대폰번호"
+        android:background="@drawable/border"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView46"
+        app:layout_constraintTop_toBottomOf="@+id/textView45" />
+</androidx.constraintlayout.widget.ConstraintLayout>

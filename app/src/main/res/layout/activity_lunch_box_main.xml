@@ -4,586 +4,812 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#F4F4F4"
     tools:context=".Lunch_box_main">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="59dp"
+            android:background="#EFEFEF"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="14dp"
+            android:paddingRight="19dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="29dp"
+                android:layout_height="19dp"
+                android:layout_weight="0.1"
+                app:srcCompat="@drawable/arrow_left_ic" />
 
             <TextView
-                android:id="@+id/textView23"
-                android:layout_width="match_parent"
-                android:layout_height="59dp"
-                android:layout_marginTop="0dp"
-                android:background="#EFEFEF"
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="0.8"
                 android:fontFamily="@font/jalnan"
-                android:gravity="center|left"
-                android:paddingLeft="50dp"
-                android:text="맞춤 도시락"
+                android:text="맞춤도시락"
                 android:textColor="#4C4C4C"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/imageView29"
-                android:layout_width="390dp"
-                android:layout_height="300dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginLeft="0dp"
-                app:srcCompat="@drawable/choice_ic2" />
-
-            <TextView
-                android:id="@+id/textView24"
-                android:layout_width="match_parent"
+                android:id="@+id/search1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/jalnan"
-                android:paddingLeft="30dp"
-                android:text="단백질"
-                android:textColor="#4C4C4C"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageView30"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/chicken_ic" />
-
-                <ImageView
-                    android:id="@+id/imageView31"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/white_fish_ic" />
-
-                <ImageView
-                    android:id="@+id/imageView32"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/tofu_ic" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <RadioGroup
-                    android:id="@+id/RadioGroup_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/tbtn_1"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="45dp"
-                        android:layout_marginLeft="45dp"
-                        android:layout_weight="0"
-                        android:text="RadioButton"
-                        android:textColor="#000000" />
-
-                    <RadioButton
-                        android:id="@+id/tbtn_2"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="105dp"
-                        android:layout_marginLeft="105dp"
-                        android:layout_weight="0"
-                        android:text="RadioButton" />
-
-                    <RadioButton
-                        android:id="@+id/tbtn_3"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="100dp"
-                        android:layout_marginLeft="100dp"
-                        android:layout_weight="0"
-                        android:text="RadioButton" />
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView27"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/jalnan"
-                    android:paddingLeft="30dp"
-                    android:text="탄수화물"
-                    android:textColor="#4C4C4C"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageView33"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/rice_ic" />
-
-                <ImageView
-                    android:id="@+id/imageView34"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/japgokbap_ic" />
-
-                <ImageView
-                    android:id="@+id/imageView35"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/konjac_ic" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <RadioGroup
-                    android:id="@+id/RadioGroup_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/tbtn_4"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="45dp"
-                        android:layout_marginLeft="45dp"
-                        android:layout_weight="0"
-                        android:text="RadioButton" />
-
-                    <RadioButton
-                        android:id="@+id/tbtn_5"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="105dp"
-                        android:layout_marginLeft="105dp"
-                        android:layout_weight="0"
-                        android:text="RadioButton" />
-
-                    <RadioButton
-                        android:id="@+id/tbtn_6"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="100dp"
-                        android:layout_marginLeft="100dp"
-                        android:layout_weight="0"
-                        android:text="RadioButton" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView31"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="30dp"
-                    android:text="지방"
-                    android:fontFamily="@font/jalnan"
-                    android:textColor="#4C4C4C"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageView36"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/green_vegetable_ic" />
-
-                <ImageView
-                    android:id="@+id/imageView37"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/seed_ic" />
-
-                <ImageView
-                    android:id="@+id/imageView38"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/nut_ic" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <RadioGroup
-                    android:id="@+id/RadioGroup_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/tbtn_7"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="45dp"
-                        android:layout_marginLeft="45dp"
-                        android:layout_weight="0"
-                        android:text="RadioButton" />
-
-                    <RadioButton
-                        android:id="@+id/tbtn_8"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="105dp"
-                        android:layout_marginLeft="105dp"
-                        android:layout_weight="0"
-                        android:text="RadioButton" />
-
-                    <RadioButton
-                        android:id="@+id/tbtn_9"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="100dp"
-                        android:layout_marginLeft="100dp"
-                        android:layout_weight="0"
-                        android:text="RadioButton" />
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView32"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="30dp"
-                    android:text="비타민"
-                    android:fontFamily="@font/jalnan"
-                    android:textColor="#4C4C4C"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageView39"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/fruit_ic" />
-
-                <ImageView
-                    android:id="@+id/imageView40"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/mushroom_ic" />
-
-                <ImageView
-                    android:id="@+id/imageView41"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/yellow_vegetable_ic" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <RadioGroup
-                    android:id="@+id/RadioGroup_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/tbtn_10"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="45dp"
-                        android:layout_marginLeft="45dp"
-                        android:layout_weight="0"
-                        android:text="RadioButton" />
-
-                    <RadioButton
-                        android:id="@+id/tbtn_11"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="105dp"
-                        android:layout_marginLeft="105dp"
-                        android:layout_weight="0"
-                        android:text="RadioButton" />
-
-                    <RadioButton
-                        android:id="@+id/tbtn_12"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="100dp"
-                        android:layout_marginLeft="100dp"
-                        android:layout_weight="0"
-                        android:text="RadioButton" />
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView33"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="30dp"
-                    android:text="칼슘"
-                    android:fontFamily="@font/jalnan"
-                    android:textColor="#4C4C4C"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageView42"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/cheesee_ic" />
-
-                <ImageView
-                    android:id="@+id/imageView43"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/anchovy_ic" />
-
-                <ImageView
-                    android:id="@+id/imageView44"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/seaweed_ic" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <RadioGroup
-                    android:id="@+id/RadioGroup_5"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/tbtn_13"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="45dp"
-                        android:layout_marginLeft="45dp"
-                        android:layout_weight="0"
-                        android:text="RadioButton" />
-
-                    <RadioButton
-                        android:id="@+id/tbtn_14"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="105dp"
-                        android:layout_marginLeft="105dp"
-                        android:layout_weight="0"
-                        android:text="RadioButton" />
-
-                    <RadioButton
-                        android:id="@+id/tbtn_15"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="100dp"
-                        android:layout_marginLeft="100dp"
-                        android:layout_weight="0"
-                        android:text="RadioButton" />
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btn_j"
-                    android:layout_width="180dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="17dp"
-                    android:layout_marginLeft="17dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_weight="0"
-                    android:fontFamily="@font/jalnan"
-                    android:text="장바구니"
-                    app:backgroundTint="#4c4c4c"
-                    app:cornerRadius="0dp" />
-
-                <Button
-                    android:id="@+id/btn_g"
-                    android:layout_width="180dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_weight="0"
-                    android:fontFamily="@font/jalnan"
-                    android:text="구매하기"
-                    app:backgroundTint="#670401"
-                    app:cornerRadius="0dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#EFEFEF"
-                android:orientation="horizontal"
-                android:padding="9dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/btn_nv1"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableTop="@drawable/main_change_red"
-                        android:text="헬스케어"
-                        android:textColor="#670401" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/btn_nv2"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableTop="@drawable/main_home_red"
-                        android:text="HOME"
-                        android:textColor="#670401" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/btn_nv3"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableTop="@drawable/main_user_red"
-                        android:text="내정보"
-                        android:textColor="#670401" />
-
-                </LinearLayout>
-            </LinearLayout>
-
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_weight="0.1"
+                app:srcCompat="@drawable/search_ic" />
+
+            <ImageView
+                android:id="@+id/shp1"
+                android:layout_width="20dp"
+                android:layout_height="27dp"
+                android:layout_weight="0.1"
+                app:srcCompat="@drawable/main_shopping_bag_ic" />
         </LinearLayout>
-    </ScrollView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView29"
+                    android:layout_width="390dp"
+                    android:layout_height="300dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    app:srcCompat="@drawable/choice_ic2" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/jalnan"
+                    android:paddingLeft="30dp"
+                    android:text="단백질"
+                    android:textColor="#4C4C4C"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView30"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/chicken_ic" />
+
+                    <ImageView
+                        android:id="@+id/imageView31"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/white_fish_ic" />
+
+                    <ImageView
+                        android:id="@+id/imageView32"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/tofu_ic" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="412dp"
+                    android:layout_height="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="39dp"
+                        android:layout_marginLeft="39dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:text="닭 가슴살" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="75dp"
+                        android:layout_marginLeft="75dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:text="흰살생선" />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="88dp"
+                        android:layout_marginLeft="88dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:text="두부" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/RadioGroup_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/tbtn_1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="45dp"
+                            android:layout_marginLeft="45dp"
+                            android:layout_weight="0"
+                            android:text="닭 가슴살"
+                            android:textColor="#000000" />
+
+                        <RadioButton
+                            android:id="@+id/tbtn_2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="105dp"
+                            android:layout_marginLeft="105dp"
+                            android:layout_weight="0"
+                            android:text="흰살생선" />
+
+                        <RadioButton
+                            android:id="@+id/tbtn_3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="100dp"
+                            android:layout_marginLeft="100dp"
+                            android:layout_weight="0"
+                            android:text="두부" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView27"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jalnan"
+                        android:paddingLeft="30dp"
+                        android:text="탄수화물"
+                        android:textColor="#4C4C4C"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView33"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/rice_ic" />
+
+                    <ImageView
+                        android:id="@+id/imageView34"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/japgokbap_ic" />
+
+                    <ImageView
+                        android:id="@+id/imageView35"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/konjac_ic" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="412dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView48"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="43dp"
+                        android:layout_marginLeft="43dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:text="흰 쌀밥" />
+
+                    <TextView
+                        android:id="@+id/textView49"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="90dp"
+                        android:layout_marginLeft="90dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:text="잡곡밥" />
+
+                    <TextView
+                        android:id="@+id/textView50"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="90dp"
+                        android:layout_marginLeft="90dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:text="곤약밥" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/RadioGroup_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/tbtn_4"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="45dp"
+                            android:layout_marginLeft="45dp"
+                            android:layout_weight="0"
+                            android:text="흰 쌀밥" />
+
+                        <RadioButton
+                            android:id="@+id/tbtn_5"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="105dp"
+                            android:layout_marginLeft="105dp"
+                            android:layout_weight="0"
+                            android:text="잡곡밥" />
+
+                        <RadioButton
+                            android:id="@+id/tbtn_6"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="100dp"
+                            android:layout_marginLeft="100dp"
+                            android:layout_weight="0"
+                            android:text="곤약밥" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView31"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jalnan"
+                        android:paddingLeft="30dp"
+                        android:text="지방"
+                        android:textColor="#4C4C4C"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/hot_img1"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/green_vegetable_ic" />
+
+                    <ImageView
+                        android:id="@+id/imageView37"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/seed_ic" />
+
+                    <ImageView
+                        android:id="@+id/imageView38"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/nut_ic" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="412dp"
+                    android:layout_height="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView109"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:text="녹색채소" />
+
+                    <TextView
+                        android:id="@+id/textView111"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="85dp"
+                        android:layout_marginLeft="85dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:text="씨앗류" />
+
+                    <TextView
+                        android:id="@+id/textView114"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="88dp"
+                        android:layout_marginLeft="88dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:text="견과류" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/RadioGroup_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/tbtn_7"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="45dp"
+                            android:layout_marginLeft="45dp"
+                            android:layout_weight="0"
+                            android:text="녹색채소" />
+
+                        <RadioButton
+                            android:id="@+id/tbtn_8"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="105dp"
+                            android:layout_marginLeft="105dp"
+                            android:layout_weight="0"
+                            android:text="씨앗류" />
+
+                        <RadioButton
+                            android:id="@+id/tbtn_9"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="100dp"
+                            android:layout_marginLeft="100dp"
+                            android:layout_weight="0"
+                            android:text="견과류" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView32"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jalnan"
+                        android:paddingLeft="30dp"
+                        android:text="비타민"
+                        android:textColor="#4C4C4C"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView39"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/fruit_ic" />
+
+                    <ImageView
+                        android:id="@+id/imageView40"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/mushroom_ic" />
+
+                    <ImageView
+                        android:id="@+id/imageView41"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/yellow_vegetable_ic" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="412dp"
+                    android:layout_height="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView115"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="45dp"
+                        android:layout_marginLeft="45dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:text="과일" />
+
+                    <TextView
+                        android:id="@+id/textView116"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="115dp"
+                        android:layout_marginLeft="115dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:text="버섯" />
+
+                    <TextView
+                        android:id="@+id/textView118"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="95dp"
+                        android:layout_marginLeft="95dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:text="황색채소" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/RadioGroup_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/tbtn_10"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="45dp"
+                            android:layout_marginLeft="45dp"
+                            android:layout_weight="0"
+                            android:text="과일" />
+
+                        <RadioButton
+                            android:id="@+id/tbtn_11"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="105dp"
+                            android:layout_marginLeft="105dp"
+                            android:layout_weight="0"
+                            android:text="버섯" />
+
+                        <RadioButton
+                            android:id="@+id/tbtn_12"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="100dp"
+                            android:layout_marginLeft="100dp"
+                            android:layout_weight="0"
+                            android:text="황색채소" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView33"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jalnan"
+                        android:paddingLeft="30dp"
+                        android:text="칼슘"
+                        android:textColor="#4C4C4C"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView42"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/cheesee_ic" />
+
+                    <ImageView
+                        android:id="@+id/imageView43"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/anchovy_ic" />
+
+                    <ImageView
+                        android:id="@+id/imageView44"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/seaweed_ic" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="412dp"
+                    android:layout_height="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView119"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="45dp"
+                        android:layout_marginLeft="45dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:text="치즈" />
+
+                    <TextView
+                        android:id="@+id/textView120"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="110dp"
+                        android:layout_marginLeft="110dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:text="멸치" />
+
+                    <TextView
+                        android:id="@+id/textView121"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginLeft="100dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:text="해조류" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/RadioGroup_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/tbtn_13"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="45dp"
+                            android:layout_marginLeft="45dp"
+                            android:layout_weight="0"
+                            android:text="치즈" />
+
+                        <RadioButton
+                            android:id="@+id/tbtn_14"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="105dp"
+                            android:layout_marginLeft="105dp"
+                            android:layout_weight="0"
+                            android:text="멸치" />
+
+                        <RadioButton
+                            android:id="@+id/tbtn_15"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="100dp"
+                            android:layout_marginLeft="100dp"
+                            android:layout_weight="0"
+                            android:text="해조류" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="30dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_j"
+                        android:layout_width="180dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginLeft="17dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/jalnan"
+                        android:text="담기"
+                        app:backgroundTint="#4c4c4c"
+                        app:cornerRadius="0dp" />
+
+                    <Button
+                        android:id="@+id/btn_g"
+                        android:layout_width="180dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/jalnan"
+                        android:text="구매하기"
+                        app:backgroundTint="#670401"
+                        app:cornerRadius="0dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EFEFEF"
+            android:orientation="horizontal"
+            android:padding="9dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_nv1"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/main_change_red"
+                    android:text="헬스케어"
+                    android:textColor="#670401" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_nv2"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/main_home_red"
+                    android:text="HOME"
+                    android:textColor="#670401" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_nv3"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/main_user_red"
+                    android:text="내정보"
+                    android:textColor="#670401" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

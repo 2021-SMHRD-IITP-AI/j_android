@@ -1,13 +1,11 @@
 package com.smhrd.j.android;
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -27,10 +25,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 
@@ -43,17 +38,6 @@ public class Login_contract extends AppCompatActivity {
     private StringRequest stringRequest;
 
     Spinner spinner;
-
-    Calendar myCalendar = Calendar.getInstance();
-    DatePickerDialog.OnDateSetListener myDatePicker = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-            myCalendar.set(Calendar.YEAR, year);
-            myCalendar.set(Calendar.MONTH, month);
-            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-            updateLabel();
-        }
-    };
 
 
     @Override
@@ -70,16 +54,6 @@ public class Login_contract extends AppCompatActivity {
         address=findViewById(R.id.address);
         birth=findViewById(R.id.birth);
 
-        //달력//
-        birth.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                new DatePickerDialog(Login_contract.this,myDatePicker,myCalendar.get(Calendar.YEAR),
-                        myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-            }
-        });
-
-        //스피너
         final String[] data = getResources().getStringArray(R.array.array);
         ArrayAdapter<String> adapter =new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,data);
         Spinner spinner1 = (Spinner) findViewById(R.id.spinner);
@@ -101,6 +75,7 @@ public class Login_contract extends AppCompatActivity {
 
     private void sendRequest() {
 
+
         queue = Volley.newRequestQueue(this);
         String url = "http://222.102.104.135:3000/Join";
         stringRequest = new StringRequest(Request.Method.POST,
@@ -114,17 +89,17 @@ public class Login_contract extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     String value = jsonObject.getString("check");
                     Log.v("result", value);
-                    if(value.equals("true")){
+                    if(value != null){
                         Intent intent = new Intent(getApplicationContext(), Login.class);
                         startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"회원가입성공",Toast.LENGTH_SHORT).show();
                         Log.v("test","가입성공");
                     }else{
                         Toast.makeText(getApplicationContext(),"회원가입에실패했습니다.",Toast.LENGTH_SHORT).show();
-                        id.setText("");
-                        pw1.setText("");
-                        name.setText("");
-                        h_p.setText("");
-                        Log.v("test","실패");
+                            id.setText("");
+                            pw1.setText("");
+                            name.setText("");
+                            h_p.setText("");
                     }
 
                 } catch (JSONException e) {
@@ -151,15 +126,13 @@ public class Login_contract extends AppCompatActivity {
                 params.put("birth",birth.getText().toString());
 
                 return params;
+
+
             }
         };
         queue.add(stringRequest);
     }
-    private void updateLabel() {
-        String myDate = "yyy/MM/dd";
-        SimpleDateFormat dateFormat = new SimpleDateFormat(myDate, Locale.KOREA);
-        birth.setText(dateFormat.format(myCalendar.getTime()));
     }
-}
+
 
 
