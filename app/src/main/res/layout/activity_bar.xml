@@ -244,19 +244,19 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView11"
+                                android:id="@+id/img_recom7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="200dp"
                                 app:srcCompat="@drawable/bar_img1" />
 
                             <TextView
-                                android:id="@+id/textView3"
+                                android:id="@+id/tv_recom_name7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="녹차 프로틴바" />
 
                             <TextView
-                                android:id="@+id/textView4"
+                                android:id="@+id/tv_recom_price7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="1,900원" />
@@ -271,19 +271,19 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageView12"
+                                android:id="@+id/img_recom8"
                                 android:layout_width="match_parent"
                                 android:layout_height="200dp"
                                 app:srcCompat="@drawable/bar_img2" />
 
                             <TextView
-                                android:id="@+id/textView8"
+                                android:id="@+id/tv_recom_name8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="아몬드 프로틴바" />
 
                             <TextView
-                                android:id="@+id/textView21"
+                                android:id="@+id/tv_recom_price8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="1,900원" />

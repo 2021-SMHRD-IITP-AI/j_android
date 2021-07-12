@@ -36,6 +36,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -48,26 +49,19 @@ public class HealthDaily extends AppCompatActivity {
    private CheckBox health_ck;
    private Button health_add;
    private LinearLayout layout1;
-   int state_cnt ;
-   String sp_health,ck_check,sp_cnt;
-
+   int state_cnt;
+   private String ck_check;
+    private String result = "";
+    private String date_daily = "";
 
     private RequestQueue queue;
     private StringRequest stringRequest;
 
     Calendar myCalendar = Calendar.getInstance();
-  //  DatePickerDialog.OnDateSetListener myDatePicker = new DatePickerDialog.OnDateSetListener() {
-      //  @Override
-//        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-//            myCalendar.set(Calendar.YEAR, year);
-//            myCalendar.set(Calendar.MONTH, month);
-//            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-//            updateLabel();
-//        }
-//
-//    };
-//
 
+
+
+    private ArrayList<HealthDTO> list = new ArrayList<HealthDTO>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,36 +69,32 @@ public class HealthDaily extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_daily);
 
+        checkHealth();
+
+
         health_edt=findViewById(R.id.health_edt);
         health_cal =findViewById(R.id.health_cal);
         health_add = findViewById(R.id.health_add);
         layout1 = (LinearLayout) findViewById(R.id.layout1);
         health_ck = findViewById(R.id.health_ck);
 
+        for(int i = 0; i < list.size(); i++){
 
-//        public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
-//        {
-//            view = inflater.inflate(R.layout.frag2, container, false);
-//
-//            mCalendarView = (CalendarView) view.findViewById(R.id.calendarView);
-//
-//            health_cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() // 날짜 선택 이벤트
-//            {
-//                @Override
-//                public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth)
-//                {
-//                    String date = year + "/" + (month + 1) + "/" + dayOfMonth;
-//                    Log.v("date",date); // 선택한 날짜로 설정
-//
-//                }
-//            });
-//        }
+//            if(건강일지 날짜 가져오기 == list.get(i).getDate()){
+//                layout1.setVisibility((View.VISIBLE));
+//            }else{
+//                layout1.setVisibility((View.INVISIBLE));
+//            }
+        }
+
 
         health_cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 month += 1;
-                //health_edt.setText(String.format("%d년 %d월 %d일" ,year,month,dayOfMonth));
+                //health_edt.setText(String.format("%d년 %d월 %d일" ,year,month,dayOfMonth));  //캘린더날짜 출력
+               // date_daily =
+
                 if (state_cnt % 2 == 0) {
                     layout1.setVisibility((View.VISIBLE));
                     state_cnt++;
@@ -129,14 +119,10 @@ public class HealthDaily extends AppCompatActivity {
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //Log.v("health",""+spinner1.getItemAtPosition(position));
-                if (spinner1.getItemAtPosition(position).toString() =="감기"){
-                    sp_cnt = "0";
-                }else if (spinner1.getItemAtPosition(position).toString() =="근육통"){
-                    sp_cnt = "1";
-                }
-
+                Log.v("health",""+position+spinner1.getItemAtPosition(position));
                 ((TextView)parent.getChildAt(0)).setTextColor(Color.BLACK);
+                //스피너값
+                result = (String)spinner1.getItemAtPosition(position);
             }
 
             @Override
@@ -147,33 +133,71 @@ public class HealthDaily extends AppCompatActivity {
 
 
 
-
         health_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                daily = health_edt.getText().toString();
-//                Log.v("a", daily);
-//                health_edt.setText(daily);
-//                Log.v("a", sp_health);
                 if (health_ck.isChecked()){
                     ck_check = "true";
-                    health_ck.setChecked(true);
+                    // health_ck.setChecked(true);
                 }else{
                     ck_check = "false";
-                    health_ck.setChecked(false);
+                    // health_ck.setChecked(false);
                 }
-//                health_add.setVisibility(View.INVISIBLE);
+
                 sendRequest();
             }
         });
 
     }
 
+    //서버에서 데이터 받아오기
+    public void checkHealth() {
+        queue = Volley.newRequestQueue(this);
+        String url = "http://222.102.104.135:3000/NoteOut";
+        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override//응답을 받아왔으 때
+            public void onResponse(String response) { //server로 부터 데이터를 받아오는 곳
+                Log.v("resultValue", response);
+
+                if(!response.equals("null")){
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        String date = jsonObject.getString("date");
+                        String health_daily = jsonObject.getString("daily");
+                        String id = jsonObject.getString("id");
+                        String health_check = jsonObject.getString("ck");
+                        String health_spinner = jsonObject.getString("sp");
+                        //HealthDTO info = new HealthDTO(date, health_daily,id,health_check,health_spinner);
+
+                    }catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
 
 
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {//server 통신 시 Error발생하면 오는 곳
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError { //server로 데이터를 보낼 시 넣어주는 곳
+                Map<String,String> params = new HashMap<String, String>();
+                return params;
+            }
+        };
+
+        queue.add(stringRequest);
+    }
+
+
+
+    //서버로 데이터 보내기
     public void sendRequest() {
         queue = Volley.newRequestQueue(this);
-        String url = "http://222.102.104.135:3000/Note";
+        String url = "http://222.102.104.135:3000/NoteIn";
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override//응답을 받아왔으 때
             public void onResponse(String response) { //server로 부터 데이터를 받아오는 곳
@@ -184,11 +208,7 @@ public class HealthDaily extends AppCompatActivity {
                     String value = jsonObject.getString("check");
                     Log.v("resultValue", value);
                     if (value.equals("true")){
-//                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-//                        startActivity(intent);
-//                        String daily = jsonObject.getString("daily");
-//                        String ck = jsonObject.getString("ck");
-//                        String sp = jsonObject.getString("sp");
+
 
 
                     }else {
@@ -209,16 +229,16 @@ public class HealthDaily extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError { //server로 데이터를 보낼 시 넣어주는 곳
                 Map<String,String> params = new HashMap<String, String>();
-                //한번에 바꾸기 alt+shift+r
                 params.put("daily", health_edt.getText().toString());
                 params.put("ck",ck_check);
-                params.put("sp",sp_cnt);
+                params.put("sp",result);
                 return params;
             }
         };
 
         queue.add(stringRequest);
     }
+
 
 
 }
