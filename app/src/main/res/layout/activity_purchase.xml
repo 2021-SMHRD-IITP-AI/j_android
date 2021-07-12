@@ -221,14 +221,14 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/hot_img1"
+                            android:id="@+id/img_recom1"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_weight="1"
                             app:srcCompat="@drawable/purchase_img1" />
 
                         <TextView
-                            android:id="@+id/textView53"
+                            android:id="@+id/tv_recom_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -238,7 +238,7 @@
                             android:textColor="#4C4C4C" />
 
                         <TextView
-                            android:id="@+id/textView57"
+                            android:id="@+id/tv_recom_price"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -257,14 +257,14 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/imageView37"
+                            android:id="@+id/img_recom2"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_weight="1"
                             app:srcCompat="@drawable/purchase_img2" />
 
                         <TextView
-                            android:id="@+id/textView54"
+                            android:id="@+id/tv_recom_name2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -274,7 +274,7 @@
                             android:textColor="#4C4C4C" />
 
                         <TextView
-                            android:id="@+id/textView58"
+                            android:id="@+id/tv_recom_price2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"

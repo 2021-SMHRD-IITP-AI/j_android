@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,7 +29,7 @@ public class Main extends AppCompatActivity {
     private Button btn_mu1,btn_mu2,btn_mu3,btn_mu4,btn_mu5,btn_mu6,btn_mu7,btn_mu8, btn_more1, btn_j, btn_nv1, btn_nv2,btn_nv3;
     private ImageView ctgr,search1, shp1,img1,img2,img3,cir1,cir2,cir3,cir4,cir5,cir6;
     private TextView menu1,menu2,menu3,menu4,tv_lu_name1,tv_lu_name2,tv_lu_name3,tv_pa1,tv_pa2,tv_pa3;
-
+    private ImageView imageView;
 
 
     @Override
@@ -163,14 +164,61 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new JSONTask().execute("http://222.102.104.135:3000/txts/go_recom.txt");
-//                new JSONTask().execute("http://222.102.104.135:3000/Dise"); // 디비로 접근하는건데 과부하 걸려서 안되는듯..
+//                new JSONTask().execute("http://222.102.104.135:3000/Dise"); // 디비로 접근하는건데 과부하 걸려서 안되는듯..? HTML을 띄워주는듯?
+                new JSONTask2().execute("http://222.102.104.135:3000/txts/go.warn.txt");
             }
         });
 
+        // 내 정보
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                startActivity(intent);
+            }
+        });
+
+        // 도시락
+        btn_mu1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "http://222.102.104.135:3000/imgs/9chan.png";
+                String url2 = "http://222.102.104.135:3000/imgs/bibim.png";
+                String url3 = "http://222.102.104.135:3000/imgs/bul.png";
+                String url4 = "http://222.102.104.135:3000/imgs/galic.png";
+                String url5 = "http://222.102.104.135:3000/imgs/kimchi.png";
+                String url6 = "http://222.102.104.135:3000/imgs/pork.png";
+                String url7 = "http://222.102.104.135:3000/imgs/hotnuddle.png";
+                String url8 = "http://222.102.104.135:3000/imgs/nuddle.png";
+
+                String[] value = {url, url2, url3, url4, url5, url6, url7, url8};
+
+                String url_name = "9가지 반찬 도시락";
+                String url2_name = "알찬 비빔밥";
+                String url3_name = "간장 불고기 잡곡 도시락";
+                String url4_name = "마늘 소세지 도시락";
+                String url5_name = "김치볶음밥";
+                String url6_name = "삼겹살 현미 도시락";
+                String url7_name = "매콤 쌀국수";
+                String url8_name = "우동 쌀국수";
+
+                String[] name = {url_name, url2_name, url3_name, url4_name, url5_name, url6_name, url7_name, url8_name};
+
+                String url_price = "6,000원";
+                String url2_price = "4,900원";
+                String url3_price = "5,500원";
+                String url4_price = "5,200원";
+                String url5_price = "5,000원";
+                String url6_price = "5,700원";
+                String url7_price = "4,500원";
+                String url8_price = "4,500원";
+
+                String[] price = {url_price, url2_price, url3_price, url4_price, url5_price, url6_price, url7_price, url8_price};
+
+                Intent intent = new Intent(getApplicationContext(), Recommend_lunch_box.class);
+                intent.putExtra("imageUrl", value);
+                intent.putExtra("imgName", name);
+                intent.putExtra("imgPrice", price);
                 startActivity(intent);
             }
         });
@@ -227,6 +275,60 @@ public class Main extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), HealthCare.class);
             intent.putExtra("result", result);
             startActivity(intent);
+        }
+    }
+
+    public class JSONTask2 extends AsyncTask<String, String, String>{
+        @Override
+        protected String doInBackground(String... urls) {
+            try {
+                HttpURLConnection con = null;
+                BufferedReader reader = null;
+                try {
+                    URL url = new URL(urls[0]);
+                    con = (HttpURLConnection) url.openConnection();
+                    con.connect();
+
+                    InputStream stream = con.getInputStream();
+
+                    reader = new BufferedReader(new InputStreamReader(stream));
+
+                    StringBuffer buffer = new StringBuffer();
+
+                    String line = "";
+
+                    while((line = reader.readLine()) != null){
+                        buffer.append(line);
+                    }
+                    return buffer.toString();
+
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (IOException e){
+                    e.printStackTrace();
+                } finally {
+                    if(con != null){
+                        con.disconnect();
+                    }
+                    try {
+                        if(reader != null){
+                            reader.close();
+                        }
+                    } catch (IOException e){
+                        e.printStackTrace();
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+        @Override
+        protected void onPostExecute(String result2) {
+            super.onPostExecute(result2);
+            Intent intent2 = new Intent(getApplicationContext(), HealthCare.class);
+            intent2.putExtra("result2", result2);
+            startActivity(intent2);
         }
     }
 }
