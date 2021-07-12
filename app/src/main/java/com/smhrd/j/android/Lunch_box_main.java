@@ -154,9 +154,7 @@ public class Lunch_box_main extends AppCompatActivity {
                     //버튼 비활성화(else)/영양소 미선택시 팝업
                     //btn_g.setEnabled(true);
                     // return;
-
                 }
-
             }
         });
 

@@ -57,7 +57,7 @@ public class Login extends AppCompatActivity {
         tv_find=findViewById(R.id.tv_find);
 
         String login = PreferenceManager.getString(getApplicationContext(), "login");
-        if (!cb_login.equals("")) {
+        if (!login.equals("")) {
             try {
                 JSONObject jsonObject = new JSONObject(login);
                 String id = jsonObject.getString("id");
@@ -108,9 +108,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
-
-                String login = PreferenceManager.getString(getApplicationContext(),"login");
-
+                String login2 = PreferenceManager.getString(getApplicationContext(),"login2");
                 if(!response.equals("null") ){
                     try {
                         JSONObject jsonObject = new JSONObject(response);
@@ -124,8 +122,7 @@ public class Login extends AppCompatActivity {
 
                         //PreferenceManager.setString(getApplicationContext(), "login", login);
 
-                        Intent intent = new Intent(getApplicationContext(), Main.class);
-                        startActivity(intent);
+
 
 
                     } catch (JSONException e) {
@@ -135,6 +132,9 @@ public class Login extends AppCompatActivity {
                 }else {
                     Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
                 }
+
+                Intent intent = new Intent(getApplicationContext(), Main.class);
+                startActivity(intent);
 
             }
         }, new Response.ErrorListener() {
