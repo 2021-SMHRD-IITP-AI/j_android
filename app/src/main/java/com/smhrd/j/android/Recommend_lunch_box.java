@@ -34,7 +34,7 @@ public class Recommend_lunch_box extends AppCompatActivity {
         img_recom5 = findViewById(R.id.img_recom5);
         img_recom6 = findViewById(R.id.img_recom6);
         img_recom7 = findViewById(R.id.img_recom7);
-        img_recom8 = findViewById(R.id.im)
+        img_recom8 = findViewById(R.id.img_recom8);
 
         tv_recom_name1 = findViewById(R.id.tv_recom_name1);
         tv_recom_name2 = findViewById(R.id.tv_recom_name2);
