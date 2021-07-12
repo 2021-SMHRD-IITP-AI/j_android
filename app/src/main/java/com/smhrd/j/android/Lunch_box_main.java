@@ -12,9 +12,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Lunch_box_main extends AppCompatActivity {
+
     private Button  btn_g;
 
-    private String btn_j;
+//    private Button btn_j;
+
+//    private RadioGroup RadioGroup_1, RadioGroup_2, RadioGroup_3,RadioGroup_4,RadioGroup_5;
+
+//    private String btn_j;
     private RadioButton tbtn_1,tbtn_2,tbtn_3,tbtn_4,tbtn_5,tbtn_6,tbtn_7
             ,tbtn_8,tbtn_9,tbtn_10,tbtn_11,tbtn_12,tbtn_13,tbtn_14,tbtn_15;
 
@@ -27,6 +32,7 @@ public class Lunch_box_main extends AppCompatActivity {
 //        btn_j=findViewById(R.id.btn_j);
         btn_g=findViewById(R.id.btn_g);
 
+
         //담는 버튼
 //        btn_j.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -38,11 +44,17 @@ public class Lunch_box_main extends AppCompatActivity {
 //            }
 //        });
 
-        final RadioGroup group1=(RadioGroup)findViewById(R.id.RadioGroup_1);
-        final RadioGroup group2=(RadioGroup)findViewById(R.id.RadioGroup_2);
-        final RadioGroup group3=(RadioGroup)findViewById(R.id.RadioGroup_3);
-        final RadioGroup group4=(RadioGroup)findViewById(R.id.RadioGroup_4);
-        final RadioGroup group5=(RadioGroup)findViewById(R.id.RadioGroup_5);
+       RadioGroup group1=(RadioGroup)findViewById(R.id.RadioGroup_1);
+       RadioGroup group2=(RadioGroup)findViewById(R.id.RadioGroup_2);
+       RadioGroup group3=(RadioGroup)findViewById(R.id.RadioGroup_3);
+       RadioGroup group4=(RadioGroup)findViewById(R.id.RadioGroup_4);
+       RadioGroup group5=(RadioGroup)findViewById(R.id.RadioGroup_5);
+
+//       final String group_1 = ((RadioButton)findViewById(group1.getCheckedRadioButtonId())).getText().toString();
+//       final String group_2 = ((RadioButton)findViewById(group2.getCheckedRadioButtonId())).getText().toString();
+//       final String group_3 = ((RadioButton)findViewById(group3.getCheckedRadioButtonId())).getText().toString();
+//       final String group_4 = ((RadioButton)findViewById(group4.getCheckedRadioButtonId())).getText().toString();
+//       final String group_5 = ((RadioButton)findViewById(group5.getCheckedRadioButtonId())).getText().toString();
 
 
         //단백질 라디오
@@ -152,7 +164,7 @@ public class Lunch_box_main extends AppCompatActivity {
 
 
 //                if(btn_j != null){
-//                Toast.makeText(Lunch_box_main.this, (CharSequence) btn_j,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Lunch_box_main.this, btn_j,Toast.LENGTH_SHORT).show();
 //
 //                    //버튼 비활성화(else)/영양소 미선택시 팝업
 //                    btn_g.setEnabled(true);
@@ -163,15 +175,10 @@ public class Lunch_box_main extends AppCompatActivity {
 //                    //버튼 활성화
 //                    btn_g.setEnabled(false);
 //
-//
 //                }
             }
 
-
-
         });
-
-
 
    }
 }
