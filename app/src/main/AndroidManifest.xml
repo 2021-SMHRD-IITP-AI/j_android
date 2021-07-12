@@ -16,11 +16,7 @@
 
 
         <activity android:name=".Proteen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".MyPage"></activity>
         <activity android:name=".MyPage_Main"></activity>
@@ -30,9 +26,18 @@
         <activity android:name=".Coupon"></activity>
         <activity android:name=".Payment"></activity>
         <activity android:name=".HealthCare"></activity>
-        <activity android:name=".HealthDaily" />
+        <activity android:name=".HealthDaily">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Hot_item"></activity>
-        <activity android:name=".Main" />
+        <activity android:name=".Main" >
+
+        </activity>
+
         <activity android:name=".Login_contract" />
         <activity android:name=".Login" />
         <activity android:name=".Lunch_box_main" />
