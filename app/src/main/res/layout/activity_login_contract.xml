@@ -280,7 +280,7 @@
                     android:textColor="@color/black" />
 
                 <Button
-                    android:id="@+id/btn_contract"
+                    android:id="@+id/btn_contract1"
                     android:layout_width="296dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="55dp"

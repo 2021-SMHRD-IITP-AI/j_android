@@ -5,17 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
 
 
 import org.json.JSONException;
@@ -24,7 +20,7 @@ import org.json.JSONObject;
 public class Login extends AppCompatActivity {
 
     private EditText id_login, pw_login;
-    private Button btn_contract, btn_login;
+    private Button btn_contract1, btn_login;
     private CheckBox cb_login;
 
 
@@ -36,7 +32,7 @@ public class Login extends AppCompatActivity {
         id_login=findViewById(R.id.id_login);
         pw_login=findViewById(R.id.pw_login);
         btn_login=findViewById(R.id.btn_login);
-        btn_contract=findViewById(R.id.btn_contract);
+        btn_contract1=findViewById(R.id.btn_contract1);
         cb_login=findViewById(R.id.cb_login);
 
 //        String login = PreferenceManager.getString(getApplicationContext(),"login");
@@ -56,7 +52,7 @@ public class Login extends AppCompatActivity {
 //        }
 
 
-        btn_contract.setOnClickListener(new View.OnClickListener() {
+        btn_contract1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Login_contract.class);

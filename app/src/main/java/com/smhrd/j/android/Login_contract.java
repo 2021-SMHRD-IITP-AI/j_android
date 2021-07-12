@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -88,7 +87,7 @@ public class Login_contract extends AppCompatActivity {
 
 
 
-        btn_contract=findViewById(R.id.btn_contract);
+        btn_contract=findViewById(R.id.btn_contract1);
 
         btn_contract.setOnClickListener(new View.OnClickListener() {
             @Override
