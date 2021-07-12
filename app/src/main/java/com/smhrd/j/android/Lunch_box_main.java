@@ -177,7 +177,7 @@ public class Lunch_box_main extends AppCompatActivity {
                 }else{
                    // Toast.makeText(Lunch_box_main.this,"영양소를 선택 해주세요",Toast.LENGTH_SHORT).show();
                    // 버튼 활성화
-                    btn_g.setEnabled(false);
+                    //btn_g.setEnabled(false);
                     Log.v("야","안 담김"+ result1);
 
 
