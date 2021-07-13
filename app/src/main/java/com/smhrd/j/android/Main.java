@@ -8,12 +8,23 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -24,6 +35,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main extends AppCompatActivity {
     private Button btn_mu1,btn_mu2,btn_mu3,btn_mu4,btn_mu5,btn_mu6,btn_mu7,btn_mu8, btn_more1, btn_j, btn_nv1, btn_nv2,btn_nv3;
@@ -31,6 +44,8 @@ public class Main extends AppCompatActivity {
     private TextView menu1,menu2,menu3,menu4,tv_lu_name1,tv_lu_name2,tv_lu_name3,tv_pa1,tv_pa2,tv_pa3;
     private ImageView imageView;
 
+    private RequestQueue queue;
+    private StringRequest stringRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,8 +92,8 @@ public class Main extends AppCompatActivity {
         tv_pa2=findViewById(R.id.tv_pa2);
         tv_pa3=findViewById(R.id.tv_pa3);
 
-
-        shp1.setOnClickListener(new View.OnClickListener() {//장바구니 페이지 이동
+        //장바구니 페이지 이동
+        shp1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Cart.class);
@@ -86,8 +101,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-
-        //인기상품
+        //인기상품 안됨
         menu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,84 +110,20 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        //맞춤도시락
-        btn_mu3.setOnClickListener(new View.OnClickListener() {
+        //이달의 특가 안됨
+        menu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Lunch_box_main.class);
+                Intent intent = new Intent(getApplicationContext(),Sale.class);
                 startActivity(intent);
             }
         });
 
-        //프로틴
-        btn_mu4.setOnClickListener(new View.OnClickListener() {
+        //헬스케어
+        menu3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Proteen.class);
-                startActivity(intent);
-            }
-        });
-
-        //일일 추천 더보기
-        btn_more1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Today_lunch_box.class);
-                startActivity(intent);
-            }
-        });
-
-        //간편식
-        btn_mu6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Snack.class);
-                startActivity(intent);
-            }
-        });
-
-        //샐러드
-        btn_mu2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Salad.class);
-                startActivity(intent);
-            }
-        });
-
-
-        img1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Purchase.class);
-//                intent.putExtra("name1",tv_lu_name1.getText().toString());
-//                intent.putExtra("name2",tv_pa1.getText().toString());
-
-//                Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.main_img4);
-//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-//                byte[] byteArray = stream.toByteArray();
-//                intent.putExtra("image",byteArray);
-
-                startActivity(intent);
-            }
-        });
-
-        // 헬스케어
-        btn_nv1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new JSONTask().execute("http://222.102.104.135:3000/txts/go_recom.txt");
-//                new JSONTask().execute("http://222.102.104.135:3000/Dise"); // 디비로 접근하는건데 과부하 걸려서 안되는듯..? HTML을 띄워주는듯?
-                new JSONTask2().execute("http://222.102.104.135:3000/txts/go.warn.txt");
-            }
-        });
-
-        // 내 정보
-        btn_nv3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                Intent intent = new Intent(getApplicationContext(),HealthCare.class);
                 startActivity(intent);
             }
         });
@@ -222,7 +172,167 @@ public class Main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //샐러드
+        btn_mu2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Salad.class);
+                startActivity(intent);
+            }
+        });
+
+
+        //맞춤도시락
+        btn_mu3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Lunch_box_main.class);
+                startActivity(intent);
+            }
+        });
+
+        //프로틴
+        btn_mu4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Proteen.class);
+                startActivity(intent);
+            }
+        });
+
+        //건강간식
+        btn_mu5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Bar.class);
+                startActivity(intent);
+            }
+        });
+
+        //간편식
+        btn_mu6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Snack.class);
+                startActivity(intent);
+            }
+        });
+
+        //헬스케어
+        btn_mu7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),HealthCare.class);
+                startActivity(intent);
+            }
+        });
+
+
+        //일일 추천 더보기   안됨
+        btn_more1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Today_lunch_box.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+        img1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Purchase.class);
+//                intent.putExtra("name1",tv_lu_name1.getText().toString());
+//                intent.putExtra("name2",tv_pa1.getText().toString());
+
+//                Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.main_img4);
+//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+//                byte[] byteArray = stream.toByteArray();
+//                intent.putExtra("image",byteArray);
+
+                startActivity(intent);
+            }
+        });
+
+        // 헬스케어 -> 수정중
+        btn_nv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                new JSONTask().execute("http://222.102.104.135:3000/txts/go_recom.txt");
+////                new JSONTask().execute("http://222.102.104.135:3000/Dise"); // 디비로 접근하는건데 과부하 걸려서 안되는듯..? HTML을 띄워주는듯?
+//                new JSONTask2().execute("http://222.102.104.135:3000/txts/go_warn.txt");
+
+                JSONObject jsonObject = new JSONObject();
+
+            }
+        });
+
+        // 내 정보
+        btn_nv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
+
+    private void sendRequest() {
+
+
+        queue = Volley.newRequestQueue(this);
+        String url = "http://222.102.104.135:3000/Join";
+        stringRequest = new StringRequest(Request.Method.POST,
+                url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                Log.v("resultValue",response);
+
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    String value = jsonObject.getString("check");
+                    Log.v("result", value);
+                    if(value != null){
+                        Intent intent = new Intent(getApplicationContext(), Login.class);
+                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"회원가입성공",Toast.LENGTH_SHORT).show();
+                        Log.v("test","가입성공");
+                    }else{
+                        Toast.makeText(getApplicationContext(),"회원가입에실패했습니다.",Toast.LENGTH_SHORT).show();
+
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String, String> params = new HashMap<String, String>();
+
+                return params;
+
+
+            }
+        };
+        queue.add(stringRequest);
+    }
+
 
     public class JSONTask extends AsyncTask<String, String, String>{
         @Override
@@ -272,6 +382,7 @@ public class Main extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
+            Log.d("result", result);
             Intent intent = new Intent(getApplicationContext(), HealthCare.class);
             intent.putExtra("result", result);
             startActivity(intent);
@@ -326,6 +437,7 @@ public class Main extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result2) {
             super.onPostExecute(result2);
+            Log.d("result2", result2);
             Intent intent2 = new Intent(getApplicationContext(), HealthCare.class);
             intent2.putExtra("result2", result2);
             startActivity(intent2);

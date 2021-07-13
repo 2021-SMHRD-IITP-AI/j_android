@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Lunch_box_main extends AppCompatActivity {
-    private Button  btn_g,btn_j;
+    private Button  btn_g,btn_j, btn_nv1, btn_nv2, btn_nv3;
 
     private RadioButton tbtn_1,tbtn_2,tbtn_3,tbtn_4,tbtn_5,tbtn_6,tbtn_7
             ,tbtn_8,tbtn_9,tbtn_10,tbtn_11,tbtn_12,tbtn_13,tbtn_14,tbtn_15;
@@ -28,17 +28,9 @@ public class Lunch_box_main extends AppCompatActivity {
 
         btn_j=findViewById(R.id.btn_j);
         btn_g=findViewById(R.id.btn_g);
-
-        //담는 버튼
-        btn_j.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //라디오버튼 선택값 저장 코드 작성필요
-
-
-                Toast.makeText(getApplicationContext(),"선택되었습니다.",Toast.LENGTH_SHORT).show();
-            }
-        });
+        btn_nv1 = findViewById(R.id.btn_nv1);
+        btn_nv2 = findViewById(R.id.btn_nv2);
+        btn_nv3 = findViewById(R.id.btn_nv3);
 
         final RadioGroup group1=(RadioGroup)findViewById(R.id.RadioGroup_1);
         final RadioGroup group2=(RadioGroup)findViewById(R.id.RadioGroup_2);
@@ -46,12 +38,34 @@ public class Lunch_box_main extends AppCompatActivity {
         final RadioGroup group4=(RadioGroup)findViewById(R.id.RadioGroup_4);
         final RadioGroup group5=(RadioGroup)findViewById(R.id.RadioGroup_5);
 
+        btn_nv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_nv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Main.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_nv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                startActivity(intent);
+            }
+        });
 
         //단백질 라디오
         group1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-
 
                 if(checkedId == R.id.tbtn_1){
                     Toast.makeText(getApplicationContext(),"닭가슴살 선택",Toast.LENGTH_SHORT).show();
@@ -148,12 +162,32 @@ public class Lunch_box_main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(result1 != null && result2 != null && result3 != null && result4 != null && result5 != null){
-                    //Toast.makeText(Lunch_box_main.this, (CharSequence) btn_j,Toast.LENGTH_SHORT).show();
                     Log.v("야", "담기 성공");
+//                    String dan = "60";
+//                    String tbtn_1 = "28";
+//                    String tbtn_2 = "25";
+//                    String tbtn_3 = "9";
+//                    if(!dan.equals(tbtn_3)){
+//                        Log.v("야", "단백질 19g이 부족합니다.");
+//                    } else{
+//                        Log.v("야", "담기 성공");
+//                    }
+
+                    Intent intent = new Intent(getApplicationContext(), Lunch_test.class);
+                    intent.putExtra("result1", result1);
+                    intent.putExtra("result2", result2);
+                    intent.putExtra("result3", result3);
+                    intent.putExtra("result4", result4);
+                    intent.putExtra("result5", result5);
+                    startActivity(intent);
 
                     //버튼 비활성화(else)/영양소 미선택시 팝업
                     //btn_g.setEnabled(true);
                     // return;
+
+                } else{
+                    Log.v("야", "담기 실패");
+                    Toast.makeText(getApplicationContext(), "5대 영양소를 모두 선택했는지 확인해주세요.", Toast.LENGTH_SHORT);
                 }
             }
         });
@@ -167,8 +201,14 @@ public class Lunch_box_main extends AppCompatActivity {
                 //맞게 담았는지 확인하는 코드 작성하기
                 if(result1 != null && result2 != null && result3 != null && result4 != null && result5 != null){
                     //Toast.makeText(Lunch_box_main.this, (CharSequence) btn_j,Toast.LENGTH_SHORT).show();
-                    Log.v("야", "담기 성공");
-
+                    Log.v("야", "구매 성공");
+                    Intent intent = new Intent(getApplicationContext(), Payment.class);
+                    intent.putExtra("result1", result1);
+                    intent.putExtra("result2", result2);
+                    intent.putExtra("result3", result3);
+                    intent.putExtra("result4", result4);
+                    intent.putExtra("result5", result5);
+                    startActivity(intent);
                     //버튼 비활성화(else)/영양소 미선택시 팝업
 //                    btn_g.setEnabled(true);
 
@@ -176,7 +216,7 @@ public class Lunch_box_main extends AppCompatActivity {
                     // Toast.makeText(Lunch_box_main.this,"영양소를 선택 해주세요",Toast.LENGTH_SHORT).show();
                     // 버튼 활성화
                     //btn_g.setEnabled(false);
-                    Log.v("야","안 담김"+ result1);
+                    Log.v("야","구매 실패"+ result1);
 
 
                 }
