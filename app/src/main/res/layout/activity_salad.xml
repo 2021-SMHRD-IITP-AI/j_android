@@ -38,6 +38,7 @@
                 android:layout_weight="0.8"
                 android:background="#F4F4F4"
                 android:text="샐러드"
+                android:fontFamily="@font/jalnan"
                 android:textColor="#4C4C4C"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -245,17 +246,20 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/Sa_img1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/salad_img1" />
 
                             <TextView
+                                android:id="@+id/Sa_name1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="그린 샐러드" />
 
                             <TextView
+                                android:id="@+id/Sa_price1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="5,500원" />
@@ -270,17 +274,20 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/Sa_img2"
                                 android:layout_width="match_parent"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/salad_img2" />
 
                             <TextView
+                                android:id="@+id/Sa_name2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="닭가슴살 깻잎 샐러드" />
 
                             <TextView
+                                android:id="@+id/Sa_price2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="5,500원" />
@@ -303,17 +310,20 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/Sa_img3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/salad_img3" />
 
                             <TextView
+                                android:id="@+id/Sa_name3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="닭가슴살 비엔나 샐러드" />
 
                             <TextView
+                                android:id="@+id/Sa_price3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="5,200원" />
@@ -328,17 +338,20 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/Sa_img4"
                                 android:layout_width="match_parent"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/salad_img4" />
 
                             <TextView
+                                android:id="@+id/Sa_name4"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="닭가슴살 샐러드" />
 
                             <TextView
+                                android:id="@+id/Sa_price4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="4,300원" />
@@ -361,17 +374,20 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/Sa_img5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/salad_img5" />
 
                             <TextView
+                                android:id="@+id/Sa_name5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="닭가슴살볼 옥수수 샐러드" />
 
                             <TextView
+                                android:id="@+id/Sa_price5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="5,600원" />
@@ -386,17 +402,20 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/Sa_img6"
                                 android:layout_width="match_parent"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/recomend_img4" />
 
                             <TextView
+                                android:id="@+id/Sa_name6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="불고기 샐러드" />
 
                             <TextView
+                                android:id="@+id/Sa_price6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="5,500원" />
@@ -419,20 +438,20 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/img_recom7"
+                                android:id="@+id/Sa_img7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/salad_img7" />
 
                             <TextView
-                                android:id="@+id/tv_recom_name7"
+                                android:id="@+id/Sa_name7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="닭가슴살 볼 샐러드" />
 
                             <TextView
-                                android:id="@+id/tv_recom_price7"
+                                android:id="@+id/Sa_price7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="5,500원" />
@@ -447,20 +466,20 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/img_recom8"
+                                android:id="@+id/Sa_img8"
                                 android:layout_width="match_parent"
                                 android:layout_height="200dp"
                                 android:background="#F4F4F4"
                                 app:srcCompat="@drawable/salad_img8" />
 
                             <TextView
-                                android:id="@+id/tv_recom_name8"
+                                android:id="@+id/Sa_name8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="훈제오리 샐러드" />
 
                             <TextView
-                                android:id="@+id/tv_recom_price8"
+                                android:id="@+id/Sa_price8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="4,500원" />

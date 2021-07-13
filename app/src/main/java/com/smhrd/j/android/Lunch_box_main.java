@@ -7,18 +7,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Lunch_box_main extends AppCompatActivity {
-    private Button  btn_g,btn_j;
+    private Button  btn_g,btn_j, btn_nv1,btn_nv2,btn_nv3;
 
     private RadioButton tbtn_1,tbtn_2,tbtn_3,tbtn_4,tbtn_5,tbtn_6,tbtn_7
             ,tbtn_8,tbtn_9,tbtn_10,tbtn_11,tbtn_12,tbtn_13,tbtn_14,tbtn_15;
 
     private String result1,result2, result3, result4, result5;
+
+    private ImageView back1, search1, shp1;
 
 
     @Override
@@ -28,6 +31,61 @@ public class Lunch_box_main extends AppCompatActivity {
 
         btn_j=findViewById(R.id.btn_j);
         btn_g=findViewById(R.id.btn_g);
+        btn_nv1 =findViewById(R.id.btn_nv1);
+        btn_nv2 =findViewById(R.id.btn_nv2);
+        btn_nv3 =findViewById(R.id.btn_nv3);
+
+
+        back1=findViewById(R.id.back1);
+        search1 =findViewById(R.id.search1);
+        shp1 =findViewById(R.id.shp1);
+
+
+
+        //뒤로가기
+        back1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+
+        //장바구니
+        shp1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Cart.class);
+                startActivity(intent);
+            }
+        });
+
+        //헬스케어
+        btn_nv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
+                startActivity(intent);
+            }
+        });
+
+        //메인
+        btn_nv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Main.class);
+                startActivity(intent);
+            }
+        });
+
+        //마이페이지
+        btn_nv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                startActivity(intent);
+            }
+        });
 
         //담는 버튼
         btn_j.setOnClickListener(new View.OnClickListener() {
@@ -144,17 +202,25 @@ public class Lunch_box_main extends AppCompatActivity {
             }
         });
 
+        //담기 버튼
         btn_j.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(result1 != null && result2 != null && result3 != null && result4 != null && result5 != null){
-                    //Toast.makeText(Lunch_box_main.this, (CharSequence) btn_j,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Lunch_box_main.this, (CharSequence) btn_j,Toast.LENGTH_SHORT).show();
                     Log.v("야", "담기 성공");
 
-                    //버튼 비활성화(else)/영양소 미선택시 팝업
-                    //btn_g.setEnabled(true);
-                   // return;
+//                    Intent intent = new Intent(getApplicationContext(),);
+//                    intent.putExtra("result1",result1);
+//                    intent.putExtra("result2",result2);
+//                    intent.putExtra("result3",result3);
+//                    intent.putExtra("result4",result4);
+//                    intent.putExtra("result5",result5);
+//                    startActivity(intent);
 
+                }else{
+                    Toast.makeText(Lunch_box_main.this,"영양소를 선택 해주세요",Toast.LENGTH_SHORT).show();
+                    Log.v("야","안 담김");
                 }
 
             }
@@ -168,16 +234,19 @@ public class Lunch_box_main extends AppCompatActivity {
 
                 //맞게 담았는지 확인하는 코드 작성하기
                 if(result1 != null && result2 != null && result3 != null && result4 != null && result5 != null){
-                //Toast.makeText(Lunch_box_main.this, (CharSequence) btn_j,Toast.LENGTH_SHORT).show();
+                Toast.makeText(Lunch_box_main.this, (CharSequence) btn_j,Toast.LENGTH_SHORT).show();
                     Log.v("야", "담기 성공");
+//                    Intent intent = new Intent(getApplicationContext(),);
+//                    intent.putExtra("result1",result1);
+//                    intent.putExtra("result2",result2);
+//                    intent.putExtra("result3",result3);
+//                    intent.putExtra("result4",result4);
+//                    intent.putExtra("result5",result5);
+//                    startActivity(intent);
 
-                    //버튼 비활성화(else)/영양소 미선택시 팝업
-//                    btn_g.setEnabled(true);
 
                 }else{
-                   // Toast.makeText(Lunch_box_main.this,"영양소를 선택 해주세요",Toast.LENGTH_SHORT).show();
-                   // 버튼 활성화
-                    //btn_g.setEnabled(false);
+                   Toast.makeText(Lunch_box_main.this,"영양소를 선택 해주세요",Toast.LENGTH_SHORT).show();
                     Log.v("야","안 담김"+ result1);
 
 
@@ -191,4 +260,12 @@ public class Lunch_box_main extends AppCompatActivity {
 
 
    }
+
+    //뒤로가기
+    @Override
+    public void onBackPressed() {
+        Log.v("Back","확인");
+        super.onBackPressed();
+    }
+
 }

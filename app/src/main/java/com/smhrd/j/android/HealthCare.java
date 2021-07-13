@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class HealthCare extends AppCompatActivity {
 
     private TextView tv_recom, tv_warn, tv_userInfo;
     private Button btn_nv1, btn_nv2, btn_nv3;
+    private ImageView back1, search1, shp1;
 
 
     @Override
@@ -29,6 +32,12 @@ public class HealthCare extends AppCompatActivity {
         btn_nv2 = findViewById(R.id.btn_nv2);
         btn_nv3 = findViewById(R.id.btn_nv3);
 
+
+        //이미지
+        back1=findViewById(R.id.back1);
+        search1 =findViewById(R.id.search1);
+        shp1 =findViewById(R.id.shp1);
+
         String result, result2;
 
         Intent intent = getIntent();
@@ -40,6 +49,24 @@ public class HealthCare extends AppCompatActivity {
         result2 = intent2.getStringExtra("result2");
 
         tv_warn.setText(result2);
+
+        //뒤로가기
+        back1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+
+        //장바구니
+        shp1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Cart.class);
+                startActivity(intent);
+            }
+        });
 
         btn_nv2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,5 +83,14 @@ public class HealthCare extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+    }
+
+    //뒤로가기
+    @Override
+    public void onBackPressed() {
+        Log.v("Back","확인");
+        super.onBackPressed();
     }
 }
