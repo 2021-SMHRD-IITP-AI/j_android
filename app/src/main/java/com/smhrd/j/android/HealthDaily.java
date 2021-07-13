@@ -80,6 +80,7 @@ public class HealthDaily extends AppCompatActivity {
         layout1 = (LinearLayout) findViewById(R.id.layout1);
         health_ck = findViewById(R.id.health_ck);
         shp1=findViewById(R.id.shp1);
+        back1=findViewById(R.id.back1);
         btn_nv1 = findViewById(R.id.btn_nv1);
         btn_nv2 = findViewById(R.id.btn_nv2);
         btn_nv3 = findViewById(R.id.btn_nv3);

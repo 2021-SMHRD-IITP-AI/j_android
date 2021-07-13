@@ -31,16 +31,18 @@
         </activity>
         <activity android:name=".Snack"></activity>
         <activity android:name=".Today_lunch_box"></activity>
-        <activity android:name=".HealthDaily"></activity>
-        <activity android:name=".Hot_item">
-
-        </activity>
-        <activity android:name=".Main" >
+        <activity android:name=".HealthDaily">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Hot_item">
+
+        </activity>
+        <activity android:name=".Main" >
+
         </activity>
         <activity android:name=".Login_contract" />
         <activity android:name=".Login" />
