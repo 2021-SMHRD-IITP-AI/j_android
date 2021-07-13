@@ -92,12 +92,12 @@ public class ID_PW_FIND extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
-                Log.v("resultValue",response);
+                Log.v("test",response);
 
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     String value = jsonObject.getString("check");
-                    Log.v("result", value);
+                    Log.v("test", value);
 
                     //★이메일과 휴대폰번호가 일치하면  아이디 찾아주기★
 
@@ -135,4 +135,4 @@ public class ID_PW_FIND extends AppCompatActivity {
         queue.add(stringRequest);
     }
 
-    }
+}

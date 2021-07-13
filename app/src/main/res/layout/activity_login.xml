@@ -57,16 +57,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_find_id_pw"
+        android:id="@+id/tv__find_id_pw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
         android:fontFamily="@font/gmarketsansttflight"
-        android:text="아이디/비밀번호 찾기 "
+        android:text="아이디/비밀번호 찾기"
         android:textColor="#4C4C4C"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/cb_login"
-        app:layout_constraintEnd_toEndOf="@+id/pw_login"
-        app:layout_constraintTop_toTopOf="@+id/cb_login" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cb_login"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView10"
@@ -141,4 +144,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="56dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="315dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

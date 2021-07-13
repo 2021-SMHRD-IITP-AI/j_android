@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -23,7 +24,8 @@ public class Login extends AppCompatActivity {
     private EditText id_login, pw_login;
     private Button btn_contract1, btn_login;
     private CheckBox cb_login;
-    private TextView tv_find_id_pw;
+    private TextView tv__find_id_pw;
+
 
 
     @Override
@@ -36,7 +38,7 @@ public class Login extends AppCompatActivity {
         btn_login=findViewById(R.id.btn_login);
         btn_contract1=findViewById(R.id.btn_contract1);
         cb_login=findViewById(R.id.cb_login);
-        tv_find_id_pw=findViewById(R.id.tv_find_id_pw);
+        tv__find_id_pw=findViewById(R.id.tv__find_id_pw);
 
 //        String login = PreferenceManager.getString(getApplicationContext(),"login");
 //        if(!login.equals("")){
@@ -54,12 +56,20 @@ public class Login extends AppCompatActivity {
 //            }
 //        }
 
-        tv_find_id_pw.setOnClickListener(new View.OnClickListener() {
+        tv__find_id_pw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ID_PW_FIND.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(getApplicationContext(),ID_PW_FIND.class);
+                startActivity(intent2);
 
+            }
+        });
+
+        pw_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),ID_PW_FIND3.class);
+                startActivity(intent);
             }
         });
 
@@ -71,6 +81,7 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,6 +102,8 @@ public class Login extends AppCompatActivity {
 
 
                                 Toast.makeText(getApplicationContext(), "로그인성공", Toast.LENGTH_SHORT).show();
+
+                                Log.v("test","성공");
 
                                 Intent intent = new Intent(Login.this, Login_contract.class);
                                 intent.putExtra("userId", (Parcelable) id_login);
