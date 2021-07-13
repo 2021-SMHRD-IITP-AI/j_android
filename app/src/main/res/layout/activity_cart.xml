@@ -37,6 +37,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_weight="0.8"
                 android:text="장바구니"
+                android:fontFamily="@font/jalnan"
                 android:textColor="#4C4C4C"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -502,6 +503,7 @@
                 android:orientation="vertical">
 
                 <Button
+                    android:id="@+id/btn_nv2"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

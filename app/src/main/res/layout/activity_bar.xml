@@ -37,6 +37,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_weight="0.8"
                 android:text="건강간식"
+                android:fontFamily="@font/jalnan"
                 android:textColor="#4C4C4C"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -244,19 +245,19 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/img_recom7"
+                                android:id="@+id/B_img1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="200dp"
                                 app:srcCompat="@drawable/bar_img1" />
 
                             <TextView
-                                android:id="@+id/tv_recom_name7"
+                                android:id="@+id/B_name1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="녹차 프로틴바" />
 
                             <TextView
-                                android:id="@+id/tv_recom_price7"
+                                android:id="@+id/B_price1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="1,900원" />
@@ -271,19 +272,19 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/img_recom8"
+                                android:id="@+id/B_img2"
                                 android:layout_width="match_parent"
                                 android:layout_height="200dp"
                                 app:srcCompat="@drawable/bar_img2" />
 
                             <TextView
-                                android:id="@+id/tv_recom_name8"
+                                android:id="@+id/B_name2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="아몬드 프로틴바" />
 
                             <TextView
-                                android:id="@+id/tv_recom_price8"
+                                android:id="@+id/B_price2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="1,900원" />
@@ -306,16 +307,19 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/B_img3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="200dp"
                                 app:srcCompat="@drawable/bar_img1" />
 
                             <TextView
+                                android:id="@+id/B_name3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="녹차 프로틴바" />
 
                             <TextView
+                                android:id="@+id/B_price3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="1,900원" />
@@ -330,16 +334,19 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/B_img4"
                                 android:layout_width="match_parent"
                                 android:layout_height="200dp"
                                 app:srcCompat="@drawable/bar_img2" />
 
                             <TextView
+                                android:id="@+id/B_name4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="아몬드 프로틴바" />
 
                             <TextView
+                                android:id="@+id/B_price4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="1,900원" />
@@ -362,16 +369,19 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/B_img5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="200dp"
                                 app:srcCompat="@drawable/bar_img1" />
 
                             <TextView
+                                android:id="@+id/B_name5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="녹차 프로틴바" />
 
                             <TextView
+                                android:id="@+id/B_price5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="1,900원" />
@@ -386,16 +396,19 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/B_img6"
                                 android:layout_width="match_parent"
                                 android:layout_height="200dp"
                                 app:srcCompat="@drawable/bar_img2" />
 
                             <TextView
+                                android:id="@+id/B_name6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="아몬드 프로틴바" />
 
                             <TextView
+                                android:id="@+id/B_price6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="1,900원" />
@@ -418,16 +431,19 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/B_img7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="200dp"
                                 app:srcCompat="@drawable/bar_img1" />
 
                             <TextView
+                                android:id="@+id/B_name7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="녹차 프로틴바" />
 
                             <TextView
+                                android:id="@+id/B_price7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="1,900원" />
@@ -442,16 +458,19 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/B_img8"
                                 android:layout_width="match_parent"
                                 android:layout_height="200dp"
                                 app:srcCompat="@drawable/bar_img2" />
 
                             <TextView
+                                android:id="@+id/B_name8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="아몬드 프로틴바" />
 
                             <TextView
+                                android:id="@+id/B_price8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="1,900원" />

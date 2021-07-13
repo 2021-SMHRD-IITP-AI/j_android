@@ -18,6 +18,7 @@ import android.widget.CalendarView;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -44,10 +45,11 @@ import java.util.Map;
 public class HealthDaily extends AppCompatActivity {
 
     Spinner spinner;
+    private ImageView shp1, back1;
    private EditText health_edt;
    private CalendarView health_cal;
    private CheckBox health_ck;
-   private Button health_add;
+   private Button health_add, btn_nv1, btn_nv2, btn_nv3;
    private LinearLayout layout1;
    int state_cnt;
    private String ck_check;
@@ -77,6 +79,11 @@ public class HealthDaily extends AppCompatActivity {
         health_add = findViewById(R.id.health_add);
         layout1 = (LinearLayout) findViewById(R.id.layout1);
         health_ck = findViewById(R.id.health_ck);
+        shp1=findViewById(R.id.shp1);
+        back1=findViewById(R.id.back1);
+        btn_nv1 = findViewById(R.id.btn_nv1);
+        btn_nv2 = findViewById(R.id.btn_nv2);
+        btn_nv3 = findViewById(R.id.btn_nv3);
 
         //날짜 비교해서 캘린더보여주기
         for(int i = 0; i < list.size(); i++){
@@ -147,6 +154,52 @@ public class HealthDaily extends AppCompatActivity {
                 sendRequest();
             }
         });
+
+        //뒤로가기
+        back1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        //장바구니
+        shp1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Cart.class);
+                startActivity(intent);
+            }
+        });
+
+
+        //헬스케어
+        btn_nv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
+                startActivity(intent);
+            }
+        });
+
+        //메인
+        btn_nv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Main.class);
+                startActivity(intent);
+            }
+        });
+
+        //마이페이지
+        btn_nv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
@@ -237,6 +290,14 @@ public class HealthDaily extends AppCompatActivity {
         };
 
         queue.add(stringRequest);
+    }
+
+
+    //뒤로가기
+    @Override
+    public void onBackPressed() {
+        Log.v("Back","확인");
+        super.onBackPressed();
     }
 
 

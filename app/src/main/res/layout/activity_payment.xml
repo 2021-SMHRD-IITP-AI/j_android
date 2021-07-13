@@ -23,7 +23,7 @@
             android:paddingRight="19dp">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/back1"
                 android:layout_width="29dp"
                 android:layout_height="19dp"
                 android:layout_weight="0.1"
@@ -36,6 +36,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_weight="0.8"
+                android:fontFamily="@font/jalnan"
                 android:text="결제창"
                 android:textColor="#4C4C4C"
                 android:textSize="16sp"
@@ -564,6 +565,7 @@
                 android:orientation="vertical">
 
                 <Button
+                    android:id="@+id/btn_nv2"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -23,7 +23,7 @@
             android:paddingRight="19dp">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/back1"
                 android:layout_width="29dp"
                 android:layout_height="19dp"
                 android:layout_weight="0.1"

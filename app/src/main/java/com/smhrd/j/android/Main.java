@@ -78,8 +78,8 @@ public class Main extends AppCompatActivity {
         tv_pa2=findViewById(R.id.tv_pa2);
         tv_pa3=findViewById(R.id.tv_pa3);
 
-
-        shp1.setOnClickListener(new View.OnClickListener() {//장바구니 페이지 이동
+        //장바구니 페이지 이동
+        shp1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Cart.class);
@@ -87,8 +87,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-
-        //인기상품
+        //인기상품 안됨
         menu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,89 +96,25 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        //맞춤도시락
-        btn_mu3.setOnClickListener(new View.OnClickListener() {
+        //이달의 특가 안됨
+        menu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Lunch_box_main.class);
+                Intent intent = new Intent(getApplicationContext(),Sale.class);
                 startActivity(intent);
             }
         });
 
-        //프로틴
-        btn_mu4.setOnClickListener(new View.OnClickListener() {
+        //헬스케어
+        menu3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Proteen.class);
+                Intent intent = new Intent(getApplicationContext(),HealthCare.class);
                 startActivity(intent);
             }
         });
 
-        //일일 추천 더보기
-        btn_more1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Today_lunch_box.class);
-                startActivity(intent);
-            }
-        });
-
-        //간편식
-        btn_mu6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Snack.class);
-                startActivity(intent);
-            }
-        });
-
-        //샐러드
-        btn_mu2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Salad.class);
-                startActivity(intent);
-            }
-        });
-
-
-        img1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Purchase.class);
-//                intent.putExtra("name1",tv_lu_name1.getText().toString());
-//                intent.putExtra("name2",tv_pa1.getText().toString());
-
-//                Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.main_img4);
-//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-//                byte[] byteArray = stream.toByteArray();
-//                intent.putExtra("image",byteArray);
-
-                startActivity(intent);
-            }
-        });
-
-        // 헬스케어
-        btn_nv1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new JSONTask().execute("http://222.102.104.135:3000/txts/go_recom.txt");
-//                new JSONTask().execute("http://222.102.104.135:3000/Dise"); // 디비로 접근하는건데 과부하 걸려서 안되는듯..? HTML을 띄워주는듯?
-                new JSONTask2().execute("http://222.102.104.135:3000/txts/go_warn.txt");
-            }
-        });
-
-        // 내 정보
-        btn_nv3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage.class);
-                startActivity(intent);
-            }
-        });
-
-        // 도시락
+        // 도시락 안됨
         btn_mu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -223,6 +158,112 @@ public class Main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //샐러드 안됨
+        btn_mu2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Salad.class);
+                startActivity(intent);
+            }
+        });
+
+
+        //맞춤도시락
+        btn_mu3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Lunch_box_main.class);
+                startActivity(intent);
+            }
+        });
+
+        //프로틴
+        btn_mu4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Proteen.class);
+                startActivity(intent);
+            }
+        });
+
+        //건강간식
+        btn_mu5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Bar.class);
+                startActivity(intent);
+            }
+        });
+
+        //간편식 안됨
+        btn_mu6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Snack.class);
+                startActivity(intent);
+            }
+        });
+
+        //헬스케어
+        btn_mu7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),HealthCare.class);
+                startActivity(intent);
+            }
+        });
+
+
+        //일일 추천 더보기   안됨
+        btn_more1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Today_lunch_box.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+        img1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Purchase.class);
+//                intent.putExtra("name1",tv_lu_name1.getText().toString());
+//                intent.putExtra("name2",tv_pa1.getText().toString());
+
+//                Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.main_img4);
+//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+//                byte[] byteArray = stream.toByteArray();
+//                intent.putExtra("image",byteArray);
+
+                startActivity(intent);
+            }
+        });
+
+        // 헬스케어
+        btn_nv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new JSONTask().execute("http://222.102.104.135:3000/txts/go_recom.txt");
+//                new JSONTask().execute("http://222.102.104.135:3000/Dise"); // 디비로 접근하는건데 과부하 걸려서 안되는듯..? HTML을 띄워주는듯?
+                new JSONTask2().execute("http://222.102.104.135:3000/txts/go_warn.txt");
+            }
+        });
+
+        // 내 정보
+        btn_nv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     public class JSONTask extends AsyncTask<String, String, String>{

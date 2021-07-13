@@ -86,7 +86,7 @@ public class ID_PW_FIND extends AppCompatActivity {
 
     private void sendRequest() {
         queue = Volley.newRequestQueue(this);
-        String url = "http://222.102.104.135:3000/Join";
+        String url = "http://222.102.104.135:3000/FindID";
         stringRequest = new StringRequest(Request.Method.POST,
                 url, new Response.Listener<String>() {
             @Override
