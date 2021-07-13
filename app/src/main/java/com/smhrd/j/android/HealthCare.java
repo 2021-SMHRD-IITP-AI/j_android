@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class HealthCare extends AppCompatActivity {
 
     private TextView tv_recom, tv_warn, tv_userInfo;
@@ -38,17 +41,21 @@ public class HealthCare extends AppCompatActivity {
         search1 =findViewById(R.id.search1);
         shp1 =findViewById(R.id.shp1);
 
-        String result, result2;
-
         Intent intent = getIntent();
-        result = intent.getStringExtra("result");
+        String diseInfo = intent.getStringExtra("diseData");
+        try {
+            JSONObject jsonObject = new JSONObject(diseInfo);
+            String recom = jsonObject.getString("recom");
+            String warn = jsonObject.getString("warn");
+            Log.v("result", recom);
+            Log.v("result2", warn);
 
-        tv_recom.setText(result);
+            tv_recom.setText(recom);
+            tv_warn.setText(warn);
 
-        Intent intent2 = getIntent();
-        result2 = intent2.getStringExtra("result2");
-
-        tv_warn.setText(result2);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         //뒤로가기
         back1.setOnClickListener(new View.OnClickListener() {

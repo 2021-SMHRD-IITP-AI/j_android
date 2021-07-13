@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.smhrd.j.android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
@@ -10,19 +11,46 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Jandroid">
+        android:theme="@style/Theme.Jandroid"
+        android:usesCleartextTraffic="true">
 
-        <activity android:name=".Login">
+        <activity android:name=".Bar"></activity>
+        <activity android:name=".Cart"></activity>
+        <activity android:name=".Coupon"></activity>
+        <activity android:name=".HealthCare"></activity>
+        <activity android:name=".HealthDaily"></activity>
+        <activity android:name=".Hot_item"></activity>
+        <activity android:name=".ID_PW_FIND">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main" />
-        <activity android:name=".Login_contract"></activity>
-        <activity android:name=".ID_PW_FIND"></activity>
         <activity android:name=".ID_PW_FIND3"></activity>
-    </application>
+        <activity android:name=".Login">
 
+        </activity>
+        <activity android:name=".Login_contract">
+
+        </activity>
+        <activity android:name=".Lunch_box_main"></activity>
+        <activity android:name=".Main">
+
+        </activity>
+        <activity android:name=".MyPage"></activity>
+        <activity android:name=".MyPage_Main"></activity>
+        <activity android:name=".Payment"></activity>
+        <activity android:name=".Proteen"></activity>
+        <activity android:name=".Purchase"></activity>
+        <activity android:name=".Recommend_lunch_box"></activity>
+        <activity android:name=".Salad"></activity>
+        <activity android:name=".Sale"></activity>
+        <activity android:name=".Snack"></activity>
+        <activity android:name=".Today_lunch_box"></activity>
+
+
+
+        <activity android:name=".Lunch_test"></activity>
+    </application>
 </manifest>

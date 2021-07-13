@@ -258,16 +258,11 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        // 헬스케어 -> 수정중
+        // 헬스케어
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                new JSONTask().execute("http://222.102.104.135:3000/txts/go_recom.txt");
-////                new JSONTask().execute("http://222.102.104.135:3000/Dise"); // 디비로 접근하는건데 과부하 걸려서 안되는듯..? HTML을 띄워주는듯?
-//                new JSONTask2().execute("http://222.102.104.135:3000/txts/go_warn.txt");
-
-                JSONObject jsonObject = new JSONObject();
-
+                sendRequest();
             }
         });
 
@@ -287,36 +282,24 @@ public class Main extends AppCompatActivity {
 
 
         queue = Volley.newRequestQueue(this);
-        String url = "http://222.102.104.135:3000/Join";
+        String url = "http://222.102.104.135:3000/Dise";
         stringRequest = new StringRequest(Request.Method.POST,
                 url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
-                Log.v("resultValue",response);
-
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    String value = jsonObject.getString("check");
-                    Log.v("result", value);
-                    if(value != null){
-                        Intent intent = new Intent(getApplicationContext(), Login.class);
+                    Log.v("result", response);
+                    if (response != null) {
+                        Intent intent = new Intent(getApplicationContext(), HealthCare.class);
+                        intent.putExtra("diseData", response);
                         startActivity(intent);
-                        Toast.makeText(getApplicationContext(),"회원가입성공",Toast.LENGTH_SHORT).show();
-                        Log.v("test","가입성공");
-                    }else{
-                        Toast.makeText(getApplicationContext(),"회원가입에실패했습니다.",Toast.LENGTH_SHORT).show();
-
+                        Log.v("test", "성공");
+                    } else {
+                        Log.v("result", "실패");
                     }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
                 error.printStackTrace();
             }
         }) {
@@ -326,121 +309,8 @@ public class Main extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
 
                 return params;
-
-
             }
         };
         queue.add(stringRequest);
-    }
-
-
-    public class JSONTask extends AsyncTask<String, String, String>{
-        @Override
-        protected String doInBackground(String... urls) {
-            try {
-                HttpURLConnection con = null;
-                BufferedReader reader = null;
-                try {
-                    URL url = new URL(urls[0]);
-                    con = (HttpURLConnection) url.openConnection();
-                    con.connect();
-
-                    InputStream stream = con.getInputStream();
-
-                    reader = new BufferedReader(new InputStreamReader(stream));
-
-                    StringBuffer buffer = new StringBuffer();
-
-                    String line = "";
-
-                    while((line = reader.readLine()) != null){
-                        buffer.append(line);
-                    }
-                    return buffer.toString();
-
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e){
-                    e.printStackTrace();
-                } finally {
-                    if(con != null){
-                        con.disconnect();
-                    }
-                    try {
-                        if(reader != null){
-                            reader.close();
-                        }
-                    } catch (IOException e){
-                        e.printStackTrace();
-                    }
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-            Log.d("result", result);
-            Intent intent = new Intent(getApplicationContext(), HealthCare.class);
-            intent.putExtra("result", result);
-            startActivity(intent);
-        }
-    }
-
-    public class JSONTask2 extends AsyncTask<String, String, String>{
-        @Override
-        protected String doInBackground(String... urls) {
-            try {
-                HttpURLConnection con = null;
-                BufferedReader reader = null;
-                try {
-                    URL url = new URL(urls[0]);
-                    con = (HttpURLConnection) url.openConnection();
-                    con.connect();
-
-                    InputStream stream = con.getInputStream();
-
-                    reader = new BufferedReader(new InputStreamReader(stream));
-
-                    StringBuffer buffer = new StringBuffer();
-
-                    String line = "";
-
-                    while((line = reader.readLine()) != null){
-                        buffer.append(line);
-                    }
-                    return buffer.toString();
-
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e){
-                    e.printStackTrace();
-                } finally {
-                    if(con != null){
-                        con.disconnect();
-                    }
-                    try {
-                        if(reader != null){
-                            reader.close();
-                        }
-                    } catch (IOException e){
-                        e.printStackTrace();
-                    }
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-        @Override
-        protected void onPostExecute(String result2) {
-            super.onPostExecute(result2);
-            Log.d("result2", result2);
-            Intent intent2 = new Intent(getApplicationContext(), HealthCare.class);
-            intent2.putExtra("result2", result2);
-            startActivity(intent2);
-        }
     }
 }
