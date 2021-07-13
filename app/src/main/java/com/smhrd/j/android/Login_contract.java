@@ -75,7 +75,6 @@ public class Login_contract extends AppCompatActivity {
 
     private void sendRequest() {
 
-
         queue = Volley.newRequestQueue(this);
         String url = "http://222.102.104.135:3000/Join";
         stringRequest = new StringRequest(Request.Method.POST,
