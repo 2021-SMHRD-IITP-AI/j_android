@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -165,7 +166,7 @@ public class Main extends AppCompatActivity {
             public void onClick(View v) {
                 new JSONTask().execute("http://222.102.104.135:3000/txts/go_recom.txt");
 //                new JSONTask().execute("http://222.102.104.135:3000/Dise"); // 디비로 접근하는건데 과부하 걸려서 안되는듯..? HTML을 띄워주는듯?
-                new JSONTask2().execute("http://222.102.104.135:3000/txts/go.warn.txt");
+                new JSONTask2().execute("http://222.102.104.135:3000/txts/go_warn.txt");
             }
         });
 
@@ -272,6 +273,7 @@ public class Main extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
+            Log.d("result", result);
             Intent intent = new Intent(getApplicationContext(), HealthCare.class);
             intent.putExtra("result", result);
             startActivity(intent);
@@ -326,6 +328,7 @@ public class Main extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result2) {
             super.onPostExecute(result2);
+            //Log.d("result2", result2);
             Intent intent2 = new Intent(getApplicationContext(), HealthCare.class);
             intent2.putExtra("result2", result2);
             startActivity(intent2);

@@ -2,22 +2,24 @@ package com.smhrd.j.android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Lunch_box_main extends AppCompatActivity {
-    private Button  btn_g,btn_j;
+    private Button  btn_g,btn_j, btn_nv1, btn_nv2, btn_nv3;
 
     private RadioButton tbtn_1,tbtn_2,tbtn_3,tbtn_4,tbtn_5,tbtn_6,tbtn_7
             ,tbtn_8,tbtn_9,tbtn_10,tbtn_11,tbtn_12,tbtn_13,tbtn_14,tbtn_15;
 
-    private RadioGroup RadioGroup_1, RadioGroup_2, RadioGroup_3, RadioGroup_4, RadioGroup_5;
+    private String result1,result2, result3, result4, result5;
 
-    private String str_result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,75 +28,132 @@ public class Lunch_box_main extends AppCompatActivity {
 
         btn_j=findViewById(R.id.btn_j);
         btn_g=findViewById(R.id.btn_g);
+        btn_nv1 = findViewById(R.id.btn_nv1);
+        btn_nv2 = findViewById(R.id.btn_nv2);
+        btn_nv3 = findViewById(R.id.btn_nv3);
 
-        RadioGroup_1 = findViewById(R.id.RadioGroup_1);
-        RadioGroup_2 = findViewById(R.id.RadioGroup_2);
-        RadioGroup_3 = findViewById(R.id.RadioGroup_3);
-        RadioGroup_4 = findViewById(R.id.RadioGroup_4);
-        RadioGroup_5 = findViewById(R.id.RadioGroup_5);
+        final RadioGroup group1=(RadioGroup)findViewById(R.id.RadioGroup_1);
+        final RadioGroup group2=(RadioGroup)findViewById(R.id.RadioGroup_2);
+        final RadioGroup group3=(RadioGroup)findViewById(R.id.RadioGroup_3);
+        final RadioGroup group4=(RadioGroup)findViewById(R.id.RadioGroup_4);
+        final RadioGroup group5=(RadioGroup)findViewById(R.id.RadioGroup_5);
 
-        RadioGroup_1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        btn_nv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_nv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Main.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_nv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                startActivity(intent);
+            }
+        });
+
+        //단백질 라디오
+        group1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.tbtn_1) {
-                    str_result = tbtn_1.getText().toString();
-                }
-                else if(checkedId == R.id.tbtn_2){
-                    str_result = tbtn_2.getText().toString();
-                } else if(checkedId == R.id.tbtn_3){
-                    str_result = tbtn_3.getText().toString();
+
+                if(checkedId == R.id.tbtn_1){
+                    Toast.makeText(getApplicationContext(),"닭가슴살 선택",Toast.LENGTH_SHORT).show();
+                    result1 ="닭가슴살";
+                }else if(checkedId ==R.id.tbtn_2){
+                    Toast.makeText(getApplicationContext(),"흰살생선 선택",Toast.LENGTH_SHORT).show();
+                    result1 ="흰살생선";
+                }else if(checkedId == R.id.tbtn_3){
+                    Toast.makeText(getApplicationContext(),"두부 선택",Toast.LENGTH_SHORT).show();
+                    result1 ="두부";
+                }else{
+                    Toast.makeText(getApplicationContext(),"단백질 식품을 선택해주세요",Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        RadioGroup_2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        //탄수화물 라디오
+        group2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.tbtn_4){
-                    str_result = tbtn_4.getText().toString();
-                } else if(checkedId == R.id.tbtn_5){
-                    str_result = tbtn_5.getText().toString();
-                } else if(checkedId == R.id.tbtn_6){
-                    str_result = tbtn_6.getText().toString();
+                if (checkedId == R.id.tbtn_4){
+                    Toast.makeText(getApplicationContext(),"흰쌀밥 선택",Toast.LENGTH_SHORT).show();
+                    result2 ="흰쌀밥";
+                }else if(checkedId ==R.id.tbtn_5){
+                    Toast.makeText(getApplicationContext(),"잡곡밥 선택",Toast.LENGTH_SHORT).show();
+                    result2="잡곡밥";
+                }else if(checkedId == R.id.tbtn_6){
+                    Toast.makeText(getApplicationContext(),"곤약밥 선택",Toast.LENGTH_SHORT).show();
+                    result2="곤약밥";
+                }else{
+                    Toast.makeText(getApplicationContext(),"탄수화물 식품을 선택해주세요",Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        RadioGroup_3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        //지방 라디오
+        group3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.tbtn_7){
-                    str_result = tbtn_7.getText().toString();
-                } else if(checkedId == R.id.tbtn_8){
-                    str_result = tbtn_8.getText().toString();
-                } else if(checkedId == R.id.tbtn_9){
-                    str_result = tbtn_9.getText().toString();
+                if (checkedId == R.id.tbtn_7){
+                    Toast.makeText(getApplicationContext(),"녹색채소 선택",Toast.LENGTH_SHORT).show();
+                    result3="녹색채소";
+                }else if(checkedId ==R.id.tbtn_8){
+                    Toast.makeText(getApplicationContext(),"씨앗류 선택",Toast.LENGTH_SHORT).show();
+                    result3="씨앗류";
+                }else if(checkedId == R.id.tbtn_9){
+                    Toast.makeText(getApplicationContext(),"견과류 선택",Toast.LENGTH_SHORT).show();
+                    result3="견과류";
+                }else{
+                    Toast.makeText(getApplicationContext(),"지방 식품을 선택해주세요",Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        RadioGroup_4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        //비타민 라디오
+        group4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.tbtn_10){
-                    str_result = tbtn_10.getText().toString();
-                } else if(checkedId == R.id.tbtn_11){
-                    str_result = tbtn_11.getText().toString();
-                } else if(checkedId == R.id.tbtn_12){
-                    str_result = tbtn_12.getText().toString();
+                if (checkedId == R.id.tbtn_10){
+                    Toast.makeText(getApplicationContext(),"과일 선택",Toast.LENGTH_SHORT).show();
+                    result4="과일";
+                }else if(checkedId ==R.id.tbtn_11){
+                    Toast.makeText(getApplicationContext(),"버섯 선택",Toast.LENGTH_SHORT).show();
+                    result4="버섯";
+                }else if(checkedId == R.id.tbtn_12){
+                    Toast.makeText(getApplicationContext(),"황색채소 선택",Toast.LENGTH_SHORT).show();
+                    result4="황색채소";
+                }else{
+                    Toast.makeText(getApplicationContext(),"비타민 식품을 선택해주세요",Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        RadioGroup_5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        //칼슘 라디오
+        group5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.tbtn_13){
-                    str_result = tbtn_13.getText().toString();
-                } else if(checkedId == R.id.tbtn_14){
-                    str_result = tbtn_14.getText().toString();
-                } else if(checkedId == R.id.tbtn_15){
-                    str_result = tbtn_15.getText().toString();
+                if (checkedId == R.id.tbtn_13){
+                    Toast.makeText(getApplicationContext(),"치즈 선택",Toast.LENGTH_SHORT).show();
+                    result5="치즈";
+                }else if(checkedId ==R.id.tbtn_14){
+                    Toast.makeText(getApplicationContext(),"멸치 선택",Toast.LENGTH_SHORT).show();
+                    result5="멸치";
+                }else if(checkedId == R.id.tbtn_15){
+                    Toast.makeText(getApplicationContext(),"해조류 선택",Toast.LENGTH_SHORT).show();
+                    result5="해조류";
+                }else{
+                    Toast.makeText(getApplicationContext(),"칼슘 식품을 선택해주세요",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -102,157 +161,72 @@ public class Lunch_box_main extends AppCompatActivity {
         btn_j.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(str_result != null){
-                    Toast.makeText(Lunch_box_main.this, str_result, Toast.LENGTH_SHORT).show();
+                if(result1 != null && result2 != null && result3 != null && result4 != null && result5 != null){
+                    Log.v("야", "담기 성공");
+//                    String dan = "60";
+//                    String tbtn_1 = "28";
+//                    String tbtn_2 = "25";
+//                    String tbtn_3 = "9";
+//                    if(!dan.equals(tbtn_3)){
+//                        Log.v("야", "단백질 19g이 부족합니다.");
+//                    } else{
+//                        Log.v("야", "담기 성공");
+//                    }
+
+                    Intent intent = new Intent(getApplicationContext(), Lunch_test.class);
+                    intent.putExtra("result1", result1);
+                    intent.putExtra("result2", result2);
+                    intent.putExtra("result3", result3);
+                    intent.putExtra("result4", result4);
+                    intent.putExtra("result5", result5);
+                    startActivity(intent);
+
+                    //버튼 비활성화(else)/영양소 미선택시 팝업
+                    //btn_g.setEnabled(true);
+                    // return;
+
                 } else{
-                    Toast.makeText(Lunch_box_main.this, "라디오 버튼 클릭해줘", Toast.LENGTH_SHORT).show();
+                    Log.v("야", "담기 실패");
+                    Toast.makeText(getApplicationContext(), "5대 영양소를 모두 선택했는지 확인해주세요.", Toast.LENGTH_SHORT);
                 }
-            }
-        });
-
-//        final RadioGroup group1=(RadioGroup)findViewById(R.id.RadioGroup_1);
-//        final RadioGroup group2=(RadioGroup)findViewById(R.id.RadioGroup_2);
-//        final RadioGroup group3=(RadioGroup)findViewById(R.id.RadioGroup_3);
-//        final RadioGroup group4=(RadioGroup)findViewById(R.id.RadioGroup_4);
-//        final RadioGroup group5=(RadioGroup)findViewById(R.id.RadioGroup_5);
-//
-//        //단백질 라디오
-//        group1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int checkedId) {
-//
-//
-//                if(checkedId == R.id.tbtn_1){
-//                    Toast.makeText(getApplicationContext(),"닭가슴살 선택",Toast.LENGTH_SHORT).show();
-////                    btn_j=tbtn_1.getText().toString();
-//                }else if(checkedId ==R.id.tbtn_2){
-//                    Toast.makeText(getApplicationContext(),"흰살생선 선택",Toast.LENGTH_SHORT).show();
-////                    btn_j=tbtn_2.getText().toString();
-//                }else if(checkedId == R.id.tbtn_3){
-//                    Toast.makeText(getApplicationContext(),"두부 선택",Toast.LENGTH_SHORT).show();
-////                    btn_j=tbtn_3.getText().toString();
-//                }else{
-//                    Toast.makeText(getApplicationContext(),"단백질 식품을 선택해주세요",Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-//
-//        //탄수화물 라디오
-//        group2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int checkedId) {
-//                if (checkedId == R.id.tbtn_4){
-//                    Toast.makeText(getApplicationContext(),"흰쌀밥 선택",Toast.LENGTH_SHORT).show();
-////                    btn_j=tbtn_4.getText().toString();
-//                }else if(checkedId ==R.id.tbtn_5){
-//                    Toast.makeText(getApplicationContext(),"잡곡밥 선택",Toast.LENGTH_SHORT).show();
-////                    btn_j=tbtn_5.getText().toString();
-//                }else if(checkedId == R.id.tbtn_6){
-//                    Toast.makeText(getApplicationContext(),"곤약밥 선택",Toast.LENGTH_SHORT).show();
-////                    btn_j=tbtn_6.getText().toString();
-//                }else{
-//                    Toast.makeText(getApplicationContext(),"탄수화물 식품을 선택해주세요",Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-//
-//        //지방 라디오
-//        group3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int checkedId) {
-//                if (checkedId == R.id.tbtn_7){
-//                    Toast.makeText(getApplicationContext(),"녹색채소 선택",Toast.LENGTH_SHORT).show();
-////                    btn_j=tbtn_7.getText().toString();
-//                }else if(checkedId ==R.id.tbtn_8){
-//                    Toast.makeText(getApplicationContext(),"씨앗류 선택",Toast.LENGTH_SHORT).show();
-////                    btn_j=tbtn_8.getText().toString();
-//                }else if(checkedId == R.id.tbtn_9){
-//                    Toast.makeText(getApplicationContext(),"견과류 선택",Toast.LENGTH_SHORT).show();
-////                    btn_j=tbtn_9.getText().toString();
-//                }else{
-//                    Toast.makeText(getApplicationContext(),"지방 식품을 선택해주세요",Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-//
-//        //비타민 라디오
-//        group4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int checkedId) {
-//                if (checkedId == R.id.tbtn_10){
-//                    Toast.makeText(getApplicationContext(),"과일 선택",Toast.LENGTH_SHORT).show();
-////                    btn_j=tbtn_10.getText().toString();
-//                }else if(checkedId ==R.id.tbtn_11){
-//                    Toast.makeText(getApplicationContext(),"버섯 선택",Toast.LENGTH_SHORT).show();
-////                    btn_j=tbtn_11.getText().toString();
-//                }else if(checkedId == R.id.tbtn_12){
-//                    Toast.makeText(getApplicationContext(),"황색채소 선택",Toast.LENGTH_SHORT).show();
-////                    btn_j=tbtn_12.getText().toString();
-//                }else{
-//                    Toast.makeText(getApplicationContext(),"비타민 식품을 선택해주세요",Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-//
-//        //칼슘 라디오
-//        group5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int checkedId) {
-//                if (checkedId == R.id.tbtn_13){
-//                    Toast.makeText(getApplicationContext(),"치즈 선택",Toast.LENGTH_SHORT).show();
-////                    btn_j=tbtn_13.getText().toString();
-//                }else if(checkedId ==R.id.tbtn_14){
-//                    Toast.makeText(getApplicationContext(),"멸치 선택",Toast.LENGTH_SHORT).show();
-////                    btn_j=tbtn_14.getText().toString();
-//                }else if(checkedId == R.id.tbtn_15){
-//                    Toast.makeText(getApplicationContext(),"해조류 선택",Toast.LENGTH_SHORT).show();
-////                    btn_j=tbtn_15.getText().toString();
-//                }else{
-//                    Toast.makeText(getApplicationContext(),"칼슘 식품을 선택해주세요",Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-
-        //담는 버튼
-        btn_j.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //라디오버튼 선택값 저장 코드 작성필요
-
-
-
-                Toast.makeText(getApplicationContext(),"선택되었습니다.",Toast.LENGTH_SHORT).show();
             }
         });
 
         //구매하기 버튼
-//        btn_g.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //맞춤 도시락 구매페이지 인텐트 필요
-//
-//                //맞게 담았는지 확인하는 코드 작성하기
-////                if(btn_j != null){
-////                Toast.makeText(Lunch_box_main.this, (CharSequence) btn_j,Toast.LENGTH_SHORT).show();
-//
-//                    //버튼 비활성화(else)/영양소 미선택시 팝업
-////                    btn_g.setEnabled(true);
-////                    return;
-//
-////                }else{
-////                    Toast.makeText(Lunch_box_main.this,"영양소를 선택 해주세요",Toast.LENGTH_SHORT).show();
-//                    //버튼 활성화
-////                    btn_g.setEnabled(false);
-//
-////
-////                }
-//            }
-//
-//
-//
-//        });
+        btn_g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //맞춤 도시락 구매페이지 인텐트 필요
+
+                //맞게 담았는지 확인하는 코드 작성하기
+                if(result1 != null && result2 != null && result3 != null && result4 != null && result5 != null){
+                    //Toast.makeText(Lunch_box_main.this, (CharSequence) btn_j,Toast.LENGTH_SHORT).show();
+                    Log.v("야", "구매 성공");
+                    Intent intent = new Intent(getApplicationContext(), Payment.class);
+                    intent.putExtra("result1", result1);
+                    intent.putExtra("result2", result2);
+                    intent.putExtra("result3", result3);
+                    intent.putExtra("result4", result4);
+                    intent.putExtra("result5", result5);
+                    startActivity(intent);
+                    //버튼 비활성화(else)/영양소 미선택시 팝업
+//                    btn_g.setEnabled(true);
+
+                }else{
+                    // Toast.makeText(Lunch_box_main.this,"영양소를 선택 해주세요",Toast.LENGTH_SHORT).show();
+                    // 버튼 활성화
+                    //btn_g.setEnabled(false);
+                    Log.v("야","구매 실패"+ result1);
+
+
+                }
+            }
 
 
 
-   }
+        });
+
+
+
+    }
 }
