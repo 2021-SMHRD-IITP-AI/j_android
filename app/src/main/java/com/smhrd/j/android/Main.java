@@ -14,7 +14,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -25,6 +35,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main extends AppCompatActivity {
     private Button btn_mu1,btn_mu2,btn_mu3,btn_mu4,btn_mu5,btn_mu6,btn_mu7,btn_mu8, btn_more1, btn_j, btn_nv1, btn_nv2,btn_nv3;
@@ -32,6 +44,8 @@ public class Main extends AppCompatActivity {
     private TextView menu1,menu2,menu3,menu4,tv_lu_name1,tv_lu_name2,tv_lu_name3,tv_pa1,tv_pa2,tv_pa3;
     private ImageView imageView;
 
+    private RequestQueue queue;
+    private StringRequest stringRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,7 +128,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        // 도시락 안됨
+        // 도시락
         btn_mu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -159,7 +173,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        //샐러드 안됨
+        //샐러드
         btn_mu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -196,7 +210,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        //간편식 안됨
+        //간편식
         btn_mu6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -244,13 +258,16 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        // 헬스케어
+        // 헬스케어 -> 수정중
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new JSONTask().execute("http://222.102.104.135:3000/txts/go_recom.txt");
-//                new JSONTask().execute("http://222.102.104.135:3000/Dise"); // 디비로 접근하는건데 과부하 걸려서 안되는듯..? HTML을 띄워주는듯?
-                new JSONTask2().execute("http://222.102.104.135:3000/txts/go_warn.txt");
+//                new JSONTask().execute("http://222.102.104.135:3000/txts/go_recom.txt");
+////                new JSONTask().execute("http://222.102.104.135:3000/Dise"); // 디비로 접근하는건데 과부하 걸려서 안되는듯..? HTML을 띄워주는듯?
+//                new JSONTask2().execute("http://222.102.104.135:3000/txts/go_warn.txt");
+
+                JSONObject jsonObject = new JSONObject();
+
             }
         });
 
@@ -265,6 +282,57 @@ public class Main extends AppCompatActivity {
 
 
     }
+
+    private void sendRequest() {
+
+
+        queue = Volley.newRequestQueue(this);
+        String url = "http://222.102.104.135:3000/Join";
+        stringRequest = new StringRequest(Request.Method.POST,
+                url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                Log.v("resultValue",response);
+
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    String value = jsonObject.getString("check");
+                    Log.v("result", value);
+                    if(value != null){
+                        Intent intent = new Intent(getApplicationContext(), Login.class);
+                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"회원가입성공",Toast.LENGTH_SHORT).show();
+                        Log.v("test","가입성공");
+                    }else{
+                        Toast.makeText(getApplicationContext(),"회원가입에실패했습니다.",Toast.LENGTH_SHORT).show();
+
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String, String> params = new HashMap<String, String>();
+
+                return params;
+
+
+            }
+        };
+        queue.add(stringRequest);
+    }
+
 
     public class JSONTask extends AsyncTask<String, String, String>{
         @Override
@@ -369,7 +437,7 @@ public class Main extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result2) {
             super.onPostExecute(result2);
-            //Log.d("result2", result2);
+            Log.d("result2", result2);
             Intent intent2 = new Intent(getApplicationContext(), HealthCare.class);
             intent2.putExtra("result2", result2);
             startActivity(intent2);

@@ -22,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 //import com.google.gson.Gson;
 
 
@@ -56,8 +57,8 @@ public class Login extends AppCompatActivity {
 
         tv_find=findViewById(R.id.tv_find);
 
-        String login = PreferenceManager.getString(getApplicationContext(), "login");
-        if (!login.equals("")) {
+        String login = PreferenceManager.getString(getApplicationContext(),"login");
+        if(!cb_login.equals("")){
             try {
                 JSONObject jsonObject = new JSONObject(login);
                 String id = jsonObject.getString("id");
@@ -71,6 +72,7 @@ public class Login extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+
         //아이디비번찾기
         tv_find.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,48 +95,32 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendRequest();
-
-
             }
         });
     }
     public void sendRequest() {
         queue = Volley.newRequestQueue(this);
         String url = "http://222.102.104.135:3000/Login";
-
-
         stringRequest = new StringRequest(Request.Method.POST,
                 url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-                String login2 = PreferenceManager.getString(getApplicationContext(),"login2");
-                if(!response.equals("null") ){
-                    try {
-                        JSONObject jsonObject = new JSONObject(response);
-                        String value = jsonObject.getString("check");
-                        String id = jsonObject.getString("id");
-                        String pw = jsonObject.getString("pw");
+                Log.v("test",response);
 
-
-//                        LoginDTO dto = new LoginDTO(id, pw);
-//                        String login = gson.toJson(dto);
-
-                        //PreferenceManager.setString(getApplicationContext(), "login", login);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    String value = jsonObject.getString("check");
+                    Log.v("test",value);
 
 
 
 
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
 
-                }else {
-                    Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
 
-                Intent intent = new Intent(getApplicationContext(), Main.class);
-                startActivity(intent);
 
             }
         }, new Response.ErrorListener() {
@@ -151,7 +137,9 @@ public class Login extends AppCompatActivity {
                     String utf8String = new String(response.data, "UTF-8");
                     return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response));
                 } catch (UnsupportedEncodingException e) {
+
                     e.printStackTrace();
+
                 }
                 return super.parseNetworkResponse(response);
             }
@@ -164,7 +152,6 @@ public class Login extends AppCompatActivity {
                 params.put("pw", pw_login.getText().toString());
 
                 return params;
-
 
             }
         };
