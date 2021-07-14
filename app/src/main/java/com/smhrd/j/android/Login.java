@@ -8,7 +8,6 @@ import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +22,6 @@ public class Login extends AppCompatActivity {
 
     private EditText id_login, pw_login;
     private Button btn_contract1, btn_login;
-    private CheckBox cb_login;
     private TextView tv__find_id_pw;
 
 
@@ -36,25 +34,11 @@ public class Login extends AppCompatActivity {
         id_login=findViewById(R.id.id_login);
         pw_login=findViewById(R.id.pw_login);
         btn_login=findViewById(R.id.btn_login);
-        btn_contract1=findViewById(R.id.btn_contract1);
-        cb_login=findViewById(R.id.cb_login);
+        btn_contract1=findViewById(R.id.btn_contract);
+
         tv__find_id_pw=findViewById(R.id.tv__find_id_pw);
 
-//        String login = PreferenceManager.getString(getApplicationContext(),"login");
-//        if(!login.equals("")){
-//            try {
-//                JSONObject jsonObject = new JSONObject(login);
-//                String id = jsonObject.getString("id");
-//                String pw = jsonObject.getString("pw");
-//
-//                id_login.setText(id);
-//                pw_login.setText(pw);
-//                cb_login.setChecked(true);
-//
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//        }
+
 
         tv__find_id_pw.setOnClickListener(new View.OnClickListener() {
             @Override

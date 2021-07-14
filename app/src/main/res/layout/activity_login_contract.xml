@@ -286,7 +286,7 @@
                     android:visibility="visible" />
 
                 <Button
-                    android:id="@+id/btn_contract1"
+                    android:id="@+id/btn_contract"
                     android:layout_width="296dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="55dp"
