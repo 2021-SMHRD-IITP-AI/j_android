@@ -3,16 +3,24 @@ package com.smhrd.j.android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.lang.reflect.Array;
 
 public class Purchase extends AppCompatActivity {
-    private Button btn_nv1, btn_nv2, btn_nv3;
-    private  ImageView shp1, back1;
+    private Button btn_nv1, btn_nv2, btn_nv3,btn_j,btn_g;
+    private  ImageView shp1, back1,Pu_img1;
+    private TextView Pu_name1,Pu_price1;
+    private Bitmap image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +36,34 @@ public class Purchase extends AppCompatActivity {
         shp1=findViewById(R.id.shp1);
         back1 = findViewById(R.id.back1);
 
+        Pu_name1=findViewById(R.id.Pu_name1);
+        Pu_price1 = findViewById(R.id.Pu_price1);
+        Pu_img1 = findViewById(R.id.Pu_img1);
+
+
+
+
+        // 이미지, 이름, 가격 가져오기
+        Bundle extras = getIntent().getExtras();
+        String name = extras.getString("main_name1");
+        String price = extras.getString("main_pr1");
+        byte[] byteArray = getIntent().getByteArrayExtra("img");
+        Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+        Pu_img1.setImageBitmap(bitmap);
+        Pu_name1.setText(name);
+        Pu_price1.setText(price);
 
         //이미지 받아오기
-//        Intent intent = getIntent();
-//        byte[] arr = getIntent().getByteArrayExtra("image");
-//        image = BitmapFactory.decodeByteArray(arr, 0, arr.length);
-//        ImageView BigImage = (ImageView)findViewById(R.id.BigImage);
-//        BigImage.setImageBitmap(image);
+//          Intent intent = getIntent();
+//        String name = intent.getStringExtra("main_name1");
+//        String price = intent.getStringExtra("main_pr1");
+//        int main_img1 = intent.getIntExtra("main_img1",R.drawable.main_img4);
+//
+//        Pu_name1.setText(name);
+//        Pu_price1.setText(price);
+//        Pu_img1.setImageResource(main_img1);
+
+
 
 
         back1.setOnClickListener(new View.OnClickListener() {
@@ -54,11 +83,11 @@ public class Purchase extends AppCompatActivity {
         });
 
 
-        //헬스케어
+        //건강일지
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
+                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
                 startActivity(intent);
             }
         });
@@ -76,7 +105,7 @@ public class Purchase extends AppCompatActivity {
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
                 startActivity(intent);
             }
         });

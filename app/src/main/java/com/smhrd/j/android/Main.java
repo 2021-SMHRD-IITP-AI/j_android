@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -86,7 +89,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        //인기상품 안됨
+        //인기상품
         menu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,7 +98,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        //이달의 특가 안됨
+        //이달의 특가
         menu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,7 +116,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        // 도시락 안됨
+        // 도시락
         btn_mu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -158,7 +161,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        //샐러드 안됨
+        //샐러드
         btn_mu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -195,7 +198,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        //간편식 안됨
+        //간편식
         btn_mu6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -214,7 +217,7 @@ public class Main extends AppCompatActivity {
         });
 
 
-        //일일 추천 더보기   안됨
+        //일일 추천 더보기
         btn_more1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -226,38 +229,56 @@ public class Main extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
         img1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Purchase.class);
-//                intent.putExtra("name1",tv_lu_name1.getText().toString());
-//                intent.putExtra("name2",tv_pa1.getText().toString());
+                //Drawable drawable =getResources().getDrawable(R.drawable.main_img4);
+                //Log.v("그냥 알아들어",drawable.toString());
+                // 현재 이미지, 텍스트, 가격 보내기
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                Bitmap bitmap = ((BitmapDrawable) img1.getDrawable()).getBitmap();
+                float scale = (float) (1024/(float)bitmap.getWidth());
+                int image_w = (int) (bitmap.getWidth() * scale);
+                int image_h = (int) (bitmap.getHeight() * scale);
+                Bitmap resize = Bitmap.createScaledBitmap(bitmap, image_w, image_h, true);
+                resize.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
 
-//                Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.main_img4);
-//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-//                byte[] byteArray = stream.toByteArray();
-//                intent.putExtra("image",byteArray);
+
+                Intent intent = new Intent(getApplicationContext(),Purchase.class);
+                intent.putExtra("main_name1",tv_lu_name1.getText().toString());
+                intent.putExtra("main_pr1",tv_pa1.getText().toString());
+                intent.putExtra("img", byteArray);
+
+                //intent.putExtra("main_img1",R.drawable.main_img4);//이미지
 
                 startActivity(intent);
             }
         });
 
-        // 헬스케어
+        // 건강일지
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new JSONTask().execute("http://222.102.104.135:3000/txts/go_recom.txt");
+                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                startActivity(intent);
+//                new JSONTask().execute("http://222.102.104.135:3000/txts/go_recom.txt");
 //                new JSONTask().execute("http://222.102.104.135:3000/Dise"); // 디비로 접근하는건데 과부하 걸려서 안되는듯..? HTML을 띄워주는듯?
-                new JSONTask2().execute("http://222.102.104.135:3000/txts/go.warn.txt");
+//                new JSONTask2().execute("http://222.102.104.135:3000/txts/go.warn.txt");
             }
         });
 
-        // 내 정보
+        // 마이페이지
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
                 startActivity(intent);
             }
         });

@@ -7,26 +7,27 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
-public class MyPage extends AppCompatActivity {
+public class BUY_INFO extends AppCompatActivity {
 
-    private Button btn_nv1, btn_nv2, btn_nv3;
     private ImageView back1, search1, shp1;
+    private Button btn_nv1,btn_nv2,btn_nv3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_page);
-
-        btn_nv1 = findViewById(R.id.btn_nv1);
-        btn_nv2 = findViewById(R.id.btn_nv2);
-        btn_nv3 = findViewById(R.id.btn_nv3);
-
+        setContentView(R.layout.activity_buy_info);
 
         back1=findViewById(R.id.back1);
         search1 =findViewById(R.id.search1);
         shp1 =findViewById(R.id.shp1);
+
+        btn_nv1 =findViewById(R.id.btn_nv1);
+        btn_nv2 =findViewById(R.id.btn_nv2);
+        btn_nv3 =findViewById(R.id.btn_nv3);
 
 
         //뒤로가기
@@ -48,16 +49,16 @@ public class MyPage extends AppCompatActivity {
         });
 
 
-        //건강일지
+        //헬스케어  //연결안됨 다시해보기
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
                 startActivity(intent);
-
-                }
+            }
         });
 
+        //메인
         btn_nv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,7 +71,7 @@ public class MyPage extends AppCompatActivity {
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
+                Intent intent = new Intent(getApplicationContext(), MyPage.class);
                 startActivity(intent);
             }
         });
@@ -82,4 +83,5 @@ public class MyPage extends AppCompatActivity {
         Log.v("Back","확인");
         super.onBackPressed();
     }
+
 }

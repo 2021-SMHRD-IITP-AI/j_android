@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableTop="@drawable/main_change_red"
-                android:text="헬스케어"
+                android:text="건강일지"
                 android:textColor="#670401" />
         </LinearLayout>
 
@@ -99,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableTop="@drawable/main_user_red"
-                android:text="내정보"
+                android:text="마이페이지"
                 android:textColor="#670401" />
 
         </LinearLayout>
@@ -269,8 +269,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_weight="0.8"
-            android:text="내 정보"
             android:fontFamily="@font/jalnan"
+            android:text="회원 정보"
             android:textColor="#4C4C4C"
             android:textSize="16sp"
             android:textStyle="bold" />

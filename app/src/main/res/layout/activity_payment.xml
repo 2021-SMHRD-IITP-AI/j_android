@@ -553,7 +553,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
-                    android:text="헬스케어"
+                    android:text="건강일지"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -588,7 +588,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
-                    android:text="내정보"
+                    android:text="마이페이지"
                     android:textColor="#670401" />
 
             </LinearLayout>
@@ -609,7 +609,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="59dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="59dp"
+        app:layout_constraintGuide_percent="0.08"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
