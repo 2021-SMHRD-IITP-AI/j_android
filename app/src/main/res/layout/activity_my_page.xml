@@ -135,7 +135,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView13w117"
+                android:id="@+id/my_tv_name"
                 android:layout_width="257dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="15dp"
@@ -166,7 +166,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView13iew117"
+                android:id="@+id/my_tv_tel"
                 android:layout_width="257dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="15dp"
@@ -198,7 +198,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView13117"
+                android:id="@+id/my_tv_addr"
                 android:layout_width="257dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -228,7 +228,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView117"
+                android:id="@+id/my_tv_email"
                 android:layout_width="257dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="15dp"

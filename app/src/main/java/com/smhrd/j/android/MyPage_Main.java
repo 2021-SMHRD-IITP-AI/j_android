@@ -4,15 +4,34 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MyPage_Main extends AppCompatActivity {
     private ImageView back1, search1, shp1;
     private Button btn_nv1,btn_nv2,btn_nv3, MY_point,MY_coupon, MY_order;
     private TextView MY_member, MY_cart, MY_qna, MY_my;
+
+    private RequestQueue queue;
+    private StringRequest stringRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,13 +115,19 @@ public class MyPage_Main extends AppCompatActivity {
             public void onClick(View v) {
                 Intent newIntent = getIntent();
                 String id = newIntent.getStringExtra("id");
+                String name = newIntent.getStringExtra("name");
+                String tel = newIntent.getStringExtra("tel");
+                String address = newIntent.getStringExtra("address");
+                String email = newIntent.getStringExtra("email");
+
                 Intent intent = new Intent(getApplicationContext(), MyPage.class);
                 intent.putExtra("id", id);
+                intent.putExtra("name", name);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
                 startActivity(intent);
             }
         });
-
-
-
     }
 }
