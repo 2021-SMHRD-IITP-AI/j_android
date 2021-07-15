@@ -15,7 +15,6 @@ public class HealthDTO {
         this.id = id;
     }
 
-
     public String getId() {
         return id;
     }

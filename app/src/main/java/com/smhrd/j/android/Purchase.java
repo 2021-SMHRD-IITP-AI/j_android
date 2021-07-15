@@ -139,8 +139,6 @@ public class Purchase extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
     //뒤로가기

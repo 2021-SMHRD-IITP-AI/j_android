@@ -148,7 +148,6 @@ public class Today_lunch_box extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     //뒤로가기

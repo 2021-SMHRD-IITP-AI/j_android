@@ -59,7 +59,6 @@ public class Bar extends AppCompatActivity {
         B_name7 = findViewById(R.id.B_name7);
         B_name8 = findViewById(R.id.B_name8);
 
-
         //뒤로가기
         back1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,8 +131,6 @@ public class Bar extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
     //뒤로가기

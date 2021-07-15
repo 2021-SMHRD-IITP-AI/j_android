@@ -51,7 +51,6 @@ public class ID_PW_FIND extends AppCompatActivity {
         btn_find_pw=findViewById(R.id.btn_find_pw);
         btn_check=findViewById(R.id.btn_check);
 
-
         btn_find_pw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

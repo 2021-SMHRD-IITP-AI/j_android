@@ -60,8 +60,6 @@ public class HealthDaily extends AppCompatActivity {
 
     Calendar myCalendar = Calendar.getInstance();
 
-
-
     private ArrayList<HealthDTO> list = new ArrayList<HealthDTO>();
 
     @Override
@@ -72,7 +70,6 @@ public class HealthDaily extends AppCompatActivity {
 
         //서버 값 가져오는 매소드
         checkHealth();
-
 
         health_edt=findViewById(R.id.health_edt);
         health_cal =findViewById(R.id.health_cal);
@@ -114,9 +111,6 @@ public class HealthDaily extends AppCompatActivity {
             }
         });
 
-
-
-
         //스피너
         final String[] data = getResources().getStringArray(R.array.healtharray);
         ArrayAdapter<String> adapter =new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,data);
@@ -137,7 +131,6 @@ public class HealthDaily extends AppCompatActivity {
 
             }
         });
-
 
         //추가버튼 클릭했을 때 서버로 값 넘김
         health_add.setOnClickListener(new View.OnClickListener() {
@@ -172,7 +165,6 @@ public class HealthDaily extends AppCompatActivity {
             }
         });
 
-
         //헬스케어
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -199,8 +191,6 @@ public class HealthDaily extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
     //서버에서 데이터 받아오기
@@ -226,8 +216,6 @@ public class HealthDaily extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -241,11 +229,8 @@ public class HealthDaily extends AppCompatActivity {
                 return params;
             }
         };
-
         queue.add(stringRequest);
     }
-
-
 
     //서버로 데이터 보내기
     public void sendRequest() {
@@ -266,12 +251,10 @@ public class HealthDaily extends AppCompatActivity {
 
                     }else {
                         health_edt.setText("");
-
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -291,7 +274,6 @@ public class HealthDaily extends AppCompatActivity {
 
         queue.add(stringRequest);
     }
-
 
     //뒤로가기
     @Override

@@ -203,16 +203,8 @@ public class Lunch_box_main extends AppCompatActivity {
                     // 버튼 활성화
                     //btn_g.setEnabled(false);
                     Log.v("야","구매 실패"+ result1);
-
-
                 }
             }
-
-
-
         });
-
-
-
     }
 }

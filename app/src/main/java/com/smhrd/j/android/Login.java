@@ -52,7 +52,7 @@ public class Login extends AppCompatActivity {
         id_login = findViewById(R.id.id_login);
         pw_login = findViewById(R.id.pw_login);
         btn_login = findViewById(R.id.btn_login);
-        btn_contract = findViewById(R.id.btn_contract);
+        btn_contract = findViewById(R.id.btn_contract1);
         cb_login = findViewById(R.id.cb_login);
 
         tv_find=findViewById(R.id.tv__find_id_pw);

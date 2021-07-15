@@ -78,7 +78,6 @@ public class MyPage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), HealthCare.class);
                 startActivity(intent);
-
             }
         });
 

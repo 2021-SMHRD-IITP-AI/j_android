@@ -125,7 +125,6 @@ public class Sale extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     //뒤로가기
