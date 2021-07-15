@@ -267,6 +267,7 @@
                         android:textStyle="bold" />
 
                     <RadioGroup
+                        android:id="@+id/rg_rg"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -283,7 +284,7 @@
                             android:text="무통장 입금" />
 
                         <RadioButton
-                            android:id="@+id/radioButton"
+                            android:id="@+id/rd_3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -293,9 +294,72 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="5dp"
+                        android:layout_height="wrap_content"
                         android:background="#F4F4F4"
                         android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/layout_g"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <Spinner
+                                android:id="@+id/spinner2"
+                                android:layout_width="150dp"
+                                android:layout_height="40dp"
+                                android:entries="@array/array2" />
+
+                            <EditText
+                                android:id="@+id/editTextNumber"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:ems="10"
+                                android:inputType="number" />
+
+                            <EditText
+                                android:id="@+id/editTextNumber2"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="0"
+                                android:ems="10"
+                                android:inputType="number" />
+
+                            <EditText
+                                android:id="@+id/editTextNumber3"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="0"
+                                android:ems="10"
+                                android:inputType="number" />
+
+                            <EditText
+                                android:id="@+id/editTextNumber4"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="0"
+                                android:ems="10"
+                                android:inputType="number" />
+
+                            <TextView
+                                android:id="@+id/textView81"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:text="CVC" />
+
+                            <EditText
+                                android:id="@+id/editTextNumber5"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:ems="10"
+                                android:inputType="number" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -361,7 +425,7 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/btn_pay"
                         android:layout_width="296dp"
                         android:layout_height="50dp"
                         android:layout_marginStart="57dp"
