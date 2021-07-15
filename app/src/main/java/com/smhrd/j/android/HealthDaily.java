@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -60,6 +61,8 @@ public class HealthDaily extends AppCompatActivity {
 
     Calendar myCalendar = Calendar.getInstance();
 
+
+
     private ArrayList<HealthDTO> list = new ArrayList<HealthDTO>();
 
     @Override
@@ -68,8 +71,13 @@ public class HealthDaily extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_daily);
 
+
+
+
+
         //서버 값 가져오는 매소드
         checkHealth();
+
 
         health_edt=findViewById(R.id.health_edt);
         health_cal =findViewById(R.id.health_cal);
@@ -83,13 +91,14 @@ public class HealthDaily extends AppCompatActivity {
         btn_nv3 = findViewById(R.id.btn_nv3);
 
         //날짜 비교해서 캘린더보여주기
-        for(int i = 0; i < list.size(); i++){
+//       for(int i = 0; i < list.size(); i++){
+//
 //            if(건강일지 날짜 가져오기 == list.get(i).getDate()){
 //                layout1.setVisibility((View.VISIBLE));
 //            }else{
 //                layout1.setVisibility((View.INVISIBLE));
 //            }
-        }
+//       }
 
         //캘린더
         health_cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -97,7 +106,7 @@ public class HealthDaily extends AppCompatActivity {
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 month += 1;
                 //health_edt.setText(String.format("%d년 %d월 %d일" ,year,month,dayOfMonth));  //캘린더날짜 출력
-                // date_daily =
+
 
                 if (state_cnt % 2 == 0) {
                     layout1.setVisibility((View.VISIBLE));
@@ -110,6 +119,8 @@ public class HealthDaily extends AppCompatActivity {
 
             }
         });
+
+
 
         //스피너
         final String[] data = getResources().getStringArray(R.array.healtharray);
@@ -132,6 +143,7 @@ public class HealthDaily extends AppCompatActivity {
             }
         });
 
+
         //추가버튼 클릭했을 때 서버로 값 넘김
         health_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,7 +155,6 @@ public class HealthDaily extends AppCompatActivity {
                     ck_check = "false";
                     // health_ck.setChecked(false);
                 }
-
                 sendRequest();
             }
         });
@@ -164,6 +175,7 @@ public class HealthDaily extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
         //헬스케어
         btn_nv1.setOnClickListener(new View.OnClickListener() {
@@ -191,7 +203,17 @@ public class HealthDaily extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+
     }
+//    브로드 캐스트
+//    public  void onReceive(Context context, Intent intent1){
+//        String id = intent1.getStringExtra("userId");
+//        Log.v("그냥 알아들어", id);
+//    }
+
 
     //서버에서 데이터 받아오기
     public void checkHealth() {
@@ -202,20 +224,21 @@ public class HealthDaily extends AppCompatActivity {
             public void onResponse(String response) { //server로 부터 데이터를 받아오는 곳
                 Log.v("resultValue", response);
 
-                if(!response.equals("null")){
+                if(response != null){
                     try {
                         JSONObject jsonObject = new JSONObject(response);
                         String date = jsonObject.getString("date");
-                        String health_daily = jsonObject.getString("daily");
+                        String health_daily = jsonObject.getString("note_text");
                         String id = jsonObject.getString("id");
-                        String health_check = jsonObject.getString("ck");
-                        String health_spinner = jsonObject.getString("sp");
-                        //HealthDTO info = new HealthDTO(date, health_daily,id,health_check,health_spinner);
+                        String health_check = jsonObject.getString("note_workout");
+                        String health_spinner = jsonObject.getString("note_health");
 
                     }catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
+
+
             }
         }, new Response.ErrorListener() {
             @Override
@@ -229,8 +252,11 @@ public class HealthDaily extends AppCompatActivity {
                 return params;
             }
         };
+
         queue.add(stringRequest);
     }
+
+
 
     //서버로 데이터 보내기
     public void sendRequest() {
@@ -251,10 +277,12 @@ public class HealthDaily extends AppCompatActivity {
 
                     }else {
                         health_edt.setText("");
+
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
             }
         }, new Response.ErrorListener() {
             @Override
@@ -264,10 +292,15 @@ public class HealthDaily extends AppCompatActivity {
         }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError { //server로 데이터를 보낼 시 넣어주는 곳
+                Log.d("check>>", health_edt.getText().toString()+"/"+ck_check+"/"+result);
+                Intent intent = getIntent();
+                String id = intent.getStringExtra("id");
                 Map<String,String> params = new HashMap<String, String>();
-                params.put("daily", health_edt.getText().toString());
-                params.put("ck",ck_check);
-                params.put("sp",result);
+                Log.v("dddd", id);
+                params.put("id",id);
+                params.put("note_text", health_edt.getText().toString());
+                params.put("note_workout",ck_check);
+                params.put("note_health",result);
                 return params;
             }
         };
@@ -275,13 +308,12 @@ public class HealthDaily extends AppCompatActivity {
         queue.add(stringRequest);
     }
 
+
     //뒤로가기
     @Override
     public void onBackPressed() {
-        Log.v("Back","확인");
+        Log.v("그냥 알아들어","확인");
         super.onBackPressed();
     }
-
-
 
 }

@@ -98,9 +98,15 @@ public class Recommend_lunch_box extends AppCompatActivity {
             task.execute();
 
             names[i].setText(values2[i]);
-
             prices[i].setText(values3[i]);
         }
+
+
+
+
+
+
+
 
         // 이미지 클릭시 구매페이지 이동
         img_recom1.setOnClickListener(new View.OnClickListener() {
@@ -108,7 +114,7 @@ public class Recommend_lunch_box extends AppCompatActivity {
             public void onClick(View v) {
                 // 현재 이미지, 이름, 가격 보내기
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                Bitmap bitmap = ((BitmapDrawable)img_recom1.getDrawable()).getBitmap();
+                Bitmap bitmap = ((BitmapDrawable)imgs[0].getDrawable()).getBitmap();
                 float scale = (float) (1024/(float)bitmap.getWidth());
                 int image_w = (int) (bitmap.getWidth() * scale);
                 int image_h = (int) (bitmap.getHeight() * scale);
@@ -123,6 +129,13 @@ public class Recommend_lunch_box extends AppCompatActivity {
                 intent.putExtra("recom_price", tv_recom_price1.getText().toString());
                 Log.v("recom_test",tv_recom_name1.getText().toString()+":"+tv_recom_price1.getText().toString());
                 startActivity(intent);
+                try {
+                    resize = null;
+                    bitmap = null;
+                    stream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -130,7 +143,7 @@ public class Recommend_lunch_box extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                Bitmap bitmap = ((BitmapDrawable) img_recom2.getDrawable()).getBitmap();
+                Bitmap bitmap = ((BitmapDrawable) imgs[1].getDrawable()).getBitmap();
                 float scale = (float) (1024/(float)bitmap.getWidth());
                 int image_w = (int) (bitmap.getWidth() * scale);
                 int image_h = (int) (bitmap.getHeight() * scale);
@@ -139,12 +152,20 @@ public class Recommend_lunch_box extends AppCompatActivity {
                 byte[] byteArray = stream.toByteArray();
 
                 Log.v("test", String.valueOf(byteArray));
+
                 Intent intent = new Intent(getApplicationContext(), Purchase.class);
                 intent.putExtra("recom_img", byteArray);
                 intent.putExtra("recom_name", tv_recom_name2.getText().toString());
                 intent.putExtra("recom_price", tv_recom_price2.getText().toString());
                 Log.v("recom_test",tv_recom_name2.getText().toString()+":"+tv_recom_price2.getText().toString());
                 startActivity(intent);
+                try {
+                    resize = null;
+                    bitmap = null;
+                    stream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -152,7 +173,7 @@ public class Recommend_lunch_box extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                Bitmap bitmap = ((BitmapDrawable) img_recom3.getDrawable()).getBitmap();
+                Bitmap bitmap = ((BitmapDrawable) imgs[2].getDrawable()).getBitmap();
                 float scale = (float) (1024/(float)bitmap.getWidth());
                 int image_w = (int) (bitmap.getWidth() * scale);
                 int image_h = (int) (bitmap.getHeight() * scale);
@@ -166,6 +187,13 @@ public class Recommend_lunch_box extends AppCompatActivity {
                 intent.putExtra("recom_name", tv_recom_name3.getText().toString());
                 intent.putExtra("recom_price", tv_recom_price3.getText().toString());
                 startActivity(intent);
+                try {
+                    resize = null;
+                    bitmap = null;
+                    stream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -173,7 +201,7 @@ public class Recommend_lunch_box extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                Bitmap bitmap = ((BitmapDrawable) img_recom4.getDrawable()).getBitmap();
+                Bitmap bitmap = ((BitmapDrawable) imgs[3].getDrawable()).getBitmap();
                 float scale = (float) (1024/(float)bitmap.getWidth());
                 int image_w = (int) (bitmap.getWidth() * scale);
                 int image_h = (int) (bitmap.getHeight() * scale);
@@ -187,6 +215,13 @@ public class Recommend_lunch_box extends AppCompatActivity {
                 intent.putExtra("recom_name", tv_recom_name4.getText().toString());
                 intent.putExtra("recom_price", tv_recom_price4.getText().toString());
                 startActivity(intent);
+                try {
+                    resize = null;
+                    bitmap = null;
+                    stream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -194,7 +229,7 @@ public class Recommend_lunch_box extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                Bitmap bitmap = ((BitmapDrawable) img_recom5.getDrawable()).getBitmap();
+                Bitmap bitmap = ((BitmapDrawable) imgs[4].getDrawable()).getBitmap();
                 float scale = (float) (1024/(float)bitmap.getWidth());
                 int image_w = (int) (bitmap.getWidth() * scale);
                 int image_h = (int) (bitmap.getHeight() * scale);
@@ -208,6 +243,13 @@ public class Recommend_lunch_box extends AppCompatActivity {
                 intent.putExtra("recom_name", tv_recom_name5.getText().toString());
                 intent.putExtra("recom_price", tv_recom_price5.getText().toString());
                 startActivity(intent);
+                try {
+                    resize = null;
+                    bitmap = null;
+                    stream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -215,7 +257,7 @@ public class Recommend_lunch_box extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                Bitmap bitmap = ((BitmapDrawable) img_recom6.getDrawable()).getBitmap();
+                Bitmap bitmap = ((BitmapDrawable) imgs[5].getDrawable()).getBitmap();
                 float scale = (float) (1024/(float)bitmap.getWidth());
                 int image_w = (int) (bitmap.getWidth() * scale);
                 int image_h = (int) (bitmap.getHeight() * scale);
@@ -229,6 +271,13 @@ public class Recommend_lunch_box extends AppCompatActivity {
                 intent.putExtra("recom_name", tv_recom_name6.getText().toString());
                 intent.putExtra("recom_price", tv_recom_price6.getText().toString());
                 startActivity(intent);
+                try {
+                    resize = null;
+                    bitmap = null;
+                    stream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -236,7 +285,7 @@ public class Recommend_lunch_box extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                Bitmap bitmap = ((BitmapDrawable) img_recom7.getDrawable()).getBitmap();
+                Bitmap bitmap = ((BitmapDrawable) imgs[6].getDrawable()).getBitmap();
                 float scale = (float) (1024/(float)bitmap.getWidth());
                 int image_w = (int) (bitmap.getWidth() * scale);
                 int image_h = (int) (bitmap.getHeight() * scale);
@@ -250,6 +299,13 @@ public class Recommend_lunch_box extends AppCompatActivity {
                 intent.putExtra("recom_name", tv_recom_name7.getText().toString());
                 intent.putExtra("recom_price", tv_recom_price7.getText().toString());
                 startActivity(intent);
+                try {
+                    resize = null;
+                    bitmap = null;
+                    stream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -257,7 +313,7 @@ public class Recommend_lunch_box extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                Bitmap bitmap = ((BitmapDrawable) img_recom8.getDrawable()).getBitmap();
+                Bitmap bitmap = ((BitmapDrawable) imgs[7].getDrawable()).getBitmap();
                 float scale = (float) (1024/(float)bitmap.getWidth());
                 int image_w = (int) (bitmap.getWidth() * scale);
                 int image_h = (int) (bitmap.getHeight() * scale);
@@ -271,6 +327,14 @@ public class Recommend_lunch_box extends AppCompatActivity {
                 intent.putExtra("recom_name", tv_recom_name8.getText().toString());
                 intent.putExtra("recom_price", tv_recom_price8.getText().toString());
                 startActivity(intent);
+
+                try {
+                    resize = null;
+                    bitmap = null;
+                    stream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 

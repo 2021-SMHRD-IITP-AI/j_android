@@ -25,12 +25,11 @@ public class Purchase extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase);
 
-
         btn_nv1 = findViewById(R.id.btn_nv1);
         btn_nv2 = findViewById(R.id.btn_nv2);
         btn_nv3 = findViewById(R.id.btn_nv3);
         btn_j = findViewById(R.id.btn_j);
-        btn_g = findViewById(R.id.btn_g);
+        btn_g = findViewById(R.id.cart_btn_g);
 
         shp1=findViewById(R.id.shp1);
         back1 = findViewById(R.id.back1);
@@ -46,7 +45,7 @@ public class Purchase extends AppCompatActivity {
         byte[] byteArray = getIntent().getByteArrayExtra("recom_img");
         Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
 
-        Pu_img1.setImageBitmap(bitmap);
+       Pu_img1.setImageBitmap(bitmap);
         Pu_name1.setText(name);
         Pu_price1.setText(price);
 
