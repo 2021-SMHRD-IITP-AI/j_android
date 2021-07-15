@@ -83,7 +83,7 @@
                         android:layout_height="27dp"
                         android:layout_marginEnd="5dp"
                         android:layout_marginRight="5dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0" />
 
                     <ImageView
                         android:id="@+id/cart_img1"
@@ -93,7 +93,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginEnd="5dp"
                         android:layout_marginRight="5dp"
-                        android:layout_weight="1"
+                        android:layout_weight="0"
                         app:srcCompat="@drawable/proteen_img8" />
 
                     <LinearLayout

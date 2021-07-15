@@ -25,18 +25,20 @@ public class Cart extends AppCompatActivity {
         btn_nv1 = findViewById(R.id.btn_nv1);
         btn_nv2 = findViewById(R.id.btn_nv2);
         btn_nv3 = findViewById(R.id.btn_nv3);
-        cart_btn_minus1 = findViewById(R.id.cart_btn_minus1);
-        cart_btn_minus2 = findViewById(R.id.cart_btn_minus2);
-        cart_btn_plus1 = findViewById(R.id.cart_btn_plus1);
-        cart_btn_plus2 = findViewById(R.id.cart_btn_plus2);
         cart_btn_g = findViewById(R.id.cart_btn_g);
 
-        cart_tv_count1 = findViewById(R.id.cart_tv_count1);
-        cart_tv_count2 = findViewById(R.id.cart_tv_count2);
+//        cart_btn_minus1 = findViewById(R.id.cart_btn_minus1);
+//        cart_btn_minus2 = findViewById(R.id.cart_btn_minus2);
+//        cart_btn_plus1 = findViewById(R.id.cart_btn_plus1);
+//        cart_btn_plus2 = findViewById(R.id.cart_btn_plus2);
+//
+//
+//        cart_tv_count1 = findViewById(R.id.cart_tv_count1);
+//        cart_tv_count2 = findViewById(R.id.cart_tv_count2);
         cart_tv_name1 = findViewById(R.id.cart_tv_name1);
-        cart_tv_name2 = findViewById(R.id.cart_tv_name2);
+//        cart_tv_name2 = findViewById(R.id.cart_tv_name2);
         cart_tv_price1 = findViewById(R.id.cart_tv_price1);
-        cart_tv_price2 = findViewById(R.id.cart_tv_price2);
+//        cart_tv_price2 = findViewById(R.id.cart_tv_price2);
         cart_tv_sum = findViewById(R.id.cart_tv_sum);
         cart_tv_total = findViewById(R.id.cart_tv_total);
         cart_tv_trans = findViewById(R.id.cart_tv_trans);
