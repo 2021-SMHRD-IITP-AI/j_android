@@ -71,6 +71,7 @@ public class Cart extends AppCompatActivity {
         });
 
 
+        //구매
         btn_g.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

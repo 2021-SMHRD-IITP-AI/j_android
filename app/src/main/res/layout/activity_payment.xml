@@ -130,24 +130,28 @@
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
 
-                                <TextView
-                                    android:id="@+id/textView2ew46"
-                                    android:layout_width="164dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="15dp"
-                                    android:layout_marginLeft="15dp"
-                                    android:textColor="#4C4C4C"
-                                    android:textSize="15sp" />
-
                             </LinearLayout>
 
                             <TextView
                                 android:id="@+id/pay_tv_price1"
-                                android:layout_width="95dp"
+                                android:layout_width="85dp"
                                 android:layout_height="33dp"
-                                android:layout_marginBottom="15dp"
                                 android:layout_weight="1"
-                                android:text="37,000원"
+                                android:gravity="right"
+                                android:text="37,000"
+                                android:textColor="#4C4C4C"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView36"
+                                android:layout_width="30dp"
+                                android:layout_height="33dp"
+                                android:layout_marginEnd="25dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:text="원"
                                 android:textColor="#4C4C4C"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -244,14 +248,6 @@
                                     android:textColor="#4C4C4C"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="164dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="15dp"
-                                    android:layout_marginLeft="15dp"
-                                    android:textColor="#4C4C4C"
-                                    android:textSize="15sp" />
 
                             </LinearLayout>
 
@@ -403,11 +399,22 @@
                                 android:id="@+id/pay_tv_sum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="25dp"
-                                android:layout_marginRight="25dp"
                                 android:layout_weight="1"
                                 android:gravity="right"
-                                android:text="38,900원"
+                                android:text="38,900"
+                                android:textColor="#4C4C4C"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView21"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="25dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_weight="0.07"
+                                android:gravity="right"
+                                android:text="원"
                                 android:textColor="#4C4C4C"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -434,11 +441,22 @@
                                 android:id="@+id/pay_tv_dc"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="25dp"
-                                android:layout_marginRight="25dp"
                                 android:layout_weight="1"
                                 android:gravity="right"
-                                android:text="-2,000원"
+                                android:text="-2,000"
+                                android:textColor="#4C4C4C"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView34"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="25dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_weight="0.07"
+                                android:gravity="right"
+                                android:text="원"
                                 android:textColor="#4C4C4C"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -464,11 +482,22 @@
                                 android:id="@+id/pay_tv_trans"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="25dp"
-                                android:layout_marginRight="25dp"
                                 android:layout_weight="1"
                                 android:gravity="right"
-                                android:text="2,500원"
+                                android:text="2,500"
+                                android:textColor="#4C4C4C"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView23"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="25dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_weight="0.07"
+                                android:gravity="right"
+                                android:text="원"
                                 android:textColor="#4C4C4C"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
