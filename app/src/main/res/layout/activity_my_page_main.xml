@@ -73,7 +73,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/MY_pint"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
@@ -84,7 +84,7 @@
                     app:backgroundTint="#F39C12" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/MY_coupon"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
@@ -95,7 +95,7 @@
                     app:backgroundTint="#FF5C30" />
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/MY_order"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
@@ -114,18 +114,18 @@
                 android:paddingTop="60dp">
 
                 <TextView
-                    android:id="@+id/textView123"
+                    android:id="@+id/MY_member"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginLeft="25dp"
                     android:layout_marginBottom="30dp"
-                    android:text="회원정보"
+                    android:text="회원 정보"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView124"
+                    android:id="@+id/MY_cart"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
@@ -136,7 +136,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView126"
+                    android:id="@+id/MY_qna"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
@@ -147,7 +147,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView127"
+                    android:id="@+id/MY_my"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
@@ -181,7 +181,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
-                    android:text="헬스케어"
+                    android:text="건강일지"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -216,7 +216,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
-                    android:text="내정보"
+                    android:text="마이페이지"
                     android:textColor="#670401" />
 
             </LinearLayout>

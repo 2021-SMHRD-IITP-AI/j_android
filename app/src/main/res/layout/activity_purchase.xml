@@ -73,8 +73,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
                     android:orientation="vertical"
+                    android:paddingLeft="32dp"
                     android:paddingTop="4dp">
 
                     <ImageView
@@ -91,6 +91,8 @@
                         android:layout_marginLeft="-20dp"
                         android:layout_marginTop="25dp"
                         android:layout_weight="1"
+                        android:gravity="left"
+                        android:paddingLeft="30dp"
                         android:text="달달한 연어 볶음밥"
                         android:textColor="#4C4C4C"
                         android:textSize="34sp"
@@ -307,7 +309,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
-                    android:text="헬스케어"
+                    android:text="건강일지"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -342,7 +344,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
-                    android:text="내정보"
+                    android:text="마이페이지"
                     android:textColor="#670401" />
 
             </LinearLayout>

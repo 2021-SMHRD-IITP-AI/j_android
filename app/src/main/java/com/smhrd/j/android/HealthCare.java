@@ -68,6 +68,16 @@ public class HealthCare extends AppCompatActivity {
             }
         });
 
+        //건강일지
+        btn_nv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                startActivity(intent);
+            }
+        });
+
+
         btn_nv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,10 +86,11 @@ public class HealthCare extends AppCompatActivity {
             }
         });
 
+        //마이페이지
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
                 startActivity(intent);
             }
         });

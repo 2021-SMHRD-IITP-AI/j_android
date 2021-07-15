@@ -13,78 +13,56 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.HttpHeaderParser;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-//import com.google.gson.Gson;
 
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
-import java.util.Map;
-
 public class Login extends AppCompatActivity {
 
     private EditText id_login, pw_login;
-    private Button btn_contract, btn_login;
-    private CheckBox cb_login;
-    private TextView tv_find;
+    private Button btn_contract1, btn_login;
+    private TextView tv__find_id_pw;
 
 
-    private RequestQueue queue;
-    private StringRequest stringRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        id_login = findViewById(R.id.id_login);
-        pw_login = findViewById(R.id.pw_login);
-        btn_login = findViewById(R.id.btn_login);
-        btn_contract = findViewById(R.id.btn_contract);
-        cb_login = findViewById(R.id.cb_login);
+        id_login=findViewById(R.id.id_login);
+        pw_login=findViewById(R.id.pw_login);
+        btn_login=findViewById(R.id.btn_login);
+        btn_contract1=findViewById(R.id.btn_contract1);
 
-        tv_find=findViewById(R.id.tv_find);
+        tv__find_id_pw=findViewById(R.id.tv__find_id_pw);
 
-        String login = PreferenceManager.getString(getApplicationContext(), "login");
-        if (!login.equals("")) {
-            try {
-                JSONObject jsonObject = new JSONObject(login);
-                String id = jsonObject.getString("id");
-                String pw = jsonObject.getString("pw");
 
-                id_login.setText(id);
-                pw_login.setText(pw);
-                cb_login.setChecked(true);
 
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-        //아이디비번찾기
-        tv_find.setOnClickListener(new View.OnClickListener() {
+        tv__find_id_pw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ID_PW_FIND.class);
+                Intent intent2 = new Intent(getApplicationContext(),ID_PW_FIND.class);
+                startActivity(intent2);
+
+            }
+        });
+
+        pw_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),ID_PW_FIND3.class);
                 startActivity(intent);
             }
         });
 
-        //회원가입 버튼
-        btn_contract.setOnClickListener(new View.OnClickListener() {
+
+        btn_contract1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Login_contract.class);
+                Intent intent = new Intent(getApplicationContext(),Login_contract.class);
                 startActivity(intent);
             }
         });
@@ -92,84 +70,52 @@ public class Login extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendRequest();
+
+                String userId = id_login.getText().toString();
+                String userPw = pw_login.getText().toString();
+
+                Response.Listener<String>listener=new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            boolean success = jsonObject.getBoolean("success");
+                            if (success) {
+
+                                String userID = jsonObject.getString("id");
+                                String userPW = jsonObject.getString("pw");
+
+
+                                Toast.makeText(getApplicationContext(), "로그인성공", Toast.LENGTH_SHORT).show();
+
+                                Log.v("test","성공");
+
+                                Intent intent = new Intent(Login.this, Login_contract.class);
+                                intent.putExtra("userId", (Parcelable) id_login);
+                                intent.putExtra("userPw", (Parcelable) pw_login);
+                                startActivity(intent);
+
+                                //브로드 캐스트
+//                                Intent intent1 = new Intent();
+//                                intent1.setAction("HealthDaily");
+//                                intent1.putExtra("userId", (Parcelable) id_login);
+//                                sendBroadcast(intent1);
+
+
+
+                            } else {
+                                return;
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                };
 
 
             }
         });
-    }
-    public void sendRequest() {
-        queue = Volley.newRequestQueue(this);
-        String url = "http://222.102.104.135:3000/Login";
-
-
-        stringRequest = new StringRequest(Request.Method.POST,
-                url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-
-                String login2 = PreferenceManager.getString(getApplicationContext(),"login2");
-                if(!response.equals("null") ){
-                    try {
-                        JSONObject jsonObject = new JSONObject(response);
-                        String value = jsonObject.getString("check");
-                        String id = jsonObject.getString("id");
-                        String pw = jsonObject.getString("pw");
-
-
-//                        LoginDTO dto = new LoginDTO(id, pw);
-//                        String login = gson.toJson(dto);
-
-                        //PreferenceManager.setString(getApplicationContext(), "login", login);
-
-
-
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                }else {
-                    Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
-                }
-
-                Intent intent = new Intent(getApplicationContext(), Main.class);
-                startActivity(intent);
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-                error.printStackTrace();
-            }
-        }) {
-            @Override
-            protected Response<String> parseNetworkResponse(NetworkResponse response) {
-
-                try {
-                    String utf8String = new String(response.data, "UTF-8");
-                    return Response.success(utf8String, HttpHeaderParser.parseCacheHeaders(response));
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
-                return super.parseNetworkResponse(response);
-            }
-
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("id", id_login.getText().toString());
-                params.put("pw", pw_login.getText().toString());
-
-                return params;
-
-
-            }
-        };
-        queue.add(stringRequest);
-
 
     }
 }

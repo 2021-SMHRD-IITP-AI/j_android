@@ -47,11 +47,11 @@ public class Payment extends AppCompatActivity {
         });
 
 
-        //헬스케어
+        //건강일지
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
+                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
                 startActivity(intent);
             }
         });
@@ -69,7 +69,7 @@ public class Payment extends AppCompatActivity {
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
                 startActivity(intent);
             }
         });
