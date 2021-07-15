@@ -267,7 +267,11 @@ public class Main extends AppCompatActivity {
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent newIntent = getIntent();
+                String id = newIntent.getStringExtra("id");
+
                 Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                intent.putExtra("id",id);
                 startActivity(intent);
 //                new JSONTask().execute("http://222.102.104.135:3000/txts/go_recom.txt");
 //                new JSONTask().execute("http://222.102.104.135:3000/Dise"); // 디비로 접근하는건데 과부하 걸려서 안되는듯..? HTML을 띄워주는듯?

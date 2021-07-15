@@ -35,6 +35,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -54,6 +55,7 @@ public class HealthDaily extends AppCompatActivity {
    private LinearLayout layout1;
    int state_cnt;
    private String ck_check;
+   private  String day ="";
     private String result = "";
 
     private RequestQueue queue;
@@ -71,6 +73,10 @@ public class HealthDaily extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_daily);
 
+
+
+
+
         //서버 값 가져오는 매소드
         checkHealth();
 
@@ -85,7 +91,6 @@ public class HealthDaily extends AppCompatActivity {
         btn_nv1 = findViewById(R.id.btn_nv1);
         btn_nv2 = findViewById(R.id.btn_nv2);
         btn_nv3 = findViewById(R.id.btn_nv3);
-
 
         //날짜 비교해서 캘린더보여주기
 //       for(int i = 0; i < list.size(); i++){
@@ -205,11 +210,6 @@ public class HealthDaily extends AppCompatActivity {
 
 
     }
-//    브로드 캐스트
-//    public  void onReceive(Context context, Intent intent1){
-//        String id = intent1.getStringExtra("userId");
-//        Log.v("그냥 알아들어", id);
-//    }
 
 
     //서버에서 데이터 받아오기
@@ -223,12 +223,28 @@ public class HealthDaily extends AppCompatActivity {
 
                 if(response != null){
                     try {
-                        JSONObject jsonObject = new JSONObject(response);
-                        String date = jsonObject.getString("date");
-                        String health_daily = jsonObject.getString("daily");
-                        String id = jsonObject.getString("id");
-                        String health_check = jsonObject.getString("ck");
-                        String health_spinner = jsonObject.getString("sp");
+                        JSONArray array = new JSONArray(response);
+                        for(int i = 0; i< array.length(); i++) {
+                            JSONObject jsonObject = array.getJSONObject(i);
+                            String date = jsonObject.getString("date");
+                            String health_daily = jsonObject.getString("note_text");
+                            String id = jsonObject.getString("id");
+                            String health_check = jsonObject.getString("note_workout");
+                            String health_spinner = jsonObject.getString("note_health");
+
+                            day = date;
+                            health_edt.setText(health_daily);
+                            if (health_check == "true"){
+                                health_ck.setChecked(true);
+                            }else{
+                                health_ck.setChecked(false);
+                            }
+
+
+
+
+                           // Log.v("check>>", date + "/" + health_daily + "/" + id + "/" + health_check + "/" + health_spinner);
+                        }
 
                     }catch (JSONException e) {
                         e.printStackTrace();
@@ -289,14 +305,15 @@ public class HealthDaily extends AppCompatActivity {
         }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError { //server로 데이터를 보낼 시 넣어주는 곳
-                Log.d("check>>", health_edt.getText().toString()+"/"+ck_check+"/"+result);
-
+                Log.v("check>>", health_edt.getText().toString()+"/"+ck_check+"/"+result);
+                Intent intent = getIntent();
+                String id = intent.getStringExtra("id");
                 Map<String,String> params = new HashMap<String, String>();
-
+                Log.v("check>>", id);
+                params.put("id",id);
                 params.put("note_text", health_edt.getText().toString());
                 params.put("note_workout",ck_check);
                 params.put("note_health",result);
-                //params.put("userId")
                 return params;
             }
         };
