@@ -7,12 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 public class MyPage_Main extends AppCompatActivity {
     private ImageView back1, search1, shp1;
-    private Button btn_nv1,btn_nv2,btn_nv3, MY_point,MY_coupon, MY_order;
-    private TextView MY_member, MY_cart, MY_qna, MY_my;
+    private Button btn_nv1,btn_nv2,btn_nv3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +25,7 @@ public class MyPage_Main extends AppCompatActivity {
         btn_nv1 =findViewById(R.id.btn_nv1);
         btn_nv2 =findViewById(R.id.btn_nv2);
         btn_nv3 =findViewById(R.id.btn_nv3);
-        MY_point =findViewById(R.id.MY_pint);
-        MY_coupon=findViewById(R.id.MY_coupon);
-        MY_order = findViewById(R.id.MY_order);
 
-        MY_member = findViewById(R.id.MY_member);
-        MY_cart = findViewById(R.id.MY_cart);
-        MY_qna = findViewById(R.id.MY_qna);
-        MY_my = findViewById(R.id.MY_my);
 
 
         //뒤로가기
@@ -60,7 +51,7 @@ public class MyPage_Main extends AppCompatActivity {
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
                 startActivity(intent);
             }
         });
@@ -78,28 +69,10 @@ public class MyPage_Main extends AppCompatActivity {
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
-                startActivity(intent);
-            }
-        });
-
-        MY_coupon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Coupon.class);
-                startActivity(intent);
-            }
-        });
-
-        MY_member.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MyPage.class);
                 startActivity(intent);
             }
         });
-
-
 
     }
 }

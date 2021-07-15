@@ -75,51 +75,51 @@ public class ID_PW_FIND3 extends AppCompatActivity {
             }
         });
     }
-        private void sendRequest() {
-            queue = Volley.newRequestQueue(this);
-            String url = "http://222.102.104.135:3000/FindPW";
-            stringRequest = new StringRequest(Request.Method.POST,
-                    url, new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    AlertDialog.Builder myAlerBuilder = new AlertDialog.Builder(ID_PW_FIND3.this);
-                    mem_pw = response;
-                    myAlerBuilder.setTitle("당신의 PW");
-                    myAlerBuilder.setMessage(mem_pw);
+    private void sendRequest() {
+        queue = Volley.newRequestQueue(this);
+        String url = "http://222.102.104.135:3000/FindPW";
+        stringRequest = new StringRequest(Request.Method.POST,
+                url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                AlertDialog.Builder myAlerBuilder = new AlertDialog.Builder(ID_PW_FIND3.this);
+                mem_pw = response;
+                myAlerBuilder.setTitle("당신의 PW");
+                myAlerBuilder.setMessage(mem_pw);
 
-                    myAlerBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(getApplicationContext(), "Pressed OK", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                    myAlerBuilder.setPositiveButton("cancle", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(getApplicationContext(), "pressed cancle", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                myAlerBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(), "Pressed OK", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                myAlerBuilder.setPositiveButton("cancle", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(), "pressed cancle", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
-                    myAlerBuilder.show();
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
+                myAlerBuilder.show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
 
-                    error.printStackTrace();
-                }
-            }) {
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
 
-                    Map<String, String> params = new HashMap<String, String>();
-                    params.put("id", edt_find_i.getText().toString());
-                    params.put("email",edt_find_e2.getText().toString());
-                    params.put("tel",edt_find_h2.getText().toString());
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("id", edt_find_i.getText().toString());
+                params.put("email",edt_find_e2.getText().toString());
+                params.put("tel",edt_find_h2.getText().toString());
 
-                    return params;
-                }
-            };
-            queue.add(stringRequest);
-        }
+                return params;
+            }
+        };
+        queue.add(stringRequest);
     }
+}

@@ -17,11 +17,6 @@ public class LoginDTO implements Serializable {
         this.status = status;
     }
 
-    public LoginDTO(String id, String pw) {
-        this.id = id;
-        this.pw = pw;
-    }
-
     public String getId() {
         return id;
     }
@@ -86,3 +81,4 @@ public class LoginDTO implements Serializable {
         this.status = status;
     }
 }
+

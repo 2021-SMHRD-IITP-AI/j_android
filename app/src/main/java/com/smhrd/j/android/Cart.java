@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Cart extends AppCompatActivity {
-    private Button btn_nv1, btn_nv2, btn_nv3, cart_btn_minus1, cart_btn_minus2, cart_btn_plus1, cart_btn_plus2, btn_g;
+    private Button btn_nv1, btn_nv2, btn_nv3, cart_btn_minus1, cart_btn_minus2, cart_btn_plus1, cart_btn_plus2, btn_j, btn_g;
     private ImageView back1, cart_img1, cart_img2;
     private TextView cart_tv_name1, cart_tv_name2, cart_tv_price1, cart_tv_price2, cart_tv_sum, cart_tv_total, cart_tv_count1, cart_tv_count2, cart_tv_trans;
 
@@ -29,6 +29,7 @@ public class Cart extends AppCompatActivity {
         cart_btn_minus2 = findViewById(R.id.cart_btn_minus2);
         cart_btn_plus1 = findViewById(R.id.cart_btn_plus1);
         cart_btn_plus2 = findViewById(R.id.cart_btn_plus2);
+        btn_j = findViewById(R.id.btn_j);
         btn_g = findViewById(R.id.btn_g);
 
         cart_tv_count1 = findViewById(R.id.cart_tv_count1);
@@ -58,7 +59,7 @@ public class Cart extends AppCompatActivity {
         cart_img2.setImageBitmap(null);
         cart_tv_name2.setText("");
         cart_tv_price2.setText("");
-        cart_tv_trans.setText("2,500원");
+        cart_tv_trans.setText("2500");
         cart_tv_sum.setText(cart_tv_price1.getText().toString() + cart_tv_price2.getText().toString());
         cart_tv_total.setText(cart_tv_price1.getText().toString() + cart_tv_price2.getText().toString() + cart_tv_trans.getText().toString());
 
@@ -70,6 +71,13 @@ public class Cart extends AppCompatActivity {
             }
         });
 
+        // 장바구니
+        btn_j.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         btn_g.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +109,7 @@ public class Cart extends AppCompatActivity {
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
+                Intent intent = new Intent(getApplicationContext(), MyPage.class);
                 startActivity(intent);
             }
         });

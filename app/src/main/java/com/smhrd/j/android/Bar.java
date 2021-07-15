@@ -14,7 +14,7 @@ public class Bar extends AppCompatActivity {
     private Button btn_nv1, btn_nv2, btn_nv3, top1, top2, top3, top4, top5;
     private ImageView B_img1,B_img2, B_img3,B_img4, B_img5,B_img6, B_img7, B_img8, shp1,back1;
     private TextView B_name1, B_name2, B_name3, B_name4, B_name5, B_name6, B_name7, B_name8,
-                    B_price1, B_price2, B_price3, B_price4, B_price5, B_price6, B_price7, B_price8;
+            B_price1, B_price2, B_price3, B_price4, B_price5, B_price6, B_price7, B_price8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +80,7 @@ public class Bar extends AppCompatActivity {
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
                 startActivity(intent);
             }
         });
@@ -96,7 +96,7 @@ public class Bar extends AppCompatActivity {
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
+                Intent intent = new Intent(getApplicationContext(), MyPage.class);
                 startActivity(intent);
             }
         });

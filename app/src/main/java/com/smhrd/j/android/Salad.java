@@ -80,11 +80,11 @@ public class Salad extends AppCompatActivity {
         });
 
 
-        //건강일지
+        //헬스케어
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
                 startActivity(intent);
             }
         });
@@ -102,7 +102,7 @@ public class Salad extends AppCompatActivity {
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
+                Intent intent = new Intent(getApplicationContext(), MyPage.class);
                 startActivity(intent);
             }
         });
