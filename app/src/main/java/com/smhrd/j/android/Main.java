@@ -281,9 +281,17 @@ public class Main extends AppCompatActivity {
             public void onClick(View v) {
                 Intent newIntent = getIntent();
                 String id = newIntent.getStringExtra("id");
+                String name = newIntent.getStringExtra("name");
+                String tel = newIntent.getStringExtra("tel");
+                String address = newIntent.getStringExtra("address");
+                String email = newIntent.getStringExtra("email");
 
                 Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
                 intent.putExtra("id", id);
+                intent.putExtra("name", name);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
                 startActivity(intent);
             }
         });

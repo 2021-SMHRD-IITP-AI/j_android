@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -28,6 +29,7 @@ public class MyPage extends AppCompatActivity {
 
     private Button btn_nv1, btn_nv2, btn_nv3, top6;
     private ImageView back1, search1, shp1;
+    private TextView my_tv_name, my_tv_tel, my_tv_addr, my_tv_email;
 
     private RequestQueue queue;
     private StringRequest stringRequest;
@@ -42,10 +44,25 @@ public class MyPage extends AppCompatActivity {
         btn_nv3 = findViewById(R.id.btn_nv3);
         top6 = findViewById(R.id.top6);
 
+        my_tv_name = findViewById(R.id.my_tv_name);
+        my_tv_tel = findViewById(R.id.my_tv_tel);
+        my_tv_addr = findViewById(R.id.my_tv_addr);
+        my_tv_email = findViewById(R.id.my_tv_email);
 
         back1=findViewById(R.id.back1);
         search1 =findViewById(R.id.search1);
         shp1 =findViewById(R.id.shp1);
+
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        String tel = intent.getStringExtra("tel");
+        String addr = intent.getStringExtra("address");
+        String email = intent.getStringExtra("email");
+
+        my_tv_name.setText(name);
+        my_tv_tel.setText(tel);
+        my_tv_addr.setText(addr);
+        my_tv_email.setText(email);
 
         top6.setOnClickListener(new View.OnClickListener() {
             @Override
