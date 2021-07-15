@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -28,6 +29,7 @@ import java.util.Map;
 
 public class ID_PW_FIND3 extends AppCompatActivity {
 
+    private ImageView back1;
     private Button btn_find_id2, btn_find_pw2, btn_check2;
     private EditText edt_find_i, edt_find_e2, edt_find_h2;
 
@@ -41,11 +43,23 @@ public class ID_PW_FIND3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_id_pw_find3);
 
+        back1=findViewById(R.id.back1);
+
         edt_find_i = findViewById(R.id.edt_find_i);
         edt_find_e2 = findViewById(R.id.edt_find_e2);
         edt_find_h2 = findViewById(R.id.edt_find_h2);
 
         btn_check2 = findViewById(R.id.btn_check2);
+
+
+        //뒤로가기
+        back1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
 
         btn_find_id2 = findViewById(R.id.btn_find_id2);
         btn_find_id2.setOnClickListener(new View.OnClickListener() {
@@ -123,4 +137,10 @@ public class ID_PW_FIND3 extends AppCompatActivity {
         };
         queue.add(stringRequest);
     }
+    @Override
+    public void onBackPressed() {
+        Log.v("Back","확인");
+        super.onBackPressed();
+    }
+
 }
