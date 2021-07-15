@@ -112,15 +112,6 @@
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/textView2ew46"
-                            android:layout_width="164dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:textColor="#4C4C4C"
-                            android:textSize="15sp" />
-
                     </LinearLayout>
 
                     <TextView
@@ -189,7 +180,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="86dp"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="invisible">
 
                     <CheckBox
                         android:id="@+id/box"
@@ -226,15 +218,6 @@
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/hot_pa1"
-                            android:layout_width="164dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:textColor="#4C4C4C"
-                            android:textSize="15sp" />
-
                     </LinearLayout>
 
                     <TextView
@@ -258,7 +241,8 @@
                     android:layout_marginRight="150dp"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:paddingBottom="25dp">
+                    android:paddingBottom="25dp"
+                    android:visibility="invisible">
 
                     <Button
                         android:id="@+id/cart_btn_minus2"
@@ -397,7 +381,7 @@
 
                         <TextView
                             android:id="@+id/textView144"
-                            android:layout_width="wrap_content"
+                            android:layout_width="89dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="45dp"
                             android:layout_marginLeft="45dp"
@@ -428,26 +412,11 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginLeft="50dp"
                     android:orientation="horizontal"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp">
-
-                    <Button
-                        android:id="@+id/btn_j"
-                        android:layout_width="25dp"
-                        android:layout_height="48dp"
-                        android:layout_marginStart="50dp"
-                        android:layout_marginLeft="50dp"
-                        android:layout_weight="1"
-                        android:background="#4C4C4C"
-                        android:fontFamily="@font/jalnan"
-                        android:text="장바구니 담기"
-                        android:textSize="16sp"
-                        app:backgroundTint="#4c4c4c"
-                        app:cornerRadius="0dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
 
                     <Button
                         android:id="@+id/btn_g"
