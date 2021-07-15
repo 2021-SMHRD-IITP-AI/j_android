@@ -734,7 +734,7 @@
                         app:cornerRadius="0dp" />
 
                     <Button
-                        android:id="@+id/btn_g"
+                        android:id="@+id/cart_btn_g"
                         android:layout_width="180dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="30dp"
@@ -811,5 +811,12 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="60dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

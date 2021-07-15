@@ -35,7 +35,6 @@ public class HealthCare extends AppCompatActivity {
         btn_nv2 = findViewById(R.id.btn_nv2);
         btn_nv3 = findViewById(R.id.btn_nv3);
 
-
         //이미지
         back1=findViewById(R.id.back1);
         search1 =findViewById(R.id.search1);
@@ -65,7 +64,6 @@ public class HealthCare extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
 
         //장바구니
         shp1.setOnClickListener(new View.OnClickListener() {
@@ -102,8 +100,6 @@ public class HealthCare extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
     //뒤로가기

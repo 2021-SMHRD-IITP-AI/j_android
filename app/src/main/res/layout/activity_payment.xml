@@ -88,7 +88,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="25dp"
                             android:layout_marginLeft="25dp"
-                            android:text="홍길동님의 장바구니"
+                            android:text="종근당님의 장바구니"
                             android:textColor="#4C4C4C" />
                     </LinearLayout>
 
@@ -648,7 +648,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="59dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="59dp"
+        app:layout_constraintGuide_percent="0.08"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline

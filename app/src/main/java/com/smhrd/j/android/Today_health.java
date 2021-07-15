@@ -3,38 +3,55 @@ package com.smhrd.j.android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
-public class MyPage_Main extends AppCompatActivity {
+public class Today_health extends AppCompatActivity {
+
     private ImageView back1, search1, shp1;
-    private Button btn_nv1,btn_nv2,btn_nv3, MY_point,MY_coupon, MY_order;
-    private TextView MY_member, MY_cart, MY_qna, MY_my;
+    private Button btn_nv1,btn_nv2,btn_nv3;
+    private VideoView video_1,video_2,video_3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_page_main);
+        setContentView(R.layout.activity_today_health);
 
         back1=findViewById(R.id.back1);
         search1 =findViewById(R.id.search1);
         shp1 =findViewById(R.id.shp1);
 
-
         btn_nv1 =findViewById(R.id.btn_nv1);
         btn_nv2 =findViewById(R.id.btn_nv2);
         btn_nv3 =findViewById(R.id.btn_nv3);
-        MY_point =findViewById(R.id.MY_pint);
-        MY_coupon=findViewById(R.id.MY_coupon);
-        MY_order = findViewById(R.id.MY_order);
 
-        MY_member = findViewById(R.id.MY_member);
-        MY_cart = findViewById(R.id.MY_cart);
-        MY_qna = findViewById(R.id.MY_qna);
-        MY_my = findViewById(R.id.MY_my);
+        video_1=findViewById(R.id.video_1);
+        video_2=findViewById(R.id.video_2);
+        video_3=findViewById(R.id.video_3);
+
+        Uri videourl=Uri.parse("https://www.youtube.com/watch?v=3VouSaW_LPw");
+
+
+        //비디오뷰 재생,일시정지 등을 할수 있는 컨트롤바
+        video_1.setMediaController(new MediaController(this));
+        //비디오뷰가 보여줄 동영상으ㅏ 경로 설정
+        video_1.setVideoURI(videourl);
+
+        video_1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                video_1.start();
+            Log.v("야","나와라 얍");
+            }
+        });
+
 
 
         //뒤로가기
@@ -60,7 +77,7 @@ public class MyPage_Main extends AppCompatActivity {
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
                 startActivity(intent);
             }
         });
@@ -78,31 +95,33 @@ public class MyPage_Main extends AppCompatActivity {
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
-                startActivity(intent);
-            }
-        });
-
-        MY_coupon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Coupon.class);
-                startActivity(intent);
-            }
-        });
-
-        MY_member.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent newIntent = getIntent();
-                String id = newIntent.getStringExtra("id");
                 Intent intent = new Intent(getApplicationContext(), MyPage.class);
-                intent.putExtra("id", id);
                 startActivity(intent);
             }
         });
+    }
 
+    @Override
+    protected void onPause(){
+        super.onPause();
 
+        //비디오 일시정지
+        if (video_1!=null && video_1.isPlaying())video_1.pause();
 
     }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+
+        //액티비티가 메모리에서 사라질때..?
+        if (video_1!=null)video_1.stopPlayback();
+    }
+
+    //뒤로가기
+    @Override
+    public void onBackPressed() {
+        Log.v("Back","확인");
+        super.onBackPressed();
+    }
+
 }

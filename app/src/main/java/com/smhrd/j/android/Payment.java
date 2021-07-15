@@ -58,13 +58,12 @@ public class Payment extends AppCompatActivity {
         pay_tv_name1.setText(name);
         pay_tv_price1.setText(price);
 
-        pay_img2.setImageBitmap(null);
-        pay_tv_name2.setText("");
-        pay_tv_price2.setText("");
-        pay_tv_dc.setText("");
-        pay_tv_trans.setText("2,500원");
-        pay_tv_sum.setText(pay_tv_price1.getText().toString() + pay_tv_price2.getText().toString());
-        pay_tv_total.setText(pay_tv_price1.getText().toString() + pay_tv_price2.getText().toString() + pay_tv_trans.getText().toString());
+        pay_tv_trans.setText("2500");
+        pay_tv_dc.setText("0");
+        pay_tv_sum.setText(pay_tv_price1.getText().toString());
+        int price1 = Integer.parseInt(pay_tv_price1.getText().toString());
+        int trans = Integer.parseInt(pay_tv_trans.getText().toString());
+        pay_tv_total.setText(String.valueOf(price1 + trans));
 
         //뒤로가기
         back1.setOnClickListener(new View.OnClickListener() {
@@ -118,9 +117,6 @@ public class Payment extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
     }
 
     //뒤로가기
