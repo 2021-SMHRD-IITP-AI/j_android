@@ -29,7 +29,7 @@ public class Purchase extends AppCompatActivity {
         btn_nv2 = findViewById(R.id.btn_nv2);
         btn_nv3 = findViewById(R.id.btn_nv3);
         btn_j = findViewById(R.id.btn_j);
-        btn_g = findViewById(R.id.btn_g);
+        btn_g = findViewById(R.id.cart_btn_g);
 
         shp1=findViewById(R.id.shp1);
         back1 = findViewById(R.id.back1);

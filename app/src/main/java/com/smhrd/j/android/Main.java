@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -14,7 +16,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -24,7 +25,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -101,7 +101,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        //인기상품 안됨
+        //인기상품
         menu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,7 +110,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        //이달의 특가 안됨
+        //이달의 특가
         menu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -228,7 +228,8 @@ public class Main extends AppCompatActivity {
         });
 
 
-        //일일 추천 더보기   안됨
+
+        //일일 추천 더보기
         btn_more1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -240,18 +241,34 @@ public class Main extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
         img1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Purchase.class);
-//                intent.putExtra("name1",tv_lu_name1.getText().toString());
-//                intent.putExtra("name2",tv_pa1.getText().toString());
+                //Drawable drawable =getResources().getDrawable(R.drawable.main_img4);
+                //Log.v("그냥 알아들어",drawable.toString());
+                // 현재 이미지, 텍스트, 가격 보내기
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                Bitmap bitmap = ((BitmapDrawable) img1.getDrawable()).getBitmap();
+                float scale = (float) (1024/(float)bitmap.getWidth());
+                int image_w = (int) (bitmap.getWidth() * scale);
+                int image_h = (int) (bitmap.getHeight() * scale);
+                Bitmap resize = Bitmap.createScaledBitmap(bitmap, image_w, image_h, true);
+                resize.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
 
-//                Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.main_img4);
-//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-//                byte[] byteArray = stream.toByteArray();
-//                intent.putExtra("image",byteArray);
+
+                Intent intent = new Intent(getApplicationContext(),Purchase.class);
+                intent.putExtra("main_name1",tv_lu_name1.getText().toString());
+                intent.putExtra("main_pr1",tv_pa1.getText().toString());
+                intent.putExtra("main_img1", byteArray);
+
+                //intent.putExtra("main_img1",R.drawable.main_img4);//이미지
 
                 startActivity(intent);
             }
@@ -261,7 +278,11 @@ public class Main extends AppCompatActivity {
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent newIntent = getIntent();
+                String id = newIntent.getStringExtra("id");
+
                 Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                intent.putExtra("id",id);
                 startActivity(intent);
             }
         });
@@ -270,13 +291,19 @@ public class Main extends AppCompatActivity {
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                Intent newIntent = getIntent();
+                String id = newIntent.getStringExtra("id");
+
+                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
+                intent.putExtra("id", id);
                 startActivity(intent);
             }
         });
     }
 
     private void sendRequest() {
+
+
         queue = Volley.newRequestQueue(this);
         String url = "http://222.102.104.135:3000/Dise";
         stringRequest = new StringRequest(Request.Method.POST,
@@ -301,9 +328,7 @@ public class Main extends AppCompatActivity {
         }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-
                 Map<String, String> params = new HashMap<String, String>();
-
                 return params;
             }
         };

@@ -94,7 +94,10 @@ public class MyPage_Main extends AppCompatActivity {
         MY_member.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent newIntent = getIntent();
+                String id = newIntent.getStringExtra("id");
                 Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                intent.putExtra("id", id);
                 startActivity(intent);
             }
         });

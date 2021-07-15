@@ -143,11 +143,7 @@ public class MyPage extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
                 Intent intent = getIntent();
                 String id = intent.getStringExtra("id");
-                String pw = intent.getStringExtra("pw");
-
-                // id, pw 서버로 보내야 하는데 로그인 정보를 가져오는 방법..?
                 params.put("id",id);
-                params.put("pw",pw);
 
                 return params;
             }

@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class Lunch_box_main extends AppCompatActivity {
@@ -27,7 +26,7 @@ public class Lunch_box_main extends AppCompatActivity {
         setContentView(R.layout.activity_lunch_box_main);
 
         btn_j=findViewById(R.id.btn_j);
-        btn_g=findViewById(R.id.btn_g);
+        btn_g=findViewById(R.id.cart_btn_g);
         btn_nv1 = findViewById(R.id.btn_nv1);
         btn_nv2 = findViewById(R.id.btn_nv2);
         btn_nv3 = findViewById(R.id.btn_nv3);
