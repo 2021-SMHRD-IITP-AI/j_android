@@ -182,7 +182,6 @@ public class Main extends AppCompatActivity {
             }
         });
 
-
         //맞춤도시락
         btn_mu3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -227,8 +226,6 @@ public class Main extends AppCompatActivity {
             }
         });
 
-
-
         //일일 추천 더보기
         btn_more1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -237,15 +234,6 @@ public class Main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
-
-
-
-
-
 
         img1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -302,8 +290,6 @@ public class Main extends AppCompatActivity {
     }
 
     private void sendRequest() {
-
-
         queue = Volley.newRequestQueue(this);
         String url = "http://222.102.104.135:3000/Dise";
         stringRequest = new StringRequest(Request.Method.POST,
