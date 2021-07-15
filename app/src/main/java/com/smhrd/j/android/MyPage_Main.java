@@ -96,6 +96,7 @@ public class MyPage_Main extends AppCompatActivity {
             public void onClick(View v) {
                 Intent newIntent = getIntent();
                 String id = newIntent.getStringExtra("id");
+
                 Intent intent = new Intent(getApplicationContext(), MyPage.class);
                 intent.putExtra("id", id);
                 startActivity(intent);

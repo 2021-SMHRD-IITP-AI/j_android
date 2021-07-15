@@ -57,6 +57,10 @@ public class HealthCare extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        String name = intent.getStringExtra("name");
+
+        tv_userInfo.setText(name + "님의 질환에 따른 정보");
+
         //뒤로가기
         back1.setOnClickListener(new View.OnClickListener() {
             @Override

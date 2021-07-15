@@ -298,8 +298,11 @@ public class Main extends AppCompatActivity {
             public void onResponse(String response) {
                 Log.v("result", response);
                 if (response != null) {
+                    Intent newIntent = getIntent();
+                    String name = newIntent.getStringExtra("name");
                     Intent intent = new Intent(getApplicationContext(), HealthCare.class);
                     intent.putExtra("diseData", response);
+                    intent.putExtra("name", name);
                     startActivity(intent);
                     Log.v("test", "성공");
                 } else {

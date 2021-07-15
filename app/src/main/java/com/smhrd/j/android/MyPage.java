@@ -114,11 +114,13 @@ public class MyPage extends AppCompatActivity {
                 url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                Log.v("test5", response);
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     String value = jsonObject.getString("check");
-                    Log.v("result", value);
-                    if(value != null){
+                    Log.v("test3", value);
+                    if(value.equals("true")){
+                        Toast.makeText(getApplicationContext(), "탈퇴되었습니다.", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), Main.class);
                         startActivity(intent);
                         Log.v("mypage","탈퇴성공");
@@ -143,7 +145,8 @@ public class MyPage extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
                 Intent intent = getIntent();
                 String id = intent.getStringExtra("id");
-                params.put("id",id);
+                Log.v("exit", id);
+                params.put("id", id);
 
                 return params;
             }
