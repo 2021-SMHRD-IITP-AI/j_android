@@ -8,11 +8,29 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MyPage extends AppCompatActivity {
 
-    private Button btn_nv1, btn_nv2, btn_nv3;
+    private Button btn_nv1, btn_nv2, btn_nv3, top6;
     private ImageView back1, search1, shp1;
+
+    private RequestQueue queue;
+    private StringRequest stringRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +40,19 @@ public class MyPage extends AppCompatActivity {
         btn_nv1 = findViewById(R.id.btn_nv1);
         btn_nv2 = findViewById(R.id.btn_nv2);
         btn_nv3 = findViewById(R.id.btn_nv3);
+        top6 = findViewById(R.id.top6);
 
 
         back1=findViewById(R.id.back1);
         search1 =findViewById(R.id.search1);
         shp1 =findViewById(R.id.shp1);
 
+        top6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendRequest();
+            }
+        });
 
         //뒤로가기
         back1.setOnClickListener(new View.OnClickListener() {
@@ -81,5 +106,53 @@ public class MyPage extends AppCompatActivity {
     public void onBackPressed() {
         Log.v("Back","확인");
         super.onBackPressed();
+    }
+
+    private void sendRequest() {
+        queue = Volley.newRequestQueue(this);
+        String url = "http://222.102.104.135:3000/Exit";
+        stringRequest = new StringRequest(Request.Method.POST,
+                url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    String value = jsonObject.getString("check");
+                    Log.v("result", value);
+                    if(value != null){
+                        Intent intent = new Intent(getApplicationContext(), Main.class);
+                        startActivity(intent);
+                        Log.v("mypage","탈퇴성공");
+                    }else{
+                        Log.v("mypage", "탈퇴실패");
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String, String> params = new HashMap<String, String>();
+                Intent intent = getIntent();
+                String id = intent.getStringExtra("id");
+                String pw = intent.getStringExtra("pw");
+
+                // id, pw 서버로 보내야 하는데 로그인 정보를 가져오는 방법..?
+                params.put("id",id);
+                params.put("pw",pw);
+
+                return params;
+            }
+        };
+        queue.add(stringRequest);
     }
 }
