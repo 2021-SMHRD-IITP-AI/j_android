@@ -163,23 +163,9 @@ public class Lunch_box_main extends AppCompatActivity {
             public void onClick(View v) {
                 if(result1 != null && result2 != null && result3 != null && result4 != null && result5 != null){
                     Log.v("야", "담기 성공");
-//                    String dan = "60";
-//                    String tbtn_1 = "28";
-//                    String tbtn_2 = "25";
-//                    String tbtn_3 = "9";
-//                    if(!dan.equals(tbtn_3)){
-//                        Log.v("야", "단백질 19g이 부족합니다.");
-//                    } else{
-//                        Log.v("야", "담기 성공");
-//                    }
 
-                    Intent intent = new Intent(getApplicationContext(), Lunch_test.class);
-                    intent.putExtra("result1", result1);
-                    intent.putExtra("result2", result2);
-                    intent.putExtra("result3", result3);
-                    intent.putExtra("result4", result4);
-                    intent.putExtra("result5", result5);
-                    startActivity(intent);
+                    // 맞춤도시락 주문정보 페이지 이동 기능
+
 
                     //버튼 비활성화(else)/영양소 미선택시 팝업
                     //btn_g.setEnabled(true);

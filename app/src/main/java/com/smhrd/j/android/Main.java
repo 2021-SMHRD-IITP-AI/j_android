@@ -223,8 +223,7 @@ public class Main extends AppCompatActivity {
         btn_mu7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HealthCare.class);
-                startActivity(intent);
+                sendRequest();
             }
         });
 
@@ -262,7 +261,7 @@ public class Main extends AppCompatActivity {
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendRequest();
+
             }
         });
 

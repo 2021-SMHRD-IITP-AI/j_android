@@ -41,6 +41,7 @@ public class HealthCare extends AppCompatActivity {
         search1 =findViewById(R.id.search1);
         shp1 =findViewById(R.id.shp1);
 
+        // 추천 및 주의식품 정보 출력
         Intent intent = getIntent();
         String diseInfo = intent.getStringExtra("diseData");
         try {

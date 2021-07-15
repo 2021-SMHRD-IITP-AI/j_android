@@ -107,11 +107,19 @@ public class Login extends AppCompatActivity {
             public void onResponse(String response) {
 
                 Log.v("test",response);
-
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-                    String value = jsonObject.getString("check");
-                    Log.v("test",value);
+                    String id = jsonObject.getString("id");
+                    String pw = jsonObject.getString("pw");
+                    if(id_login.getText().toString().equals(id) && pw_login.getText().toString().equals(pw)){
+                        Intent intent1 = new Intent(getApplicationContext(), Main.class);
+                        intent1.putExtra("id", id);
+                        intent1.putExtra("pw", pw);
+                        startActivity(intent1);
+                        Log.v("Login", "성공");
+                    } else{
+                        Log.v("Login", "실패");
+                    }
 
 
 
