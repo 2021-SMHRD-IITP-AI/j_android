@@ -63,7 +63,6 @@ public class ID_PW_FIND extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),ID_PW_FIND3.class);
                 startActivity(intent);
 
-
             }
         });
 
