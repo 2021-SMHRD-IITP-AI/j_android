@@ -68,17 +68,18 @@ public class Lunch_box_main extends AppCompatActivity {
 
                 if(checkedId == R.id.tbtn_1){
                     Toast.makeText(getApplicationContext(),"닭가슴살 선택",Toast.LENGTH_SHORT).show();
-                    result1 ="닭가슴살";
+                    result1 ="닭가슴살 28g";
                 }else if(checkedId ==R.id.tbtn_2){
                     Toast.makeText(getApplicationContext(),"흰살생선 선택",Toast.LENGTH_SHORT).show();
-                    result1 ="흰살생선";
+                    result1 ="흰살생선 25g";
                 }else if(checkedId == R.id.tbtn_3){
                     Toast.makeText(getApplicationContext(),"두부 선택",Toast.LENGTH_SHORT).show();
-                    result1 ="두부";
+                    result1 ="두부 9g";
                 }else{
                     Toast.makeText(getApplicationContext(),"단백질 식품을 선택해주세요",Toast.LENGTH_SHORT).show();
                 }
             }
+
         });
 
         //탄수화물 라디오
@@ -87,13 +88,13 @@ public class Lunch_box_main extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.tbtn_4){
                     Toast.makeText(getApplicationContext(),"흰쌀밥 선택",Toast.LENGTH_SHORT).show();
-                    result2 ="흰쌀밥";
+                    result2 ="흰쌀밥 33g";
                 }else if(checkedId ==R.id.tbtn_5){
                     Toast.makeText(getApplicationContext(),"잡곡밥 선택",Toast.LENGTH_SHORT).show();
-                    result2="잡곡밥";
+                    result2="잡곡밥 58g";
                 }else if(checkedId == R.id.tbtn_6){
                     Toast.makeText(getApplicationContext(),"곤약밥 선택",Toast.LENGTH_SHORT).show();
-                    result2="곤약밥";
+                    result2="곤약밥 13g";
                 }else{
                     Toast.makeText(getApplicationContext(),"탄수화물 식품을 선택해주세요",Toast.LENGTH_SHORT).show();
                 }
@@ -106,13 +107,13 @@ public class Lunch_box_main extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.tbtn_7){
                     Toast.makeText(getApplicationContext(),"녹색채소 선택",Toast.LENGTH_SHORT).show();
-                    result3="녹색채소";
+                    result3="녹색채소 5g";
                 }else if(checkedId ==R.id.tbtn_8){
                     Toast.makeText(getApplicationContext(),"씨앗류 선택",Toast.LENGTH_SHORT).show();
-                    result3="씨앗류";
+                    result3="씨앗류 28g";
                 }else if(checkedId == R.id.tbtn_9){
                     Toast.makeText(getApplicationContext(),"견과류 선택",Toast.LENGTH_SHORT).show();
-                    result3="견과류";
+                    result3="견과류 13g";
                 }else{
                     Toast.makeText(getApplicationContext(),"지방 식품을 선택해주세요",Toast.LENGTH_SHORT).show();
                 }
@@ -125,13 +126,13 @@ public class Lunch_box_main extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.tbtn_10){
                     Toast.makeText(getApplicationContext(),"과일 선택",Toast.LENGTH_SHORT).show();
-                    result4="과일";
+                    result4="과일 99mg";
                 }else if(checkedId ==R.id.tbtn_11){
                     Toast.makeText(getApplicationContext(),"버섯 선택",Toast.LENGTH_SHORT).show();
-                    result4="버섯";
+                    result4="버섯 5mg";
                 }else if(checkedId == R.id.tbtn_12){
                     Toast.makeText(getApplicationContext(),"황색채소 선택",Toast.LENGTH_SHORT).show();
-                    result4="황색채소";
+                    result4="황색채소 17mg";
                 }else{
                     Toast.makeText(getApplicationContext(),"비타민 식품을 선택해주세요",Toast.LENGTH_SHORT).show();
                 }
@@ -144,13 +145,13 @@ public class Lunch_box_main extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.tbtn_13){
                     Toast.makeText(getApplicationContext(),"치즈 선택",Toast.LENGTH_SHORT).show();
-                    result5="치즈";
+                    result5="치즈 626mg";
                 }else if(checkedId ==R.id.tbtn_14){
                     Toast.makeText(getApplicationContext(),"멸치 선택",Toast.LENGTH_SHORT).show();
-                    result5="멸치";
+                    result5="멸치 620mg";
                 }else if(checkedId == R.id.tbtn_15){
                     Toast.makeText(getApplicationContext(),"해조류 선택",Toast.LENGTH_SHORT).show();
-                    result5="해조류";
+                    result5="해조류 18mg";
                 }else{
                     Toast.makeText(getApplicationContext(),"칼슘 식품을 선택해주세요",Toast.LENGTH_SHORT).show();
                 }
@@ -165,6 +166,13 @@ public class Lunch_box_main extends AppCompatActivity {
 
                     // 맞춤도시락 주문정보 페이지 이동 기능
 
+                    Intent intent = new Intent(getApplicationContext(),Lunch_box_main2.class);
+                    intent.putExtra("result1",result1);
+                    intent.putExtra("result2",result2);
+                    intent.putExtra("result3",result3);
+                    intent.putExtra("result4",result4);
+                    intent.putExtra("result5",result5);
+                    startActivity(intent);
 
                     //버튼 비활성화(else)/영양소 미선택시 팝업
                     //btn_g.setEnabled(true);
