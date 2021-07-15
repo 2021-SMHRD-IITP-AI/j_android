@@ -2,6 +2,8 @@ package com.smhrd.j.android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -35,6 +37,8 @@ public class ID_PW_FIND extends AppCompatActivity {
     private RequestQueue queue;
     private StringRequest stringRequest;
 
+    private String mem_id = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +50,6 @@ public class ID_PW_FIND extends AppCompatActivity {
         btn_find_id=findViewById(R.id.btn_find_id);
         btn_find_pw=findViewById(R.id.btn_find_pw);
         btn_check=findViewById(R.id.btn_check);
-
 
         btn_find_pw.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +66,6 @@ public class ID_PW_FIND extends AppCompatActivity {
         });
 
         //아이디 찾기 버튼 클릭시 입력값 초기화
-
         btn_find_id.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,29 +93,25 @@ public class ID_PW_FIND extends AppCompatActivity {
                 url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                AlertDialog.Builder myAlerBuilder = new AlertDialog.Builder(ID_PW_FIND.this);
+                mem_id = response;
+                myAlerBuilder.setTitle("당신의 ID");
+                myAlerBuilder.setMessage(mem_id);
 
-                Log.v("resultValue",response);
+                myAlerBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(), "Pressed OK", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                myAlerBuilder.setPositiveButton("cancle", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(), "pressed cancle", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    String value = jsonObject.getString("check");
-                    Log.v("result", value);
-
-                    //★이메일과 휴대폰번호가 일치하면  아이디 찾아주기★
-
-//                    if(value.equals("true")){
-//                        Intent intent = new Intent(getApplicationContext(), Login.class);
-//                        startActivity(intent);
-//                        Log.v("test","찾았다!");
-//                    }else{
-//                        edt_find_e.setText("");
-//                        edt_find_h.setText("");
-//                        Log.v("test","실패...................");
-//                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                myAlerBuilder.show();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -134,5 +132,4 @@ public class ID_PW_FIND extends AppCompatActivity {
         };
         queue.add(stringRequest);
     }
-
-    }
+}

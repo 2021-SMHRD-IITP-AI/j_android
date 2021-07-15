@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -16,7 +14,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -27,6 +35,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main extends AppCompatActivity {
     private Button btn_mu1,btn_mu2,btn_mu3,btn_mu4,btn_mu5,btn_mu6,btn_mu7,btn_mu8, btn_more1, btn_j, btn_nv1, btn_nv2,btn_nv3;
@@ -34,6 +44,8 @@ public class Main extends AppCompatActivity {
     private TextView menu1,menu2,menu3,menu4,tv_lu_name1,tv_lu_name2,tv_lu_name3,tv_pa1,tv_pa2,tv_pa3;
     private ImageView imageView;
 
+    private RequestQueue queue;
+    private StringRequest stringRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +101,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        //인기상품
+        //인기상품 안됨
         menu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,7 +110,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        //이달의 특가
+        //이달의 특가 안됨
         menu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,14 +154,14 @@ public class Main extends AppCompatActivity {
 
                 String[] name = {url_name, url2_name, url3_name, url4_name, url5_name, url6_name, url7_name, url8_name};
 
-                String url_price = "6,000원";
-                String url2_price = "4,900원";
-                String url3_price = "5,500원";
-                String url4_price = "5,200원";
-                String url5_price = "5,000원";
-                String url6_price = "5,700원";
-                String url7_price = "4,500원";
-                String url8_price = "4,500원";
+                String url_price = "6000";
+                String url2_price = "4900";
+                String url3_price = "5500";
+                String url4_price = "5200";
+                String url5_price = "5000";
+                String url6_price = "5700";
+                String url7_price = "4500";
+                String url8_price = "4500";
 
                 String[] price = {url_price, url2_price, url3_price, url4_price, url5_price, url6_price, url7_price, url8_price};
 
@@ -211,13 +223,12 @@ public class Main extends AppCompatActivity {
         btn_mu7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HealthCare.class);
-                startActivity(intent);
+                sendRequest();
             }
         });
 
 
-        //일일 추천 더보기
+        //일일 추천 더보기   안됨
         btn_more1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -229,56 +240,36 @@ public class Main extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
         img1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Drawable drawable =getResources().getDrawable(R.drawable.main_img4);
-                //Log.v("그냥 알아들어",drawable.toString());
-                // 현재 이미지, 텍스트, 가격 보내기
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                Bitmap bitmap = ((BitmapDrawable) img1.getDrawable()).getBitmap();
-                float scale = (float) (1024/(float)bitmap.getWidth());
-                int image_w = (int) (bitmap.getWidth() * scale);
-                int image_h = (int) (bitmap.getHeight() * scale);
-                Bitmap resize = Bitmap.createScaledBitmap(bitmap, image_w, image_h, true);
-                resize.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                byte[] byteArray = stream.toByteArray();
-
-
                 Intent intent = new Intent(getApplicationContext(),Purchase.class);
-                intent.putExtra("main_name1",tv_lu_name1.getText().toString());
-                intent.putExtra("main_pr1",tv_pa1.getText().toString());
-                intent.putExtra("img", byteArray);
+//                intent.putExtra("name1",tv_lu_name1.getText().toString());
+//                intent.putExtra("name2",tv_pa1.getText().toString());
 
-                //intent.putExtra("main_img1",R.drawable.main_img4);//이미지
+//                Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.main_img4);
+//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//                sendBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+//                byte[] byteArray = stream.toByteArray();
+//                intent.putExtra("image",byteArray);
 
                 startActivity(intent);
             }
         });
 
-        // 건강일지
+        // 헬스케어
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
-                startActivity(intent);
-//                new JSONTask().execute("http://222.102.104.135:3000/txts/go_recom.txt");
-//                new JSONTask().execute("http://222.102.104.135:3000/Dise"); // 디비로 접근하는건데 과부하 걸려서 안되는듯..? HTML을 띄워주는듯?
-//                new JSONTask2().execute("http://222.102.104.135:3000/txts/go.warn.txt");
+
             }
         });
 
-        // 마이페이지
+        // 내 정보
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
+                Intent intent = new Intent(getApplicationContext(), MyPage.class);
                 startActivity(intent);
             }
         });
@@ -286,111 +277,37 @@ public class Main extends AppCompatActivity {
 
     }
 
-    public class JSONTask extends AsyncTask<String, String, String>{
-        @Override
-        protected String doInBackground(String... urls) {
-            try {
-                HttpURLConnection con = null;
-                BufferedReader reader = null;
-                try {
-                    URL url = new URL(urls[0]);
-                    con = (HttpURLConnection) url.openConnection();
-                    con.connect();
-
-                    InputStream stream = con.getInputStream();
-
-                    reader = new BufferedReader(new InputStreamReader(stream));
-
-                    StringBuffer buffer = new StringBuffer();
-
-                    String line = "";
-
-                    while((line = reader.readLine()) != null){
-                        buffer.append(line);
-                    }
-                    return buffer.toString();
-
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e){
-                    e.printStackTrace();
-                } finally {
-                    if(con != null){
-                        con.disconnect();
-                    }
-                    try {
-                        if(reader != null){
-                            reader.close();
-                        }
-                    } catch (IOException e){
-                        e.printStackTrace();
-                    }
+    private void sendRequest() {
+        queue = Volley.newRequestQueue(this);
+        String url = "http://222.102.104.135:3000/Dise";
+        stringRequest = new StringRequest(Request.Method.POST,
+                url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.v("result", response);
+                if (response != null) {
+                    Intent intent = new Intent(getApplicationContext(), HealthCare.class);
+                    intent.putExtra("diseData", response);
+                    startActivity(intent);
+                    Log.v("test", "성공");
+                } else {
+                    Log.v("result", "실패");
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-            return null;
-        }
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-            Intent intent = new Intent(getApplicationContext(), HealthCare.class);
-            intent.putExtra("result", result);
-            startActivity(intent);
-        }
-    }
-
-    public class JSONTask2 extends AsyncTask<String, String, String>{
-        @Override
-        protected String doInBackground(String... urls) {
-            try {
-                HttpURLConnection con = null;
-                BufferedReader reader = null;
-                try {
-                    URL url = new URL(urls[0]);
-                    con = (HttpURLConnection) url.openConnection();
-                    con.connect();
-
-                    InputStream stream = con.getInputStream();
-
-                    reader = new BufferedReader(new InputStreamReader(stream));
-
-                    StringBuffer buffer = new StringBuffer();
-
-                    String line = "";
-
-                    while((line = reader.readLine()) != null){
-                        buffer.append(line);
-                    }
-                    return buffer.toString();
-
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e){
-                    e.printStackTrace();
-                } finally {
-                    if(con != null){
-                        con.disconnect();
-                    }
-                    try {
-                        if(reader != null){
-                            reader.close();
-                        }
-                    } catch (IOException e){
-                        e.printStackTrace();
-                    }
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
             }
-            return null;
-        }
-        @Override
-        protected void onPostExecute(String result2) {
-            super.onPostExecute(result2);
-            Intent intent2 = new Intent(getApplicationContext(), HealthCare.class);
-            intent2.putExtra("result2", result2);
-            startActivity(intent2);
-        }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String, String> params = new HashMap<String, String>();
+
+                return params;
+            }
+        };
+        queue.add(stringRequest);
     }
 }

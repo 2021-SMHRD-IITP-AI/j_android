@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class HealthCare extends AppCompatActivity {
 
     private TextView tv_recom, tv_warn, tv_userInfo;
@@ -32,23 +35,27 @@ public class HealthCare extends AppCompatActivity {
         btn_nv2 = findViewById(R.id.btn_nv2);
         btn_nv3 = findViewById(R.id.btn_nv3);
 
-
         //이미지
         back1=findViewById(R.id.back1);
         search1 =findViewById(R.id.search1);
         shp1 =findViewById(R.id.shp1);
 
-        String result, result2;
-
+        // 추천 및 주의식품 정보 출력
         Intent intent = getIntent();
-        result = intent.getStringExtra("result");
+        String diseInfo = intent.getStringExtra("diseData");
+        try {
+            JSONObject jsonObject = new JSONObject(diseInfo);
+            String recom = jsonObject.getString("recom");
+            String warn = jsonObject.getString("warn");
+            Log.v("result", recom);
+            Log.v("result2", warn);
 
-        tv_recom.setText(result);
+            tv_recom.setText(recom);
+            tv_warn.setText(warn);
 
-        Intent intent2 = getIntent();
-        result2 = intent2.getStringExtra("result2");
-
-        tv_warn.setText(result2);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         //뒤로가기
         back1.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +64,6 @@ public class HealthCare extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
 
         //장바구니
         shp1.setOnClickListener(new View.OnClickListener() {
@@ -94,8 +100,6 @@ public class HealthCare extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
     //뒤로가기

@@ -39,7 +39,6 @@ public class statusAdapter extends BaseAdapter {
 
         LoginDTO dto = list.get(position);
 
-
         return convertView;
     }
 //    public void addItem(String id){

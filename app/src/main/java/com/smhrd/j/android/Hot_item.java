@@ -133,8 +133,6 @@ public class Hot_item extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
     //뒤로가기
