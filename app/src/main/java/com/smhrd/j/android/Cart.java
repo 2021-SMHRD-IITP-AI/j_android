@@ -58,7 +58,7 @@ public class Cart extends AppCompatActivity {
         cart_img2.setImageBitmap(null);
         cart_tv_name2.setText("");
         cart_tv_price2.setText("");
-        cart_tv_trans.setText("2,500원");
+        cart_tv_trans.setText("2500");
         cart_tv_sum.setText(cart_tv_price1.getText().toString() + cart_tv_price2.getText().toString());
         cart_tv_total.setText(cart_tv_price1.getText().toString() + cart_tv_price2.getText().toString() + cart_tv_trans.getText().toString());
 
@@ -69,7 +69,6 @@ public class Cart extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
 
         btn_g.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -62,7 +62,7 @@ public class Payment extends AppCompatActivity {
         pay_tv_name2.setText("");
         pay_tv_price2.setText("");
         pay_tv_dc.setText("");
-        pay_tv_trans.setText("2,500원");
+        pay_tv_trans.setText("2500");
         pay_tv_sum.setText(pay_tv_price1.getText().toString() + pay_tv_price2.getText().toString());
         pay_tv_total.setText(pay_tv_price1.getText().toString() + pay_tv_price2.getText().toString() + pay_tv_trans.getText().toString());
 
@@ -118,9 +118,6 @@ public class Payment extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
     }
 
     //뒤로가기

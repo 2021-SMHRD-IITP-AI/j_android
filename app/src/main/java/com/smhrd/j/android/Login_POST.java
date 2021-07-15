@@ -24,5 +24,4 @@ public class Login_POST extends Login_contract {
         map.put("userPW", pw);
 
     };
-
 }

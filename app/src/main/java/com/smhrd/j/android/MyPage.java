@@ -79,8 +79,7 @@ public class MyPage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
                 startActivity(intent);
-
-                }
+            }
         });
 
         btn_nv2.setOnClickListener(new View.OnClickListener() {

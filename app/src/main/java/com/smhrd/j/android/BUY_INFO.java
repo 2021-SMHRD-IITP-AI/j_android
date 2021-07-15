@@ -77,6 +77,7 @@ public class BUY_INFO extends AppCompatActivity {
         });
     }
 
+
     //뒤로가기
     @Override
     public void onBackPressed() {

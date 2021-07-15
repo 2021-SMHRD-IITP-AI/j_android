@@ -258,11 +258,25 @@
                                 android:layout_height="wrap_content"
                                 android:text="제주톳보리밥 도시락" />
 
-                            <TextView
-                                android:id="@+id/tv_recom_price1"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="5,300원" />
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_recom_price1"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="5,300원" />
+
+                                <TextView
+                                    android:id="@+id/textView41"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="TextView" />
+                            </LinearLayout>
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -286,11 +300,25 @@
                                 android:layout_height="wrap_content"
                                 android:text="불고기 볶음밥" />
 
-                            <TextView
-                                android:id="@+id/tv_recom_price2"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="4,900원" />
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_recom_price2"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="4,900원" />
+
+                                <TextView
+                                    android:id="@+id/textView42"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="TextView" />
+                            </LinearLayout>
+
                         </LinearLayout>
 
                     </LinearLayout>
@@ -322,11 +350,25 @@
                                 android:layout_height="wrap_content"
                                 android:text="단호박 영양 도시락" />
 
-                            <TextView
-                                android:id="@+id/tv_recom_price3"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="5,300원" />
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_recom_price3"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="5,300원" />
+
+                                <TextView
+                                    android:id="@+id/textView43"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="TextView" />
+                            </LinearLayout>
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -350,11 +392,25 @@
                                 android:layout_height="match_parent"
                                 android:text="마늘 닭가슴살 도시락" />
 
-                            <TextView
-                                android:id="@+id/tv_recom_price4"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="5,500원" />
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_recom_price4"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="5,500원" />
+
+                                <TextView
+                                    android:id="@+id/textView51"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="TextView" />
+                            </LinearLayout>
+
                         </LinearLayout>
 
                     </LinearLayout>
@@ -386,11 +442,25 @@
                                 android:layout_height="wrap_content"
                                 android:text="닭갈비 볶음밥" />
 
-                            <TextView
-                                android:id="@+id/tv_recom_price5"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="4,900원" />
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_recom_price5"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="4,900원" />
+
+                                <TextView
+                                    android:id="@+id/textView55"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="TextView" />
+                            </LinearLayout>
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -414,11 +484,25 @@
                                 android:layout_height="wrap_content"
                                 android:text="미역국 도시락" />
 
-                            <TextView
-                                android:id="@+id/tv_recom_price6"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="5,500원" />
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_recom_price6"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="5,500원" />
+
+                                <TextView
+                                    android:id="@+id/textView56"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="TextView" />
+                            </LinearLayout>
+
                         </LinearLayout>
 
                     </LinearLayout>
@@ -450,11 +534,25 @@
                                 android:layout_height="wrap_content"
                                 android:text="닭가슴 카레 도시락" />
 
-                            <TextView
-                                android:id="@+id/tv_recom_price7"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="5,800원" />
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_recom_price7"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="5,800원" />
+
+                                <TextView
+                                    android:id="@+id/textView52"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="TextView" />
+                            </LinearLayout>
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -478,11 +576,25 @@
                                 android:layout_height="wrap_content"
                                 android:text="닭가슴살 난자 완스 도시락" />
 
-                            <TextView
-                                android:id="@+id/tv_recom_price8"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="5,800원" />
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_recom_price8"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="5,800원" />
+
+                                <TextView
+                                    android:id="@+id/textView53"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="TextView" />
+                            </LinearLayout>
+
                         </LinearLayout>
 
                     </LinearLayout>

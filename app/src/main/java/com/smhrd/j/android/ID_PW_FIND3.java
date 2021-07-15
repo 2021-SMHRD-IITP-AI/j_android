@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -28,6 +29,7 @@ import java.util.Map;
 
 public class ID_PW_FIND3 extends AppCompatActivity {
 
+    private ImageView back1;
     private Button btn_find_id2, btn_find_pw2, btn_check2;
     private EditText edt_find_i, edt_find_e2, edt_find_h2;
 
@@ -41,11 +43,23 @@ public class ID_PW_FIND3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_id_pw_find3);
 
+        back1=findViewById(R.id.back1);
+
         edt_find_i = findViewById(R.id.edt_find_i);
         edt_find_e2 = findViewById(R.id.edt_find_e2);
         edt_find_h2 = findViewById(R.id.edt_find_h2);
 
         btn_check2 = findViewById(R.id.btn_check2);
+
+
+        //뒤로가기
+        back1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
 
         btn_find_id2 = findViewById(R.id.btn_find_id2);
         btn_find_id2.setOnClickListener(new View.OnClickListener() {
@@ -75,51 +89,58 @@ public class ID_PW_FIND3 extends AppCompatActivity {
             }
         });
     }
-        private void sendRequest() {
-            queue = Volley.newRequestQueue(this);
-            String url = "http://222.102.104.135:3000/FindPW";
-            stringRequest = new StringRequest(Request.Method.POST,
-                    url, new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    AlertDialog.Builder myAlerBuilder = new AlertDialog.Builder(ID_PW_FIND3.this);
-                    mem_pw = response;
-                    myAlerBuilder.setTitle("당신의 PW");
-                    myAlerBuilder.setMessage(mem_pw);
 
-                    myAlerBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(getApplicationContext(), "Pressed OK", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                    myAlerBuilder.setPositiveButton("cancle", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(getApplicationContext(), "pressed cancle", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+    private void sendRequest() {
+        queue = Volley.newRequestQueue(this);
+        String url = "http://222.102.104.135:3000/FindPW";
+        stringRequest = new StringRequest(Request.Method.POST,
+                url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                AlertDialog.Builder myAlerBuilder = new AlertDialog.Builder(ID_PW_FIND3.this);
+                mem_pw = response;
+                myAlerBuilder.setTitle("당신의 PW");
+                myAlerBuilder.setMessage(mem_pw);
 
-                    myAlerBuilder.show();
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
+                myAlerBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(), "Pressed OK", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                myAlerBuilder.setPositiveButton("cancle", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(), "pressed cancle", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
-                    error.printStackTrace();
-                }
-            }) {
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
+                myAlerBuilder.show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
 
-                    Map<String, String> params = new HashMap<String, String>();
-                    params.put("id", edt_find_i.getText().toString());
-                    params.put("email",edt_find_e2.getText().toString());
-                    params.put("tel",edt_find_h2.getText().toString());
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
 
-                    return params;
-                }
-            };
-            queue.add(stringRequest);
-        }
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("id", edt_find_i.getText().toString());
+                params.put("email",edt_find_e2.getText().toString());
+                params.put("tel",edt_find_h2.getText().toString());
+
+                return params;
+            }
+        };
+        queue.add(stringRequest);
     }
+    @Override
+    public void onBackPressed() {
+        Log.v("Back","확인");
+        super.onBackPressed();
+    }
+
+}
