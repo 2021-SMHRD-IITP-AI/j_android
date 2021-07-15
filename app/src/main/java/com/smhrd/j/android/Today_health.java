@@ -36,7 +36,7 @@ public class Today_health extends AppCompatActivity {
         video_2=findViewById(R.id.video_2);
         video_3=findViewById(R.id.video_3);
 
-        Uri videourl=Uri.parse("https://www.youtube.com/watch?v=3VouSaW_LPw");
+        Uri videourl=Uri.parse("https://tv.naver.com/v/20612077");
 
 
         //비디오뷰 재생,일시정지 등을 할수 있는 컨트롤바

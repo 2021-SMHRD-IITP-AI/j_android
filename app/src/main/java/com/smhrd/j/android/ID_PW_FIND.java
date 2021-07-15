@@ -60,12 +60,9 @@ public class ID_PW_FIND extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                Color.rgb(103,4,1);
-
                 Intent intent = new Intent(getApplicationContext(),ID_PW_FIND3.class);
                 startActivity(intent);
 
-                // 입력값 db로 전달 만들기
 
             }
         });
@@ -77,8 +74,6 @@ public class ID_PW_FIND extends AppCompatActivity {
 
                 edt_find_e.setText(" ");
                 edt_find_h.setText(" ");
-
-
             }
         });
 
