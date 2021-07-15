@@ -131,11 +131,11 @@ public class MyPage extends AppCompatActivity {
                 url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.v("test5", response);
+                Log.v("mypage", response);
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     String value = jsonObject.getString("check");
-                    Log.v("test3", value);
+                    Log.v("mypage", value);
                     if(value.equals("true")){
                         Toast.makeText(getApplicationContext(), "탈퇴되었습니다.", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), Main.class);
