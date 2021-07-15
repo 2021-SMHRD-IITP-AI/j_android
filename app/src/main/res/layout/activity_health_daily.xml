@@ -10,7 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -23,7 +24,7 @@
             android:paddingRight="19dp">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/back1"
                 android:layout_width="29dp"
                 android:layout_height="19dp"
                 android:layout_weight="0.1"
@@ -36,8 +37,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_weight="0.8"
-                android:text="건강일지"
                 android:fontFamily="@font/jalnan"
+                android:text="건강일지"
                 android:textColor="#4C4C4C"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -208,7 +209,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
-                    android:text="헬스케어"
+                    android:text="건강일지"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -220,6 +221,7 @@
                 android:orientation="vertical">
 
                 <Button
+                    android:id="@+id/btn_nv2"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -242,7 +244,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
-                    android:text="내정보"
+                    android:text="마이페이지"
                     android:textColor="#670401" />
 
             </LinearLayout>

@@ -86,4 +86,3 @@ public class LoginDTO implements Serializable {
         this.status = status;
     }
 }
-

@@ -86,7 +86,7 @@
                         android:layout_weight="1" />
 
                     <ImageView
-                        android:id="@+id/imageView2w36"
+                        android:id="@+id/cart_img1"
                         android:layout_width="80dp"
                         android:layout_height="65dp"
                         android:layout_marginEnd="15dp"
@@ -101,7 +101,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView2ew45"
+                            android:id="@+id/cart_tv_name1"
                             android:layout_width="164dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
@@ -112,20 +112,10 @@
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/textView2ew46"
-                            android:layout_width="164dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:text="프로틴 그린티맛"
-                            android:textColor="#4C4C4C"
-                            android:textSize="15sp" />
-
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/textView1107"
+                        android:id="@+id/cart_tv_price1"
                         android:layout_width="95dp"
                         android:layout_height="33dp"
                         android:layout_weight="1"
@@ -148,7 +138,7 @@
                     android:paddingBottom="25dp">
 
                     <Button
-                        android:id="@+id/button7"
+                        android:id="@+id/cart_btn_minus1"
                         android:layout_width="60dp"
                         android:layout_height="25dp"
                         android:layout_weight="1"
@@ -160,7 +150,7 @@
                         app:backgroundTint="#E0E0E0" />
 
                     <TextView
-                        android:id="@+id/textView110"
+                        android:id="@+id/cart_tv_count1"
                         android:layout_width="60dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="5dp"
@@ -174,7 +164,7 @@
                         android:textSize="12sp" />
 
                     <Button
-                        android:id="@+id/button8"
+                        android:id="@+id/cart_btn_plus1"
                         android:layout_width="60dp"
                         android:layout_height="25dp"
                         android:layout_weight="1"
@@ -190,7 +180,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="86dp"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="invisible">
 
                     <CheckBox
                         android:id="@+id/box"
@@ -201,7 +192,7 @@
                         android:layout_weight="1" />
 
                     <ImageView
-                        android:id="@+id/img_recom1"
+                        android:id="@+id/cart_img2"
                         android:layout_width="80dp"
                         android:layout_height="65dp"
                         android:layout_marginEnd="15dp"
@@ -216,7 +207,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/hot_name1"
+                            android:id="@+id/cart_tv_name2"
                             android:layout_width="164dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
@@ -227,20 +218,10 @@
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/hot_pa1"
-                            android:layout_width="164dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:text="게살 볶음밥"
-                            android:textColor="#4C4C4C"
-                            android:textSize="15sp" />
-
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/textView107"
+                        android:id="@+id/cart_tv_price2"
                         android:layout_width="95dp"
                         android:layout_height="33dp"
                         android:layout_weight="1"
@@ -260,9 +241,11 @@
                     android:layout_marginRight="150dp"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:paddingBottom="25dp">
+                    android:paddingBottom="25dp"
+                    android:visibility="invisible">
 
                     <Button
+                        android:id="@+id/cart_btn_minus2"
                         android:layout_width="60dp"
                         android:layout_height="25dp"
                         android:layout_weight="1"
@@ -274,6 +257,7 @@
                         app:backgroundTint="#E0E0E0" />
 
                     <TextView
+                        android:id="@+id/cart_tv_count2"
                         android:layout_width="60dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="5dp"
@@ -287,6 +271,7 @@
                         android:textSize="12sp" />
 
                     <Button
+                        android:id="@+id/cart_btn_plus2"
                         android:layout_width="60dp"
                         android:layout_height="25dp"
                         android:layout_weight="1"
@@ -329,7 +314,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/textView134iew139"
+                            android:id="@+id/cart_tv_sum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="30dp"
@@ -361,7 +346,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/textView139"
+                            android:id="@+id/cart_tv_trans"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="30dp"
@@ -396,7 +381,7 @@
 
                         <TextView
                             android:id="@+id/textView144"
-                            android:layout_width="wrap_content"
+                            android:layout_width="89dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="45dp"
                             android:layout_marginLeft="45dp"
@@ -407,7 +392,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView145"
+                            android:id="@+id/cart_tv_total"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -427,29 +412,14 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginLeft="50dp"
                     android:orientation="horizontal"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp">
 
                     <Button
-                        android:id="@+id/btn_login8"
-                        android:layout_width="25dp"
-                        android:layout_height="48dp"
-                        android:layout_marginStart="50dp"
-                        android:layout_marginLeft="50dp"
-                        android:layout_weight="1"
-                        android:background="#4C4C4C"
-                        android:fontFamily="@font/jalnan"
-                        android:text="장바구니 담기"
-                        android:textSize="16sp"
-                        app:backgroundTint="#4c4c4c"
-                        app:cornerRadius="0dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
-
-                    <Button
-                        android:id="@+id/btn_login5"
+                        android:id="@+id/btn_g"
                         android:layout_width="25dp"
                         android:layout_height="48dp"
                         android:layout_marginEnd="50dp"
@@ -491,7 +461,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
-                    android:text="헬스케어"
+                    android:text="건강일지"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -526,7 +496,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
-                    android:text="내정보"
+                    android:text="마이페이지"
                     android:textColor="#670401" />
 
             </LinearLayout>

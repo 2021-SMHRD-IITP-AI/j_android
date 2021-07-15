@@ -41,6 +41,7 @@ public class HealthCare extends AppCompatActivity {
         search1 =findViewById(R.id.search1);
         shp1 =findViewById(R.id.shp1);
 
+        // 추천 및 주의식품 정보 출력
         Intent intent = getIntent();
         String diseInfo = intent.getStringExtra("diseData");
         try {
@@ -75,6 +76,16 @@ public class HealthCare extends AppCompatActivity {
             }
         });
 
+        //건강일지
+        btn_nv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                startActivity(intent);
+            }
+        });
+
+
         btn_nv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,10 +94,11 @@ public class HealthCare extends AppCompatActivity {
             }
         });
 
+        //마이페이지
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
                 startActivity(intent);
             }
         });

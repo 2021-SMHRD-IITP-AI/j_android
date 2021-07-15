@@ -117,7 +117,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cb_login" />
 
     <Button
-        android:id="@+id/btn_contract"
+        android:id="@+id/btn_contract1"
         android:layout_width="299dp"
         android:layout_height="48dp"
         android:layout_marginTop="5dp"

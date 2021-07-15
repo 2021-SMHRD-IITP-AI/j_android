@@ -104,6 +104,7 @@
                             android:orientation="horizontal">
 
                             <ImageView
+                                android:id="@+id/pay_img1"
                                 android:layout_width="80dp"
                                 android:layout_height="65dp"
                                 android:layout_marginStart="25dp"
@@ -118,7 +119,7 @@
                                 android:orientation="vertical">
 
                                 <TextView
-                                    android:id="@+id/textView2ew45"
+                                    android:id="@+id/pay_tv_name1"
                                     android:layout_width="164dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="15dp"
@@ -135,13 +136,13 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="15dp"
                                     android:layout_marginLeft="15dp"
-                                    android:text="프로틴 그린티맛"
                                     android:textColor="#4C4C4C"
                                     android:textSize="15sp" />
 
                             </LinearLayout>
 
                             <TextView
+                                android:id="@+id/pay_tv_price1"
                                 android:layout_width="95dp"
                                 android:layout_height="33dp"
                                 android:layout_marginBottom="15dp"
@@ -165,6 +166,7 @@
                             android:paddingBottom="25dp">
 
                             <Button
+                                android:id="@+id/pay_btn_minus1"
                                 android:layout_width="60dp"
                                 android:layout_height="25dp"
                                 android:layout_weight="1"
@@ -176,6 +178,7 @@
                                 app:backgroundTint="#E0E0E0" />
 
                             <TextView
+                                android:id="@+id/pay_tv_count1"
                                 android:layout_width="60dp"
                                 android:layout_height="25dp"
                                 android:layout_marginStart="5dp"
@@ -189,6 +192,7 @@
                                 android:textSize="12sp" />
 
                             <Button
+                                android:id="@+id/pay_btn_plus1"
                                 android:layout_width="60dp"
                                 android:layout_height="25dp"
                                 android:layout_weight="1"
@@ -205,7 +209,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="invisible">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -214,6 +219,7 @@
                             android:orientation="horizontal">
 
                             <ImageView
+                                android:id="@+id/pay_img2"
                                 android:layout_width="80dp"
                                 android:layout_height="65dp"
                                 android:layout_marginStart="25dp"
@@ -228,6 +234,7 @@
                                 android:orientation="vertical">
 
                                 <TextView
+                                    android:id="@+id/pay_tv_name2"
                                     android:layout_width="164dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="15dp"
@@ -243,14 +250,13 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="15dp"
                                     android:layout_marginLeft="15dp"
-                                    android:text="프로틴 그린티맛"
                                     android:textColor="#4C4C4C"
                                     android:textSize="15sp" />
 
                             </LinearLayout>
 
                             <TextView
-                                android:id="@+id/textView1107"
+                                android:id="@+id/pay_tv_price2"
                                 android:layout_width="95dp"
                                 android:layout_height="33dp"
                                 android:layout_marginBottom="15dp"
@@ -274,17 +280,19 @@
                             android:paddingBottom="25dp">
 
                             <Button
+                                android:id="@+id/pay_btn_minus2"
                                 android:layout_width="60dp"
                                 android:layout_height="25dp"
                                 android:layout_weight="1"
                                 android:background="#E0E0E0"
                                 android:gravity="center"
-                                android:text="+"
+                                android:text="-"
                                 android:textColor="#4C4C4C"
                                 android:textSize="12sp"
                                 app:backgroundTint="#E0E0E0" />
 
                             <TextView
+                                android:id="@+id/pay_tv_count2"
                                 android:layout_width="60dp"
                                 android:layout_height="25dp"
                                 android:layout_marginStart="5dp"
@@ -298,11 +306,13 @@
                                 android:textSize="12sp" />
 
                             <Button
+                                android:id="@+id/pay_btn_plus2"
                                 android:layout_width="60dp"
                                 android:layout_height="25dp"
                                 android:layout_weight="1"
                                 android:background="#E0E0E0"
                                 android:gravity="center"
+                                android:text="+"
                                 android:textColor="#4C4C4C"
                                 android:textSize="12sp"
                                 app:backgroundTint="#E0E0E0" />
@@ -320,7 +330,7 @@
                         android:paddingBottom="15dp">
 
                         <Button
-                            android:id="@+id/btn_login7"
+                            android:id="@+id/btn_point"
                             android:layout_width="5dp"
                             android:layout_height="35dp"
                             android:layout_marginStart="50dp"
@@ -338,7 +348,7 @@
                             app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
 
                         <Button
-                            android:id="@+id/btn_login9"
+                            android:id="@+id/btn_coupon"
                             android:layout_width="5dp"
                             android:layout_height="35dp"
                             android:layout_marginTop="15dp"
@@ -390,7 +400,7 @@
                                 android:textSize="16sp" />
 
                             <TextView
-                                android:id="@+id/textView134iew139"
+                                android:id="@+id/pay_tv_sum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="25dp"
@@ -421,7 +431,7 @@
                                 android:textSize="16sp" />
 
                             <TextView
-                                android:id="@+id/textView1349"
+                                android:id="@+id/pay_tv_dc"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="25dp"
@@ -451,7 +461,7 @@
                                 android:textSize="16sp" />
 
                             <TextView
-                                android:id="@+id/textView139"
+                                android:id="@+id/pay_tv_trans"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="25dp"
@@ -491,7 +501,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView145"
+                            android:id="@+id/pay_tv_total"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="210dp"
@@ -553,7 +563,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
-                    android:text="헬스케어"
+                    android:text="건강일지"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -588,7 +598,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
-                    android:text="내정보"
+                    android:text="마이페이지"
                     android:textColor="#670401" />
 
             </LinearLayout>

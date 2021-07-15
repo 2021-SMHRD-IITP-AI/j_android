@@ -63,10 +63,6 @@ public class Login_contract extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_contract);
 
-        if(queue == null){
-            queue = Volley.newRequestQueue(this);
-        }
-
         id=findViewById(R.id.id);
         pw1=findViewById(R.id.pw);
         name=findViewById(R.id.name);
@@ -100,8 +96,6 @@ public class Login_contract extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), value,Toast.LENGTH_SHORT).show();
                 check_h = spinner1.getSelectedItem().toString();
 
-                Log.v("check_h", check_h);
-
 //                int spinner_num = spinner1.getSelectedItemPosition();
 //                String[] size_value = getResources().getStringArray(R.array.array);
 //                int size_int = Integer.valueOf(size_value[spinner_num]);
@@ -125,21 +119,18 @@ public class Login_contract extends AppCompatActivity {
     }
     private void sendRequest() {
 
-
+        queue = Volley.newRequestQueue(this);
         String url = "http://222.102.104.135:3000/Join";
         stringRequest = new StringRequest(Request.Method.POST,
                 url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.v("test",response);
+                Log.v("resultValue",response);
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     String value = jsonObject.getString("check");
                     Log.v("result", value);
                     if(value.equals("true")){
-
-                        PreferenceManager.setString(getApplicationContext(),"login",value);
-
                         Intent intent = new Intent(getApplicationContext(), Login.class);
                         startActivity(intent);
                         Toast.makeText(getApplicationContext(),"회원가입에 성공했습니다.",Toast.LENGTH_SHORT).show();
@@ -161,7 +152,6 @@ public class Login_contract extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-
             }
         }) {
             @Override
@@ -180,7 +170,6 @@ public class Login_contract extends AppCompatActivity {
                 return params;
             }
         };
-        stringRequest.setShouldCache(true);
         queue.add(stringRequest);
     }
     private void updateLabel() {
@@ -189,5 +178,4 @@ public class Login_contract extends AppCompatActivity {
         birth.setText(dateFormat.format(myCalendar.getTime()));
     }
 }
-
 
