@@ -55,12 +55,11 @@ public class Cart extends AppCompatActivity {
         cart_tv_name1.setText(name);
         cart_tv_price1.setText(price);
 
-        cart_img2.setImageBitmap(null);
-        cart_tv_name2.setText("");
-        cart_tv_price2.setText("");
         cart_tv_trans.setText("2500");
-        cart_tv_sum.setText(cart_tv_price1.getText().toString() + cart_tv_price2.getText().toString());
-        cart_tv_total.setText(cart_tv_price1.getText().toString() + cart_tv_price2.getText().toString() + cart_tv_trans.getText().toString());
+        cart_tv_sum.setText(cart_tv_price1.getText().toString());
+        int price1 = Integer.parseInt(cart_tv_price1.getText().toString());
+        int trans = Integer.parseInt(cart_tv_trans.getText().toString());
+        cart_tv_total.setText(String.valueOf(price1 + trans));
 
         // 뒤로가기
         back1.setOnClickListener(new View.OnClickListener() {

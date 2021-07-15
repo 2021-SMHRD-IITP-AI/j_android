@@ -257,15 +257,16 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        // 헬스케어
+        // 건강일지
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                startActivity(intent);
             }
         });
 
-        // 내 정보
+        // 마이페이지
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -273,8 +274,6 @@ public class Main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
     private void sendRequest() {
