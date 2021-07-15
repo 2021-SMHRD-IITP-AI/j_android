@@ -88,7 +88,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="25dp"
                             android:layout_marginLeft="25dp"
-                            android:text="홍길동님의 장바구니"
+                            android:text="종근당님의 장바구니"
                             android:textColor="#4C4C4C" />
                     </LinearLayout>
 
