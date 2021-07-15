@@ -217,6 +217,7 @@ public class Main extends AppCompatActivity {
         });
 
 
+
         //일일 추천 더보기
         btn_more1.setOnClickListener(new View.OnClickListener() {
             @Override
