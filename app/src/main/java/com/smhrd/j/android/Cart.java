@@ -86,10 +86,12 @@ public class Cart extends AppCompatActivity {
                 resize.compress(Bitmap.CompressFormat.PNG, 100, stream);
                 byte[] byteArray = stream.toByteArray();
 
-                Intent intent = new Intent(getApplicationContext(), Payment.class);
-                intent.putExtra("purchase_img", byteArray);
-                intent.putExtra("purchase_name", cart_tv_name1.getText().toString());
-                intent.putExtra("purchase_price", cart_tv_price1.getText().toString());
+                Intent intent = new Intent(getApplicationContext(), PAY_BAY.class);
+                intent.putExtra("paybay_img", byteArray);
+                intent.putExtra("paybay_name", cart_tv_name1.getText().toString());
+                intent.putExtra("paybay_price", cart_tv_price1.getText().toString());
+                intent.putExtra("paybay_total", cart_tv_total.getText().toString());
+
                 intent.putExtra("id", id);
                 intent.putExtra("name", user);
                 intent.putExtra("tel", tel);

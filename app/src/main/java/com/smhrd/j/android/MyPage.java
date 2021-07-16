@@ -160,21 +160,13 @@ public class MyPage extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 AlertDialog.Builder myAlerBuilder = new AlertDialog.Builder(MyPage.this);
-                myAlerBuilder.setTitle("이건어때?");
-                myAlerBuilder.setMessage("탈퇴하시겠나요?");
-
-                myAlerBuilder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                myAlerBuilder.setTitle("탈퇴되었습니다.");
+                myAlerBuilder.setMessage("이용해주셔서 감사합니다.");
+                myAlerBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(), "탈퇴되었습니다.", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), Main.class);
+                        Intent intent = new Intent(getApplicationContext(), Login.class);
                         startActivity(intent);
-                    }
-                });
-                myAlerBuilder.setNegativeButton("cancle", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(), "취소하셨습니다.", Toast.LENGTH_SHORT).show();
                     }
                 });
 
