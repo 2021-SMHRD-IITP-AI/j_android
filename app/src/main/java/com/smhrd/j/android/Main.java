@@ -41,8 +41,10 @@ import java.util.Map;
 public class Main extends AppCompatActivity {
     private Button btn_mu1,btn_mu2,btn_mu3,btn_mu4,btn_mu5,btn_mu6,btn_mu7,btn_mu8, btn_more1, btn_j, btn_nv1, btn_nv2,btn_nv3;
     private ImageView ctgr,search1, shp1,img1,img2,img3,cir1,cir2,cir3,cir4,cir5,cir6;
-    private TextView menu1,menu2,menu3,menu4,tv_lu_name1,tv_lu_name2,tv_lu_name3,tv_pa1,tv_pa2,tv_pa3;
+    private TextView menu1,menu2,menu3,menu4,tv_lu_name1,tv_lu_name2,tv_lu_name3,tv_pa1,tv_pa2,tv_pa3,tv_login_s;
     private ImageView imageView;
+
+    String cnt1 = "1";
 
     private RequestQueue queue;
     private StringRequest stringRequest;
@@ -91,6 +93,34 @@ public class Main extends AppCompatActivity {
         tv_pa1=findViewById(R.id.tv_pa1);
         tv_pa2=findViewById(R.id.tv_pa2);
         tv_pa3=findViewById(R.id.tv_pa3);
+        tv_login_s=findViewById(R.id.tv_login_s);
+
+
+        //로그인 페이지 이동 / 로그인시 로그아웃으로 변경
+        tv_login_s.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                Intent intent = new Intent(getApplicationContext(),Login.class);
+                intent.putExtra("logout","로그아웃");
+                startActivity(intent);
+
+            }
+        });
+
+
+
+         Intent intent = getIntent();
+         String logout = intent.getStringExtra("logout");
+         String cnt = intent.getStringExtra("cnt");
+
+         if (cnt1.equals(cnt)) {
+             tv_login_s.setText(logout);
+         }else {
+             tv_login_s.setText("로그인");
+         }
 
         //장바구니 페이지 이동
         shp1.setOnClickListener(new View.OnClickListener() {

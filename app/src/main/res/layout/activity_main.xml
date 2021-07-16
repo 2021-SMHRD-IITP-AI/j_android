@@ -44,12 +44,14 @@
                 android:textColor="#670401"
                 android:textSize="21sp" />
 
-            <ImageView
-                android:id="@+id/search1"
-                android:layout_width="23dp"
+            <TextView
+                android:id="@+id/tv_login_s"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.05"
-                app:srcCompat="@drawable/search_ic" />
+                android:layout_weight="0.06"
+                android:gravity="center"
+                android:text="로그인"
+                android:textColor="#670401" />
 
             <ImageView
                 android:id="@+id/shp1"
@@ -182,7 +184,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:drawableTop="@drawable/main_choice_red"
-                            android:text="선택도시락"
+                            android:text="맞춤도시락"
                             android:textColor="#670401"
                             android:textSize="15sp" />
 
