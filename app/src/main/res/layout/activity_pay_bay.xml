@@ -60,8 +60,8 @@
                     android:id="@+id/textView57"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginLeft="17dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="9dp"
                     android:fontFamily="@font/gmarketsansttfbold"
@@ -74,8 +74,8 @@
                     android:id="@+id/textView58"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginLeft="17dp"
                     android:layout_marginBottom="10dp"
                     android:text="종근당 010-1234-4567" />
 
@@ -93,8 +93,8 @@
                     android:id="@+id/textView59"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginLeft="17dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="9dp"
                     android:fontFamily="@font/gmarketsansttfbold"
@@ -107,16 +107,16 @@
                     android:id="@+id/textView60"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginLeft="17dp"
                     android:text="종근당 010-1234-5678" />
 
                 <TextView
                     android:id="@+id/textView61"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginLeft="17dp"
                     android:text="광주광역시 남구 송암로 60" />
 
                 <TextView
@@ -144,8 +144,8 @@
                     android:id="@+id/textView63"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginLeft="17dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/gmarketsansttfbold"
                     android:text="배송요청사항"
@@ -157,8 +157,8 @@
                     android:id="@+id/textView64"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginLeft="17dp"
                     android:layout_marginTop="9dp"
                     android:layout_marginBottom="10dp"
                     android:text="문 앞에 놓아주세요" />
@@ -177,8 +177,8 @@
                     android:id="@+id/textView65"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginLeft="17dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/gmarketsansttfbold"
                     android:text="주문상품정보"
@@ -217,7 +217,8 @@
                                 android:layout_marginStart="9dp"
                                 android:layout_marginLeft="9dp"
                                 android:layout_marginTop="30dp"
-                                android:text="상품명" />
+                                android:text="상품명"
+                                android:textColor="#151414" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -229,13 +230,15 @@
                                     android:layout_width="130dp"
                                     android:layout_height="wrap_content"
                                     android:gravity="right"
-                                    android:text="가격" />
+                                    android:text="가격"
+                                    android:textColor="#151414" />
 
                                 <TextView
                                     android:id="@+id/textView80"
                                     android:layout_width="40dp"
                                     android:layout_height="wrap_content"
-                                    android:text="원" />
+                                    android:text="원"
+                                    android:textColor="#151414" />
                             </LinearLayout>
 
                         </LinearLayout>
@@ -274,8 +277,8 @@
                         android:id="@+id/textView73"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:layout_marginLeft="14dp"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginLeft="17dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/gmarketsansttfbold"
                         android:text="결제수단"
@@ -475,8 +478,8 @@
                             android:id="@+id/textView74"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="14dp"
-                            android:layout_marginLeft="14dp"
+                            android:layout_marginStart="17dp"
+                            android:layout_marginLeft="17dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
                             android:fontFamily="@font/gmarketsansttfbold"
@@ -493,7 +496,8 @@
                             android:layout_marginBottom="5dp"
                             android:layout_weight="0"
                             android:gravity="right"
-                            android:text="7,900" />
+                            android:text="7,900"
+                            android:textColor="#151414" />
 
                         <TextView
                             android:id="@+id/textView66"
@@ -501,7 +505,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_weight="0"
-                            android:text="원" />
+                            android:text="원"
+                            android:textColor="#151414" />
                     </LinearLayout>
 
                     <LinearLayout
