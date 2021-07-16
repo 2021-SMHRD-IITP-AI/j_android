@@ -214,13 +214,29 @@
                                 android:id="@+id/textView79"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginStart="9dp"
+                                android:layout_marginLeft="9dp"
+                                android:layout_marginTop="18dp"
                                 android:text="상품명" />
 
-                            <TextView
-                                android:id="@+id/textView80"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="가격" />
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_ga"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="가격" />
+
+                                <TextView
+                                    android:id="@+id/textView80"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="원" />
+                            </LinearLayout>
+
                         </LinearLayout>
                     </LinearLayout>
 
@@ -272,13 +288,13 @@
                         android:layout_height="match_parent">
 
                         <RadioButton
-                            android:id="@+id/radioButton3"
+                            android:id="@+id/rd_1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="휴대폰 결제" />
 
                         <RadioButton
-                            android:id="@+id/radioButton2"
+                            android:id="@+id/rd_2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="무통장 입금" />
@@ -346,7 +362,7 @@
 
                             <TextView
                                 android:id="@+id/textView81"
-                                android:layout_width="40dp"
+                                android:layout_width="35dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="5dp"
                                 android:layout_marginLeft="5dp"
@@ -361,6 +377,83 @@
 
                         </LinearLayout>
 
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_p"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/layout_p2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/textView68"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="80dp"
+                                android:layout_marginLeft="80dp"
+                                android:layout_weight="0"
+                                android:text="유효기간" />
+
+                            <EditText
+                                android:id="@+id/editTextDate"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="0"
+                                android:ems="10"
+                                android:hint="MM"
+                                android:inputType="date"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/textView69"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0"
+                                android:text="/" />
+
+                            <EditText
+                                android:id="@+id/editTextDate2"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="0"
+                                android:ems="10"
+                                android:hint="YY"
+                                android:inputType="date"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/textView70"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_weight="0"
+                                android:text="비밀번호 앞 두자리" />
+
+                            <EditText
+                                android:id="@+id/editTextTextPassword"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="0"
+                                android:ems="10"
+                                android:inputType="textPassword" />
+
+                            <TextView
+                                android:id="@+id/textView72"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0"
+                                android:text="* *" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <LinearLayout
@@ -384,12 +477,20 @@
 
                         <TextView
                             android:id="@+id/textView75"
-                            android:layout_width="wrap_content"
+                            android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="5dp"
-                            android:layout_weight="1"
-                            android:text="가격" />
+                            android:layout_weight="0"
+                            android:text="7,900" />
+
+                        <TextView
+                            android:id="@+id/textView66"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="0"
+                            android:text="원" />
                     </LinearLayout>
 
                     <LinearLayout
