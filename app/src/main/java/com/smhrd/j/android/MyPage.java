@@ -2,6 +2,8 @@ package com.smhrd.j.android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -53,15 +55,17 @@ public class MyPage extends AppCompatActivity {
         search1 =findViewById(R.id.search1);
         shp1 =findViewById(R.id.shp1);
 
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        String tel = intent.getStringExtra("tel");
-        String addr = intent.getStringExtra("address");
-        String email = intent.getStringExtra("email");
+        Intent newIntent = getIntent();
+        String id = newIntent.getStringExtra("id");
+        String user = newIntent.getStringExtra("name");
+        String tel = newIntent.getStringExtra("tel");
+        String address = newIntent.getStringExtra("address");
+        String email = newIntent.getStringExtra("email");
+        String status = newIntent.getStringExtra("status");
 
-        my_tv_name.setText(name);
+        my_tv_name.setText(user);
         my_tv_tel.setText(tel);
-        my_tv_addr.setText(addr);
+        my_tv_addr.setText(address);
         my_tv_email.setText(email);
 
         top6.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +89,12 @@ public class MyPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Cart.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -95,6 +105,12 @@ public class MyPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -103,6 +119,12 @@ public class MyPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -112,6 +134,12 @@ public class MyPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -131,23 +159,26 @@ public class MyPage extends AppCompatActivity {
                 url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.v("mypage", response);
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    String value = jsonObject.getString("check");
-                    Log.v("mypage", value);
-                    if(value.equals("true")){
+                AlertDialog.Builder myAlerBuilder = new AlertDialog.Builder(MyPage.this);
+                myAlerBuilder.setTitle("이건어때?");
+                myAlerBuilder.setMessage("탈퇴하시겠나요?");
+
+                myAlerBuilder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(getApplicationContext(), "탈퇴되었습니다.", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), Main.class);
                         startActivity(intent);
-                        Log.v("mypage","탈퇴성공");
-                    }else{
-                        Log.v("mypage", "탈퇴실패");
                     }
+                });
+                myAlerBuilder.setNegativeButton("cancle", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(), "취소하셨습니다.", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                myAlerBuilder.show();
             }
         }, new Response.ErrorListener() {
             @Override

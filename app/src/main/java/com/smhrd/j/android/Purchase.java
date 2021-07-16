@@ -38,6 +38,14 @@ public class Purchase extends AppCompatActivity {
         Pu_name1 = findViewById(R.id.Pu_name1);
         Pu_price1 = findViewById(R.id.Pu_price1);
 
+        Intent newIntent = getIntent();
+        String id = newIntent.getStringExtra("id");
+        String user = newIntent.getStringExtra("name");
+        String tel = newIntent.getStringExtra("tel");
+        String address = newIntent.getStringExtra("address");
+        String email = newIntent.getStringExtra("email");
+        String status = newIntent.getStringExtra("status");
+
         // 이미지, 이름, 가격 가져오기
         Intent intent = getIntent();
         String name = intent.getStringExtra("recom_name");
@@ -45,7 +53,7 @@ public class Purchase extends AppCompatActivity {
         byte[] byteArray = getIntent().getByteArrayExtra("recom_img");
         Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
 
-       Pu_img1.setImageBitmap(bitmap);
+        Pu_img1.setImageBitmap(bitmap);
         Pu_name1.setText(name);
         Pu_price1.setText(price);
 
@@ -67,6 +75,13 @@ public class Purchase extends AppCompatActivity {
                 intent.putExtra("purchase_img", byteArray);
                 intent.putExtra("purchase_name", Pu_name1.getText().toString());
                 intent.putExtra("purchase_price", Pu_price1.getText().toString());
+
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -89,6 +104,13 @@ public class Purchase extends AppCompatActivity {
                 intent.putExtra("purchase_img", byteArray);
                 intent.putExtra("purchase_name", Pu_name1.getText().toString());
                 intent.putExtra("purchase_price", Pu_price1.getText().toString());
+
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -106,16 +128,28 @@ public class Purchase extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Cart.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
 
 
-        //헬스케어
+        //건강일지
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
+                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
 
             }
@@ -126,6 +160,12 @@ public class Purchase extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -134,7 +174,13 @@ public class Purchase extends AppCompatActivity {
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });

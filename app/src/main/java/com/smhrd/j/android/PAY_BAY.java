@@ -23,6 +23,14 @@ public class PAY_BAY extends AppCompatActivity {
         rg_rg=findViewById(R.id.rg_rg);
         btn_pay=findViewById(R.id.btn_pay);
 
+        Intent newIntent = getIntent();
+        String id = newIntent.getStringExtra("id");
+        String user = newIntent.getStringExtra("name");
+        String tel = newIntent.getStringExtra("tel");
+        String address = newIntent.getStringExtra("address");
+        String email = newIntent.getStringExtra("email");
+        String status = newIntent.getStringExtra("status");
+
         //결제하면 창 띄우기
         rg_rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -42,6 +50,12 @@ public class PAY_BAY extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(),"결제성공",Toast.LENGTH_SHORT).show();
             }

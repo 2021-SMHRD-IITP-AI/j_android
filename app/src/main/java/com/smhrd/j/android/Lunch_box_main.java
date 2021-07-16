@@ -37,10 +37,24 @@ public class Lunch_box_main extends AppCompatActivity {
         final RadioGroup group4=(RadioGroup)findViewById(R.id.RadioGroup_4);
         final RadioGroup group5=(RadioGroup)findViewById(R.id.RadioGroup_5);
 
+        Intent newIntent = getIntent();
+        String id = newIntent.getStringExtra("id");
+        String user = newIntent.getStringExtra("name");
+        String tel = newIntent.getStringExtra("tel");
+        String address = newIntent.getStringExtra("address");
+        String email = newIntent.getStringExtra("email");
+        String status = newIntent.getStringExtra("status");
+
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
+                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -49,6 +63,12 @@ public class Lunch_box_main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -56,7 +76,13 @@ public class Lunch_box_main extends AppCompatActivity {
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -193,6 +219,12 @@ public class Lunch_box_main extends AppCompatActivity {
                     intent.putExtra("result3", result3);
                     intent.putExtra("result4", result4);
                     intent.putExtra("result5", result5);
+                    intent.putExtra("id", id);
+                    intent.putExtra("name", user);
+                    intent.putExtra("tel", tel);
+                    intent.putExtra("address", address);
+                    intent.putExtra("email", email);
+                    intent.putExtra("status", status);
                     startActivity(intent);
                     //버튼 비활성화(else)/영양소 미선택시 팝업
 //                    btn_g.setEnabled(true);
