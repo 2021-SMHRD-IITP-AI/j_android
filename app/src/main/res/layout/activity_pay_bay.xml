@@ -216,7 +216,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="9dp"
                                 android:layout_marginLeft="9dp"
-                                android:layout_marginTop="18dp"
+                                android:layout_marginTop="30dp"
                                 android:text="상품명" />
 
                             <LinearLayout
@@ -226,13 +226,14 @@
 
                                 <TextView
                                     android:id="@+id/tv_ga"
-                                    android:layout_width="100dp"
+                                    android:layout_width="130dp"
                                     android:layout_height="wrap_content"
+                                    android:gravity="right"
                                     android:text="가격" />
 
                                 <TextView
                                     android:id="@+id/textView80"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="40dp"
                                     android:layout_height="wrap_content"
                                     android:text="원" />
                             </LinearLayout>
@@ -291,24 +292,31 @@
                             android:id="@+id/rd_1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="9dp"
+                            android:layout_marginLeft="9dp"
                             android:text="휴대폰 결제" />
 
                         <RadioButton
                             android:id="@+id/rd_2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="9dp"
+                            android:layout_marginLeft="9dp"
                             android:text="무통장 입금" />
 
                         <RadioButton
                             android:id="@+id/rd_3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="9dp"
+                            android:layout_marginLeft="9dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
                             android:text="신용/체크카드" />
                     </RadioGroup>
 
                     <LinearLayout
+                        android:id="@+id/layout_p3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#F4F4F4"
@@ -327,6 +335,8 @@
                                 android:id="@+id/spinner2"
                                 android:layout_width="150dp"
                                 android:layout_height="40dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
                                 android:entries="@array/array2" />
 
                             <EditText
@@ -396,8 +406,8 @@
                                 android:id="@+id/textView68"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="80dp"
-                                android:layout_marginLeft="80dp"
+                                android:layout_marginStart="70dp"
+                                android:layout_marginLeft="70dp"
                                 android:layout_weight="0"
                                 android:text="유효기간" />
 
@@ -482,6 +492,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="5dp"
                             android:layout_weight="0"
+                            android:gravity="right"
                             android:text="7,900" />
 
                         <TextView

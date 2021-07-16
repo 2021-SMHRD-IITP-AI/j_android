@@ -15,6 +15,7 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".PAY_BAY">
 
+
         </activity>
         <activity android:name=".Bar" />
         <activity android:name=".Cart" />
@@ -33,14 +34,15 @@
 
         </activity>
         <activity android:name=".Lunch_box_main2">
-
-        </activity>
-        <activity android:name=".Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".Main">
+
         </activity>
         <activity android:name=".MyPage"></activity>
         <activity android:name=".MyPage_Main" />
