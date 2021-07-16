@@ -11,10 +11,24 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class BUY_INFO extends AppCompatActivity {
 
     private ImageView back1, search1, shp1;
     private Button btn_nv1,btn_nv2,btn_nv3;
+
+    private RequestQueue queue;
+    private StringRequest stringRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +43,13 @@ public class BUY_INFO extends AppCompatActivity {
         btn_nv2 =findViewById(R.id.btn_nv2);
         btn_nv3 =findViewById(R.id.btn_nv3);
 
+        Intent newIntent = getIntent();
+        String id = newIntent.getStringExtra("id");
+        String user = newIntent.getStringExtra("name");
+        String tel = newIntent.getStringExtra("tel");
+        String address = newIntent.getStringExtra("address");
+        String email = newIntent.getStringExtra("email");
+        String status = newIntent.getStringExtra("status");
 
         //뒤로가기
         back1.setOnClickListener(new View.OnClickListener() {
@@ -44,17 +65,22 @@ public class BUY_INFO extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Cart.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
 
 
-        //헬스케어  //연결안됨 다시해보기
+        //헬스케어
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
-                startActivity(intent);
+                sendRequest();
             }
         });
 
@@ -63,6 +89,12 @@ public class BUY_INFO extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -71,7 +103,13 @@ public class BUY_INFO extends AppCompatActivity {
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -83,6 +121,53 @@ public class BUY_INFO extends AppCompatActivity {
     public void onBackPressed() {
         Log.v("Back","확인");
         super.onBackPressed();
+    }
+
+    private void sendRequest() {
+        queue = Volley.newRequestQueue(this);
+        String url = "http://222.102.104.135:3000/Dise";
+        stringRequest = new StringRequest(Request.Method.POST,
+                url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.v("result", response);
+                if (response != null) {
+                    Intent newIntent = getIntent();
+                    String id = newIntent.getStringExtra("id");
+                    String user = newIntent.getStringExtra("name");
+                    String tel = newIntent.getStringExtra("tel");
+                    String address = newIntent.getStringExtra("address");
+                    String email = newIntent.getStringExtra("email");
+                    String status = newIntent.getStringExtra("status");
+
+                    Intent intent = new Intent(getApplicationContext(), HealthCare.class);
+                    intent.putExtra("diseData", response);
+                    intent.putExtra("id", id);
+                    intent.putExtra("name", user);
+                    intent.putExtra("tel", tel);
+                    intent.putExtra("address", address);
+                    intent.putExtra("email", email);
+                    intent.putExtra("status", status);
+
+                    startActivity(intent);
+                    Log.v("test", "성공");
+                } else {
+                    Log.v("result", "실패");
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                return params;
+            }
+        };
+        queue.add(stringRequest);
     }
 
 }
