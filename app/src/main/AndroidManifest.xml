@@ -26,15 +26,22 @@
         <activity android:name=".ID_PW_FIND"></activity>
         <activity android:name=".ID_PW_FIND3" />
         <activity android:name=".Login">
+
+        </activity>
+        <activity android:name=".Login_contract"></activity>
+        <activity android:name=".Lunch_box_main">
+
+        </activity>
+        <activity android:name=".Lunch_box_main2">
+
+        </activity>
+        <activity android:name=".Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login_contract"></activity>
-        <activity android:name=".Lunch_box_main" />
-        <activity android:name=".Main"></activity>
         <activity android:name=".MyPage"></activity>
         <activity android:name=".MyPage_Main" />
         <activity android:name=".Payment" />

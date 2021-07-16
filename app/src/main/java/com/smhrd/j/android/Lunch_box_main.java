@@ -198,6 +198,14 @@ public class Lunch_box_main extends AppCompatActivity {
                     intent.putExtra("result3",result3);
                     intent.putExtra("result4",result4);
                     intent.putExtra("result5",result5);
+
+                    intent.putExtra("id", id);
+                    intent.putExtra("name", user);
+                    intent.putExtra("tel", tel);
+                    intent.putExtra("address", address);
+                    intent.putExtra("email", email);
+                    intent.putExtra("status", status);
+
                     startActivity(intent);
 
                     //버튼 비활성화(else)/영양소 미선택시 팝업
@@ -227,6 +235,7 @@ public class Lunch_box_main extends AppCompatActivity {
                     intent.putExtra("result3", result3);
                     intent.putExtra("result4", result4);
                     intent.putExtra("result5", result5);
+
                     intent.putExtra("id", id);
                     intent.putExtra("name", user);
                     intent.putExtra("tel", tel);

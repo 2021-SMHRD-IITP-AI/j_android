@@ -3,11 +3,16 @@ package com.smhrd.j.android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.ByteArrayOutputStream;
 
 public class Lunch_box_main2 extends AppCompatActivity {
 
@@ -30,6 +35,15 @@ public class Lunch_box_main2 extends AppCompatActivity {
         tv_chois5=findViewById(R.id.tv_chois5);
 
         img_box1=findViewById(R.id.img_box1);
+        img_box2 = findViewById(R.id.img_box2);
+
+        Intent newIntent = getIntent();
+        String id = newIntent.getStringExtra("id");
+        String user = newIntent.getStringExtra("name");
+        String tel = newIntent.getStringExtra("tel");
+        String address = newIntent.getStringExtra("address");
+        String email = newIntent.getStringExtra("email");
+        String status = newIntent.getStringExtra("status");
 
 
         //뒤로가기
@@ -58,8 +72,44 @@ public class Lunch_box_main2 extends AppCompatActivity {
         img_box1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(),PAY_BAY.class);
-                startActivity(intent1);
+                // 현재 이미지, 이름, 가격 보내기
+                Intent intent = new Intent(getApplicationContext(), PAY_BAY.class);
+                Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lunchbax1);
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                sendBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
+                intent.putExtra("paybay_img",byteArray);
+
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
+
+                startActivity(intent);
+            }
+        });
+
+        img_box2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 현재 이미지, 이름, 가격 보내기
+                Intent intent = new Intent(getApplicationContext(), PAY_BAY.class);
+                Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lunchbax2);
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                sendBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
+                intent.putExtra("paybay_img",byteArray);
+
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
+
+                startActivity(intent);
             }
         });
 
