@@ -35,6 +35,10 @@
         </activity>
         <activity android:name=".Login_contract"></activity>
         <activity android:name=".Lunch_box_main" ></activity>
+        <activity android:name=".Lunch_box_main2" >
+
+
+        </activity>
         <activity android:name=".Main">
 
         </activity>
@@ -49,6 +53,7 @@
         <activity android:name=".Snack" ></activity>
         <activity android:name=".Today_health"></activity>
         <activity android:name=".Today_lunch_box" ></activity>
+
     </application>
 
 </manifest>

@@ -55,6 +55,7 @@ public class Login extends AppCompatActivity {
         btn_contract = findViewById(R.id.btn_contract1);
         cb_login = findViewById(R.id.cb_login);
 
+
         tv_find=findViewById(R.id.tv__find_id_pw);
 
         String login = PreferenceManager.getString(getApplicationContext(),"login");
@@ -91,10 +92,15 @@ public class Login extends AppCompatActivity {
             }
         });
 
+
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendRequest();
+//                //로그인 텍스트 로그아웃으로 변경
+//                Intent intent2 = new Intent(getApplicationContext(),Main.class);
+//                intent2.putExtra("logout","로그아웃");
+//                startActivity(intent2);
             }
         });
     }
@@ -111,35 +117,48 @@ public class Login extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     String id = jsonObject.getString("id");
                     String pw = jsonObject.getString("pw");
-                    String user = jsonObject.getString("name");
+                    String name = jsonObject.getString("name");
                     String tel = jsonObject.getString("tel");
                     String address = jsonObject.getString("address");
                     String email = jsonObject.getString("email");
-                    String status = jsonObject.getString("status");
-
                     if(id_login.getText().toString().equals(id) && pw_login.getText().toString().equals(pw)){
                         Intent intent = new Intent(getApplicationContext(), Main.class);
                         intent.putExtra("id", id);
                         intent.putExtra("pw", pw);
-                        intent.putExtra("name", user);
+                        intent.putExtra("name", name);
                         intent.putExtra("tel", tel);
                         intent.putExtra("address", address);
                         intent.putExtra("email", email);
-                        intent.putExtra("status", status);
+                        intent.putExtra("logout","로그아웃");
+                        intent.putExtra("cnt","1");
                         startActivity(intent);
                         Log.v("Login", "성공");
+
+//                        if(id!=null){
+//                            btn_login.setText("로그아웃");
+//
+//                        }
+
+//                        Intent intent1 = getIntent();
+//                        String tv_logout = intent1.getStringExtra("logout");
+//                        btn_login.setText(tv_logout);
+
                     } else{
                         Log.v("Login", "실패");
                     }
+
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
+
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+
                 error.printStackTrace();
             }
         }) {
@@ -169,5 +188,7 @@ public class Login extends AppCompatActivity {
             }
         };
         queue.add(stringRequest);
+
+
     }
 }

@@ -3,11 +3,15 @@ package com.smhrd.j.android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.ByteArrayOutputStream;
 
 public class Lunch_box_main2 extends AppCompatActivity {
 
@@ -54,12 +58,30 @@ public class Lunch_box_main2 extends AppCompatActivity {
         tv_chois5.setText(tv5);
 
 
+        img_box1.setImageResource(R.drawable.lunchbax1);
+
         //사진누르면 결제창
         img_box1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(),PAY_BAY.class);
-                startActivity(intent1);
+
+//                Intent intent1 = new Intent(getApplicationContext(),PAY_BAY.class);
+//                startActivity(intent1);
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                Bitmap bitmap = ((BitmapDrawable) img_box1.getDrawable()).getBitmap();
+                float scale = (float) (1024/(float)bitmap.getWidth());
+                int image_w = (int) (bitmap.getWidth() * scale);
+                int image_h = (int) (bitmap.getHeight() * scale);
+                Bitmap resize = Bitmap.createScaledBitmap(bitmap, image_w, image_h, true);
+                resize.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
+
+
+
+                Intent intent = new Intent(getApplicationContext(), PAY_BAY.class);
+                intent.putExtra("imgbox", byteArray);
+                startActivity(intent);
+
             }
         });
 

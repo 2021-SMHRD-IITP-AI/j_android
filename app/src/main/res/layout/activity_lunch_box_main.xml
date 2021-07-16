@@ -721,10 +721,10 @@
 
                     <Button
                         android:id="@+id/btn_j"
-                        android:layout_width="180dp"
+                        android:layout_width="296dp"
                         android:layout_height="50dp"
-                        android:layout_marginStart="17dp"
-                        android:layout_marginLeft="17dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginLeft="60dp"
                         android:layout_marginTop="30dp"
                         android:layout_marginBottom="10dp"
                         android:layout_weight="0"
@@ -733,16 +733,6 @@
                         app:backgroundTint="#4c4c4c"
                         app:cornerRadius="0dp" />
 
-                    <Button
-                        android:id="@+id/cart_btn_g"
-                        android:layout_width="180dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="30dp"
-                        android:layout_weight="0"
-                        android:fontFamily="@font/jalnan"
-                        android:text="구매하기"
-                        app:backgroundTint="#670401"
-                        app:cornerRadius="0dp" />
                 </LinearLayout>
 
             </LinearLayout>
