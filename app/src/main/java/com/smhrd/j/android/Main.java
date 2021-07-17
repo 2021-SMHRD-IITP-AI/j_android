@@ -419,6 +419,9 @@ public class Main extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
+                Intent intent = getIntent();
+                String status = intent.getStringExtra("status");
+                params.put("status", status);
                 return params;
             }
         };

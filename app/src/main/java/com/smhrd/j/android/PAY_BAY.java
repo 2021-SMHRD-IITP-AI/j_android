@@ -22,10 +22,20 @@ public class PAY_BAY extends AppCompatActivity {
     TextView bay_name1, tv_ga, bay_total;
     ImageView bay_img1;
 
+    private LinearLayout layout_p3,layout_p,layout_p2,layout_g;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pay_bay);
+
+        //결제창 레이아웃
+//        layout_p3=findViewById(R.id.layout_p3);
+        layout_p=findViewById(R.id.layout_p);
+        layout_p2=findViewById(R.id.layout_p2);
+        layout_g=findViewById(R.id.layout_g);
+
 
         rg_rg=findViewById(R.id.rg_rg);
         btn_pay=findViewById(R.id.btn_pay);
@@ -46,8 +56,8 @@ public class PAY_BAY extends AppCompatActivity {
         tv_ga.setText(price);
         bay_total.setText(total);
 
-        bay_name1.setText("도시락");
-        tv_ga.setText("5000");
+        bay_name1.setText("맞춤구성 영양소 도시락");
+        tv_ga.setText("7500");
         bay_total.setText("7500");
 
         Intent newIntent = getIntent();
@@ -63,13 +73,26 @@ public class PAY_BAY extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                if(checkedId == R.id.rd_3){
+                if (checkedId == R.id.rd_3) {
 
-                    LinearLayout layout_g = findViewById(R.id.layout_g);
+//                    LinearLayout layout_g = findViewById(R.id.layout_g);
+//                    layout_g.setVisibility(View.VISIBLE);
+//                    LinearLayout layout_p2 =findViewById(R.id.layout_p2);
+//                    layout_p2.setVisibility(View.VISIBLE);
+                    layout_p2.setVisibility(View.VISIBLE);
                     layout_g.setVisibility(View.VISIBLE);
-                }else{
+
+                } else if (checkedId == R.id.rd_2) {
+                    layout_p3.setVisibility(View.GONE);
+                    layout_p.setVisibility(View.GONE);
+
+                } else if (checkedId == R.id.rd_1) {
+                    layout_p3.setVisibility(View.GONE);
+                    layout_p.setVisibility(View.GONE);
 
                 }
+
+
             }
         });
 

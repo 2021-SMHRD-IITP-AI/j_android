@@ -115,13 +115,6 @@ public class Recommend_lunch_box extends AppCompatActivity {
             prices[i].setText(values3[i]);
         }
 
-
-
-
-
-
-
-
         // 이미지 클릭시 구매페이지 이동
         img_recom1.setOnClickListener(new View.OnClickListener() {
             @Override

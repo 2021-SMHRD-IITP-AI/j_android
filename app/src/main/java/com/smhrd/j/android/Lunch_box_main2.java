@@ -16,10 +16,8 @@ import java.io.ByteArrayOutputStream;
 
 public class Lunch_box_main2 extends AppCompatActivity {
 
-
     private ImageView back1,img_box1,img_box2;
     private TextView tv_chois1,tv_chois2,tv_chois3,tv_chois4,tv_chois5;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +43,6 @@ public class Lunch_box_main2 extends AppCompatActivity {
         String email = newIntent.getStringExtra("email");
         String status = newIntent.getStringExtra("status");
 
-
         //뒤로가기
         back1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +63,6 @@ public class Lunch_box_main2 extends AppCompatActivity {
         tv_chois4.setText(tv4);
         String tv5 = intent.getStringExtra("result5");
         tv_chois5.setText(tv5);
-
 
         //사진누르면 결제창
         img_box1.setOnClickListener(new View.OnClickListener() {
@@ -112,9 +108,6 @@ public class Lunch_box_main2 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
     }
    //뒤로가기
     @Override
