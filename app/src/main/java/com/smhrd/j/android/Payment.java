@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.ByteArrayOutputStream;
 
 public class Payment extends AppCompatActivity {
     private ImageView back1, search1, shp1, pay_img1, pay_img2;
@@ -48,6 +51,14 @@ public class Payment extends AppCompatActivity {
         pay_tv_total = findViewById(R.id.pay_tv_total);
         pay_tv_trans = findViewById(R.id.pay_tv_trans);
 
+        Intent newIntent = getIntent();
+        String id = newIntent.getStringExtra("id");
+        String user = newIntent.getStringExtra("name");
+        String tel = newIntent.getStringExtra("tel");
+        String address = newIntent.getStringExtra("address");
+        String email = newIntent.getStringExtra("email");
+        String status = newIntent.getStringExtra("status");
+
         // 이미지, 이름, 가격 가져오기
         Intent intent = getIntent();
         String name = intent.getStringExtra("purchase_name");
@@ -77,6 +88,29 @@ public class Payment extends AppCompatActivity {
         btn_contract3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // 현재 이미지, 이름, 가격 보내기
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                Bitmap bitmap = ((BitmapDrawable) pay_img1.getDrawable()).getBitmap();
+                float scale = (float) (1024/(float)bitmap.getWidth());
+                int image_w = (int) (bitmap.getWidth() * scale);
+                int image_h = (int) (bitmap.getHeight() * scale);
+                Bitmap resize = Bitmap.createScaledBitmap(bitmap, image_w, image_h, true);
+                resize.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
+
+                Intent intent = new Intent(getApplicationContext(), PAY_BAY.class);
+                intent.putExtra("paybay_img", byteArray);
+                intent.putExtra("paybay_name", pay_tv_name1.getText().toString());
+                intent.putExtra("paybay_price", pay_tv_price1.getText().toString());
+                intent.putExtra("paybay_total", pay_tv_total.getText().toString());
+
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
+                startActivity(intent);
 
             }
         });
@@ -86,6 +120,12 @@ public class Payment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Cart.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -96,6 +136,12 @@ public class Payment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -105,6 +151,12 @@ public class Payment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -114,6 +166,12 @@ public class Payment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });

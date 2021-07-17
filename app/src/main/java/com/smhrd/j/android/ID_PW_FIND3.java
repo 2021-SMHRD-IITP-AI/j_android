@@ -51,6 +51,13 @@ public class ID_PW_FIND3 extends AppCompatActivity {
 
         btn_check2 = findViewById(R.id.btn_check2);
 
+        Intent newIntent = getIntent();
+        String id = newIntent.getStringExtra("id");
+        String user = newIntent.getStringExtra("name");
+        String tel = newIntent.getStringExtra("tel");
+        String address = newIntent.getStringExtra("address");
+        String email = newIntent.getStringExtra("email");
+        String status = newIntent.getStringExtra("status");
 
         //뒤로가기
         back1.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +73,12 @@ public class ID_PW_FIND3 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ID_PW_FIND.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -105,13 +118,13 @@ public class ID_PW_FIND3 extends AppCompatActivity {
                 myAlerBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(), "Pressed OK", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), Login.class);
+                        startActivity(intent);
                     }
                 });
-                myAlerBuilder.setPositiveButton("cancle", new DialogInterface.OnClickListener() {
+                myAlerBuilder.setNegativeButton("cancle", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(), "pressed cancle", Toast.LENGTH_SHORT).show();
                     }
                 });
 

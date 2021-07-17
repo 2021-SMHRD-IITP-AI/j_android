@@ -2,12 +2,15 @@ package com.smhrd.j.android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -28,6 +31,7 @@ public class MyPage extends AppCompatActivity {
 
     private Button btn_nv1, btn_nv2, btn_nv3, top6;
     private ImageView back1, search1, shp1;
+    private TextView my_tv_name, my_tv_tel, my_tv_addr, my_tv_email;
 
     private RequestQueue queue;
     private StringRequest stringRequest;
@@ -42,10 +46,27 @@ public class MyPage extends AppCompatActivity {
         btn_nv3 = findViewById(R.id.btn_nv3);
         top6 = findViewById(R.id.top6);
 
+        my_tv_name = findViewById(R.id.my_tv_name);
+        my_tv_tel = findViewById(R.id.my_tv_tel);
+        my_tv_addr = findViewById(R.id.my_tv_addr);
+        my_tv_email = findViewById(R.id.my_tv_email);
 
         back1=findViewById(R.id.back1);
         search1 =findViewById(R.id.search1);
         shp1 =findViewById(R.id.shp1);
+
+        Intent newIntent = getIntent();
+        String id = newIntent.getStringExtra("id");
+        String user = newIntent.getStringExtra("name");
+        String tel = newIntent.getStringExtra("tel");
+        String address = newIntent.getStringExtra("address");
+        String email = newIntent.getStringExtra("email");
+        String status = newIntent.getStringExtra("status");
+
+        my_tv_name.setText(user);
+        my_tv_tel.setText(tel);
+        my_tv_addr.setText(address);
+        my_tv_email.setText(email);
 
         top6.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +89,12 @@ public class MyPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Cart.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -78,6 +105,12 @@ public class MyPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -86,6 +119,12 @@ public class MyPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -95,6 +134,12 @@ public class MyPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -114,21 +159,18 @@ public class MyPage extends AppCompatActivity {
                 url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    String value = jsonObject.getString("check");
-                    Log.v("result", value);
-                    if(value != null){
-                        Intent intent = new Intent(getApplicationContext(), Main.class);
+                AlertDialog.Builder myAlerBuilder = new AlertDialog.Builder(MyPage.this);
+                myAlerBuilder.setTitle("탈퇴되었습니다.");
+                myAlerBuilder.setMessage("이용해주셔서 감사합니다.");
+                myAlerBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getApplicationContext(), Login.class);
                         startActivity(intent);
-                        Log.v("mypage","탈퇴성공");
-                    }else{
-                        Log.v("mypage", "탈퇴실패");
                     }
+                });
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                myAlerBuilder.show();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -143,7 +185,8 @@ public class MyPage extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
                 Intent intent = getIntent();
                 String id = intent.getStringExtra("id");
-                params.put("id",id);
+                Log.v("exit", id);
+                params.put("id", id);
 
                 return params;
             }

@@ -15,7 +15,7 @@ import org.json.JSONObject;
 
 public class HealthCare extends AppCompatActivity {
 
-    private TextView tv_recom, tv_warn, tv_userInfo;
+    private TextView tv_recom, tv_warn, tv_userInfo, tv_dise;
     private Button btn_nv1, btn_nv2, btn_nv3;
     private ImageView back1, search1, shp1;
 
@@ -29,6 +29,7 @@ public class HealthCare extends AppCompatActivity {
         tv_recom = findViewById(R.id.tv_recom);
         tv_warn = findViewById(R.id.tv_warn);
         tv_userInfo = findViewById(R.id.tv_userInfo);
+        tv_dise = findViewById(R.id.tv_dise);
 
         // 버튼
         btn_nv1 = findViewById(R.id.btn_nv1);
@@ -39,6 +40,14 @@ public class HealthCare extends AppCompatActivity {
         back1=findViewById(R.id.back1);
         search1 =findViewById(R.id.search1);
         shp1 =findViewById(R.id.shp1);
+
+        Intent newIntent = getIntent();
+        String id = newIntent.getStringExtra("id");
+        String user = newIntent.getStringExtra("name");
+        String tel = newIntent.getStringExtra("tel");
+        String address = newIntent.getStringExtra("address");
+        String email = newIntent.getStringExtra("email");
+        String status = newIntent.getStringExtra("status");
 
         // 추천 및 주의식품 정보 출력
         Intent intent = getIntent();
@@ -57,6 +66,9 @@ public class HealthCare extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        tv_userInfo.setText(user + "님의 질환에 따른 정보");
+        tv_dise.setText(status + "에 추천 식품");
+
         //뒤로가기
         back1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +82,12 @@ public class HealthCare extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Cart.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -79,15 +97,26 @@ public class HealthCare extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
-
 
         btn_nv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -97,6 +126,12 @@ public class HealthCare extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
