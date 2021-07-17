@@ -15,7 +15,6 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".PAY_BAY">
 
-
         </activity>
         <activity android:name=".Bar" />
         <activity android:name=".Cart" />
