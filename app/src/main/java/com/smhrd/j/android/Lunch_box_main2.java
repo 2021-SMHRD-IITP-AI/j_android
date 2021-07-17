@@ -16,7 +16,6 @@ import java.io.ByteArrayOutputStream;
 
 public class Lunch_box_main2 extends AppCompatActivity {
 
-
     private ImageView back1,img_box1,img_box2;
     private TextView tv_chois1,tv_chois2,tv_chois3,tv_chois4,tv_chois5;
 
