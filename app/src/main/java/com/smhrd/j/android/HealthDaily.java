@@ -127,6 +127,7 @@ public class HealthDaily extends AppCompatActivity{
                     }
                     health_edt.setText(note);
 
+
                     if (check_box.equals("true")) {
                         health_ck.setChecked(true);
                     }else  if (check_box.equals("false")){
