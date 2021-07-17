@@ -11,7 +11,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Layout;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -40,40 +42,44 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
-public class HealthDaily extends AppCompatActivity {
+public class HealthDaily extends AppCompatActivity{
 
     Spinner spinner;
     private ImageView shp1, back1;
-   private EditText health_edt;
-   private CalendarView health_cal;
-   private CheckBox health_ck;
-   private Button health_add, btn_nv1, btn_nv2, btn_nv3;
-   private LinearLayout layout1;
-   int state_cnt;
-   private String ck_check;
-   private  String day ="";
+    private EditText health_edt;
+    private CalendarView health_cal;
+    private CheckBox health_ck;
+    private Button health_add, btn_nv1, btn_nv2, btn_nv3;
+    private String ck_check;
+    private String check_box;
+    private String edt_ckeck;
     private String result = "";
-
     private RequestQueue queue;
     private StringRequest stringRequest;
-
+    private JSONObject date_symptom=new JSONObject();
+    private JSONObject date_note=new JSONObject();
+    private HashSet<String> symptoms= new HashSet<String>();
+    Spinner spinner1;
     Calendar myCalendar = Calendar.getInstance();
+    ArrayAdapter<String> adapter;
 
 
 
-    private ArrayList<HealthDTO> list = new ArrayList<HealthDTO>();
+//    private ArrayList<HealthDTO> list = new ArrayList<HealthDTO>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_daily);
-
-
 
 
 
@@ -84,7 +90,6 @@ public class HealthDaily extends AppCompatActivity {
         health_edt=findViewById(R.id.health_edt);
         health_cal =findViewById(R.id.health_cal);
         health_add = findViewById(R.id.health_add);
-        layout1 = (LinearLayout) findViewById(R.id.layout1);
         health_ck = findViewById(R.id.health_ck);
         shp1=findViewById(R.id.shp1);
         back1=findViewById(R.id.back1);
@@ -92,15 +97,7 @@ public class HealthDaily extends AppCompatActivity {
         btn_nv2 = findViewById(R.id.btn_nv2);
         btn_nv3 = findViewById(R.id.btn_nv3);
 
-        //날짜 비교해서 캘린더보여주기
-//       for(int i = 0; i < list.size(); i++){
-//
-//            if(건강일지 날짜 가져오기 == list.get(i).getDate()){
-//                layout1.setVisibility((View.VISIBLE));
-//            }else{
-//                layout1.setVisibility((View.INVISIBLE));
-//            }
-//       }
+
 
         //캘린더
         health_cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -108,26 +105,56 @@ public class HealthDaily extends AppCompatActivity {
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 month += 1;
                 //health_edt.setText(String.format("%d년 %d월 %d일" ,year,month,dayOfMonth));  //캘린더날짜 출력
+                String date = String.format("%04d-%02d-%02d", year,month,dayOfMonth);
+                try{
+                    String symptom = date_symptom.getString(date);//날짜에 따른 스피너내용
+                    String note = date_note.getString(date); //날짜에 따른 건강 내용
+                    Log.v("야4",note);
+                    Log.v("야1",symptom);
+                    String[] tmp = Arrays.copyOf(symptoms.toArray(), symptoms.toArray().length, String[].class);
+                    //스피너값
+                    adapter =new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, tmp);
 
 
-                if (state_cnt % 2 == 0) {
-                    layout1.setVisibility((View.VISIBLE));
-                    state_cnt++;
+                    spinner1.setAdapter(adapter);
 
-                } else {
-                    layout1.setVisibility((View.INVISIBLE));
-                    state_cnt++;
+                    for(int i=0;i<adapter.getCount();i++){
+                        if(adapter.getItem(i).equals(symptom)){// 날짜와 비교해서
+                            Log.v("야1",adapter.getItem(i));
+                            spinner1.setSelection(i);
+                            break;
+                        }
+                    }
+                    health_edt.setText(note);
+                    if (check_box.equals("true")) {
+                        health_ck.setChecked(true);
+                    }else  if (check_box.equals("false")){
+                        health_ck.setChecked(false);
+                    }
+
+
+
+                }catch (JSONException e){
+                    spinner1.setSelection(0);
+                    health_ck.setChecked(false);
+                    health_edt.setText("");
+
                 }
 
-                }
+
+            }
         });
 
 
 
-       //스피너
+//        HashSet<String> total_data=new HashSet<>();
+        //스피너
         final String[] data = getResources().getStringArray(R.array.healtharray);
-        ArrayAdapter<String> adapter =new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,data);
-        Spinner spinner1 = (Spinner) findViewById(R.id.health_sp);
+        Collections.addAll(symptoms, data);
+
+
+        adapter =new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,data);
+        spinner1 = (Spinner) findViewById(R.id.health_sp);
         spinner1.setAdapter(adapter);
 
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -152,10 +179,8 @@ public class HealthDaily extends AppCompatActivity {
             public void onClick(View v) {
                 if (health_ck.isChecked()){
                     ck_check = "true";
-                    // health_ck.setChecked(true);
                 }else{
                     ck_check = "false";
-                    // health_ck.setChecked(false);
                 }
                 sendRequest();
             }
@@ -223,28 +248,33 @@ public class HealthDaily extends AppCompatActivity {
 
                 if(response != null){
                     try {
-                        JSONArray array = new JSONArray(response);
-                        for(int i = 0; i< array.length(); i++) {
-                            JSONObject jsonObject = array.getJSONObject(i);
-                            String date = jsonObject.getString("date");
-                            String health_daily = jsonObject.getString("note_text");
-                            String id = jsonObject.getString("id");
-                            String health_check = jsonObject.getString("note_workout");
-                            String health_spinner = jsonObject.getString("note_health");
+//                        JSONObject jsonObject = new JSONObject(response);
+                        JSONArray jsonArray = new JSONArray(response);
+                        Log.v("야",jsonArray.toString());
+                        for( int i=0; i<jsonArray.length();i++){
+                            Log.v("야2","test");
+                            JSONObject jo = (JSONObject)jsonArray.get(i);
+                            String date =jo.getString("note_date");
+                            String health_daily = jo.getString("note_text");
+                            String id = jo.getString("mem_id");
+                            String health_check = jo.getString("note_workout");
+                            String health_spinner = jo.getString("note_health");
+                            Log.v("야",date+"/"+health_daily+"/"+id+"/"+health_check+"/"+health_spinner);
+                            date_symptom.put(date.substring(0,10),health_spinner);//스피너 내용
+                            date_note.put(date.substring(0,10),health_daily);//건강 내용
+                            Log.v("야3",date_note.toString());
+                            symptoms.add(health_spinner);
+                            edt_ckeck=health_daily;
+                            check_box = health_check;
 
-                            day = date;
-                            health_edt.setText(health_daily);
-                            if (health_check == "true"){
-                                health_ck.setChecked(true);
-                            }else{
-                                health_ck.setChecked(false);
-                            }
-
-
-
-
-                           // Log.v("check>>", date + "/" + health_daily + "/" + id + "/" + health_check + "/" + health_spinner);
                         }
+//                        String date = ((JSONObject)jsonObject.get(0)).getString("note_date");
+//                        String health_daily = ((JSONObject)jsonObject.get(0)).getString("note_text");
+//                        String id = jsonObject.getString("id");
+//                        String health_check = jsonObject.getString("note_workout");
+//                        String health_spinner = jsonObject.getString("note_health");
+
+
 
                     }catch (JSONException e) {
                         e.printStackTrace();
@@ -285,11 +315,8 @@ public class HealthDaily extends AppCompatActivity {
                     String value = jsonObject.getString("check");
                     Log.v("resultValue", value);
                     if (value.equals("true")){
-
-
-
+                        checkHealth();
                     }else {
-                        health_edt.setText("");
 
                     }
                 } catch (JSONException e) {
@@ -305,11 +332,11 @@ public class HealthDaily extends AppCompatActivity {
         }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError { //server로 데이터를 보낼 시 넣어주는 곳
-                Log.v("check>>", health_edt.getText().toString()+"/"+ck_check+"/"+result);
+                Log.d("check>>", health_edt.getText().toString()+"/"+ck_check+"/"+result);
                 Intent intent = getIntent();
                 String id = intent.getStringExtra("id");
                 Map<String,String> params = new HashMap<String, String>();
-                Log.v("check>>", id);
+                Log.v("dddd", id);
                 params.put("id",id);
                 params.put("note_text", health_edt.getText().toString());
                 params.put("note_workout",ck_check);

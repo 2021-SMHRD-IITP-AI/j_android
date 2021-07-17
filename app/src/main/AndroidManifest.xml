@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Jandroid"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Lunch_box_main_2"></activity>
         <activity android:name=".Proteen" />
         <activity android:name=".MyPage" />
         <activity android:name=".MyPage_Main" />
@@ -30,15 +29,15 @@
         <activity android:name=".HealthDaily" />
         <activity android:name=".Hot_item" />
         <activity android:name=".Main">
+
+        </activity>
+        <activity android:name=".Login_contract" />
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".Login_contract" />
-        <activity android:name=".Login">
-
         </activity>
         <activity android:name=".Lunch_box_main" />
         <activity android:name=".Sale" />
