@@ -35,7 +35,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_weight="0.8"
-                android:background="#F4F4F4"
+                android:background="#EFEFEF"
                 android:fontFamily="@font/jalnan"
                 android:text="오늘의 홈트 추천영상"
                 android:textColor="#4C4C4C"

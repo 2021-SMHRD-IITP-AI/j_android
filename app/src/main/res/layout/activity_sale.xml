@@ -36,7 +36,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_weight="0.8"
-                android:background="#F4F4F4"
+                android:background="#EFEFEF"
                 android:text="이달의 특가"
                 android:fontFamily="@font/jalnan"
                 android:textColor="#4C4C4C"
@@ -98,6 +98,7 @@
                             android:drawableLeft="@drawable/horsv_lunch_gr"
                             android:gravity="center|right"
                             android:text="도시락/볶음밥"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -121,6 +122,7 @@
                             android:drawableLeft="@drawable/horsv_choice_gr"
                             android:gravity="center|right"
                             android:text="맟춤도시락"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -143,6 +145,7 @@
                             android:drawableLeft="@drawable/horsv_salad_gr"
                             android:gravity="center|right"
                             android:text="샐러드"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -165,6 +168,7 @@
                             android:drawableLeft="@drawable/horsv_conveniece_gr"
                             android:gravity="center|right"
                             android:text="간편식"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -187,6 +191,7 @@
                             android:drawableLeft="@drawable/horsv_food_gr"
                             android:gravity="center|right"
                             android:text="건강간식"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -248,12 +253,14 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="닭가슴살 세트" />
+                                android:text="닭가슴살 세트"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="19,000원" />
+                                android:text="19,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -273,12 +280,14 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="컵밥도시락 세트" />
+                                android:text="컵밥도시락 세트"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="27,000원" />
+                                android:text="27,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -306,12 +315,14 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="프로틴 초코맛 10+1" />
+                                android:text="프로틴 초코맛 10+1"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="17,000원" />
+                                android:text="17,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -331,12 +342,14 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="프로틴 일반" />
+                                android:text="프로틴 일반"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="49,000원" />
+                                android:text="49,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -364,12 +377,14 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="도시락 세트" />
+                                android:text="도시락 세트"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="27,000원" />
+                                android:text="27,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -389,12 +404,14 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="문어도시락 세트" />
+                                android:text="문어도시락 세트"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="19,000원" />
+                                android:text="19,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -422,12 +439,14 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="프로틴 카페 프런치맛" />
+                                android:text="프로틴 카페 프런치맛"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="37,000원" />
+                                android:text="37,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -447,12 +466,14 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="알밤도시락 세트" />
+                                android:text="알밤도시락 세트"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="17,000원" />
+                                android:text="17,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -483,6 +504,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
                     android:text="건강일지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -500,6 +522,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_home_red"
                     android:text="HOME"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>
@@ -518,6 +541,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
                     android:text="마이페이지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>

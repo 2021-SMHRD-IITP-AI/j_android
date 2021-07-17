@@ -9,6 +9,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ public class Lunch_box_main2 extends AppCompatActivity {
 
     private ImageView back1,img_box1,img_box2;
     private TextView tv_chois1,tv_chois2,tv_chois3,tv_chois4,tv_chois5;
+    private Button btn_nv1, btn_nv2, btn_nv3;
 
 
     @Override
@@ -25,7 +27,11 @@ public class Lunch_box_main2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lunch_box_main2);
 
-        back1=findViewById(R.id.back1);
+
+
+        btn_nv1 = findViewById(R.id.btn_nv1);
+        btn_nv2 = findViewById(R.id.btn_nv2);
+        btn_nv3 = findViewById(R.id.btn_nv3);
 
         tv_chois1=findViewById(R.id.tv_chois1);
         tv_chois2=findViewById(R.id.tv_chois2);
@@ -33,6 +39,7 @@ public class Lunch_box_main2 extends AppCompatActivity {
         tv_chois4=findViewById(R.id.tv_chois4);
         tv_chois5=findViewById(R.id.tv_chois5);
 
+        back1=findViewById(R.id.back1);
         img_box1=findViewById(R.id.img_box1);
         img_box2 = findViewById(R.id.img_box2);
 
@@ -53,7 +60,50 @@ public class Lunch_box_main2 extends AppCompatActivity {
             }
         });
 
-        //선택값 보내기
+
+        btn_nv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
+                startActivity(intent);
+            }
+        });
+
+        btn_nv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
+                startActivity(intent);
+            }
+        });
+
+        btn_nv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
+                startActivity(intent);
+            }
+        });
+
+        //맞춤도시락 선택값 가져오기
         Intent intent=getIntent();
         String tv1= intent.getStringExtra("result1");
         tv_chois1.setText(tv1);

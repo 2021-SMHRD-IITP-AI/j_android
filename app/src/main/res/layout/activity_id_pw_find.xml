@@ -106,8 +106,12 @@
         android:layout_marginRight="53dp"
         android:background="@drawable/border"
         android:ems="10"
+        android:fontFamily="@font/gmarketsansttflight"
         android:hint=" 이메일"
+
         android:inputType="textPersonName"
+
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView28"
         app:layout_constraintTop_toBottomOf="@+id/textView28" />
@@ -118,6 +122,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="62dp"
         android:layout_marginLeft="62dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="53dp"
         android:layout_marginRight="53dp"
         android:layout_marginBottom="177dp"
@@ -128,7 +133,8 @@
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_find_h" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline28"
@@ -167,8 +173,10 @@
         android:layout_marginRight="55dp"
         android:background="@drawable/border"
         android:ems="10"
+        android:fontFamily="@font/gmarketsansttflight"
         android:hint=" 휴대폰번호"
         android:inputType="phone"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView28"
         app:layout_constraintTop_toBottomOf="@+id/textView35" />

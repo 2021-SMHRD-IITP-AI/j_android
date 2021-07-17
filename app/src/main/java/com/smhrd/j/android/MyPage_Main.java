@@ -161,5 +161,19 @@ public class MyPage_Main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        MY_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(getApplicationContext(), BUY_INFO.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
+                startActivity(intent);
+            }
+        });
     }
 }

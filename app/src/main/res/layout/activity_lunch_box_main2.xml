@@ -35,7 +35,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_weight="0.8"
-                android:background="#F4F4F4"
+                android:background="#EFEFEF"
                 android:fontFamily="@font/jalnan"
                 android:text="맞춤도시락"
                 android:textColor="#4C4C4C"
@@ -272,7 +272,11 @@
                         android:id="@+id/textView78"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="도시락을 선택해주세요" />
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/gmarketsansttfmedium"
+                        android:gravity="center"
+                        android:text="도시락 이미지를 선택해주세요"
+                        android:textColor="#670401" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -300,6 +304,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
                     android:text="건강일지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -317,6 +322,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_home_red"
                     android:text="HOME"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>
@@ -335,6 +341,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
                     android:text="마이페이지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>

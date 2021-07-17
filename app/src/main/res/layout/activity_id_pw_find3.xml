@@ -15,6 +15,7 @@
         android:orientation="horizontal"
         android:paddingLeft="14dp"
         android:paddingRight="19dp"
+        android:fontFamily="@font/gmarketsansttfmedium"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView

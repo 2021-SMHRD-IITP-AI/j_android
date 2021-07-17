@@ -90,6 +90,7 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginRight="15dp"
                 android:text="종근당"
+                android:fontFamily="@font/gmarketsansttfmedium"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -100,6 +101,7 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginRight="15dp"
                 android:text="010-1234-5678"
+                android:fontFamily="@font/gmarketsansttfmedium"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -110,6 +112,7 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginRight="15dp"
                 android:text="광주광역시 동구 예술길 31-15 3층"
+                android:fontFamily="@font/gmarketsansttfmedium"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -120,6 +123,7 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginRight="15dp"
                 android:text="aaa@naver.com"
+                android:fontFamily="@font/gmarketsansttfmedium"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -290,6 +294,7 @@
                 android:layout_height="wrap_content"
                 android:drawableTop="@drawable/main_change_red"
                 android:text="건강일지"
+                android:fontFamily="@font/jalnan"
                 android:textColor="#670401" />
         </LinearLayout>
 
@@ -307,6 +312,7 @@
                 android:layout_height="wrap_content"
                 android:drawableTop="@drawable/main_home_red"
                 android:text="HOME"
+                android:fontFamily="@font/jalnan"
                 android:textColor="#670401" />
 
         </LinearLayout>
@@ -325,6 +331,7 @@
                 android:layout_height="wrap_content"
                 android:drawableTop="@drawable/main_user_red"
                 android:text="마이페이지"
+                android:fontFamily="@font/jalnan"
                 android:textColor="#670401" />
 
         </LinearLayout>

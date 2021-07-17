@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -19,6 +20,8 @@ public class Lunch_box_main extends AppCompatActivity {
 
     private String result1,result2, result3, result4, result5;
 
+    private ImageView back1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,7 @@ public class Lunch_box_main extends AppCompatActivity {
         btn_nv1 = findViewById(R.id.btn_nv1);
         btn_nv2 = findViewById(R.id.btn_nv2);
         btn_nv3 = findViewById(R.id.btn_nv3);
+        back1 = findViewById(R.id.back1);
 
         final RadioGroup group1=(RadioGroup)findViewById(R.id.RadioGroup_1);
         final RadioGroup group2=(RadioGroup)findViewById(R.id.RadioGroup_2);
@@ -44,6 +48,14 @@ public class Lunch_box_main extends AppCompatActivity {
         String address = newIntent.getStringExtra("address");
         String email = newIntent.getStringExtra("email");
         String status = newIntent.getStringExtra("status");
+
+        //뒤로가기
+        back1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -254,5 +266,11 @@ public class Lunch_box_main extends AppCompatActivity {
 //                }
 //            }
 //        });
+    }
+    //뒤로가기
+    @Override
+    public void onBackPressed() {
+        Log.v("Back","확인");
+        super.onBackPressed();
     }
 }

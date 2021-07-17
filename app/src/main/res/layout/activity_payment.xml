@@ -88,8 +88,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="25dp"
                             android:layout_marginLeft="25dp"
+                            android:fontFamily="@font/gmarketsansttflight"
                             android:text="종근당님의 장바구니"
-                            android:textColor="#4C4C4C" />
+                            android:textColor="#4C4C4C"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -126,6 +128,7 @@
                                     android:layout_marginLeft="15dp"
                                     android:paddingBottom="20dp"
                                     android:text="상품명 : 1234568"
+                                    android:fontFamily="@font/gmarketsansttfmedium"
                                     android:textColor="#4C4C4C"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
@@ -139,6 +142,7 @@
                                 android:layout_weight="1"
                                 android:gravity="right"
                                 android:text="37,000"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:textColor="#4C4C4C"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -152,6 +156,7 @@
                                 android:layout_weight="1"
                                 android:gravity="right"
                                 android:text="원"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:textColor="#4C4C4C"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -392,6 +397,7 @@
                                 android:layout_marginLeft="25dp"
                                 android:layout_weight="1"
                                 android:text="상품금액"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:textColor="#4C4C4C"
                                 android:textSize="16sp" />
 
@@ -402,6 +408,7 @@
                                 android:layout_weight="1"
                                 android:gravity="right"
                                 android:text="38,900"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:textColor="#4C4C4C"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -415,6 +422,7 @@
                                 android:layout_weight="0.07"
                                 android:gravity="right"
                                 android:text="원"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:textColor="#4C4C4C"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -434,6 +442,7 @@
                                 android:layout_marginLeft="25dp"
                                 android:layout_weight="1"
                                 android:text="할인금액"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:textColor="#4C4C4C"
                                 android:textSize="16sp" />
 
@@ -444,6 +453,7 @@
                                 android:layout_weight="1"
                                 android:gravity="right"
                                 android:text="-2,000"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:textColor="#4C4C4C"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -457,6 +467,7 @@
                                 android:layout_weight="0.07"
                                 android:gravity="right"
                                 android:text="원"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:textColor="#4C4C4C"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -475,6 +486,7 @@
                                 android:layout_marginLeft="25dp"
                                 android:layout_weight="1"
                                 android:text="배송비"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:textColor="#4C4C4C"
                                 android:textSize="16sp" />
 
@@ -485,6 +497,7 @@
                                 android:layout_weight="1"
                                 android:gravity="right"
                                 android:text="2,500"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:textColor="#4C4C4C"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -498,6 +511,7 @@
                                 android:layout_weight="0.07"
                                 android:gravity="right"
                                 android:text="원"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:textColor="#4C4C4C"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -519,11 +533,12 @@
 
                         <TextView
                             android:id="@+id/textView144"
-                            android:layout_width="1dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="25dp"
                             android:layout_marginLeft="25dp"
                             android:layout_weight="1"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:text="총금액 : "
                             android:textColor="#4C4C4C"
                             android:textSize="16sp"
@@ -537,6 +552,7 @@
                             android:layout_marginRight="210dp"
                             android:layout_weight="1"
                             android:text="39,400원"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -593,6 +609,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
                     android:text="건강일지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -610,6 +627,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_home_red"
                     android:text="HOME"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>
@@ -628,6 +646,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
                     android:text="마이페이지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>

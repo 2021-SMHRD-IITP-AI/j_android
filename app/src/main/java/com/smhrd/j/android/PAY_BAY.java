@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,7 +21,7 @@ public class PAY_BAY extends AppCompatActivity {
     RadioGroup rg_rg;
     Button btn_pay;
     TextView bay_name1, tv_ga, bay_total;
-    ImageView bay_img1;
+    ImageView bay_img1, back1;
 
     private LinearLayout layout_p3,layout_p,layout_p2,layout_g;
 
@@ -43,6 +44,17 @@ public class PAY_BAY extends AppCompatActivity {
         tv_ga = findViewById(R.id.tv_ga);
         bay_img1 = findViewById(R.id.bay_img1);
         bay_total = findViewById(R.id.bay_total);
+        back1 = findViewById(R.id.back1);
+
+
+
+        back1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
 
         // 이미지, 이름, 가격 가져오기
         Intent intent = getIntent();
@@ -111,5 +123,12 @@ public class PAY_BAY extends AppCompatActivity {
             }
         });
 
+    }
+
+    //뒤로가기
+    @Override
+    public void onBackPressed() {
+        Log.v("Back","확인");
+        super.onBackPressed();
     }
 }
