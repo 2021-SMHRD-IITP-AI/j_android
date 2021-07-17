@@ -12,7 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class Lunch_box_main extends AppCompatActivity {
-    private Button  btn_g,btn_j, btn_nv1, btn_nv2, btn_nv3;
+    private Button  btn_g,btn_j2, btn_nv1, btn_nv2, btn_nv3;
 
     private RadioButton tbtn_1,tbtn_2,tbtn_3,tbtn_4,tbtn_5,tbtn_6,tbtn_7
             ,tbtn_8,tbtn_9,tbtn_10,tbtn_11,tbtn_12,tbtn_13,tbtn_14,tbtn_15;
@@ -25,7 +25,7 @@ public class Lunch_box_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lunch_box_main);
 
-        btn_j=findViewById(R.id.btn_j);
+        btn_j2=findViewById(R.id.btn_j2);
         btn_g=findViewById(R.id.cart_btn_g);
         btn_nv1 = findViewById(R.id.btn_nv1);
         btn_nv2 = findViewById(R.id.btn_nv2);
@@ -184,7 +184,7 @@ public class Lunch_box_main extends AppCompatActivity {
             }
         });
 
-        btn_j.setOnClickListener(new View.OnClickListener() {
+        btn_j2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(result1 != null && result2 != null && result3 != null && result4 != null && result5 != null){
@@ -220,39 +220,39 @@ public class Lunch_box_main extends AppCompatActivity {
         });
 
         //구매하기 버튼
-        btn_g.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //맞춤 도시락 구매페이지 인텐트 필요
-
-                //맞게 담았는지 확인하는 코드 작성하기
-                if(result1 != null && result2 != null && result3 != null && result4 != null && result5 != null){
-                    //Toast.makeText(Lunch_box_main.this, (CharSequence) btn_j,Toast.LENGTH_SHORT).show();
-                    Log.v("야", "구매 성공");
-                    Intent intent = new Intent(getApplicationContext(), Payment.class);
-                    intent.putExtra("result1", result1);
-                    intent.putExtra("result2", result2);
-                    intent.putExtra("result3", result3);
-                    intent.putExtra("result4", result4);
-                    intent.putExtra("result5", result5);
-
-                    intent.putExtra("id", id);
-                    intent.putExtra("name", user);
-                    intent.putExtra("tel", tel);
-                    intent.putExtra("address", address);
-                    intent.putExtra("email", email);
-                    intent.putExtra("status", status);
-                    startActivity(intent);
-                    //버튼 비활성화(else)/영양소 미선택시 팝업
-//                    btn_g.setEnabled(true);
-
-                }else{
-                    // Toast.makeText(Lunch_box_main.this,"영양소를 선택 해주세요",Toast.LENGTH_SHORT).show();
-                    // 버튼 활성화
-                    //btn_g.setEnabled(false);
-                    Log.v("야","구매 실패"+ result1);
-                }
-            }
-        });
+//        btn_g.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //맞춤 도시락 구매페이지 인텐트 필요
+//
+//                //맞게 담았는지 확인하는 코드 작성하기
+//                if(result1 != null && result2 != null && result3 != null && result4 != null && result5 != null){
+//                    //Toast.makeText(Lunch_box_main.this, (CharSequence) btn_j,Toast.LENGTH_SHORT).show();
+//                    Log.v("야", "구매 성공");
+//                    Intent intent = new Intent(getApplicationContext(), Payment.class);
+//                    intent.putExtra("result1", result1);
+//                    intent.putExtra("result2", result2);
+//                    intent.putExtra("result3", result3);
+//                    intent.putExtra("result4", result4);
+//                    intent.putExtra("result5", result5);
+//
+//                    intent.putExtra("id", id);
+//                    intent.putExtra("name", user);
+//                    intent.putExtra("tel", tel);
+//                    intent.putExtra("address", address);
+//                    intent.putExtra("email", email);
+//                    intent.putExtra("status", status);
+//                    startActivity(intent);
+//                    //버튼 비활성화(else)/영양소 미선택시 팝업
+////                    btn_g.setEnabled(true);
+//
+//                }else{
+//                    // Toast.makeText(Lunch_box_main.this,"영양소를 선택 해주세요",Toast.LENGTH_SHORT).show();
+//                    // 버튼 활성화
+//                    //btn_g.setEnabled(false);
+//                    Log.v("야","구매 실패"+ result1);
+//                }
+//            }
+//        });
     }
 }

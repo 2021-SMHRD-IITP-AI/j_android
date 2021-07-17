@@ -127,8 +127,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="4dp"
                             android:layout_marginLeft="4dp"
-                            android:paddingLeft="8dp"
                             android:fontFamily="@font/gmarketsansttfbold"
+                            android:paddingLeft="8dp"
                             android:text="하루 권장량 "
                             android:textSize="17sp" />
 
@@ -261,6 +261,18 @@
 
                     </LinearLayout>
 
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView78"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="도시락을 선택해주세요" />
                 </LinearLayout>
 
             </LinearLayout>

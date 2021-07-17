@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:layout_marginRight="15dp"
-                android:text="홍길동"
+                android:text="종근당"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -99,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:layout_marginRight="15dp"
-                android:text="010-1111-1111"
+                android:text="010-1234-5678"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
