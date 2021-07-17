@@ -12,7 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class Lunch_box_main extends AppCompatActivity {
-    private Button  btn_g,btn_j, btn_nv1, btn_nv2, btn_nv3;
+    private Button  btn_g,btn_j2, btn_nv1, btn_nv2, btn_nv3;
 
     private RadioButton tbtn_1,tbtn_2,tbtn_3,tbtn_4,tbtn_5,tbtn_6,tbtn_7
             ,tbtn_8,tbtn_9,tbtn_10,tbtn_11,tbtn_12,tbtn_13,tbtn_14,tbtn_15;
@@ -25,7 +25,7 @@ public class Lunch_box_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lunch_box_main);
 
-        btn_j=findViewById(R.id.btn_j);
+        btn_j2=findViewById(R.id.btn_j2);
         btn_g=findViewById(R.id.cart_btn_g);
         btn_nv1 = findViewById(R.id.btn_nv1);
         btn_nv2 = findViewById(R.id.btn_nv2);
@@ -184,7 +184,7 @@ public class Lunch_box_main extends AppCompatActivity {
             }
         });
 
-        btn_j.setOnClickListener(new View.OnClickListener() {
+        btn_j2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(result1 != null && result2 != null && result3 != null && result4 != null && result5 != null){

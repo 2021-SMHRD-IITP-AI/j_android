@@ -30,11 +30,11 @@ public class PAY_BAY extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pay_bay);
 
+        //결제창 레이아웃
         layout_p3=findViewById(R.id.layout_p3);
         layout_p=findViewById(R.id.layout_p);
         layout_p2=findViewById(R.id.layout_p2);
         layout_g=findViewById(R.id.layout_g);
-
 
 
         rg_rg=findViewById(R.id.rg_rg);

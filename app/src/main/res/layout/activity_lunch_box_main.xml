@@ -720,7 +720,7 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/btn_j"
+                        android:id="@+id/btn_j2"
                         android:layout_width="296dp"
                         android:layout_height="50dp"
                         android:layout_marginStart="60dp"

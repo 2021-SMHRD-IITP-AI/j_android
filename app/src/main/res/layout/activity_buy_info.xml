@@ -94,6 +94,7 @@
                             android:id="@+id/tv_menu_name1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:text="제주톳도시락"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -102,6 +103,7 @@
                             android:id="@+id/tv_menu_p1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:text="가격 : 5,900원"
                             android:textSize="15sp" />
 
@@ -109,6 +111,7 @@
                             android:id="@+id/tv_menu_s1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:text="상태 : 배송중"
                             android:textSize="15sp" />
 
@@ -131,6 +134,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="15dp"
                                 android:layout_weight="0"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="리뷰작성"
                                 android:textSize="15sp" />
                         </LinearLayout>
@@ -163,6 +167,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="닭가슴살 샐러드"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -171,12 +176,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="가격 : 4,900원"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textSize="15sp" />
 
                         <TextView
                             android:id="@+id/tv_menu_s2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:text="상태 : 배송중"
                             android:textSize="15sp" />
 
@@ -200,6 +207,7 @@
                                 android:layout_marginTop="15dp"
                                 android:layout_weight="0"
                                 android:text="리뷰작성"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:textSize="15sp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -231,6 +239,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="바닐라 아몬드 바"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -239,6 +248,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="가격 : 1,900원"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textSize="15sp" />
 
                         <TextView
@@ -246,6 +256,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="상태 : 배송중"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textSize="15sp" />
 
                         <LinearLayout
@@ -268,6 +279,7 @@
                                 android:layout_marginTop="15dp"
                                 android:layout_weight="0"
                                 android:text="리뷰작성"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:textSize="15sp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -297,6 +309,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
+                    android:fontFamily="@font/jalnan"
                     android:text="건강일지"
                     android:textColor="#670401" />
             </LinearLayout>
@@ -315,6 +328,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_home_red"
                     android:text="HOME"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>
@@ -333,6 +347,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
                     android:text="마이페이지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>
