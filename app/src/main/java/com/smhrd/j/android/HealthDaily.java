@@ -11,7 +11,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Layout;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -48,7 +50,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
-public class HealthDaily extends AppCompatActivity {
+public class HealthDaily extends AppCompatActivity{
 
     Spinner spinner;
     private ImageView shp1, back1;
@@ -60,10 +62,10 @@ public class HealthDaily extends AppCompatActivity {
     private String check_box;
     private String edt_ckeck;
     private String result = "";
-
     private RequestQueue queue;
     private StringRequest stringRequest;
     private JSONObject date_symptom=new JSONObject();
+    private JSONObject date_note=new JSONObject();
     private HashSet<String> symptoms= new HashSet<String>();
     Spinner spinner1;
     Calendar myCalendar = Calendar.getInstance();
@@ -71,15 +73,13 @@ public class HealthDaily extends AppCompatActivity {
 
 
 
-    private ArrayList<HealthDTO> list = new ArrayList<HealthDTO>();
+//    private ArrayList<HealthDTO> list = new ArrayList<HealthDTO>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_daily);
-
-
 
 
 
@@ -97,13 +97,7 @@ public class HealthDaily extends AppCompatActivity {
         btn_nv2 = findViewById(R.id.btn_nv2);
         btn_nv3 = findViewById(R.id.btn_nv3);
 
-        Intent newIntent = getIntent();
-        String id = newIntent.getStringExtra("id");
-        String user = newIntent.getStringExtra("name");
-        String tel = newIntent.getStringExtra("tel");
-        String address = newIntent.getStringExtra("address");
-        String email = newIntent.getStringExtra("email");
-        String status = newIntent.getStringExtra("status");
+
 
         //캘린더
         health_cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -113,24 +107,31 @@ public class HealthDaily extends AppCompatActivity {
                 //health_edt.setText(String.format("%d년 %d월 %d일" ,year,month,dayOfMonth));  //캘린더날짜 출력
                 String date = String.format("%04d-%02d-%02d", year,month,dayOfMonth);
                 try{
-                    String symptom = date_symptom.getString(date);
+                    String symptom = date_symptom.getString(date);//날짜에 따른 스피너내용
+                    String note = date_note.getString(date); //날짜에 따른 건강 내용
+                    Log.v("야4",note);
+                    Log.v("야1",symptom);
                     String[] tmp = Arrays.copyOf(symptoms.toArray(), symptoms.toArray().length, String[].class);
+                    //스피너값
                     adapter =new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, tmp);
 
 
                     spinner1.setAdapter(adapter);
+
                     for(int i=0;i<adapter.getCount();i++){
-                        if(adapter.getItem(i).equals(symptom)){
+                        if(adapter.getItem(i).equals(symptom)){// 날짜와 비교해서
+                            Log.v("야1",adapter.getItem(i));
                             spinner1.setSelection(i);
                             break;
                         }
                     }
+                    health_edt.setText(note);
                     if (check_box.equals("true")) {
                         health_ck.setChecked(true);
                     }else  if (check_box.equals("false")){
                         health_ck.setChecked(false);
                     }
-                    health_edt.setText(edt_ckeck);
+
 
 
                 }catch (JSONException e){
@@ -139,7 +140,6 @@ public class HealthDaily extends AppCompatActivity {
                     health_edt.setText("");
 
                 }
-
 
 
             }
@@ -199,22 +199,16 @@ public class HealthDaily extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Cart.class);
-                intent.putExtra("id", id);
-                intent.putExtra("name", user);
-                intent.putExtra("tel", tel);
-                intent.putExtra("address", address);
-                intent.putExtra("email", email);
-                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
 
 
-        //건강일지
+        //헬스케어
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
                 startActivity(intent);
             }
         });
@@ -224,12 +218,6 @@ public class HealthDaily extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
-                intent.putExtra("id", id);
-                intent.putExtra("name", user);
-                intent.putExtra("tel", tel);
-                intent.putExtra("address", address);
-                intent.putExtra("email", email);
-                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -238,13 +226,7 @@ public class HealthDaily extends AppCompatActivity {
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
-                intent.putExtra("id", id);
-                intent.putExtra("name", user);
-                intent.putExtra("tel", tel);
-                intent.putExtra("address", address);
-                intent.putExtra("email", email);
-                intent.putExtra("status", status);
+                Intent intent = new Intent(getApplicationContext(), MyPage.class);
                 startActivity(intent);
             }
         });
@@ -278,7 +260,9 @@ public class HealthDaily extends AppCompatActivity {
                             String health_check = jo.getString("note_workout");
                             String health_spinner = jo.getString("note_health");
                             Log.v("야",date+"/"+health_daily+"/"+id+"/"+health_check+"/"+health_spinner);
-                            date_symptom.put(date.substring(0,10),health_spinner);
+                            date_symptom.put(date.substring(0,10),health_spinner);//스피너 내용
+                            date_note.put(date.substring(0,10),health_daily);//건강 내용
+                            Log.v("야3",date_note.toString());
                             symptoms.add(health_spinner);
                             edt_ckeck=health_daily;
                             check_box = health_check;
@@ -333,7 +317,6 @@ public class HealthDaily extends AppCompatActivity {
                     if (value.equals("true")){
                         checkHealth();
                     }else {
-                        health_edt.setText("");
 
                     }
                 } catch (JSONException e) {
