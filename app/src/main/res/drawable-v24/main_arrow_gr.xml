@@ -3,7 +3,8 @@
 <item
     android:drawable="@drawable/main_arrow_ic"
     android:width="8dp"
-    android:height="8dp"/>
+    android:height="8dp"
+    />
 
 
 </layer-list>

@@ -79,6 +79,7 @@
                     android:layout_weight="1"
                     android:background="#F39C12"
                     android:text="포인트"
+                    android:fontFamily="@font/jalnan"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:backgroundTint="#F39C12" />
@@ -90,6 +91,7 @@
                     android:layout_weight="1"
                     android:background="#FF5C30"
                     android:text="쿠폰"
+                    android:fontFamily="@font/jalnan"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:backgroundTint="#FF5C30" />
@@ -101,6 +103,8 @@
                     android:layout_weight="1"
                     android:background="#FC5C65"
                     android:text="주문정보"
+
+                    android:fontFamily="@font/jalnan"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:backgroundTint="#FC5C65" />
@@ -121,6 +125,7 @@
                     android:layout_marginLeft="25dp"
                     android:layout_marginBottom="30dp"
                     android:text="회원 정보"
+                    android:fontFamily="@font/gmarketsansttfmedium"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -132,6 +137,7 @@
                     android:layout_marginLeft="25dp"
                     android:layout_marginBottom="30dp"
                     android:text="장바구니"
+                    android:fontFamily="@font/gmarketsansttfmedium"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -143,6 +149,7 @@
                     android:layout_marginLeft="25dp"
                     android:layout_marginBottom="30dp"
                     android:text="QnA"
+                    android:fontFamily="@font/gmarketsansttfmedium"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -153,6 +160,7 @@
                     android:layout_marginStart="25dp"
                     android:layout_marginLeft="25dp"
                     android:text="My알림"
+                    android:fontFamily="@font/gmarketsansttfmedium"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -182,6 +190,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
                     android:text="건강일지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -199,6 +208,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_home_red"
                     android:text="HOME"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>
@@ -217,6 +227,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
                     android:text="마이페이지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>

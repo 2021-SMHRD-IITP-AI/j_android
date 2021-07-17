@@ -41,8 +41,10 @@ import java.util.Map;
 public class Main extends AppCompatActivity {
     private Button btn_mu1,btn_mu2,btn_mu3,btn_mu4,btn_mu5,btn_mu6,btn_mu7,btn_mu8, btn_more1, btn_j, btn_nv1, btn_nv2,btn_nv3;
     private ImageView ctgr,search1, shp1,img1,img2,img3,cir1,cir2,cir3,cir4,cir5,cir6;
-    private TextView menu1,menu2,menu3,menu4,tv_lu_name1,tv_lu_name2,tv_lu_name3,tv_pa1,tv_pa2,tv_pa3;
+    private TextView menu1,menu2,menu3,menu4,tv_lu_name1,tv_lu_name2,tv_lu_name3,tv_pa1,tv_pa2,tv_pa3,tv_login_s;
     private ImageView imageView;
+
+    String cnt1 = "1";
 
     private RequestQueue queue;
     private StringRequest stringRequest;
@@ -91,27 +93,40 @@ public class Main extends AppCompatActivity {
         tv_pa1=findViewById(R.id.tv_pa1);
         tv_pa2=findViewById(R.id.tv_pa2);
         tv_pa3=findViewById(R.id.tv_pa3);
+        tv_login_s=findViewById(R.id.tv_login_s);
 
-        Intent newIntent = getIntent();
-        String id = newIntent.getStringExtra("id");
-        String user = newIntent.getStringExtra("name");
-        String tel = newIntent.getStringExtra("tel");
-        String address = newIntent.getStringExtra("address");
-        String email = newIntent.getStringExtra("email");
-        String status = newIntent.getStringExtra("status");
+
+        //로그인 페이지 이동 / 로그인시 로그아웃으로 변경
+        tv_login_s.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                Intent intent = new Intent(getApplicationContext(),Login.class);
+                intent.putExtra("logout","로그아웃");
+                startActivity(intent);
+
+            }
+        });
+
+
+
+        Intent intent = getIntent();
+        String logout = intent.getStringExtra("logout");
+        String cnt = intent.getStringExtra("cnt");
+
+        if (cnt1.equals(cnt)) {
+            tv_login_s.setText(logout);
+        }else {
+            tv_login_s.setText("로그인");
+        }
 
         //장바구니 페이지 이동
         shp1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Cart.class);
-                intent.putExtra("id", id);
-                intent.putExtra("name", user);
-                intent.putExtra("tel", tel);
-                intent.putExtra("address", address);
-                intent.putExtra("email", email);
-                intent.putExtra("status", status);
-
                 startActivity(intent);
             }
         });
@@ -121,13 +136,6 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Hot_item.class);
-                intent.putExtra("id", id);
-                intent.putExtra("name", user);
-                intent.putExtra("tel", tel);
-                intent.putExtra("address", address);
-                intent.putExtra("email", email);
-                intent.putExtra("status", status);
-
                 startActivity(intent);
             }
         });
@@ -137,14 +145,6 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Sale.class);
-
-                intent.putExtra("id", id);
-                intent.putExtra("name", user);
-                intent.putExtra("tel", tel);
-                intent.putExtra("address", address);
-                intent.putExtra("email", email);
-                intent.putExtra("status", status);
-
                 startActivity(intent);
             }
         });
@@ -153,7 +153,8 @@ public class Main extends AppCompatActivity {
         menu3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendRequest();
+                Intent intent = new Intent(getApplicationContext(),HealthCare.class);
+                startActivity(intent);
             }
         });
 
@@ -198,13 +199,6 @@ public class Main extends AppCompatActivity {
                 intent.putExtra("imageUrl", value);
                 intent.putExtra("imgName", name);
                 intent.putExtra("imgPrice", price);
-                intent.putExtra("id", id);
-                intent.putExtra("name", user);
-                intent.putExtra("tel", tel);
-                intent.putExtra("address", address);
-                intent.putExtra("email", email);
-                intent.putExtra("status", status);
-
                 startActivity(intent);
             }
         });
@@ -214,13 +208,6 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Salad.class);
-                intent.putExtra("id", id);
-                intent.putExtra("name", user);
-                intent.putExtra("tel", tel);
-                intent.putExtra("address", address);
-                intent.putExtra("email", email);
-                intent.putExtra("status", status);
-
                 startActivity(intent);
             }
         });
@@ -230,13 +217,6 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Lunch_box_main.class);
-                intent.putExtra("id", id);
-                intent.putExtra("name", user);
-                intent.putExtra("tel", tel);
-                intent.putExtra("address", address);
-                intent.putExtra("email", email);
-                intent.putExtra("status", status);
-
                 startActivity(intent);
             }
         });
@@ -246,13 +226,6 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Proteen.class);
-                intent.putExtra("id", id);
-                intent.putExtra("name", user);
-                intent.putExtra("tel", tel);
-                intent.putExtra("address", address);
-                intent.putExtra("email", email);
-                intent.putExtra("status", status);
-
                 startActivity(intent);
             }
         });
@@ -262,13 +235,6 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Bar.class);
-                intent.putExtra("id", id);
-                intent.putExtra("name", user);
-                intent.putExtra("tel", tel);
-                intent.putExtra("address", address);
-                intent.putExtra("email", email);
-                intent.putExtra("status", status);
-
                 startActivity(intent);
             }
         });
@@ -278,13 +244,6 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Snack.class);
-                intent.putExtra("id", id);
-                intent.putExtra("name", user);
-                intent.putExtra("tel", tel);
-                intent.putExtra("address", address);
-                intent.putExtra("email", email);
-                intent.putExtra("status", status);
-
                 startActivity(intent);
             }
         });
@@ -302,13 +261,6 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Today_lunch_box.class);
-                intent.putExtra("id", id);
-                intent.putExtra("name", user);
-                intent.putExtra("tel", tel);
-                intent.putExtra("address", address);
-                intent.putExtra("email", email);
-                intent.putExtra("status", status);
-
                 startActivity(intent);
             }
         });
@@ -328,19 +280,13 @@ public class Main extends AppCompatActivity {
                 resize.compress(Bitmap.CompressFormat.PNG, 100, stream);
                 byte[] byteArray = stream.toByteArray();
 
+
                 Intent intent = new Intent(getApplicationContext(),Purchase.class);
                 intent.putExtra("main_name1",tv_lu_name1.getText().toString());
                 intent.putExtra("main_pr1",tv_pa1.getText().toString());
                 intent.putExtra("main_img1", byteArray);
 
                 //intent.putExtra("main_img1",R.drawable.main_img4);//이미지
-
-                intent.putExtra("id", id);
-                intent.putExtra("name", user);
-                intent.putExtra("tel", tel);
-                intent.putExtra("address", address);
-                intent.putExtra("email", email);
-                intent.putExtra("status", status);
 
                 startActivity(intent);
             }
@@ -350,14 +296,11 @@ public class Main extends AppCompatActivity {
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
-                intent.putExtra("id", id);
-                intent.putExtra("name", user);
-                intent.putExtra("tel", tel);
-                intent.putExtra("address", address);
-                intent.putExtra("email", email);
-                intent.putExtra("status", status);
+                Intent newIntent = getIntent();
+                String id = newIntent.getStringExtra("id");
 
+                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                intent.putExtra("id",id);
                 startActivity(intent);
             }
         });
@@ -366,13 +309,19 @@ public class Main extends AppCompatActivity {
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent newIntent = getIntent();
+                String id = newIntent.getStringExtra("id");
+                String name = newIntent.getStringExtra("name");
+                String tel = newIntent.getStringExtra("tel");
+                String address = newIntent.getStringExtra("address");
+                String email = newIntent.getStringExtra("email");
+
                 Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
                 intent.putExtra("id", id);
-                intent.putExtra("name", user);
+                intent.putExtra("name", name);
                 intent.putExtra("tel", tel);
                 intent.putExtra("address", address);
                 intent.putExtra("email", email);
-                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -388,22 +337,10 @@ public class Main extends AppCompatActivity {
                 Log.v("result", response);
                 if (response != null) {
                     Intent newIntent = getIntent();
-                    String id = newIntent.getStringExtra("id");
-                    String user = newIntent.getStringExtra("name");
-                    String tel = newIntent.getStringExtra("tel");
-                    String address = newIntent.getStringExtra("address");
-                    String email = newIntent.getStringExtra("email");
-                    String status = newIntent.getStringExtra("status");
-
+                    String name = newIntent.getStringExtra("name");
                     Intent intent = new Intent(getApplicationContext(), HealthCare.class);
                     intent.putExtra("diseData", response);
-                    intent.putExtra("id", id);
-                    intent.putExtra("name", user);
-                    intent.putExtra("tel", tel);
-                    intent.putExtra("address", address);
-                    intent.putExtra("email", email);
-                    intent.putExtra("status", status);
-
+                    intent.putExtra("name", name);
                     startActivity(intent);
                     Log.v("test", "성공");
                 } else {

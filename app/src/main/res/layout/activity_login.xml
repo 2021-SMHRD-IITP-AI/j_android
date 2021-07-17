@@ -26,6 +26,7 @@
         android:textColor="#4C4C4C"
         android:textColorHint="#4C4C4C"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,6 +38,7 @@
         android:fontFamily="@font/gmarketsansttflight"
         android:text="자동로그인"
         android:textColor="#4C4C4C"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/pw_login"
         app:layout_constraintTop_toBottomOf="@+id/pw_login" />
 
@@ -53,6 +55,7 @@
         android:textColor="#4C4C4C"
         android:textColorHint="#4C4C4C"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/id_login"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,6 +69,7 @@
         android:fontFamily="@font/gmarketsansttflight"
         android:text="아이디/비밀번호 찾기"
         android:textColor="#4C4C4C"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/cb_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cb_login"

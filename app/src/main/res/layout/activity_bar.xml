@@ -97,6 +97,7 @@
                             android:drawableLeft="@drawable/horsv_lunch_gr"
                             android:gravity="center|right"
                             android:text="도시락/볶음밥"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -120,6 +121,7 @@
                             android:drawableLeft="@drawable/horsv_choice_gr"
                             android:gravity="center|right"
                             android:text="맟춤도시락"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -142,6 +144,7 @@
                             android:drawableLeft="@drawable/horsv_salad_gr"
                             android:gravity="center|right"
                             android:text="샐러드"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -163,6 +166,7 @@
                             android:layout_weight="1"
                             android:drawableLeft="@drawable/horsv_conveniece_gr"
                             android:gravity="center|right"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:text="간편식"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
@@ -185,6 +189,7 @@
                             android:layout_weight="1"
                             android:drawableLeft="@drawable/horsv_food_gr"
                             android:gravity="center|right"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:text="건강간식"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
@@ -215,6 +220,7 @@
                     android:id="@+id/textView67"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/gmarketsansttfbold"
                     android:gravity="center"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
@@ -254,12 +260,14 @@
                                 android:id="@+id/B_name1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="녹차 프로틴바" />
 
                             <TextView
                                 android:id="@+id/B_price1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="1,900원" />
                         </LinearLayout>
 
@@ -281,12 +289,14 @@
                                 android:id="@+id/B_name2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="아몬드 프로틴바" />
 
                             <TextView
                                 android:id="@+id/B_price2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="1,900원" />
                         </LinearLayout>
 
@@ -316,12 +326,14 @@
                                 android:id="@+id/B_name3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="녹차 프로틴바" />
 
                             <TextView
                                 android:id="@+id/B_price3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="1,900원" />
                         </LinearLayout>
 
@@ -343,12 +355,14 @@
                                 android:id="@+id/B_name4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="아몬드 프로틴바" />
 
                             <TextView
                                 android:id="@+id/B_price4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="1,900원" />
                         </LinearLayout>
 
@@ -378,12 +392,14 @@
                                 android:id="@+id/B_name5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="녹차 프로틴바" />
 
                             <TextView
                                 android:id="@+id/B_price5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="1,900원" />
                         </LinearLayout>
 
@@ -405,12 +421,14 @@
                                 android:id="@+id/B_name6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="아몬드 프로틴바" />
 
                             <TextView
                                 android:id="@+id/B_price6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="1,900원" />
                         </LinearLayout>
 
@@ -440,12 +458,14 @@
                                 android:id="@+id/B_name7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="녹차 프로틴바" />
 
                             <TextView
                                 android:id="@+id/B_price7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="1,900원" />
                         </LinearLayout>
 
@@ -467,12 +487,14 @@
                                 android:id="@+id/B_name8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="아몬드 프로틴바" />
 
                             <TextView
                                 android:id="@+id/B_price8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/gmarketsansttfmedium"
                                 android:text="1,900원" />
                         </LinearLayout>
 
@@ -503,6 +525,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
+                    android:fontFamily="@font/jalnan"
                     android:text="건강일지"
                     android:textColor="#670401" />
             </LinearLayout>
@@ -520,6 +543,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_home_red"
+                    android:fontFamily="@font/jalnan"
                     android:text="HOME"
                     android:textColor="#670401" />
 
@@ -538,6 +562,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
+                    android:fontFamily="@font/jalnan"
                     android:text="마이페이지"
                     android:textColor="#670401" />
 

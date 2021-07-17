@@ -95,6 +95,7 @@
                         android:layout_marginRight="25dp"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
+                        android:fontFamily="@font/gmarketsansttfmedium"
                         android:text="종근당님에게 맞춘 질환별 식품 추천 입니다."
                         android:textColor="#4C4C4C" />
                 </LinearLayout>
@@ -135,6 +136,7 @@
                         android:gravity="center"
                         android:padding="2dp"
                         android:text="추천식품"
+                        android:fontFamily="@font/gmarketsansttfbold"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -145,8 +147,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
                         android:layout_marginLeft="30dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="25dp"
                         android:layout_marginRight="25dp"
+                        android:fontFamily="@font/gmarketsansttfmedium"
                         android:text="3. 곤약, 우무묵, 차(홍차, 녹차)  "
                         android:textColor="#4C4C4C" />
 
@@ -169,6 +173,7 @@
                         android:background="#FB6565"
                         android:gravity="center"
                         android:padding="2dp"
+                        android:fontFamily="@font/gmarketsansttfbold"
                         android:text="주의식품"
                         android:textColor="@color/white"
                         android:textSize="18sp"
@@ -180,8 +185,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
                         android:layout_marginLeft="30dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="25dp"
                         android:layout_marginRight="25dp"
+                        android:fontFamily="@font/gmarketsansttfmedium"
                         android:text="1. 너무 달거나 기름이 많이 들어간 음식(튀김, 양식, 중국요리 등)은 되도록 피합니다.  "
                         android:textColor="#4C4C4C" />
 
@@ -189,7 +196,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingBottom="40dp">
 
@@ -202,6 +209,7 @@
                         android:layout_marginEnd="25dp"
                         android:layout_marginRight="25dp"
                         android:layout_weight="1"
+                        android:fontFamily="@font/gmarketsansttfbold"
                         android:text="당뇨에 좋은 식품"
                         android:textColor="#4C4C4C"
                         android:textSize="16sp"
@@ -236,6 +244,7 @@
                             android:layout_marginLeft="30dp"
                             android:layout_weight="1"
                             android:text="닭가슴살 샐러드"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C" />
 
                         <TextView
@@ -246,6 +255,7 @@
                             android:layout_marginLeft="30dp"
                             android:layout_weight="1"
                             android:text="4,300원"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textStyle="bold" />
 
@@ -273,6 +283,7 @@
                             android:layout_marginLeft="30dp"
                             android:layout_weight="1"
                             android:text="훈제오리 샐러드"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C" />
 
                         <TextView
@@ -283,6 +294,7 @@
                             android:layout_marginLeft="30dp"
                             android:layout_weight="1"
                             android:text="4,300원"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textStyle="bold" />
 
@@ -314,6 +326,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
+                    android:fontFamily="@font/jalnan"
                     android:text="건강일지"
                     android:textColor="#670401" />
             </LinearLayout>
@@ -331,6 +344,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_home_red"
+                    android:fontFamily="@font/jalnan"
                     android:text="HOME"
                     android:textColor="#670401" />
 
@@ -349,6 +363,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
+                    android:fontFamily="@font/jalnan"
                     android:text="마이페이지"
                     android:textColor="#670401" />
 

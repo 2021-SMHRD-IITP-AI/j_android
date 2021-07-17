@@ -44,12 +44,16 @@
                 android:textColor="#670401"
                 android:textSize="21sp" />
 
-            <ImageView
-                android:id="@+id/search1"
-                android:layout_width="23dp"
+            <TextView
+                android:id="@+id/tv_login_s"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.05"
-                app:srcCompat="@drawable/search_ic" />
+                android:layout_marginTop="2dp"
+                android:layout_weight="0.06"
+                android:fontFamily="@font/gmarketsansttfmedium"
+                android:gravity="center"
+                android:text="로그인"
+                android:textColor="#670401" />
 
             <ImageView
                 android:id="@+id/shp1"
@@ -74,6 +78,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="인기상품"
+                android:fontFamily="@font/gmarketsansttfmedium"
                 android:textColor="#FFFFFF" />
 
             <TextView
@@ -83,6 +88,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="이달의특가"
+                android:fontFamily="@font/gmarketsansttfmedium"
                 android:textColor="#FFFFFF" />
 
             <TextView
@@ -92,6 +98,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="헬스케어"
+                android:fontFamily="@font/gmarketsansttfmedium"
                 android:textColor="#FFFFFF" />
 
             <TextView
@@ -101,6 +108,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="종류별"
+                android:fontFamily="@font/gmarketsansttfmedium"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 
@@ -160,9 +168,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:drawableTop="@drawable/main_lunch_red"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:text="도시락"
                             android:textColor="#670401"
-                            android:textSize="15sp" />
+                            android:textSize="14sp" />
 
                         <Button
                             android:id="@+id/btn_mu2"
@@ -171,9 +180,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:drawableTop="@drawable/main_salad_red"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:text="샐러드"
                             android:textColor="#670401"
-                            android:textSize="15sp" />
+                            android:textSize="14sp" />
 
                         <Button
                             android:id="@+id/btn_mu3"
@@ -182,9 +192,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:drawableTop="@drawable/main_choice_red"
-                            android:text="선택도시락"
+                            android:fontFamily="@font/gmarketsansttfmedium"
+                            android:text="맞춤도시락"
                             android:textColor="#670401"
-                            android:textSize="15sp" />
+                            android:textSize="14sp" />
 
                         <Button
                             android:id="@+id/btn_mu4"
@@ -193,9 +204,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:drawableTop="@drawable/main_proteen_red"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:text="프로틴"
                             android:textColor="#670401"
-                            android:textSize="15sp" />
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
@@ -215,9 +227,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.96"
                             android:drawableTop="@drawable/main_health_red"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:text="건강간식"
                             android:textColor="#670401"
-                            android:textSize="15sp" />
+                            android:textSize="14sp" />
 
                         <Button
                             android:id="@+id/btn_mu6"
@@ -226,9 +239,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.96"
                             android:drawableTop="@drawable/main_conveniece_red"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:text="간편식"
                             android:textColor="#670401"
-                            android:textSize="15sp" />
+                            android:textSize="14sp" />
 
                         <Button
                             android:id="@+id/btn_mu7"
@@ -237,9 +251,11 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.96"
                             android:drawableTop="@drawable/main_change1_red"
+                            android:fontFamily="@font/gmarketsansttfmedium"
+
                             android:text="헬스케어"
                             android:textColor="#670401"
-                            android:textSize="15sp" />
+                            android:textSize="14sp" />
 
                         <Button
                             android:id="@+id/btn_mu8"
@@ -248,9 +264,10 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.96"
                             android:drawableTop="@drawable/main_training_red"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:text="홈트영상"
                             android:textColor="#670401"
-                            android:textSize="15sp" />
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
@@ -288,6 +305,7 @@
                         android:background="#F4F4F4"
                         android:paddingLeft="15dp"
                         android:text="일일 도시락 추천"
+                        android:fontFamily="@font/gmarketsansttfmedium"
                         android:textColor="#4C4C4C"
                         android:textSize="24sp" />
 
@@ -300,6 +318,7 @@
                         android:drawableRight="@drawable/main_arrow_gr"
                         android:gravity="center|right"
                         android:text="더보기"
+                        android:fontFamily="@font/gmarketsansttfmedium"
                         android:textColor="#4C4C4C"
                         android:textSize="10sp" />
 
@@ -333,6 +352,7 @@
                             android:layout_marginStart="22dp"
                             android:layout_marginLeft="22dp"
                             android:text="제육 도시락"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C" />
 
                         <TextView
@@ -342,6 +362,7 @@
                             android:layout_marginStart="22dp"
                             android:layout_marginLeft="22dp"
                             android:text="4,800원"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C" />
                     </LinearLayout>
 
@@ -366,6 +387,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="22dp"
                             android:layout_marginLeft="22dp"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:text="등심 도시락"
                             android:textColor="#4C4C4C" />
 
@@ -376,6 +398,7 @@
                             android:layout_marginStart="22dp"
                             android:layout_marginLeft="22dp"
                             android:text="5,100원"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C" />
                     </LinearLayout>
                 </LinearLayout>
@@ -453,6 +476,7 @@
                         android:layout_marginLeft="75dp"
                         android:paddingTop="11dp"
                         android:text="[이건어때?] 닭가슴살 소시지 4+1"
+                        android:fontFamily="@font/gmarketsansttfmedium"
                         android:textColor="#4C4C4C"
                         android:textSize="16sp" />
 
@@ -464,6 +488,7 @@
                         android:layout_marginLeft="75dp"
                         android:paddingTop="8dp"
                         android:text="6,700원"
+                        android:fontFamily="@font/gmarketsansttfmedium"
                         android:textColor="#4C4C4C"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -494,6 +519,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
                     android:text="건강일지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -511,6 +537,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_home_red"
                     android:text="HOME"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>
@@ -529,6 +556,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
                     android:text="마이페이지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>

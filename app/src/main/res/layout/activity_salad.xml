@@ -36,7 +36,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_weight="0.8"
-                android:background="#F4F4F4"
+                android:background="#EFEFEF"
                 android:text="샐러드"
                 android:fontFamily="@font/jalnan"
                 android:textColor="#4C4C4C"
@@ -98,6 +98,7 @@
                             android:drawableLeft="@drawable/horsv_lunch_gr"
                             android:gravity="center|right"
                             android:text="도시락/볶음밥"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -121,6 +122,7 @@
                             android:drawableLeft="@drawable/horsv_choice_gr"
                             android:gravity="center|right"
                             android:text="맟춤도시락"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -143,6 +145,7 @@
                             android:drawableLeft="@drawable/horsv_salad_gr"
                             android:gravity="center|right"
                             android:text="샐러드"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -165,6 +168,7 @@
                             android:drawableLeft="@drawable/horsv_conveniece_gr"
                             android:gravity="center|right"
                             android:text="간편식"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -187,6 +191,7 @@
                             android:drawableLeft="@drawable/horsv_food_gr"
                             android:gravity="center|right"
                             android:text="건강간식"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -220,6 +225,7 @@
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
                     android:text="추천상품"
+                    android:fontFamily="@font/gmarketsansttfbold"
                     android:textColor="#4C4C4C"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -256,13 +262,15 @@
                                 android:id="@+id/Sa_name1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="그린 샐러드" />
+                                android:text="그린 샐러드"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/Sa_price1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="5,500원" />
+                                android:text="5,500원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -284,13 +292,15 @@
                                 android:id="@+id/Sa_name2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="닭가슴살 깻잎 샐러드" />
+                                android:text="닭가슴살 깻잎 샐러드"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/Sa_price2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="5,500원" />
+                                android:text="5,500원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -320,13 +330,15 @@
                                 android:id="@+id/Sa_name3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="닭가슴살 비엔나 샐러드" />
+                                android:text="닭가슴살 비엔나 샐러드"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/Sa_price3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="5,200원" />
+                                android:text="5,200원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -348,13 +360,15 @@
                                 android:id="@+id/Sa_name4"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="닭가슴살 샐러드" />
+                                android:text="닭가슴살 샐러드"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/Sa_price4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="4,300원" />
+                                android:text="4,300원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -384,13 +398,15 @@
                                 android:id="@+id/Sa_name5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="닭가슴살볼 옥수수 샐러드" />
+                                android:text="닭가슴살볼 옥수수 샐러드"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/Sa_price5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="5,600원" />
+                                android:text="5,600원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -412,13 +428,15 @@
                                 android:id="@+id/Sa_name6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="불고기 샐러드" />
+                                android:text="불고기 샐러드"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/Sa_price6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="5,500원" />
+                                android:text="5,500원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -448,13 +466,15 @@
                                 android:id="@+id/Sa_name7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="닭가슴살 볼 샐러드" />
+                                android:text="닭가슴살 볼 샐러드"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/Sa_price7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="5,500원" />
+                                android:text="5,500원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -476,13 +496,15 @@
                                 android:id="@+id/Sa_name8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="훈제오리 샐러드" />
+                                android:text="훈제오리 샐러드"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/Sa_price8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="4,500원" />
+                                android:text="4,500원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -513,6 +535,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
                     android:text="건강일지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -530,6 +553,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_home_red"
                     android:text="HOME"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>
@@ -548,6 +572,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
                     android:text="마이페이지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>

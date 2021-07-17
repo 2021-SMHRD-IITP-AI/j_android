@@ -720,11 +720,11 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/btn_j"
-                        android:layout_width="180dp"
+                        android:id="@+id/btn_j2"
+                        android:layout_width="296dp"
                         android:layout_height="50dp"
-                        android:layout_marginStart="17dp"
-                        android:layout_marginLeft="17dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginLeft="60dp"
                         android:layout_marginTop="30dp"
                         android:layout_marginBottom="10dp"
                         android:layout_weight="0"
@@ -733,16 +733,6 @@
                         app:backgroundTint="#4c4c4c"
                         app:cornerRadius="0dp" />
 
-                    <Button
-                        android:id="@+id/cart_btn_g"
-                        android:layout_width="180dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="30dp"
-                        android:layout_weight="0"
-                        android:fontFamily="@font/jalnan"
-                        android:text="구매하기"
-                        app:backgroundTint="#670401"
-                        app:cornerRadius="0dp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -770,6 +760,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
                     android:text="건강일지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -787,6 +778,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_home_red"
                     android:text="HOME"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>
@@ -805,18 +797,12 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
                     android:text="마이페이지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline37"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="60dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

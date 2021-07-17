@@ -95,6 +95,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:drawableLeft="@drawable/horsv_lunch_gr"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:gravity="center|right"
                             android:text="도시락/볶음밥"
                             android:textColor="#4C4C4C"
@@ -118,6 +119,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:drawableLeft="@drawable/horsv_choice_gr"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:gravity="center|right"
                             android:text="맟춤도시락"
                             android:textColor="#4C4C4C"
@@ -140,6 +142,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:drawableLeft="@drawable/horsv_salad_gr"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:gravity="center|right"
                             android:text="샐러드"
                             android:textColor="#4C4C4C"
@@ -164,6 +167,7 @@
                             android:drawableLeft="@drawable/horsv_conveniece_gr"
                             android:gravity="center|right"
                             android:text="간편식"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -186,6 +190,7 @@
                             android:drawableLeft="@drawable/horsv_food_gr"
                             android:gravity="center|right"
                             android:text="건강간식"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -257,6 +262,7 @@
                         android:layout_marginLeft="15dp"
                         android:paddingBottom="20dp"
                         android:text="카레 곤약밥"
+                        android:fontFamily="@font/gmarketsansttfmedium"
                         android:textColor="#4C4C4C"
                         android:textSize="18sp" />
 
@@ -267,6 +273,7 @@
                         android:layout_marginStart="15dp"
                         android:layout_marginLeft="15dp"
                         android:text="4,300원"
+                        android:fontFamily="@font/gmarketsansttfmedium"
                         android:textColor="#4C4C4C"
                         android:textSize="15sp"
                         android:textStyle="bold" />
@@ -329,6 +336,7 @@
                         android:layout_marginLeft="15dp"
                         android:paddingBottom="20dp"
                         android:text="불고기 볶음밥"
+                        android:fontFamily="@font/gmarketsansttfmedium"
                         android:textColor="#4C4C4C"
                         android:textSize="18sp" />
 
@@ -339,6 +347,7 @@
                         android:layout_marginStart="15dp"
                         android:layout_marginLeft="15dp"
                         android:text="4,300원"
+                        android:fontFamily="@font/gmarketsansttfmedium"
                         android:textColor="#4C4C4C"
                         android:textSize="15sp"
                         android:textStyle="bold" />
@@ -401,6 +410,7 @@
                         android:layout_marginLeft="15dp"
                         android:paddingBottom="20dp"
                         android:text="닭가슴살 볶음밥"
+                        android:fontFamily="@font/gmarketsansttfmedium"
                         android:textColor="#4C4C4C"
                         android:textSize="18sp" />
 
@@ -411,6 +421,7 @@
                         android:layout_marginStart="15dp"
                         android:layout_marginLeft="15dp"
                         android:text="4,300원"
+                        android:fontFamily="@font/gmarketsansttfmedium"
                         android:textColor="#4C4C4C"
                         android:textSize="15sp"
                         android:textStyle="bold" />
@@ -455,6 +466,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
                     android:text="건강일지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -472,6 +484,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_home_red"
                     android:text="HOME"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>
@@ -490,6 +503,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
                     android:text="마이페이지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>

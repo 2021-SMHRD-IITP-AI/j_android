@@ -64,6 +64,15 @@ public class ID_PW_FIND extends AppCompatActivity {
         String email = newIntent.getStringExtra("email");
         String status = newIntent.getStringExtra("status");
 
+        //뒤로가기
+        back1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+
         btn_find_pw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -150,5 +159,7 @@ public class ID_PW_FIND extends AppCompatActivity {
         Log.v("Back","확인");
         super.onBackPressed();
     }
+
+
 
 }

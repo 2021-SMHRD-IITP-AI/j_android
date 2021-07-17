@@ -43,7 +43,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_weight="0.8"
-                android:background="#F4F4F4"
+                android:background="#EFEFEF"
                 android:text="프로틴"
                 android:fontFamily="@font/jalnan"
                 android:textColor="#4C4C4C"
@@ -105,6 +105,7 @@
                             android:drawableLeft="@drawable/horsv_lunch_gr"
                             android:gravity="center|right"
                             android:text="도시락/볶음밥"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -128,6 +129,7 @@
                             android:drawableLeft="@drawable/horsv_choice_gr"
                             android:gravity="center|right"
                             android:text="맟춤도시락"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -150,6 +152,7 @@
                             android:drawableLeft="@drawable/horsv_salad_gr"
                             android:gravity="center|right"
                             android:text="샐러드"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -172,6 +175,7 @@
                             android:drawableLeft="@drawable/horsv_conveniece_gr"
                             android:gravity="center|right"
                             android:text="간편식"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
 
@@ -194,6 +198,7 @@
                             android:drawableLeft="@drawable/horsv_food_gr"
                             android:gravity="center|right"
                             android:text="건강간식"
+                            android:fontFamily="@font/gmarketsansttfmedium"
                             android:textColor="#4C4C4C"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -227,6 +232,7 @@
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
                     android:text="추천상품"
+                    android:fontFamily="@font/gmarketsansttfbold"
                     android:textColor="#4C4C4C"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -263,13 +269,15 @@
                                 android:id="@+id/P_name1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="프로틴 바나나맛" />
+                                android:text="프로틴 바나나맛"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/P_price1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="59,000원" />
+                                android:text="59,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -291,13 +299,15 @@
                                 android:id="@+id/P_name2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="프로틴 고구마 라떼맛" />
+                                android:text="프로틴 고구마 라떼맛"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/P_price2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="37,000원" />
+                                android:text="37,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -326,13 +336,15 @@
                                 android:id="@+id/P_name3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="프로틴 딸기맛" />
+                                android:text="프로틴 딸기맛"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/P_price3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="59,000원" />
+                                android:text="59,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -353,13 +365,15 @@
                                 android:id="@+id/P_name4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="프로틴 일반" />
+                                android:text="프로틴 일반"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/P_price4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="49,000원" />
+                                android:text="49,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -388,13 +402,15 @@
                                 android:id="@+id/P_name5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="프로틴 블루베리맛" />
+                                android:text="프로틴 블루베리맛"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/P_price5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="37,000원" />
+                                android:text="37,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -415,13 +431,15 @@
                                 android:id="@+id/P_name6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="프로틴 초코맛" />
+                                android:text="프로틴 초코맛"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/P_price6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="37,000원" />
+                                android:text="37,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -450,13 +468,15 @@
                                 android:id="@+id/P_name7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="프로틴 카페 프런치맛" />
+                                android:text="프로틴 카페 프런치맛"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/P_price7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="37,000원" />
+                                android:text="37,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -477,13 +497,15 @@
                                 android:id="@+id/P_name8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="프로틴 그린티맛" />
+                                android:text="프로틴 그린티맛"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
 
                             <TextView
                                 android:id="@+id/P_price8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="37,000원" />
+                                android:text="37,000원"
+                                android:fontFamily="@font/gmarketsansttfmedium"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -514,6 +536,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
                     android:text="건강일지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -531,6 +554,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_home_red"
                     android:text="HOME"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>
@@ -549,6 +573,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
                     android:text="마이페이지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>
