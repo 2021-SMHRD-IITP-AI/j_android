@@ -93,6 +93,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
                     android:text="푸쉬업 자세교정"
+                    android:fontFamily="@font/gmarketsansttfmedium"
                     android:textSize="15sp" />
 
                 <TextView
@@ -101,7 +102,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginLeft="30dp"
-                    android:text="운동은 처음 자세가 제일 중요하기 때문에 언제든지 " />
+                    android:text="운동은 처음 자세가 제일 중요하기 때문에 언제든지 "
+                    android:fontFamily="@font/gmarketsansttfmedium"/>
 
                 <TextView
                     android:id="@+id/textView39"
@@ -110,7 +112,8 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginBottom="20dp"
-                    android:text="할 수 있는 당신의 푸쉬업 자세를 교정해 줍니다." />
+                    android:text="할 수 있는 당신의 푸쉬업 자세를 교정해 줍니다."
+                    android:fontFamily="@font/gmarketsansttfmedium"/>
 
                 <VideoView
                     android:id="@+id/video_2"
@@ -125,6 +128,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
                     android:text="집에서 누구나 걱정없이 할 수있는 홈트영상"
+                    android:fontFamily="@font/gmarketsansttfmedium"
                     android:textSize="15sp" />
 
                 <TextView
@@ -134,7 +138,8 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginBottom="20dp"
-                    android:text="집에서 혼자가 아닌 가족들과 함께 즐길 수 있는 홈트영상" />
+                    android:text="집에서 혼자가 아닌 가족들과 함께 즐길 수 있는 홈트영상"
+                    android:fontFamily="@font/gmarketsansttfmedium"/>
 
                 <VideoView
                     android:id="@+id/video_3"
@@ -149,6 +154,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
                     android:text="층간 소음 걱정하지 마세요"
+                    android:fontFamily="@font/gmarketsansttfmedium"
                     android:textSize="15sp" />
 
                 <TextView
@@ -157,7 +163,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginLeft="30dp"
-                    android:text="조용하게 할 수 있는 효과만점인 홈트영상" />
+                    android:text="조용하게 할 수 있는 효과만점인 홈트영상"
+                    android:fontFamily="@font/gmarketsansttfmedium"/>
             </LinearLayout>
         </ScrollView>
 
@@ -183,6 +190,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_change_red"
                     android:text="헬스케어"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
             </LinearLayout>
 
@@ -200,6 +208,7 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_home_red"
                     android:text="HOME"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>
@@ -217,7 +226,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/main_user_red"
-                    android:text="내정보"
+                    android:text="마이페이지"
+                    android:fontFamily="@font/jalnan"
                     android:textColor="#670401" />
 
             </LinearLayout>

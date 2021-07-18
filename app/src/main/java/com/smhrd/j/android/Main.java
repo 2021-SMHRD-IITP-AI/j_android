@@ -323,6 +323,14 @@ public class Main extends AppCompatActivity {
             }
         });
 
+        btn_mu8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(),Today_health.class);
+                startActivity(intent1);
+            }
+        });
+
         //일일 추천 더보기
         btn_more1.setOnClickListener(new View.OnClickListener() {
             @Override
