@@ -131,7 +131,14 @@ public class Login_contract extends AppCompatActivity {
                     String value = jsonObject.getString("check");
                     Log.v("result", value);
                     if(value.equals("true")){
+                        Intent newIntent = getIntent();
+                        String logout = newIntent.getStringExtra("logout");
+                        String cnt = newIntent.getStringExtra("cnt");
+
                         Intent intent = new Intent(getApplicationContext(), Login.class);
+                        intent.putExtra("logout", logout);
+                        intent.putExtra("cnt", cnt);
+
                         startActivity(intent);
                         Toast.makeText(getApplicationContext(),"회원가입에 성공했습니다.",Toast.LENGTH_SHORT).show();
 

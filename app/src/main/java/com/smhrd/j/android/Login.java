@@ -110,10 +110,29 @@ public class Login extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     String id = jsonObject.getString("id");
                     String pw = jsonObject.getString("pw");
+                    String user = jsonObject.getString("name");
+                    String tel = jsonObject.getString("tel");
+                    String address = jsonObject.getString("address");
+                    String email = jsonObject.getString("email");
+                    String status = jsonObject.getString("status");
+
+                    Intent intent = getIntent();
+                    String logout = intent.getStringExtra("logout");
+                    String cnt = intent.getStringExtra("cnt");
+
                     if(id_login.getText().toString().equals(id) && pw_login.getText().toString().equals(pw)){
                         Intent intent1 = new Intent(getApplicationContext(), Main.class);
                         intent1.putExtra("id", id);
                         intent1.putExtra("pw", pw);
+                        intent1.putExtra("name", user);
+                        intent1.putExtra("tel", tel);
+                        intent1.putExtra("address", address);
+                        intent1.putExtra("email", email);
+                        intent1.putExtra("status", status);
+
+                        intent1.putExtra("logout", logout);
+                        intent1.putExtra("cnt", cnt);
+
                         startActivity(intent1);
                         Log.v("Login", "성공");
                     } else{

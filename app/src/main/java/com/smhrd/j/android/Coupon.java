@@ -27,6 +27,14 @@ public class Coupon extends AppCompatActivity {
         search1 =findViewById(R.id.search1);
         shp1 =findViewById(R.id.shp1);
 
+        Intent newIntent = getIntent();
+        String id = newIntent.getStringExtra("id");
+        String user = newIntent.getStringExtra("name");
+        String tel = newIntent.getStringExtra("tel");
+        String address = newIntent.getStringExtra("address");
+        String email = newIntent.getStringExtra("email");
+        String status = newIntent.getStringExtra("status");
+
         //뒤로가기
         back1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,16 +48,28 @@ public class Coupon extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Cart.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
 
 
-        //헬스케어
+        // 건강일지
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
+                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -59,6 +79,12 @@ public class Coupon extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });
@@ -67,7 +93,13 @@ public class Coupon extends AppCompatActivity {
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", user);
+                intent.putExtra("tel", tel);
+                intent.putExtra("address", address);
+                intent.putExtra("email", email);
+                intent.putExtra("status", status);
                 startActivity(intent);
             }
         });

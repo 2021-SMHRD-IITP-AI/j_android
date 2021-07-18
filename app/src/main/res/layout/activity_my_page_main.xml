@@ -78,9 +78,9 @@
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     android:background="#F39C12"
-                    android:text="포인트"
                     android:fontFamily="@font/jalnan"
-                    android:textSize="24sp"
+                    android:text="포인트"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     app:backgroundTint="#F39C12" />
 
@@ -90,9 +90,9 @@
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     android:background="#FF5C30"
-                    android:text="쿠폰"
                     android:fontFamily="@font/jalnan"
-                    android:textSize="24sp"
+                    android:text="쿠폰"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     app:backgroundTint="#FF5C30" />
 
@@ -102,10 +102,10 @@
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     android:background="#FC5C65"
-                    android:text="주문정보"
-
                     android:fontFamily="@font/jalnan"
-                    android:textSize="24sp"
+
+                    android:text="주문정보"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     app:backgroundTint="#FC5C65" />
 

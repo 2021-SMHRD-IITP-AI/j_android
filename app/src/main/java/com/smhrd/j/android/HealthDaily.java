@@ -133,7 +133,7 @@ public class HealthDaily extends AppCompatActivity{
                             break;
                         }
                     }
-//                    health_edt.setText(음표);
+                    health_edt.setText(note);
                     if (check_box.equals("true")) {
                         health_ck.setChecked(true);
                     }else  if (check_box.equals("false")){
@@ -218,11 +218,11 @@ public class HealthDaily extends AppCompatActivity{
         });
 
 
-        //헬스케어
+        // 건강일지
         btn_nv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HealthCare.class);
+                Intent intent = new Intent(getApplicationContext(), HealthDaily.class);
                 intent.putExtra("id", id);
                 intent.putExtra("name", user);
                 intent.putExtra("tel", tel);
@@ -252,7 +252,7 @@ public class HealthDaily extends AppCompatActivity{
         btn_nv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage.class);
+                Intent intent = new Intent(getApplicationContext(), MyPage_Main.class);
                 intent.putExtra("id", id);
                 intent.putExtra("name", user);
                 intent.putExtra("tel", tel);
@@ -347,6 +347,7 @@ public class HealthDaily extends AppCompatActivity{
                     String value = jsonObject.getString("check");
                     Log.v("resultValue", value);
                     if (value.equals("true")){
+                        health_edt.setText("");
                         checkHealth();
                     }else {
 
