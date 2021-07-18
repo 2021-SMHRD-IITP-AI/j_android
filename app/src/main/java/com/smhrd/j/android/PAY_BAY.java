@@ -107,10 +107,7 @@ public class PAY_BAY extends AppCompatActivity {
                 } else if (checkedId == R.id.rd_1) {
                     layout_p3.setVisibility(View.GONE);
                     layout_p.setVisibility(View.GONE);
-
                 }
-
-
             }
         });
 
@@ -118,14 +115,6 @@ public class PAY_BAY extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendRequest();
-//                Intent intent = new Intent(getApplicationContext(),Main.class);
-//                intent.putExtra("id", id);
-//                intent.putExtra("name", user);
-//                intent.putExtra("tel", tel);
-//                intent.putExtra("address", address);
-//                intent.putExtra("email", email);
-//                intent.putExtra("status", status);
-//                startActivity(intent);
                 Toast.makeText(getApplicationContext(),"결제성공",Toast.LENGTH_SHORT).show();
             }
         });
@@ -151,7 +140,6 @@ public class PAY_BAY extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
             }
         }, new Response.ErrorListener() {
             @Override
